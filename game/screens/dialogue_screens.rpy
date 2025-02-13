@@ -15,6 +15,7 @@
 screen say(who, what):
     style_prefix "say"
 
+    add SideImage() xalign 0.0 yalign 1.0
     window:
         id "window"
 
@@ -28,7 +29,6 @@ screen say(who, what):
         text what id "what"
 
     ## If there's a side image, display it in front of the text.
-    add SideImage() xalign 0.0 yalign 1.0
 
 
 ## Make the namebox available for styling through the Character object.

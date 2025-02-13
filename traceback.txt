@@ -1,30 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/clearing.rpy", line 123, in script
-    menu:
-SyntaxError: invalid syntax (game/scripts/game_content/clearing.rpy, line 127)
+  File "game/scripts/game_content/start.rpy", line 50, in script
+    l "I should probably check out what's happening around camp."
+Exception: Sayer 'l' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/clearing.rpy", line 123, in script
-    menu:
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1625, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\exports\menuexports.py", line 100, in menu
-    condition = renpy.python.py_eval(condition)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1207, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/scripts/game_content/clearing.rpy, line 127)
+  File "game/scripts/game_content/start.rpy", line 50, in script
+    l "I should probably check out what's happening around camp."
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 2579, in execute
+    Say.execute(self)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 581, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 470, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'l' is not defined.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Sun Feb  9 13:58:38 2025
+Thu Feb 13 15:35:41 2025
