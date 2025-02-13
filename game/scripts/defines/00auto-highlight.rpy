@@ -94,8 +94,14 @@ init -10 python:
     #       Used by SpriteFocus's __call__ function to determine which sprites to put in talking and non-talking states
     def name_callback(event, interact=True, name=None, **kwargs):
         global speaking_char
+
         if event == "begin":
             speaking_char = name
+
+        if event == "show_done":
+            renpy.sound.play("ticksfile.mp3")
+        elif event == "slow_done":
+            renpy.sound.stop()
 
     # Used to help make sprite_tf more reusable while still using the function statement in the ATL
     class SpriteFocus(object):
@@ -186,6 +192,7 @@ init -10 python:
                 trans.matrixcolor = SaturationMatrix((1.0-sat_change) + curr_ease * sat_change) * BrightnessMatrix(-bright_change + curr_ease * bright_change)
                 trans.zoom = min(curr_ease * zoom_change + (1.0-zoom_change), 1.0)
                 trans.yoffset = y_change - curr_ease * y_change # Delete here if you removed y_change earlier
+
             else:           # Apply the not-talking transformation
                 trans.matrixcolor = SaturationMatrix(1.0 - curr_ease * sat_change) * BrightnessMatrix(curr_ease * -bright_change)
                 trans.zoom = max(1.0 - curr_ease * zoom_change, (1.0-zoom_change))
@@ -193,4 +200,6 @@ init -10 python:
             # Finally, we don't really want to ever stop running this.
             # So we just ask to be continuously redrawn ASAP forever.
             # Returning > 0 will cause it to redraw slower. And returning None will cause it to stop running
+
+            
             return 0
