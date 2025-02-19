@@ -21,7 +21,10 @@ screen Camp():
         xpos 620
         ypos 213
         auto "gui/button/go_patrol_%s.png"
-        action ShowMenu("PatrolSelect")
+        if already_patrolled==False:
+            action ShowMenu("PatrolSelect")
+        else:
+            action ShowMenu("PostPatrolSelect")
 
     imagebutton:
         xpos 587

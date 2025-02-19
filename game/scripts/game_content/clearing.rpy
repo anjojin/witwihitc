@@ -1,4 +1,4 @@
-label clearing_first:
+label cl1:
     $ final_game_screen = False
     $ quick_menu = True
     $ clearing_visited = True

@@ -6,7 +6,11 @@ screen gameUI:
         yoffset 30
         idle "gui/button/camp_idle.png"
         hover "gui/button/camp_hover.png"
-        action Show("Camp")
+        if currently_in == "burial":
+            action Jump("cl1")
+        else:
+            action Show("Camp")
+
 
     imagebutton:
         xalign 1.0

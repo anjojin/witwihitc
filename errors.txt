@@ -2,25 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/clearing.rpy", line 189: expected statement.
-    "About Nettlebreeze ..." if not already_soot_nettlebreeze:
-                             ^
-
-File "game/scripts/game_content/clearing.rpy", line 191: expected statement.
-    "About Willowleap ..." if quest_willowleap_message.started and already_soot_willow:
-                           ^
-
-File "game/scripts/game_content/clearing.rpy", line 193: expected statement.
-    "About Brightpoppy ..." if bright_aggressive and not already_soot_bright:
-                            ^
-
-File "game/scripts/game_content/clearing.rpy", line 195: expected statement.
-    "I had this dream ..." if not already_soot_dream:
-                           ^
-
-File "game/scripts/game_content/clearing.rpy", line 197: expected statement.
-    "Wanna train together?" if not already_soot_training:
-                            ^
+File "game/scripts/game_content/burial_site.rpy", line 200: expected ':' not found.
+    label bs1_sun_furious
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Feb  9 13:29:04 2025
+Wed Feb 19 12:34:39 2025
