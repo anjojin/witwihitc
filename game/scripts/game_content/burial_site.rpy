@@ -39,7 +39,7 @@ label bs_1:
 label bs1_warrior_code:
     t "The Warrior Code clearly states that keeping the Clan fed must always be our top priority, even at the expense of --"
     s "StarClan, that's the problem with you, Talonclaw."
-    s "Our friends and family are dropping like flies, and yet still, here you are, clinging to the rules like they mean anything at all."
+    s "Our friends and family are dropping like flies, and yet still, you cling to the rules."
     s "Why do you think this famine happened, in the first place?"
     menu: 
         t "..."
@@ -53,39 +53,40 @@ label bs1_warrior_code:
             jump bs1_wc_leafbare
 
 label bs1_wc_moonpool:
-    t "Say what you will, but you can't deny that the moment we lost our connection to StarClan, things started going wrong."
-    s "Am I really expected to believe that the limitless power of our warrior ancestors is contained within a little pool of water?"
-    s "If that's the case, why do we worship them at all?"
-    s "The land of the living -- that's what really matters."
+    t "You can't deny that the moment we lost our connection to StarClan, things started going wrong."
+    s "Am I really expected to believe that the power of our warrior ancestors is contained within a little pool of water?"
+    s "If that's the case, why do we even worship them at all?"
+    s "What happens when the Moonpool freezes? Or when twolegs decide to fill it in?"
+    s "No, what happens in the land of the living -- that's what really matters."
     s "This past newleaf alone, we've had four new litters of kits, plus all downtrodden rogues and strays Wrenstar's taken in."
     s "By my calculations, that put ThunderClan's greenleaf population well past eighty."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
-    t "I think every cat in the Clan is already well aware of your opinions, Sunshadow."
+    t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
     s "How many are there, now?"
     t "... With the loss of Dapplefeather, I believe that puts us at twenty-eight."
     jump bs1_sun_lament
 
 label bs1_wc_greencough:
-    t "The medicine cats say that this outbreak of greencough is one of the worst that the forest has seen in moons."
-    s "And how do outbreaks spread?"
+    t "The medicine cats say that this greencough strain is one of the deadliest that the forest has seen in moons."
+    s "And how do outbreaks spread, Talonclaw?"
     s "This past newleaf alone, we've had four new litters of kits, plus all downtrodden rogues and strays Wrenstar's taken in."
     s "By my calculations, that put ThunderClan's greenleaf population well past eighty."
     s "With our dens overflowing, it's no wonder the sickness spread so fast."
-    t "I think every cat in the Clan is already well aware of your opinions, Sunshadow."
+    t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
     s "How many are there, now?"
     t "... With the loss of Dapplefeather, I believe that puts us at twenty-eight."
     jump bs1_sun_lament
 
 label bs1_wc_overpopulation:
-    t "I think every cat in the Clan is already well aware of your opinions on this matter, Sunshadow."
+    t "I think every cat in ThunderClan is already well aware of your opinions on this matter, Sunshadow."
     s "It's not an opinion. It's simple fact."
     s "This past newleaf alone, we've had four new litters of kits, plus all downtrodden rogues and strays Wrenstar's taken in."
     s "By my calculations, that put ThunderClan's greenleaf population well past eighty."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
     t "Hn. Well, if your theory is true, the hard times shouldn't last much longer."
-    t "... According to my last head count, I believe our ranks are down to twenty-eight."
+    t "By my last head count, I believe our ranks are down to twenty-eight."
     jump bs1_sun_lament
 
 label bs1_wc_leafbare:
@@ -96,7 +97,7 @@ label bs1_wc_leafbare:
     s "This past newleaf alone, we've had four new litters of kits, plus all downtrodden rogues and strays Wrenstar's taken in."
     s "By my calculations, that put ThunderClan's greenleaf population well past eighty."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
-    t "I think every cat in the Clan is already well aware of your opinions, Sunshadow."
+    t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
     s "How many are there, now?"
     t "... With the loss of Dapplefeather, I believe that puts us at twenty-eight."
@@ -113,7 +114,7 @@ label bs1_sun_lament:
     s "The same Warrior Code that got us into this mess, in the first place?"
     t "... I was going to say 'if we just stick together.'"
     s "Yes. Well."
-    s "Dapplefeather used to say the same thing."
+    s "Dapplefeather thought so, too."
     t "..."
     hide side sun sitting
     show side sun rising
@@ -133,17 +134,16 @@ label bs1_kits:
 
 label bs1_kits_selfish:
     t "It's the most selfish, irresponsible thing I can think of. I'm sorry, but that's just the truth."
-    t "You really think that your comfort, your peace of mind over Dapplefeather's body, is worth more than the lives of those kits?"
-    t "What do you think is going to happen to them without you? You think they'll be happy growing up knowing that their father chose a corpse over them?"
+    t "You really think that your peace of mind over Dapplefeather's body is worth more than the lives of those kits?"
+    t "What do you think is going to happen to them? You think they'll be happy growing up knowing that their father chose a corpse over them?"
     jump bs1_kit_quiz
 
 label bs1_kits_irrational:
     t "It's just not rational to throw your life away over a cat who's already gone."
-    t "I'm sorry, Sunshadow. I know how much you loved her. But you can't bring her back."
-    t "What happens to Dapplefeather's body won't really make a difference in the lives of your kits."
+    t "I'm sorry, Sunshadow. I know how much you loved her. But doing this won't bring her back."
+    t "What happens to Dapplefeather's body won't make a difference in the lives of your kits."
     t "But what happens to you, will."
-    t "As long as you're alive."
-    t "Just ... Come on, Sunshadow. Come back to camp with me. Get some food in your body. Warm your paws. I can cover your hunting patrols for the day."
+    t "Just ... Come on, Sunshadow. Come back to camp with me. Get some food in your belly. Warm your paws. I can cover your hunting patrols for the day."
     jump bs1_kit_quiz
 
 label bs1_kits_unfair:
@@ -152,20 +152,19 @@ label bs1_kits_unfair:
     t "And it especially isn't fair to Dapplefeather."
     s "..."
     t "StarClan, I still remember when the two of you were just a couple of feather-brained apprentices ..."
-    t "Remembering when you got that massive sting on your muzzle, trying to pick those flowers to impress her?"
+    t "Remember when you got that massive sting on your muzzle, trying to pick those flowers to impress her?"
     s "... I ate all my food pre-chewed for a week, after that."
     t "And you deserved it, too! Don't you know a wasp's nest when you see one?"
     s "Ha!"
     t "Heh."
-    t "Yeah, she knew how to bring out the mouse-brain in you."
-    t "... She deserves a proper burial."
-    t "And I wish that I could give her one."
-    t "I wish that I could give one to every cat who's passed on in the past four moons."
-    t "But I can't, Sunshadow."
-    t "And neither can you."
-    t "Not with our Clanmates counting on us."
-    t "Especially since those Clanmates include the last pieces of Dapplefeather you have left."
-    t "And don't tell me that she would disagree, because you know she wouldn't."
+    s "... But she never left me."
+    s "All that time in the medicine den, she stayed right by my side."
+    t "... Yeah. She was a special cat."
+    t "She deserves a proper burial."
+    t "Every cat we've lost does."
+    t "But we can't give that to them, Sunshadow."
+    t "Not while our Clanmates are counting on us to keep them alive."
+    t "And I think Dapplefeather would agree."
     jump bs1_sun_relent
 
 label bs1_kit_quiz:
@@ -201,8 +200,10 @@ label bs1_sun_furious:
     s "..."
     s "Get out."
     t "Sunshadow --"
-    s "You have some nerve, lecturing me about my family. Do you even know what Dapplefeather's favorite prey was?"
-    s "Do you know what her last words were?"
+    s "You have some nerve, lecturing me about my family."
+    s "To think I once considered you their kin."
+    s "{i}She{/i} considered you their kin."
+    t "Please, just --"
     s "{i}Out.{/i} Now. You don't deserve to be here."
     s "You're polluting the air with your scent."
     t "..."
@@ -227,9 +228,9 @@ label bs1_me:
 
 label sun_ultimatum:
     s "I'm giving my mate a proper burial, Talonclaw."
-    s "I'm sorry. You can't stop me."
+    s "Whether you like it, or not."
     menu:
-        s "I'll die before I let her get carried off by vultures."
+        s "I'll die before I let the vultures carry her off."
         "Offer to help":
             jump bs1_offer_help
         "Leave him to it":
@@ -237,14 +238,16 @@ label sun_ultimatum:
 
 label bs1_offer_help:
     $ sunshadow_rel += 20
-    t "... Then let me help."
+    t "... Then let me help you."
     s "What?"
-    t "If there's nothing I can do to stop you, then at least let me help."
-    t "If we hurry, we can be done before dark."
-    t "Maybe even have a little energy left over to hunt for the Clan."
+    t "If there's nothing I can do to stop you, then at least let me help you."
+    t "If we hurry, maybe we can be done by dark."
+    t "We might even have a little energy left over to hunt for the Clan."
     s "..."
     s "You're a good cat, Talonclaw."
-    t "Whatever. Just tell me what you need."
+    t "Yeah, yeah."
+    t "Just tell me what you need."
+    jump bs1_quest
 
 label bs1_leave_to_it:
     $ sunshadow_rel -= 20
@@ -262,7 +265,7 @@ label bs1_sun_relent:
     $ sunshadow_rel += 40
     s "..."
     s "StarClan, Talonclaw. I really hate you."
-    s "How is it that you always know just what to say?"
+    s "How is it that you always know exactly what to say?"
     t "Because I've spent too much time around you, mouse-brain."
     t "That, and I have psychic powers. But don't tell anyone."
     s "*Snrk*"
@@ -296,6 +299,7 @@ label bs1_sun_relent:
     s "..."
 
 label bs1_quest:
+    $ burial_rites = True
     s "There are three things."
     s "One: a scrap of moss from her nest."
     $ quest_nesting_material.started = True

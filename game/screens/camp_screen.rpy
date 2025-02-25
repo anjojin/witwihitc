@@ -49,12 +49,15 @@ screen Camp():
             else:
                 action [Hide("Camp"), SetVariable("currently_in", "elders"), Jump("elders_den_revisit")]
 
-
     imagebutton:
         xpos 1181
         ypos 631
         auto "gui/button/warriors_den_%s.png"
-        action Jump("warriorsden")
+        if already_patrolled == False:
+            if warriors_visited == False:
+                action [Hide("Camp"), SetVariable("currently_in", "warriors"), Jump("warriors_den_first")]
+            else:
+                action [Hide("Camp"), SetVariable("currently_in", "warriors"), Jump("warriors_den_revisit")]
 
     imagebutton:
         xpos 1220
@@ -91,7 +94,7 @@ screen Camp():
         add "gui/button/clearing_unavailable.png" xpos 916 ypos 472
 
     if currently_in == "warriors":
-        add "gui/button/warriors_den_unavailable.png" xpos 1191 ypos 631
+        add "gui/button/warriors_den_unavailable.png" xpos 1180 ypos 631
 
     if currently_in == "med_den":
         add "gui/button/med_den_unavailable.png" xpos 587 ypos 362

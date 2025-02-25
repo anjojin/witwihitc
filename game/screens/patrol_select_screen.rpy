@@ -58,7 +58,7 @@ screen HuntingSelected():
         ypos 895
         idle "gui/button/proceed_idle.png"
         hover "gui/button/proceed_hover.png"
-        action NullAction
+        action Jump("hunting_start")
 
     imagebutton:
         xpos 1096

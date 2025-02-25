@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/burial_site.rpy", line 200: expected ':' not found.
-    label bs1_sun_furious
-                         ^
+File "game/scripts/game_content/warriors_den.rpy", line 40: end of line expected.
+    call sceen gameUI
+               ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Wed Feb 19 12:34:39 2025
+Mon Feb 24 21:31:30 2025

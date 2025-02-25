@@ -1,24 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/clearing.rpy", line 10, in script
-    l "Sootpaw?"
-Exception: Sayer 'l' is not defined.
+  File "game/scripts/game_content/warriors_den.rpy", line 40, in script
+    call screen gameUI
+ScriptError: could not find label 'elders_den_revisit:'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/clearing.rpy", line 10, in script
-    l "Sootpaw?"
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 2579, in execute
-    Say.execute(self)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 581, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 470, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'l' is not defined.
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "game/scripts/game_content/warriors_den.rpy", line 40, in script
+    call screen gameUI
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'elders_den_revisit:'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Wed Feb 19 12:57:54 2025
+Mon Feb 24 21:37:07 2025
