@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/warriors_den.rpy", line 40: end of line expected.
-    call sceen gameUI
-               ^
+File "game/screens/camp_screen.rpy", line 44: reached end of line when expecting ':'.
+    if not currently_in=="apprentices"
+                                      ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Mon Feb 24 21:31:30 2025
+Tue Feb 25 17:17:58 2025

@@ -7,13 +7,19 @@ image side sun standing = At("char/sun_standing.png", sprite_highlight('sun'))
 define t = Character("Talonclaw", color = "#3d3c72", callback = name_callback, cb_name = 'talon')
 image talon = At("char/lark pixel.png", sprite_highlight('talon'))
 
-define w = Character("Willowleap", callback=name_callback, cb_name='willow', color="#6b0e5a")
-image willowleap = At("char/willowleap.png", sprite_highlight('willow'))
+define b = Character("Briarstar", callback=name_callback, cb_name='briar', color="#6b0e5a")
+image briarstar = At("char/briarstar.png", sprite_highlight('briar'))
+image briarstar_standing = At("char/briarstar_standing.png", sprite_highlight('briar'))
 
-define b = Character("Brightpoppy", callback=name_callback, cb_name='brightpoppy', image="brightpoppy", color="#9f4b16")
-image brightpoppy laying = At("char/brightpoppy/brightpoppy laying.png", sprite_highlight('brightpoppy'))
-image brightpoppy standing = At("char/brightpoppy/brightpoppy standing.png", sprite_highlight('brightpoppy'))
-image brightpoppy side = At("char/brightpoppy/brightpoppy side.png", sprite_highlight('brightpoppy'))
+define f = Character("Fawnpaw", callback=name_callback, cb_name='fawn', color="#9f5d16")
+image fawnpaw_ad1 = At("char/fawnpaw ad1.png", sprite_highlight('fawn'))
 
-define f = Character("Flykit", callback=name_callback, cb_name = 'flykit', color = "#627610")
-image flykit = At("char/flykit.png", sprite_highlight('flykit'))
+define r = Character("Redpaw", callback=name_callback, cb_name='red', color="#9f1616")
+image redpaw_ad1 = At("char/redpaw ad1.png", sprite_highlight('red'))
+
+define c = Character("Cloverpaw", callback=name_callback, cb_name='clover', color="#274f23")
+image cloverpaw_ad1 = At("char/cloverpaw ad1.png")
+
+define l = Character("Lilypaw", callback=name_callback, cb_name='lily', color="#4f233c")
+image lilypaw_entrace = At("char/lilypaw entrance.png")
+image lilypaw_ad1 = At("char/lilypaw ad1.png")

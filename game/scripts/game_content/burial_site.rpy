@@ -173,26 +173,26 @@ label bs1_kit_quiz:
     t "What?"
     menu:
         s "My kits. Since you care so much about them, tell me their names."
-        "Willowkit, Wolfkit, Stormkit, Briarkit, and Featherkit":
+        "Willowkit, Wolfkit, Stormkit, Starlingkit, and Featherkit":
             jump bs1_kits_correct
-        "Willowkit, Wolfkit, Shadekit, Bluekit, and Dapplekit":
+        "Willowkit, Wolfkit, Stormkit, Bluekit, and Dapplekit":
             jump bs1_kits_incorrect1
-        "Willowkit, Spottedkit, Shadekit, Briarkit, and Featherkit":
+        "Willowkit, Spottedkit, Shadekit, Starlingkit, and Featherkit":
             jump bs1_kits_incorrect2
 
 label bs1_kits_correct:
     $ sunshadow_rel += 10
-    t "Willowkit, Wolfkit, Stormkit, Briarkit, and Featherkit."
+    t "Willowkit, Wolfkit, Stormkit, Starlingkit, and Featherkit."
     t "And now, you look like a fool."
     s "..."
     jump sun_ultimatum
 
 label bs1_kits_incorrect1:
-    t "Willowkit, Wolfkit, Shadekit, Bluekit, and ... Dapplekit?"
+    t "Willowkit, Wolfkit, Stormkit, Bluekit, and ... Dapplekit?"
     jump bs1_sun_furious
 
 label bs1_kits_incorrect2:
-    t  "Willowkit, Spottedkit ... Shadekit ... Briarkit, and Featherkit?"
+    t  "Willowkit, Spottedkit ... Shadekit ... Starlingkit, and Featherkit?"
     jump bs1_sun_furious
 
 label bs1_sun_furious:

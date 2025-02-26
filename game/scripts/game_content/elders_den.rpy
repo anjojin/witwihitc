@@ -1,4 +1,4 @@
-label elders_den_first:
+label ed1:
     $ elders_visited = True
     scene elders_bg_crocus with fade
     show screen gameUI
@@ -13,7 +13,7 @@ label elders_den_first:
         show screen crocus
     call screen gameUI
 
-label take_crocus:
+label ed1_take_crocus:
     hide screen crocus
     scene elders_den_bg with fade
     "You picked up the {b}crocus.{/b}"
@@ -23,7 +23,7 @@ label take_crocus:
     $ quest_crocus.started = False
     call screen gameUI
 
-label elders_den_revisit:
+label ed2:
     if quest_crocus.started:
         jump elders_den_first
     if quest_crocus.completed:

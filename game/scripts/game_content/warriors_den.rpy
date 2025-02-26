@@ -1,4 +1,4 @@
-label warriors_den_first:
+label wd1:
     $ warriors_visited = True
     scene warriors_den_dapple_nest with fade
     show screen gameUI
@@ -9,7 +9,7 @@ label warriors_den_first:
         show screen dapple_nest
     call screen gameUI
 
-label take_nesting:
+label wd1_take_nesting:
     hide screen dapple_nest
     scene warriors_den_empty with fade
     "You picked up the {b}nesting materials.{/b}"
@@ -19,7 +19,7 @@ label take_nesting:
     t "The warriors' den just keeps getting smaller and smaller."
     call screen gameUI
 
-label warriors_den_revisit:
+label wd_2:
     if quest_nesting_material.started:
         jump warriors_den_first
     if quest_nesting_material.completed:
