@@ -35,4 +35,4 @@ screen quests_ui:
 
 style quests_screen_text:
     color "#1c1503"
-    
+    size 30

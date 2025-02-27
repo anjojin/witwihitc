@@ -9,8 +9,7 @@ screen gameUI:
         if currently_in == "burial":
             action Jump("cl1")
         else:
-            action Show("Camp")
-
+            action [Show("Camp")]
 
     imagebutton:
         xalign 1.0

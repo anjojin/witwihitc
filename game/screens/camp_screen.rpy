@@ -1,4 +1,5 @@
 screen Camp():
+    tag herb_screen
     $ Hide("quick_menu")
     if not already_patrolled:
         add "bg/camp_bg.png"

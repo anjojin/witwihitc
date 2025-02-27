@@ -56,3 +56,12 @@ label start:
         s_unknown "..."
         scene black with fade
         jump bs_1
+
+
+label hide_herbs:
+    hide n_tansy
+    hide ad_juniper
+    hide ld_mushroom
+    hide dapple_nest
+    hide crocus
+    return 
