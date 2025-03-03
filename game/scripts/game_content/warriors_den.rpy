@@ -19,9 +19,9 @@ label wd1_take_nesting:
     t "The warriors' den just keeps getting smaller and smaller."
     call screen gameUI
 
-label wd_2:
+label wd2:
     if quest_nesting_material.started:
-        jump warriors_den_first
+        jump wd1
     if quest_nesting_material.completed:
         scene warriors_den_empty with fade
     else:
@@ -35,7 +35,7 @@ label wd_2:
     else:
         t "... When they finally clear Dapplefeather's nest away, he'll be devastated."
     t "I hope burying her will at least help him find some healing."
-    t "I could use a little healing, myself."
+    t "I think I could use a little of that, myself."
     t "This whole Clan could."
     call screen gameUI
 

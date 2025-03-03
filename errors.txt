@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/herbs.rpy", line 46: expected 'image_name_component' not found.
-    hide "herb_screen"
-         ^
+File "game/screens/camp_screen.rpy", line 38: reached end of line when expecting ':'.
+    if not currently_in == "med_den"
+                                    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Wed Feb 26 19:09:20 2025
+Wed Feb 26 19:58:37 2025

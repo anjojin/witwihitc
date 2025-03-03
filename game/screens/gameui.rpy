@@ -6,6 +6,8 @@ screen gameUI:
         yoffset 30
         idle "gui/button/camp_idle.png"
         hover "gui/button/camp_hover.png"
+        hover_sound "audio/button_hover_5.mp3"
+        activate_sound "audio/button_click_2.mp3"
         if currently_in == "burial":
             action Jump("cl1")
         else:
@@ -18,6 +20,8 @@ screen gameUI:
         yoffset 20
         idle "gui/button/quest_idle.png"
         hover "gui/button/quest_hover.png"
+        hover_sound "audio/button_hover_5.mp3"
+        activate_sound "audio/button_click_2.mp3"
         action ShowMenu("quests_ui")
 
     if final_game_screen:

@@ -1,7 +1,7 @@
 screen crocus:
     imagebutton:
-        xpos 1610
-        ypos 656
+        xpos 1605
+        ypos 655
         idle "gui/button/crocus.png"
         hover "gui/button/crocus_hover.png"
         action Jump("ed1_take_crocus")
@@ -18,8 +18,8 @@ screen dapple_nest:
 screen ld_mushroom:
     tag herb_screen
     imagebutton:
-        xpos 965
-        ypos 435
+        xpos 969
+        ypos 450
         idle "gui/button/mushroom.png"
         hover "gui/button/mushroom_hover.png"
         action Jump("ld1_click_mushroom")
@@ -41,3 +41,12 @@ screen n_tansy:
         idle "gui/button/tansy.png"
         hover "gui/button/tansy_hover.png"
         action Jump("n1_click_tansy")
+
+screen md_berries:
+    tag herb_screen
+    imagebutton:
+        xpos 1384
+        ypos 30
+        idle "gui/button/berry.png"
+        hover "gui/button/berry_hover.png"
+        action Jump("md1_click_berries")
