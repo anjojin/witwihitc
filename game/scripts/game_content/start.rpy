@@ -4,6 +4,7 @@ label start:
     jump sun_speech
 
     label sun_speech:
+        play music "ES_A Hard Truth - Wanderer's Trove.mp3"
         s_unknown "They say our ancestors are suffering."
         show start bg with fade
         s sitting "You know, when the Moonpool first ran dry, I could hardly believe it."

@@ -1,28 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/warriors_den.rpy", line 40, in script
-    call screen gameUI
-ScriptError: could not find label 'medicine'.
+  File "game/scripts/game_content/start.rpy", line 7, in script
+    $ renpy.start.play("ES_A Hard Truth - Wanderer's Trove.mp3")
+  File "game/scripts/game_content/start.rpy", line 7, in <module>
+    $ renpy.start.play("ES_A Hard Truth - Wanderer's Trove.mp3")
+AttributeError: module 'renpy.exports' has no attribute 'start'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "game/scripts/game_content/warriors_den.rpy", line 40, in script
-    call screen gameUI
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'medicine'.
+  File "game/scripts/game_content/start.rpy", line 7, in script
+    $ renpy.start.play("ES_A Hard Truth - Wanderer's Trove.mp3")
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/game_content/start.rpy", line 7, in <module>
+    $ renpy.start.play("ES_A Hard Truth - Wanderer's Trove.mp3")
+AttributeError: module 'renpy.exports' has no attribute 'start'
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Wed Feb 26 19:57:39 2025
+Tue Mar  4 17:56:50 2025

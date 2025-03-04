@@ -99,7 +99,7 @@ init -10 python:
             speaking_char = name
 
         if event == "show_done":
-            renpy.sound.play("ticksfile.mp3")
+            renpy.sound.play("ticks.mp4")
         elif event == "slow_done":
             renpy.sound.stop()
 

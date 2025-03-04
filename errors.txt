@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/camp_screen.rpy", line 38: reached end of line when expecting ':'.
-    if not currently_in == "med_den"
-                                    ^
+File "game/scripts/defines/00auto-highlight.rpy", line 102: invalid syntax
+            play sound "ticksfile.mp4"
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Wed Feb 26 19:58:37 2025
+Tue Mar  4 17:59:27 2025
