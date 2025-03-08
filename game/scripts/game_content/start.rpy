@@ -1,10 +1,10 @@
 label start:
-    call create_my_quests
+    call create_my_quests from _call_create_my_quests
 
     jump sun_speech
 
     label sun_speech:
-        play music "ES_A Hard Truth - Wanderer's Trove.mp3"
+        play music "ES_A Hard Truth - Wanderer's Trove.mp3" loop
         s_unknown "They say our ancestors are suffering."
         show start bg with fade
         s sitting "You know, when the Moonpool first ran dry, I could hardly believe it."
@@ -30,13 +30,13 @@ label start:
         s_unknown "Just five days ago, she delivered our first litter."
         s_unknown "Willowkit, Wolfkit, Stormkit, Starlingkit, and Featherkit."
         s_unknown "They haven't even opened their eyes yet and, already, their mother is gone."
-        s_unknown "Our kits will grow up never having seen their mother's face."
+        s_unknown "Our kits will grow up with no memory of her face."
         hide dapplefeather bg
         s sitting "..."
         s "Of course, it was only a matter of time."
         s "Dapplefeather's body was sick and weakened by the hunger, as so many of ours are now."
-        s "So, when she finally passed, I can't even say that I was shocked."
-        s "No, instead, all I could do was wonder:"
+        s "I can't even say that I'm shocked by her passing."
+        s "No, instead, all I can do now is wonder:"
         s rising "... {i}Does this mean Dapplefeather is in StarClan, now?{/i}"
         s "Has her suffering ended? Has she reached any kind of peace, or salvation?"
         s standing "... Or, are our warrior ancestors all starving up there, too?"
@@ -55,6 +55,7 @@ label start:
         s_unknown "StarClan, what a waste."
         s_unknown "What a collosal waste ..."
         s_unknown "..."
+        stop music fadeout 0.5
         scene black with fade
         jump bs_1
 

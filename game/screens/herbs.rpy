@@ -28,7 +28,7 @@ screen ad_juniper:
     tag herb_screen
     imagebutton:
         xpos 0
-        ypos 0
+        ypos 832
         idle "gui/button/juniper.png"
         hover "gui/button/juniper_hover.png"
         action Jump("ad1_click_juniper")

@@ -2,44 +2,45 @@ label ld1:
     $ leaders_visited = True
     scene leaders_entrance_day with fade
     show screen gameUI
+    stop music fadeout 0.5
+    play music "ES_La Vuelta a Lerida - Vendla.mp3" loop
     
     if quest_crocus.started:
         t "Hmm ... if I were a crocus, where would I be?"
-        t "Growing in the roots of a great, big tree like this seems like as good of a place as any."
-        t "Though, how anything manages grow in the middle of a leaf-bare like this one is beyond me ..."
+        t "These tree roots seem like as good of a place as any to grow."
+        t "Though, how anything manages grow these days is beyond me ..."
         show briarstar_standing with fade
         b "Talonclaw."
         t "Oh!"
         b "I thought I heard somecat talking out here."
         t "I'm so sorry to disturb you, Briarstar. I was just searching around the leader's den for crocuses."
         t "If you're wondering why, it's because --"
-        b "No need."
+        b "No need to explain yourself."
         b "Please. Come inside. You can continue your search there."
         t "Are you certain? I'd hate to impose."
         b "It's really no trouble. Follow me."
         b "Your paws must be freezing."
         hide briarstar_standing with fade
-        t "Alright, if you insist ..."
+        t "..."
         jump ld1_inside
 
     else:
         t "The leaders' den."
-        t "Rumor has it Briarstar only has two lives left. At the start of greenleaf, she had seven."
+        t "Rumor has it Briarstar is on her last two lives. At the gathering in greenleaf, she was so proud to report that she had all nine ..."
         t "I can't remember the last time I saw her eating a piece of prey."
-        t "Come to think of it, I can't remember the last time I saw her at all."
-        t "Ever since she stopped attending her Clanmates' vigils ..."
+        t "Come to think of it, I can't remember the last time I saw her at all ..."
         show briarstar_standing with fade
         b "Talonclaw."
         t "Oh!"
         b "I thought I heard somecat talking out here."
         t "I'm so sorry to disturb you, Briarstar. I don't know what I was --"
-        b "No need."
-        b "I understand perfectly. There's a certain comfort in hearing your own thoughts spoken aloud."
-        b "Why don't you come inside? Your paws must be freezing."
-        t "Are you certain? I --"
-        b "It's really no trouble. Follow me."
+        b "No need to explain yourself."
+        b "Sometimes, there's a certain comfort to hearing your thoughts spoken aloud."
+        b "Why don't you step inside my den for a moment? Your paws must be freezing."
+        t "That's very kind of you, but you really don't have to --"
+        b "Please. I insist. Follow me."
         hide briarstar_standing with fade
-        t "..."
+        t "... Okay?"
         jump ld1_inside
 
 label ld1_inside:
@@ -57,8 +58,8 @@ label ld1_inside:
         b "Yes. It must have."
         b "Thank you, Talonclaw."
         b "For helping me discover something new about myself."
-        t "Happy to help."
-        b "... Talonclaw?"
+        t "... Happy to help."
+        b "Talonclaw?"
         t "Yes?"
         if quest_crocus.started:
             b "I must apologize. I'm afraid I invited you in here with an ulterior motive, unrelated to your foraging."
@@ -80,10 +81,11 @@ label ld1_inside:
 label ld1_accept:
     "{b}Quest Unlocked:{/b} Feed the Deputy"
     $ quest_feed_deputy.started = True
+    $ talon_clan_bonus += 2
     t "Sure, Briarstar. No problem."
     t "I'll make sure Pouncetail gets what he needs."
     b "You're a good cat, Talonclaw. I only pray that it helps him recover."
-    b "StarClan knows ThunderClan can't afford to lose another deputy. Especially not so soon after Squirrelpelt ..."
+    b "StarClan knows ThunderClan can't afford to lose another deputy. Especially so soon after Squirrelpelt's death."
     t "Yes. Of course. I'm so sorry for your loss."
     t "You and Squirrelpelt were together for moons. His passing must have been devastating."
     b "..."
@@ -91,8 +93,9 @@ label ld1_accept:
     t "I'm sorry. Did I say something wrong?"
     b "... No."
     b "It's okay."
-    b "I suppose I am ... devastated."
-    b "I'm not sure. I try not to feel things too strongly anymore."
+    b "I suppose I am ... {i}devastated.{/i}"
+    b "I'm not sure."
+    b "I try not to feel things too strongly, these days."
     t "... When was the last time you ate something, Briarstar?"
     b "..."
     b "You have more pressing things to worry about."
@@ -107,7 +110,8 @@ label ld1_accept:
     call screen gameUI
 
 label ld1_decline:
-    t "I'm sorry, Briarstar. Hunting's been poor. There's no guarantee that I'll bring anything back to camp today."
+    t "I'm sorry, Briarstar. Hunting's been poor."
+    t "There's no guarantee that I'll bring anything back to camp today, let alone have enough to spare for Pouncetail."
     t "Even if I did, the medicine cats would have a fit if I broke their quarantine."
     t "They're pretty strict about keeping the sick cats away from the healthy ones."
     b "..."
@@ -132,7 +136,7 @@ label ld1_decline:
     call screen gameUI
 
 label ld1_talonclaw_sunshadow:
-        b "If he stands any chance against his illness, it's imperative that he keeps his strength up."
+        b "If he stands any chance against greencough, it's imperative that he keeps his strength up."
         t "... I'm sorry, Briarstar. I'm actually not sure if I'll be able to hunt for the Clan today."
         t "I agreed to help with a burial ceremony for Dapplefeather."
         t "That's what the crocuses are for."
@@ -153,16 +157,17 @@ label ld1_talonclaw_sunshadow:
                 jump ld1_switch    
             
 label ld1_stick_sunshadow:
+    $ talon_sun_bonus +=1
     t "Sunshadow just lost the love of his life."
     t "He needs me."
     b "Talonclaw, there's not a cat left in ThunderClan who hasn't lost something. Who doesn't {i}need{/i} something."
-    b "Squirrelpelt is rotting in the elders' den right now, alongside several of our kits."
+    b "Squirrelpelt's body is rotting in the elders' den right now, alongside those of several of our kits."
     b "If that was all we paid attention to, ThunderClan would never catch another piece of prey."
     t "I'm sorry. I can't just abandon my friend."
     b "..."
     b "... You are loyal to him."
     b "More loyal to him than you are to your own Clan."
-    b "Watch your back around him, Talonclaw."
+    b "Watch your back, Talonclaw."
     b "Loyalty like that is often rewarded with betrayal."
     t "..."
     b "I'll be moving deeper into my quarters. Feel free to stay in my den as long as you'd like."
@@ -189,6 +194,7 @@ label ld1_switch:
     $ quest_favorite_prey.cancelled = True
     $ quest_nesting_material.started = False
     $ quest_nesting_material.cancelled = True
+    $ quest_feed_deputy.started = True
     "{b}Questline Cancelled:{/b} Burial Rites"
     "{b}Quest Unlocked:{/b} Feed the Deputy"
     b "Thank you, Talonclaw. You're a good cat. Loyal to your friend. That's something to be admired."
@@ -200,6 +206,10 @@ label ld1_switch:
     call screen gameUI
 
 label ld_2:
+    scene leaders_entrance_day with fade
+    show screen gameUI
+    stop music fadeout 0.5
+    play music "ES_La Vuelta a Lerida - Vendla.mp3" loop
     t "I doubt Briarstar wants anycat disturbing her right now."
     if quest_feed_deputy.started:
         t "I'll come back when I've made sure that Pouncetail's eaten something."

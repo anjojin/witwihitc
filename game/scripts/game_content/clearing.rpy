@@ -1,10 +1,8 @@
 label cl1:
-    $ quick_menu = True
-    $ clearing_visited = True
     $ currently_in = "clearing"
     scene clearing bg with fade
     show screen gameUI
-
+    stop music fadeout 0.5
     if burial_rites:
         t "Okay. Nesting materials, prey, and crocuses ..."
         t "Nesting materials, I can probably find in the warrior's den."
@@ -16,7 +14,7 @@ label cl1:
         call screen gameUI
 
     else:
-        if sunshadow_rel < 0:
+        if talon_sun_bonus < 0:
             t "Mouse-brain ..."
             t "Whatever. He'll cool off eventually."
             t "He has to ..."
@@ -26,3 +24,10 @@ label cl1:
         "The {b}Camp{/b} button can also be used to travel to different parts of camp, or go on patrol."
         "Talonclaw does not have the strength to patrol more than once per day, so use it wisely."
         call screen gameUI
+
+label cl2:
+    scene clearing bg with fade
+    show screen gameUI
+    stop music fadeout 0.5
+    "x"
+    call screen gameUI

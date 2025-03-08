@@ -6,6 +6,7 @@ default leaders_visited = False
 default nursery_visited = False
 default clearing_visited = False
 default warriors_visited = False
+default nursery_visited_prep2=False
 
 default currently_in = ""
 

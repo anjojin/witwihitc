@@ -1,5 +1,5 @@
 define s = Character("Sunshadow", callback = name_callback, cb_name = 'sun', color="#7c490f", image="sun")
-define s_unknown = Character("Sunshadow", color="#7c490f")
+define s_unknown = Character("Sunshadow", color="#7c490f", callback=name_callback, cb_name='sun')
 image side sun sitting = At("char/sun_sitting.png", sprite_highlight('sun'))
 image side sun rising = At("char/sun_rising.png", sprite_highlight('sun'))
 image side sun standing = At("char/sun_standing.png", sprite_highlight('sun'))
@@ -11,7 +11,7 @@ define b = Character("Briarstar", callback=name_callback, cb_name='briar', color
 image briarstar = At("char/briarstar.png", sprite_highlight('briar'))
 image briarstar_standing = At("char/briarstar_standing.png", sprite_highlight('briar'))
 
-define f = Character("Fawnpaw", callback=name_callback, cb_name='fawn', color="#9f5d16")
+define fa = Character("Fawnpaw", callback=name_callback, cb_name='fawn', color="#9f5d16")
 image fawnpaw_ad1 = At("char/fawnpaw ad1.png", sprite_highlight('fawn'))
 
 define r = Character("Redpaw", callback=name_callback, cb_name='red', color="#9f1616")
@@ -20,8 +20,8 @@ image redpaw_ad1 = At("char/redpaw ad1.png", sprite_highlight('red'))
 define c = Character("Cloverpaw", callback=name_callback, cb_name='clover', color="#274f23")
 image cloverpaw_ad1 = At("char/cloverpaw ad1.png", sprite_highlight('clover'))
 
-define l = Character("Lilypaw", callback=name_callback, cb_name='lily', color="#4f233c")
-image lilypaw_entrace = At("char/lilypaw entrance.png", sprite_highlight('lily'))
+define li = Character("Lilypaw", callback=name_callback, cb_name='lily', color="#4f233c")
+image lilypaw_entrace = At("char/lilypaw ad1 entrance.png", sprite_highlight('lily'))
 image lilypaw_ad1 = At("char/lilypaw ad1.png", sprite_highlight('lily'))
 
 define cr = Character("Crowkit", callback=name_callback, cb_name='crow', color="#1e1e1e")
@@ -48,3 +48,9 @@ image wolfkit = At("char/wolfkit.png", sprite_highlight('wolf'))
 
 define f = Character("Featherkit", callback=name_callback, cb_name='feather', color="#454545")
 image featherkit = At("char/featherkit.png", sprite_highlight('feather'))
+
+define l = Character("Locustleaf", callback=name_callback, cb_name='locust', color="#4c5119")
+image locustleaf = At("char/locustleaf.png", sprite_highlight('locust'))
+
+define m = Character("Maplebreeze", callback=name_callback, cb_name='maple', color="#400000")
+image maplebreeze = At("char/maplebreeze_1.png", sprite_highlight('maple'))

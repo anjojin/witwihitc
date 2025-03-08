@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/scripts/defines/00auto-highlight.rpy", line 102: invalid syntax
-            play sound "ticksfile.mp4"
-                  ^
+The label _call_patrol_select_1 is defined twice, at File "game/scripts/game_content/hunting_patrol.rpy", line 58:
+            call patrol_select from _call_patrol_select_1
+and File "game/scripts/game_content/hunting_patrol.rpy", line 64:
+    call patrol_select from _call_patrol_select_1
+
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Tue Mar  4 17:59:27 2025
+Sat Mar  8 15:19:11 2025

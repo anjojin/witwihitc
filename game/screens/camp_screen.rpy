@@ -25,7 +25,7 @@ screen Camp():
                 if leaders_visited==False:
                     action [Hide("Camp"), SetVariable("currently_in", "leaders"), Jump("ld1")]
                 else:
-                    action [Hide("Camp"), SetVariable("currently_in", "leaders"), Jump("ed2")]
+                    action [Hide("Camp"), SetVariable("currently_in", "leaders"), Jump("ld2")]
 
     imagebutton:
         xpos 620
@@ -48,10 +48,10 @@ screen Camp():
         activate_sound "audio/button_click_1.mp3"
         if not currently_in == "med_den":
             if already_patrolled == False:
-                if warriors_visited == False:
+                if med_den_visited == False:
                     action [Hide("Camp"), SetVariable("currently_in", "med_den"), Jump("md1")]
                 else:
-                    action [Hide("Camp"), SetVariable("currently_in", "med_den"), Jump("wd2")]
+                    action [Hide("Camp"), SetVariable("currently_in", "med_den"), Jump("md2")]
 
     imagebutton:
         xpos 590
@@ -62,7 +62,7 @@ screen Camp():
         activate_sound "audio/button_click_1.mp3"
         if not currently_in=="apprentices":
             if already_patrolled==False:
-                action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("app_den_empty")]
+                action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("ad1")]
 
     imagebutton:
         xpos 901 
@@ -104,7 +104,7 @@ screen Camp():
                 if nursery_visited == False:
                     action [Hide("Camp"), SetVariable("currently_in", "nursery"), Jump("n1")]
                 else:
-                    action [Hide("Camp"), SetVariable("currently_in", "nursery"), Jump("nursery_revisit")]
+                    action [Hide("Camp"), SetVariable("currently_in", "nursery"), Jump("n2")]
 
     imagebutton:
         xpos 916
@@ -116,5 +116,4 @@ screen Camp():
         activate_sound "audio/button_click_1.mp3"
         if not currently_in=="clearing":
             if already_patrolled==False:
-                if clearing_visited==False:
-                    action [Hide("Camp"), SetVariable("currently_in", "clearing"), Jump("clearing_first")]
+                    action [Hide("Camp"), SetVariable("currently_in", "clearing"), Jump("cl2")]

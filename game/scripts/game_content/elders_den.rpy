@@ -1,6 +1,8 @@
 label ed1:
     $ elders_visited = True
     scene elders_bg_crocus with fade
+    stop music fadeout 1.0
+    play music "ES_Night, Wind In Trees, Quiet, Distant Rumbling Bass - Epidemic Sound.mp3" loop volume 1.5
     show screen gameUI
     ""
     t "This used to be the elders' den, and now ..."

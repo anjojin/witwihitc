@@ -31,6 +31,8 @@ screen main_menu():
 
         textbutton _("About") action ShowMenu("about")
 
+        textbutton _("Achievements") action ShowMenu("achievement_gallery")
+
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.

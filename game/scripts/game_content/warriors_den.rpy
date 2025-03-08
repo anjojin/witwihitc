@@ -1,6 +1,7 @@
 label wd1:
     $ warriors_visited = True
     scene warriors_den_dapple_nest with fade
+    stop music fadeout 1.0
     show screen gameUI
 
     t "Guess my conversation with Sunshadow took longer than I thought. All the healthy warriors have already gone out on patrol."
@@ -26,6 +27,7 @@ label wd2:
         scene warriors_den_empty with fade
     else:
         scene warriors_den_dapple_nest with fade
+    stop music fadeout 1.0
     t "I hope the other warriors don't hate me for missing the morning patrol."
     t "Curse Sunshadow with his stupid, histrionic lectures."
     if quest_nesting_material.started:
