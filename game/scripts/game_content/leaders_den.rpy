@@ -71,17 +71,31 @@ label ld1_inside:
         b "On your hunt today, can you be sure to bring back something substantial for Pouncetail?"
         if quest_crocus.started or quest_crocus.completed:
             jump ld1_talonclaw_sunshadow
-        menu:
+        if quest_gather_herbs.started:
             b "If he stands any chance at beating greencough, it's imperative that he keeps his strength up."
-            "Accept":
-                jump ld1_accept
-            "Decline":
-                jump ld1_decline
+            "{b}Game Tip:{/b} hunting for Pouncetail means Talonclaw will no longer be able to complete the following quest: {b}Gather Herbs.{/b}"
+            menu:
+                "How would you like to proceed?"
+                "Stick with gathering herbs":
+                    jump ld1_decline
+                "Switch to hunting for Pouncetail":
+                    jump ld1_accept
+        else:
+            menu:
+                b "If he stands any chance at beating greencough, it's imperative that he keeps his strength up."
+                "Accept":
+                    jump ld1_accept
+                "Decline":
+                    jump ld1_decline
 
 label ld1_accept:
     "{b}Quest Unlocked:{/b} Feed the Deputy"
     $ quest_feed_deputy.started = True
     $ talon_clan_bonus += 2
+    if quest_gather_herbs.started:
+        $ quest_gather_herbs.started = False
+        $ quest_gather_herbs.cancelled = True
+        "{b}Quest Cancelled:{/b} Gather Herbs"
     t "Sure, Briarstar. No problem."
     t "I'll make sure Pouncetail gets what he needs."
     b "You're a good cat, Talonclaw. I only pray that it helps him recover."

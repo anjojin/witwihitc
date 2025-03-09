@@ -10,6 +10,8 @@ screen gameUI:
         activate_sound "audio/button_click_2.mp3"
         if currently_in == "burial":
             action Jump("cl1")
+        if currently_in == "outside":
+            action Jump("cl2")
         else:
             action [Show("Camp")]
 

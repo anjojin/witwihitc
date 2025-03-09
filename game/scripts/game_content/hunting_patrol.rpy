@@ -2,12 +2,14 @@
 
 label hunting_start:
     $ proceed_counter = 3
+    $ currently_in = "outside"
     call shuffle_patrols from _call_shuffle_patrols
     if quest_favorite_prey.started:
         $ talon_chance = 12 - talon_sun_bonus
     else:
         $ talon_chance = 12 - talon_clan_bonus
-    show patrol bg with fade
+    scene patrol bg with fade
+    show screen gameUI
     t "I am now hunting."
     call patrol_select from _call_patrol_select
 
@@ -19,6 +21,8 @@ label hunting_1:
             $ proceed_counter -= 1
             if h1_int > talon_chance:
                 jump hunting_success
+            elif h1_int < 2:
+                jump hunting_major_fail
             else:
                 jump hunting_fail
         "Do not proceed":
@@ -71,7 +75,10 @@ label hunting_dnp:
     call patrol_select from _call_patrol_select_11
 
 label hunting_major_fail:    
+    $ prey_caught = 0
     "You lost all the prey."
+    call patrol_select from _call_patrol_select_12
+
 
 label hunting_red: 
     $ h1_int = renpy.random.randint(1,20)

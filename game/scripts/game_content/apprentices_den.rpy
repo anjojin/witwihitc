@@ -3,34 +3,37 @@ label ad1:
     scene app_den_bg with fade
     stop music fadeout 1.0
     show screen gameUI
-    t "It's always nice to check up on how the apprentices are doing."
-    t "I wonder what they're up to, in there ..."
+    t "It's always nice to check up on the Clan's future warriors."
     menu:
-        t "Focusing hard on their training, I'm sure."
+        t "I wonder what they're up to, in there ..."
         "Eavesdrop":
             jump ad1_eavesdrop
         "Leave them alone":
             jump ad1_leave_alone
 
 label ad1_eavesdrop:
-    "You strain your ears, picking up on the familiar sound of the apprentices' voices."
+    "You strain your ears, picking up on the apprentices' familiar voices."
     c "StarClan, Redpaw, if I have to hear one more word --"
-    r "I'm exercising my own free will! I don't have to do anything I don't --"
+    r "I'm exercising my free will! I have the right to refuse anything I don't --"
     c "Free will? Are you serious?"
-    r "It's not hygenic! That's all I'm saying! What's the problem?"
+    r "I'm just saying it's not hygenic! What's the problem?"
     c "The problem is that your sister went out of her way to get this snow for you to drink, and now you're letting it go to waste."
     r "I don't want to drink something that's been in another cat's mouth! That's all!"
     fa "That's why I put it on a leaf, mouse-brain!"
     c "You hear that? That's why she put it on a leaf."
     r "You don't know where that leaf has been!"
-    c "I'll show you where that leaf has been!"
+    c "It's a {i}leaf!{/i} You're a ThunderClan apprentice, and you're afraid of a ..."
+    c "Ah ..."
+    c "Ah-CHOO!"
+    r "See? Your argument is so stupid, your own body is allergic to it."
+    c "Is {i}your{/i} body allergic to my paws in your face?"
     fa "Cloverpaw, wait!!!"
     r "AHHHHH!"
     li "EVERYONE STOP FIGHTING!!!"
     li "StarClan, you're all driving me crazy!"
     fa "Lilypaw, where are you going?"
-    li "Someplace where I can hear myself think! StarClan knows it isn't in here!"
-    r "We were just fooling around ..."
+    li "Somewhere I can hear myself think! StarClan knows it isn't in here!"
+    r "Psh ..."
     c "Buzzkill."
     show lilypaw_entrace with fade
     li "... Eep!"
@@ -44,11 +47,11 @@ label ad1_eavesdrop:
     show lilypaw_ad1 with easeinleft
     fa "Talonclaw!!!"
     t "Hey, kittos."
-    t "Sounded like quite the argument in there."
-    fa "This one was actually pretty tame. It usually takes way longer to separate them."
+    t "Sounded like some battle in there."
+    fa "Oh, this one was actually pretty tame. Usually, it takes twice as long to separate them."
     r "Slowing down lately, Cloverpaw?"
     c "Slowing down? Tch, I was just getting started. You're lucky Talonclaw showed up when he did, or else I would've shredded him."
-    r "Right ... that's probably the reason I won our last three mock-battles, too."
+    r "Right ... that's probably why I won our last three mock-battles, too."
     c "{i}*STOMP*{/i}"
     menu:
         r "Oww!"
@@ -66,7 +69,7 @@ label ad1_side_red:
     t "It isn't hygenic."
     r "Hahaha! See? That's exactly what I said!"
     c "Stuff a feather in it, Redpaw."
-    t "... It probably isn't the best idea to pick petty fights with your denmates, either."
+    t "... It probably isn't the best idea to pick petty fights with your denmates, either, Cloverpaw."
     c "Hmph ..."
     jump ad1_cont
 
@@ -89,40 +92,54 @@ label ad1_stayout:
     jump ad1_cont
 
 label ad1_cont:
-    fa "I think we've all just gone a little stir-crazy from being stuck in camp all the time."
+    fa "I think we've all just gone a little stir-crazy from being stuck in camp."
     r "Seriously. I haven't had a real training session since Flipcloud moved into the medicine den." 
-    fa "Yeah. And my mentor keep ditching me to go on patrol alone."
-    fa "Apparently ThunderClan 'can't afford inexperienced hunters scaring off all the prey.'"
+    fa "Yeah. And my mentor keep ditching me to go on patrol with the warriors."
+    fa "Apparently ThunderClan 'can't afford to have inexperienced hunters scaring off all the prey.'"
     fa "As if there's any prey out there to begin with ..."
     r "Say ... maybe you could take us out later, Talonclaw."
     c "Ooh! Yeah! That'd be awesome!"
     r "It could be just like a regular hunting patrol, only we'd be there to help you."
-    fa "We swear, we won't let you down! We've all been practicing our moves."
+    fa "We swear, we won't let you down! We've all been practicing."
     r "Yeah. Cloverpaw's made an excellent mock mouse."
     c "{i}*STOMP*{/i}"
     r "Ha. Missed me that time."
     t "I don't know, you guys ..."
     if quest_favorite_prey.started:
         t "I kind of agreed to do this thing for Sunshadow today, and it's really important."
-    fa "Come on! What do you have to lose?"
-    "{b}Game Tip:{/b} Hunting with the apprentices will {b}increase{/b} your number of opportunities at catching prey."
-    "However, it will also {b}decrease{/b} your chances of success."
-    menu:
-        "Do you accept?"
-        "Yes":
-            jump ad1_yes
-        "No":
-            jump ad1_no 
+    fa "Come on! What have you got to lose?"
+    "{b}Game Tip:{/b} Hunting with the apprentices will {b}increase{/b} the number of opportunities you have at catching prey."
+    "However, it will also {b}decrease{/b} your odds of success."
+    if quest_gather_herbs.started:
+            "It will also mean you can no longer complete the following questline: {b}Gather Herbs{/b}"
+            menu:
+                "How would you like to proceed?"
+                "Stick with finding catmint":
+                    jump ad1_no
+                "Switch to patrolling with the apprentices":
+                    jump ad1_yes
+    else:
+        menu:
+            "Do you accept?"
+            "Yes":
+                jump ad1_yes
+            "No":
+                jump ad1_no 
 
 label ad1_yes:
     $ quest_babysitting.started = True
     $ training_with = ["hunting_red", "hunting_lily", "hunting_fawn", "hunting_clover"]
-    t "Aw, what the hey? I'll take you guys out with me. Why not?"
+    t "Aw, sure. I'll take you guys out with me. Why not?"
     "{b}Quest Unlocked:{/b} Babysitting"
+    if quest_gather_herbs.started:
+        $ quest_gather_herbs.started = False
+        $ quest_gather_herbs.cancelled = True
+        "{b}Quest Cancelled:{/b} Gather Herbs"
     fa "Yes! Thank you!"
-    c "Hahaha! I'm gonna catch so much prey, we're not gonna be able to carry it all home!"
+    c "Hahaha! I'm gonna catch so much, we won't be able to carry it all home!"
     r "That's kind of unrealistic, Cloverpaw."
-    c "Shut it."
+    c "Can you allow joy to exist in your vicinity for, like, one second without getting your melancholy all over it?"
+    r "Nyehh."
     t "... Lilypaw? You've been awfully quiet. Do you have anything to say?"
     li "..."
     li "I ..."
@@ -130,7 +147,7 @@ label ad1_yes:
     t "That's all I can ask for."
     li "{i}*Smile*{/i}"
     t "Alright, then. I'll meet you all on the territory when I'm ready to get started."
-    t "Try not to injure each other until then."
+    t "Until then, try not to injure each other."
     c "Not making any promises."
     r "Cloverpaw!"
     c "What? I'm just trying to be more {i}realistic.{/i}"
@@ -150,8 +167,8 @@ label ad1_no:
             jump ad1_polite
         "... it's too risky":
             jump ad1_risk
-        "... of Dapplefeather" if quest_favorite_prey.started:
-            jump ad1_dapplefeather
+        "... I'm already committed" if quest_favorite_prey.started or quest_gather_herbs.started:
+            jump ad1_committed
 
 label ad1_leave_alone:
     t "Probably best not to disturb them. Especially when there's so much other work to be done."
@@ -162,50 +179,65 @@ label ad1_leave_alone:
 
 label ad1_mentors:
     $ talon_clan_bonus += 1
-    t "Your mentors decide when to train you. It's not my place to take you out."
-    r "My mentor has been in the medicine den for moons now, and no cat's assigned me a new one. How is that my fault?"
+    t "It's just not my place to patrol with you. That's your mentors' jobs."
+    r "My mentor has been in the medicine den for moons now, and no cat's assigned me a new one. How is that fair?"
     fa "Even if you were assigned a new one, they probably wouldn't take you out, anyways!"
-    fa "No matter what you do to prove you're ready!"
-    t "I'm sorry, guys. Those are the rules."
-    c "Screw the rules! We're healthy! We want to hunt! This Clan isn't fed on technicailities!"
+    fa "No matter how hard you try to prove to them that you're ready!"
+    t "I'm sorry, guys. Those are just the rules."
+    c "Screw the rules! We're healthy! We want to hunt! ThunderClan isn't fed on technicailities!"
     r "Yeah!"
     jump ad1_no_finish
 
 label ad1_polite:
     $ talon_clan_bonus -= 1
     t "Patrolling isn't all it's cracked up to be."
-    t "You should consider yourself lucky to relax around camp all day while the rest of us are out there freezing our tails off."
-    c "... Really?"
-    c "Our Clanmates and kin are dying. All we want is to help, and you're telling us it's 'not all it's cracked up to be?'"
-    c "Unbelievable. How old do you think we are?"
-    r "This is why things never get better. No one ever takes our ideas seriously."
+    t "You should consider all yourselves lucky to get to relax around camp all day while the rest of us freeze our tails off out there."
+    c "... What?"
+    c "Our Clanmates and kin are dying. We just want to help, and you're telling us it's 'not all it's cracked up to be?'"
+    c "How old do you think we are?"
+    r "Unbelievable. You know, this is why things never get better. Because cats like you refuse to take our ideas seriously."
+    c "This is slander!"
+    r "It's an outrage!"
     jump ad1_no_finish
 
 label ad1_risk:
-    t "Prey is scarce enough as it is. You guys may feel like seasoned hunters now, but the truth is, you're still lacking experience."
-    c "Well, when are we supposed to get the experience? At this rate, we'll be graduating at 20 moons old!"
+    t "I'm sorry. Prey is scarce enough as it is. You guys may feel like seasoned hunters now, but the truth is, you're still lacking experience."
+    c "Well, when are we supposed to get the experience? At this rate, we'll be 20 moons old before we graduate!"
     r "This is completely unfair. How can you say it's too risky when you haven't even given us a chance?"
+    c "It's an outrage!"
+    r "It's criminal!"
     jump ad1_no_finish
 
-label ad1_dapplefeather:
-    $ talon_sun_bonus += 1
-    t "I'm already committed. I've gotta catch a piece of prey for Dapplefeather before she's buried."
-    c "You guys are burying Dapplefeather?"
-    c "My sisters still haven't been buried, and they croaked moons ago. Can you throw them in there, too?"
-    r "Why can't we come with you to hunt for Dapplefeather? All you need is one piece of prey, right?"
-    jump ad1_risk
+label ad1_committed:
+    if quest_favorite_prey.started:
+        $ talon_sun_bonus += 1
+        t "I'm already committed. I've gotta catch a piece of prey for Dapplefeather before she's buried."
+        c "You guys are gonna bury Dapplefeather?"
+        c "My sisters haven't been buried yet, and they croaked moons ago. Can you throw them in there, too?"
+        r "Why can't we come with you to hunt for Dapplefeather? All you need is one piece of prey, right?"
+        jump ad1_risk
+    if quest_gather_herbs.started:
+        t "I'm already committed. I've gotta look for catmint to help Sunshadow's sick kits."
+        c "Sunshadow's kits are sick?"
+        fa "My father has been sick for moons. Could you find some catmint for him, too?"
+        r "This is ridiculous. You're a warrior, not a medicine cat. You're really going to put your personal needs over the needs of the Clan?"
+        c "It's an outrage!"
+        r "It's criminal!"
+        jump ad1_no_finish
 
 label ad1_no_finish:
     fa "... Lilypaw. You've been quiet."
-    fa "Do you have anything to say?"
+    fa "Do you have anything to sat?"
     li "..."
     li ".........."
     li "I'm tired of the fighting."
+    li "I'm going back inside."
     hide lilypaw_ad1 with moveoutleft
     fa "Lilypaw, wait!"
     hide fawnpaw_ad1 with moveoutright
     c "Tch. Whatever. I don't know why I even bother."
     hide cloverpaw_ad1 with moveoutright
+    r "... I expected more from you."
     hide redpaw_ad1 with moveoutleft
     t "..."
     if quest_crocus.started:
@@ -216,4 +248,12 @@ label ad1_click_juniper:
     t "It's purple, and it's a flower ... but it's not quite a crocus."
     t "I'd better keep looking."
     hide screen ad_juniper
+    call screen gameUI
+
+label ad2:
+    t "It's probably best not to disturb the apprentices right now."
+    if quest_babysitting.started:
+        t "I'll see them when I'm ready to patrol."
+    if quest_crocus.started:
+        show screen ad_juniper
     call screen gameUI

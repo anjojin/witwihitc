@@ -60,21 +60,40 @@ label md1:
         t "More catmint. Then, could you spare some for Featherkit?"
         l "Ha! If you find any catmint on that territory, you could line your nest with it, for all I care."
         l "Better yet, you could find a whole branch and spend the afternoon hitting yourself over the head with it."
-        if not quest_favorite_prey.started:
-            menu:
-                l "It'd probably be a better use of your time."
-                "Challenge Accepted":
-                    jump md1_accept_challenge
-                "Give Up":
-                    jump md1_give_up
-        else:
+        if quest_favorite_prey.started:
             l "It'd probably be a better use of your time."
             "{b}Game Tip:{/b} hunting for catmint means Talonclaw will no longer be able to complete the following questline: {b}Burial Rites.{/b}"
             menu:
                 "How would you like to proceed?"
                 "Stick with burying Dapplefeather":
                     jump md1_accept_challenge
-                "Switch to hunting for catmint":
+                "Switch to finding catmint":
+                    jump md1_give_up
+        if quest_feed_deputy.started:
+            l "It'd probably be a better use of your time."
+            "{b}Game Tip:{/b} hunting for catmint means Talonclaw will no longer be able to complete the following quest: {b}Feed the Deputy.{/b}"
+            menu:
+                "How would you like to proceed?"
+                "Stick with hunting for Pouncetail":
+                    jump md1_accept_challenge
+                "Switch to finding catmint":
+                    jump md1_give_up
+                            if quest_feed_deputy.started:
+        if quest_babysitting.started:
+            l "It'd probably be a better use of your time."
+            "{b}Game Tip:{/b} hunting for catmint means Talonclaw will no longer be able to complete the following quest: {b}Babysitting.{/b}"
+            menu:
+                "How would you like to proceed?"
+                "Stick with patrolling with the apprentices":
+                    jump md1_accept_challenge
+                "Switch to finding catmint":
+                    jump md1_give_up
+        else:
+            menu:
+                l "It'd probably be a better use of your time."
+                "Challenge Accepted":
+                    jump md1_accept_challenge
+                "Give Up":
                     jump md1_give_up
 
 label md1_accept_challenge:
@@ -87,6 +106,14 @@ label md1_accept_challenge:
         $ quest_favorite_prey.cancelled = True
         $ quest_nesting_material.started = False
         $ quest_nesting_material.cancelled = True
+    if quest_feed_deputy.started:
+        "{b}Quest Cancelled:{/b} Feed the Deputy"
+        $ quest_feed_deputy.started = False
+        $ quest_feed_deputy.cancelled = True
+    if quest_babysitting.started:
+        "{b}Quest Cancelled:{/b} Babysitting"
+        $ quest_babysitting.started = False
+        $ quest_babysitting.cancelled = True
     "{b}Quest Unlocked:{/b} Gather Herbs"
     t "Fine! I will, then!"
     t "... N-Not the branch thing. The catmint thing."

@@ -1,26 +1,44 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/burial_site.rpy", line 200, in script
-    $ sunshadow_rel -= 40
-  File "game/scripts/game_content/burial_site.rpy", line 200, in <module>
-    $ sunshadow_rel -= 40
-NameError: name 'sunshadow_rel' is not defined
+  File "game/scripts/game_content/hunting_patrol.rpy", line 14, in script call
+    call patrol_select from _call_patrol_select
+  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
+    call patrol_select from _call_patrol_select_2
+  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
+    call patrol_select from _call_patrol_select_2
+  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
+    call patrol_select from _call_patrol_select_2
+  File "game/scripts/defines/hunting.rpy", line 23, in script
+    python:
+  File "game/scripts/defines/hunting.rpy", line 27, in <module>
+    renpy.jump(hunting_patrols.pop(0))
+IndexError: pop from empty list
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/burial_site.rpy", line 200, in script
-    $ sunshadow_rel -= 40
+  File "game/scripts/game_content/hunting_patrol.rpy", line 14, in script call
+    call patrol_select from _call_patrol_select
+  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
+    call patrol_select from _call_patrol_select_2
+  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
+    call patrol_select from _call_patrol_select_2
+  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
+    call patrol_select from _call_patrol_select_2
+  File "game/scripts/defines/hunting.rpy", line 23, in script
+    python:
   File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/scripts/game_content/burial_site.rpy", line 200, in <module>
-    $ sunshadow_rel -= 40
-NameError: name 'sunshadow_rel' is not defined
+  File "game/scripts/defines/hunting.rpy", line 27, in <module>
+    renpy.jump(hunting_patrols.pop(0))
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\revertable.py", line 90, in do_mutation
+    return method(self, *args, **kwargs)
+IndexError: pop from empty list
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Sat Mar  8 15:20:01 2025
+Sat Mar  8 21:52:01 2025

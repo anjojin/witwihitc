@@ -1,5 +1,5 @@
 label bs_1:
-    $ currently_in = "burial"
+    $ currently_in = "outside"
     t "Some eulogy."
     show burial site bg with fade
     show side sun sitting
