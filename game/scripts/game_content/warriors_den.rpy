@@ -11,6 +11,7 @@ label wd1:
     call screen gameUI
 
 label wd1_take_nesting:
+    play audio "sfx/plant_correct.mp3"
     hide screen dapple_nest
     scene warriors_den_empty with fade
     "You picked up the {b}nesting materials.{/b}"

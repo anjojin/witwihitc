@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label _call_patrol_select_1 is defined twice, at File "game/scripts/game_content/hunting_patrol.rpy", line 58:
-            call patrol_select from _call_patrol_select_1
-and File "game/scripts/game_content/hunting_patrol.rpy", line 64:
-    call patrol_select from _call_patrol_select_1
-
+File "game/scripts/game_content/apprentices_den.rpy", line 120: Captions and say menuitems may not exist in the same menu.
+    "How would you like to proceed?"
+                                    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sat Mar  8 15:19:11 2025
+Mon Mar 10 18:26:18 2025

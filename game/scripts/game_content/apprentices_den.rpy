@@ -2,6 +2,7 @@ label ad1:
     $ apprentice_visited = True
     scene app_den_bg with fade
     stop music fadeout 1.0
+    play music "music/ES_Unbounded Horizons - Victor Lundberg.mp3" loop
     show screen gameUI
     t "It's always nice to check up on the Clan's future warriors."
     menu:
@@ -12,18 +13,20 @@ label ad1:
             jump ad1_leave_alone
 
 label ad1_eavesdrop:
+    play sound "sfx/ES_Twig, Snap From Branch - Epidemic Sound.mp3"
     "You strain your ears, picking up on the apprentices' familiar voices."
     c "StarClan, Redpaw, if I have to hear one more word --"
     r "I'm exercising my free will! I have the right to refuse anything I don't --"
     c "Free will? Are you serious?"
     r "I'm just saying it's not hygenic! What's the problem?"
     c "The problem is that your sister went out of her way to get this snow for you to drink, and now you're letting it go to waste."
-    r "I don't want to drink something that's been in another cat's mouth! That's all!"
+    r "I don't want to drink something that's been in another cat's mouth! Is that so wrong?"
     fa "That's why I put it on a leaf, mouse-brain!"
     c "You hear that? That's why she put it on a leaf."
     r "You don't know where that leaf has been!"
     c "It's a {i}leaf!{/i} You're a ThunderClan apprentice, and you're afraid of a ..."
     c "Ah ..."
+    play audio "sfx/ES_Female, Sneezeing - Epidemic Sound - 0000-1518.mp3"
     c "Ah-CHOO!"
     r "See? Your argument is so stupid, your own body is allergic to it."
     c "Is {i}your{/i} body allergic to my paws in your face?"
@@ -31,16 +34,16 @@ label ad1_eavesdrop:
     r "AHHHHH!"
     li "EVERYONE STOP FIGHTING!!!"
     li "StarClan, you're all driving me crazy!"
-    fa "Lilypaw, where are you going?"
-    li "Somewhere I can hear myself think! StarClan knows it isn't in here!"
-    r "Psh ..."
-    c "Buzzkill."
+    play sound "sfx/rustle.mp3"
+    play audio "sfx/impact.mp3"
     show lilypaw_entrace with fade
     li "... Eep!"
     li "T-Talonclaw! Hello!"
     fa "Talonclaw's outside?"
     c "Talonclaw!"
     hide lilypaw_entrace with fade
+    play sound "sfx/rustle.mp3"
+    play audio "sfx/impact.mp3"
     show cloverpaw_ad1 with easeinright
     show fawnpaw_ad1 with easeinright
     show redpaw_ad1 with easeinleft
@@ -48,9 +51,9 @@ label ad1_eavesdrop:
     fa "Talonclaw!!!"
     t "Hey, kittos."
     t "Sounded like some battle in there."
-    fa "Oh, this one was actually pretty tame. Usually, it takes twice as long to separate them."
+    fa "Oh, this one was actually pretty tame. Usually, it takes twice as long to pull Cloverpaw and Redpaw apart."
     r "Slowing down lately, Cloverpaw?"
-    c "Slowing down? Tch, I was just getting started. You're lucky Talonclaw showed up when he did, or else I would've shredded him."
+    c "Slowing down? Tch, I was just getting started. You're lucky Talonclaw showed up when he did, or else I would've shredded you."
     r "Right ... that's probably why I won our last three mock-battles, too."
     c "{i}*STOMP*{/i}"
     menu:
@@ -92,7 +95,7 @@ label ad1_stayout:
     jump ad1_cont
 
 label ad1_cont:
-    fa "I think we've all just gone a little stir-crazy from being stuck in camp."
+    fa "I think we've all just gone a little stir-crazy from being stuck in camp all the time."
     r "Seriously. I haven't had a real training session since Flipcloud moved into the medicine den." 
     fa "Yeah. And my mentor keep ditching me to go on patrol with the warriors."
     fa "Apparently ThunderClan 'can't afford to have inexperienced hunters scaring off all the prey.'"
@@ -108,9 +111,12 @@ label ad1_cont:
     if quest_favorite_prey.started:
         t "I kind of agreed to do this thing for Sunshadow today, and it's really important."
     fa "Come on! What have you got to lose?"
+    play sound "sfx/game_tip.mp3"
     "{b}Game Tip:{/b} Hunting with the apprentices will {b}increase{/b} the number of opportunities you have at catching prey."
+    play sound "sfx/game_tip.mp3"
     "However, it will also {b}decrease{/b} your odds of success."
     if quest_gather_herbs.started:
+            play sound "sfx/game_tip.mp3"
             "It will also mean you can no longer complete the following questline: {b}Gather Herbs{/b}"
             menu:
                 "How would you like to proceed?"
@@ -130,10 +136,12 @@ label ad1_yes:
     $ quest_babysitting.started = True
     $ training_with = ["hunting_red", "hunting_lily", "hunting_fawn", "hunting_clover"]
     t "Aw, sure. I'll take you guys out with me. Why not?"
+    play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Babysitting"
     if quest_gather_herbs.started:
         $ quest_gather_herbs.started = False
         $ quest_gather_herbs.cancelled = True
+        play sound "sfx/ES_Error 04 - Epidemic Sound.mp3"
         "{b}Quest Cancelled:{/b} Gather Herbs"
     fa "Yes! Thank you!"
     c "Hahaha! I'm gonna catch so much, we won't be able to carry it all home!"
@@ -150,7 +158,7 @@ label ad1_yes:
     t "Until then, try not to injure each other."
     c "Not making any promises."
     r "Cloverpaw!"
-    c "What? I'm just trying to be more {i}realistic.{/i}"
+    c "What? I'm just trying to be {i}realistic.{/i}"
     fa "We promise you won't regret this, Talonclaw."
     t "I might be starting to, already ..."
     if quest_crocus.started:
@@ -227,7 +235,7 @@ label ad1_committed:
 
 label ad1_no_finish:
     fa "... Lilypaw. You've been quiet."
-    fa "Do you have anything to sat?"
+    fa "Do you have anything to say?"
     li "..."
     li ".........."
     li "I'm tired of the fighting."
@@ -239,12 +247,13 @@ label ad1_no_finish:
     hide cloverpaw_ad1 with moveoutright
     r "... I expected more from you."
     hide redpaw_ad1 with moveoutleft
-    t "..."
+    t "Young cats sure are dramatic."
     if quest_crocus.started:
         show screen ad_juniper
     call screen gameUI
 
 label ad1_click_juniper:
+    play audio "sfx/plant_error.mp3"
     t "It's purple, and it's a flower ... but it's not quite a crocus."
     t "I'd better keep looking."
     hide screen ad_juniper

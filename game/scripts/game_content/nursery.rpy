@@ -2,7 +2,7 @@ label n1:
     $ nursery_visited = True
     scene nursery bg with fade
     stop music fadeout 0.5
-    play music "ES_View of the Park - Roots and Recognition.mp3" loop
+    play music "music/ES_View of the Park - Roots and Recognition.mp3" loop
     show screen gameUI
     t "... Hello?"
     show crowkit with easeinright
@@ -31,11 +31,13 @@ label n1:
     show willowkit
     show wolfkit
     show featherkit
+    play audio "sfx/ES_Newborn Kittens 02 - Epidemic Sound.mp3" volume 0.75
     wo "Mew!"
     st "Mrow!"
     w "Eep!"
     f "..."
     sta "Zzz ..."
+    stop audio
     hide starlingkit
     hide stormkit
     hide willowkit
@@ -65,11 +67,11 @@ label n1:
     t "Don't say things like --"
     stop music
     show featherkit
-    play audio "ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
+    play audio "sfx/ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
     f "*koff* *koff*"
     hide featherkit
     t "!!!"
-    play music "ES_A Different Story - Roots and Recognition.mp3" loop
+    play music "music/ES_A Different Story - Roots and Recognition.mp3" loop
     be "Oh, StarClan. Not this again."
     be "Shh, shhh ... it's alright little one. Settle down."
     t "What's happening? Why is she coughing?"
@@ -87,6 +89,7 @@ label n1_offer_help:
     $ talon_sun_bonus += 1
     t "Y-Yes! Of course!"
     $ quest_medical_opinion.started = True
+    play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Medical Opinion"
     t "I'll see Locustleaf in the medicine den and ask him what he thinks."
     be "Thank you, Talonclaw. Probably best not to delay."
@@ -118,6 +121,7 @@ label n1_decline:
         call screen gameUI
 
 label n1_click_tansy:
+    play audio "sfx/plant_error.mp3"
     t "It's purple, and it's a flower ... but it's not quite a crocus."
     t "I'd better keep looking."
     hide screen n_tansy
@@ -127,11 +131,11 @@ label n2:
     scene nursery bg with fade
     show beetle_kits
     stop music fadeout 0.5
-    play music "ES_A Different Story - Roots and Recognition.mp3" loop
+    play music "music/ES_A Different Story - Roots and Recognition.mp3" loop
     show screen gameUI
     if quest_medical_opinion.started:
         show willowkit
-        play audio "ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
+        play audio "sfx/ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
         w "*koff* *koff*"
         hide willowkit
         be "Oh, no ... Don't you start now, too."
@@ -259,7 +263,7 @@ label n2_white_lie:
 
 label n2_finish:
     show willowkit
-    play audio "ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
+    play audio "sfx/ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
     w "*rasp* *wheeze*"
     hide willowkit
     t "Willowkit's started now, too?"

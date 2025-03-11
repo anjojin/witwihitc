@@ -27,8 +27,8 @@ style choice_button:
     background Frame("gui/button/choice_[prefix_]background.png",
         150, 25, 150, 25, tile=False)
     padding (12, 12)
-    hover_sound "audio/button_hover_3.mp3"
-    activate_sound "audio/button_click_3.mp3"
+    hover_sound "audio/sfx/button_hover_3.mp3"
+    activate_sound "audio/sfx/button_click_3.mp3"
 
 style choice_button_text:
     is default # This means it doesn't use the usual button text styling

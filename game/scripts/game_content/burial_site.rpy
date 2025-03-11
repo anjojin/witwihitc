@@ -1,9 +1,11 @@
 label bs_1:
-    $ currently_in = "outside"
+    $ currently_in = "burial"
+    play sound "sfx/rustle.mp3"
+    Rplay audio "sfx/impact.mp3"
     t "Some eulogy."
     show burial site bg with fade
     show side sun sitting
-    play music "ES_A Friend Like You - Headlund.mp3" loop
+    play music "music/ES_A Friend Like You - Headlund.mp3" loop
     s "I only said what's been on every ThunderClan cat's mind."
     t "I had a few thoughts about the part where you condemned our warrior ancestors to an eternity of suffering and torment ..."
     hide side sun sitting
@@ -71,10 +73,10 @@ label bs1_wc_moonpool:
 
 label bs1_wc_greencough:
     t "The medicine cats say that this greencough strain is one of the deadliest that the forest has seen in moons."
-    s "And how do outbreaks spread, Talonclaw?"
+    s "And how do outbreaks spread?"
     s "This past newleaf alone, we've had four new litters of kits, plus all downtrodden rogues and strays Briarstar's taken in."
     s "By my calculations, that put ThunderClan's greenleaf population well past eighty."
-    s "With our dens overflowing, it's no wonder the sickness spread so fast."
+    s "With our dens overflowing, it's no wonder the sickness spread as fast as it did."
     t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
     s "How many are there, now?"
@@ -210,7 +212,9 @@ label bs1_sun_furious:
     s "This is a sacred place, and you're polluting the air with your scent."
     t "..."
     show screen gameUI with fade
+    play sound "sfx/game_tip.mp3"
     "Click the {b}'?!'{/b} button to access your Quest list."
+    play sound "sfx/game_tip.mp3"
     "Click the {b}Camp{/b} button to travel back to camp."
     call screen gameUI
 
@@ -257,7 +261,9 @@ label bs1_leave_to_it:
     t "You know, the cats whose fates can still actually be changed."
     s "..."
     show screen gameUI with fade
+    play sound "sfx/game_tip.mp3"
     "Click the {b}'?!'{/b} button to access your Quest list."
+    play sound "sfx/game_tip.mp3"
     "Click the {b}Camp{/b} button to travel back to camp."
     call screen gameUI
 
@@ -304,14 +310,17 @@ label bs1_quest:
     s "There are three things."
     s "One: a scrap of moss from her nest."
     $ quest_nesting_material.started = True
+    play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Nesting Material"
     s "Two: a piece of her favorite prey."
     s "Dapplefeather wasn't picky. Anything should suffice."
     $ quest_favorite_prey.started = True
+    play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Favorite Prey"
     s "Finally: a crocus. Her favorite flower."
     s "I think I've seen some growing around camp."
     $ quest_crocus.started = True
+    play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Crocuses"
     t "Is that all?"
     s "Yes. If you get those things for me, I can handle all the digging myself."
@@ -324,7 +333,9 @@ label bs1_quest:
     s "I know that, wherever she is, she's grateful for your help, too."
     t "..."
     show screen gameUI with fade
+    play sound "sfx/game_tip.mp3"
     "Click the {b}'?!'{/b} button to access your Quest list."
+    play sound "sfx/game_tip.mp3"
     "Click the {b}Camp{/b} button to travel back to camp."
     call screen gameUI
 

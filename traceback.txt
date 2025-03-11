@@ -5,10 +5,10 @@ While running game code:
     call patrol_select from _call_patrol_select
   File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
     call patrol_select from _call_patrol_select_2
-  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
-    call patrol_select from _call_patrol_select_2
-  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
-    call patrol_select from _call_patrol_select_2
+  File "game/scripts/game_content/hunting_patrol.rpy", line 67, in script call
+    call patrol_select from _call_patrol_select_1
+  File "game/scripts/game_content/hunting_patrol.rpy", line 67, in script call
+    call patrol_select from _call_patrol_select_1
   File "game/scripts/defines/hunting.rpy", line 23, in script
     python:
   File "game/scripts/defines/hunting.rpy", line 27, in <module>
@@ -22,10 +22,10 @@ Full traceback:
     call patrol_select from _call_patrol_select
   File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
     call patrol_select from _call_patrol_select_2
-  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
-    call patrol_select from _call_patrol_select_2
-  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
-    call patrol_select from _call_patrol_select_2
+  File "game/scripts/game_content/hunting_patrol.rpy", line 67, in script call
+    call patrol_select from _call_patrol_select_1
+  File "game/scripts/game_content/hunting_patrol.rpy", line 67, in script call
+    call patrol_select from _call_patrol_select_1
   File "game/scripts/defines/hunting.rpy", line 23, in script
     python:
   File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
@@ -41,4 +41,4 @@ IndexError: pop from empty list
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Sat Mar  8 21:52:01 2025
+Mon Mar 10 22:22:06 2025

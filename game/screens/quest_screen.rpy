@@ -9,8 +9,8 @@ screen quests_ui:
         xoffset 30
         yoffset 30
         auto "gui/button/back_%s.png"
-        hover_sound "audio/button_hover_1.mp3"
-        activate_sound "audio/button_click_1.mp3"
+        hover_sound "audio/sfx/button_hover_1.mp3"
+        activate_sound "audio/sfx/button_click_1.mp3"
         action Return()
 
     frame:

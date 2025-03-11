@@ -3,6 +3,7 @@ label cl1:
     scene clearing bg with fade
     show screen gameUI
     stop music fadeout 0.5
+    play music "music/ES_Dreams of a Life - Damon Greene.mp3"
     if burial_rites:
         t "Okay. Nesting materials, prey, and crocuses ..."
         t "Nesting materials, I can probably find in the warrior's den."

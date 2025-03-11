@@ -2,13 +2,14 @@ label ld1:
     $ leaders_visited = True
     scene leaders_entrance_day with fade
     show screen gameUI
-    stop music fadeout 0.5
-    play music "ES_La Vuelta a Lerida - Vendla.mp3" loop
-    
+    stop music fadeout 0.5    
+    play music "music/ES_La Vuelta a Lerida - Vendla.mp3" loop
     if quest_crocus.started:
         t "Hmm ... if I were a crocus, where would I be?"
         t "These tree roots seem like as good of a place as any to grow."
         t "Though, how anything manages grow these days is beyond me ..."
+        play sound "sfx/rustle.mp3"
+        play audio "sfx/impact.mp3"
         show briarstar_standing with fade
         b "Talonclaw."
         t "Oh!"
@@ -20,8 +21,12 @@ label ld1:
         t "Are you certain? I'd hate to impose."
         b "It's really no trouble. Follow me."
         b "Your paws must be freezing."
+        play sound "sfx/rustle.mp3"
+        play audio "sfx/impact.mp3"
         hide briarstar_standing with fade
-        t "..."
+        t "If you insist ..."
+        play sound "sfx/rustle.mp3"
+        play audio "sfx/impact.mp3"
         jump ld1_inside
 
     else:
@@ -30,21 +35,29 @@ label ld1:
         t "I can't remember the last time I saw her eating a piece of prey."
         t "Come to think of it, I can't remember the last time I saw her at all ..."
         show briarstar_standing with fade
+        play sound "sfx/rustle.mp3"
+        play audio "sfx/impact.mp3"
         b "Talonclaw."
         t "Oh!"
         b "I thought I heard somecat talking out here."
         t "I'm so sorry to disturb you, Briarstar. I don't know what I was --"
         b "No need to explain yourself."
-        b "Sometimes, there's a certain comfort to hearing your thoughts spoken aloud."
-        b "Why don't you step inside my den for a moment? Your paws must be freezing."
+        b "Sometimes, there's a certain comfort in hearing one's thoughts spoken aloud."
+        b "Why don't you step inside my den with me for a moment? Your paws must be freezing."
         t "That's very kind of you, but you really don't have to --"
         b "Please. I insist. Follow me."
         hide briarstar_standing with fade
+        play sound "sfx/rustle.mp3"
+        play audio "sfx/impact.mp3"
         t "... Okay?"
+        play sound "sfx/rustle.mp3"
+        play audio "sfx/impact.mp3"
         jump ld1_inside
 
 label ld1_inside:
         scene leaders_den_bg with fade
+        stop music fadeout 2.0
+        play music "music/ES_Little Light - Wanderer's Trove.mp3" loop
         show briarstar
         b "It stays quite warm in here all year round, so sometimes, peculiar things will grow."
         b "Mostly mushrooms and other fungi; though, once, the most precious white lily blossomed in that corner right over there."
@@ -68,11 +81,12 @@ label ld1_inside:
         b "... I have to ask you for a favor."
         t "Oh! That's alright, Briarstar." 
         t "What is it?"
-        b "On your hunt today, can you be sure to bring back something substantial for Pouncetail?"
+        b "On your hunt today, can you be sure to bring something substantial back for Pouncetail?"
         if quest_crocus.started or quest_crocus.completed:
             jump ld1_talonclaw_sunshadow
         if quest_gather_herbs.started:
             b "If he stands any chance at beating greencough, it's imperative that he keeps his strength up."
+            play sound "sfx/game_tip.mp3"
             "{b}Game Tip:{/b} hunting for Pouncetail means Talonclaw will no longer be able to complete the following quest: {b}Gather Herbs.{/b}"
             menu:
                 "How would you like to proceed?"
@@ -89,12 +103,14 @@ label ld1_inside:
                     jump ld1_decline
 
 label ld1_accept:
+    play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Feed the Deputy"
     $ quest_feed_deputy.started = True
     $ talon_clan_bonus += 2
     if quest_gather_herbs.started:
         $ quest_gather_herbs.started = False
         $ quest_gather_herbs.cancelled = True
+        play sound "sfx/ES_Error 04 - Epidemic Sound.mp3"
         "{b}Quest Cancelled:{/b} Gather Herbs"
     t "Sure, Briarstar. No problem."
     t "I'll make sure Pouncetail gets what he needs."
@@ -119,6 +135,8 @@ label ld1_accept:
     t "..."
     b "Come and find me after you've visited Pouncetail. I'd like to know how he's doing."
     t "Oh --"
+    play sound "sfx/rustle.mp3"
+    play audio "sfx/impact.mp3"
     hide briarstar with fade
     t "... kay."
     call screen gameUI
@@ -145,6 +163,8 @@ label ld1_decline:
     b "I'll be retreating deeper into my quarters. Feel free to stay here as long as you'd like."
     b "I hope you stay well, Talonclaw."
     t "Thank --"
+    play sound "sfx/rustle.mp3"
+    play audio "sfx/impact.mp3"
     hide briarstar with fade 
     t "... you."
     call screen gameUI
@@ -153,7 +173,8 @@ label ld1_talonclaw_sunshadow:
         b "If he stands any chance against greencough, it's imperative that he keeps his strength up."
         t "... I'm sorry, Briarstar. I'm actually not sure if I'll be able to hunt for the Clan today."
         t "I agreed to help with a burial ceremony for Dapplefeather."
-        t "That's what the crocuses are for."
+        if quest_crocus.started:
+            t "That's what the crocuses are for."
         b "Oh."
         b "..."
         b "Is this because of Sunshadow's speech?"
@@ -187,6 +208,8 @@ label ld1_stick_sunshadow:
     b "I'll be moving deeper into my quarters. Feel free to stay in my den as long as you'd like."
     b "I hope you find what you're looking for, Talonclaw."
     t "Thank --"
+    play sound "sfx/rustle.mp3"
+    play audio "sfx/impact.mp3"
     hide briarstar with fade
     t "... you."
     if quest_crocus.started:
@@ -194,6 +217,7 @@ label ld1_stick_sunshadow:
     call screen gameUI
 
 label ld1_click_mushroom:
+    play audio "sfx/plant_error.mp3"
     t "I don't think this is what Sunshadow is looking for."
     hide screen ld_mushroom
     call screen gameUI
@@ -202,19 +226,25 @@ label ld1_switch:
     t "... You're right."
     t "I'm sorry, Briarstar. I don't know what's gotten into me."
     t "I'll make sure to get Pouncetail what he needs."
-    $ quest_crocus.started = False
-    $ quest_crocus.cancelled = True
+    if quest_crocus.started:
+        $ quest_crocus.started = False
+        $ quest_crocus.cancelled = True
     $ quest_favorite_prey.started = False
     $ quest_favorite_prey.cancelled = True
-    $ quest_nesting_material.started = False
-    $ quest_nesting_material.cancelled = True
+    if quest_nesting_material.started:
+        $ quest_nesting_material.started = False
+        $ quest_nesting_material.cancelled = True
     $ quest_feed_deputy.started = True
+    play sound "sfx/ES_Error 04 - Epidemic Sound.mp3"
     "{b}Questline Cancelled:{/b} Burial Rites"
+    play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Feed the Deputy"
     b "Thank you, Talonclaw. You're a good cat. Loyal to your friend. That's something to be admired."
     b "I hope, once all this is over, the two of you can dig a truly lavish grave together."
     t "Thank --"
     b "Come and find me after you've visited Pouncetail. I'd like to know how he's doing."
+    play sound "sfx/rustle.mp3"
+    play audio "sfx/impact.mp3"
     hide briarstar with fade
     t "... you."
     call screen gameUI

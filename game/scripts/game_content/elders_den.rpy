@@ -2,9 +2,9 @@ label ed1:
     $ elders_visited = True
     scene elders_bg_crocus with fade
     stop music fadeout 1.0
-    play music "ES_Night, Wind In Trees, Quiet, Distant Rumbling Bass - Epidemic Sound.mp3" loop volume 1.5
+    play music "ambience/ES_Forest High Wind Trees Creaking - Epidemic Sound.mp3" loop volume 1.5
     show screen gameUI
-    ""
+    t ""
     t "This used to be the elders' den, and now ..."
     t "..."
     t "......."
@@ -18,6 +18,7 @@ label ed1:
 label ed1_take_crocus:
     hide screen crocus
     scene elders_den_bg with fade
+    play audio "sfx/plant_correct.mp3"
     "You picked up the {b}crocus.{/b}"
     t "Crocuses. Probably best not to tell Sunshadow where they came from."
     t "How cruel, that something so beautiful can grow in a place like this."
