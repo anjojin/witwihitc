@@ -16,8 +16,6 @@ label md1:
     else:
         scene med_den_bg with fade
         show screen gameUI
-        stop music fadeout 0.5
-        play music "music/ES_Enough by Now - Headlund.mp3" loop
         show locustleaf with moveinright
         show maplebreeze with moveinleft
         m "{i}*Wheeze*{/i} I-I'm not ... {i}*Wheeze*{/i} I'm not that sick, Locustleaf ... {i}*Wheeze*{/i} Honest ..."
@@ -25,45 +23,49 @@ label md1:
         l "Shut up and eat your catmint."
         t "Locustleaf!"
         l "Talonclaw?"
-        l "What have I told you? The medicine den is for emergencies only!"
+        l "What do I always say? The medicine den is for emergencies, only!"
         t "But it {i}is{/i} an emergency!"
-        t "Featherkit, she's gotten sick, and --"
+        t "Featherkit's gotten sick, and --"
         m "*Gasp* Oh, no! Will she be alright?"
         l "Stay out of this, Maplebreeze."
-        l "Featherkit ... Has she stopped eating?"
+        l "Featherkit ... she's one of Sunshadow's new litter, right?"
+        l "Has she stopped eating?"
         t "Yes."
         l "And developed a cough?"
         t "Yes! Now, come on, we need to hurry! Do you have anything I can --"
+        stop music
         l "She'll be dead by sundown."
-        t "What?!"
         m "*Gasp*"
-        l "I'm sorry. There's nothing more I can do."
+        play music "music/ES_Days That Matter - Headlund.mp3" loop
+        t "What?!"
+        l "I'm sorry. There's nothing I can do."
         l "A cat her age, in these conditions, doesn't stand a chance against any sort of cough."
         l "Herbs, or no herbs."
         t "No, no, that can't be right."
         t "She just got sick this morning! There must still be some time to save her!"
-        m "{i}Wheeze{/i} ... Yes, Locustleaf, surely there's still something --"
+        m "{i}Wheeze{/i} ... Yes, Locustleaf, surely there's still something we can --"
         l "Quiet, Maplebreeze!"
         m "..."
-        l "... Okay. Maybe, if I had herbs to spare, I would be more inclined to agree with you."
-        l "But, in case you haven't noticed, this den is full of the sick and dying, inclduing our own deputy."
+        l "... Okay. Maybe, if I had the herbs to spare, I would be more inclined to agree with you."
+        l "But, in case you haven't noticed, this den is already filled with the sick and dying, inclduing our own deputy."
         t "But Featherkit's so small -- she'll only need a tiny scrap of catmint!"
         t "Maplebreeze was just saying she didn't need hers!"
         m "Yes ... {i}wheeze{/i}... I'd be happy to spare a little ..."
         l "Maplebreeze is a {i}medicine cat.{/i}"
         l "If these herbs could go towards saving one life, versus saving Maplebreeze, who will go on to save dozens ..."
         l "Well, I'll let you do the math on that one."
-        l "Need I remind you how much worse things got for ThunderClan after we lost our last apprentice?"
+        l "Need I remind you how much worse things got for ThunderClan after we lost our apprentice?"
         t "..."
         t "... What if I could find more?"
         l "Excuse me?"
         t "More catmint. Then, could you spare some for Featherkit?"
-        l "Ha! If you find any catmint on that territory, you could line your nest with it, for all I care."
+        l "Ha! If you find any catmint out there, you could line your nest with it, for all I care."
         l "Better yet, you could find a whole branch and spend the afternoon hitting yourself over the head with it."
         if quest_favorite_prey.started:
             l "It'd probably be a better use of your time."
             play sound "sfx/game_tip.mp3"
-            "{b}Game Tip:{/b} hunting for catmint means Talonclaw will no longer be able to complete the following questline: {b}Burial Rites.{/b}"
+            "{b}Game Tip:{/b} Hunting for catmint means Talonclaw will no longer be able to complete the following questline: {b}Burial Rites.{/b}"
+            play sound "sfx/game_tip.mp3"
             menu:
                 "How would you like to proceed?"
                 "Stick with burying Dapplefeather":
@@ -75,6 +77,7 @@ label md1:
             l "It'd probably be a better use of your time."
             play sound "sfx/game_tip.mp3"
             "{b}Game Tip:{/b} hunting for catmint means Talonclaw will no longer be able to complete the following quest: {b}Feed the Deputy.{/b}"
+            play sound "sfx/game_tip.mp3"
             menu:
                 "How would you like to proceed?"
                 "Stick with hunting for Pouncetail":
@@ -86,6 +89,7 @@ label md1:
             l "It'd probably be a better use of your time."
             play sound "sfx/game_tip.mp3"
             "{b}Game Tip:{/b} hunting for catmint means Talonclaw will no longer be able to complete the following quest: {b}Babysitting.{/b}"
+            play sound "sfx/game_tip.mp3"
             menu:
                 "How would you like to proceed?"
                 "Stick with patrolling with the apprentices":
@@ -174,9 +178,16 @@ label md2:
         stop music fadeout 0.5
         play music "music/ES_Enough by Now - Headlund.mp3" loop
         scene med_den_ext with fade
-        t "Locustleaf would have a fit if I went back in there without a good reason."
+        t "I doubt Locustleaf wants to see me back so soon ..."
         if quest_gather_herbs.started:
-            t "I'll come back when I have the herbs I need."
+            t "I'll follow up with him when I get the herbs, like I promised."
+        else:
+            t "I hope he's doing okay."
+            t "If we lost him ..."
+            t "{i}*Shudder*{/i}"
+            t "Probably best not to think about things like that."
+            t "Locustleaf is the most talented medicine cat in the forest. I know he'll be fine."
+            t "He has to."
         if quest_crocus.started:
             show screen md_berries
             call screen gameUI

@@ -50,3 +50,12 @@ screen md_berries:
         idle "gui/button/berry.png"
         hover "gui/button/berry_hover.png"
         action Jump("md1_click_berries")
+
+screen freshkill:
+    tag herb_screen
+    imagebutton:
+        xpos 1605
+        ypos 587
+        idle "gui/button/freshkill.png"
+        hover "gui/button/freshkill_hover.png"
+        action Jump("click_freshkill")

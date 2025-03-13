@@ -5,25 +5,34 @@ label n1:
     play music "music/ES_View of the Park - Roots and Recognition.mp3" loop
     show screen gameUI
     t "... Hello?"
+    play audio "sfx/ES_Twig, Snap From Branch - Epidemic Sound.mp3"
     show crowkit with easeinright
+    play audio "sfx/kitten1.mp3"
     cr "*Gasp* Batkit! Look who's here!"
+    play audio "sfx/ES_Twig, Snap From Branch - Epidemic Sound.mp3"
     show batkit with easeinleft
     ba "Talonclaw!!!"
+    play audio "sfx/kitten2.mp3"
     cr "Talonclaw, Talonclaw, Talonclaw!!!"
     ba "What are you doing here? Shouldn't you be out on patrol with the rest of the warriors?"
     cr "Didja bring us any presents?"
     ba "Anything to eat???"
+    play audio "sfx/growl.mp3"
     be "Boys, stop pestering him."
     cr "But - But --"
     be "But nothing. Talonclaw probably has a lot to do today. Leave the grownup cats to talk in peace."
+    play audio "sfx/kitten3.mp3"
     cr "Aww ..."
+    play audio "sfx/ES_Twig, Snap From Branch - Epidemic Sound.mp3"
     hide crowkit with moveoutright
+    play audio "sfx/ES_Twig, Snap From Branch - Epidemic Sound.mp3"
     hide batkit with moveoutleft
+    play audio "sfx/slideup.mp3"
     show beetle_kits with easeinbottom
     be "Sorry about that. They never mind their manners."
     t "It's alright. They're good kits."
     be "They're a regular pawful, is what they are. But I suppose they keep me young."
-    be "This Clan could certainly use more of their energy ..."
+    be "I could certainly use more of their energy ..."
     t "How are the newborns doing?"
     be "Ah, yes. Say hello to your Uncle Talonclaw, dears."
     show starlingkit
@@ -31,7 +40,7 @@ label n1:
     show willowkit
     show wolfkit
     show featherkit
-    play audio "sfx/ES_Newborn Kittens 02 - Epidemic Sound.mp3" volume 0.75
+    play audio "sfx/mews.mp3" volume 0.75
     wo "Mew!"
     st "Mrow!"
     w "Eep!"
@@ -49,25 +58,24 @@ label n1:
     be "Stormkit looks so much like her mother, don't you think?"
     t "Yes. She's beautiful."
     t "They all are."
-    be "Their father should be here to enjoy this moment. Where is Sunshadow?"
-    t "He's ... out."
-    be "Out where?"
+    be "Their father should be here to enjoy this moment. Have you seen Sunshadow today?"
+    t "Er, Sunshadow is ... out."
+    be "Oh, really? Out where? On patrol?"
     t "... Out digging a grave for Dapplefeather."
-    be "Tch. Do you hear that, little ones?"
-    be "Your father must be the biggest fool in all of ThunderClan."
+    be "Tch."
+    be "Do you hear that, little ones? Your father must be the biggest fool in all of ThunderClan."
     if quest_crocus.started or quest_crocus.completed:
-        t "You could cut him some slack, you know. He's going through a hard time."
-        be "And exactly what type of time have the rest of us been going through?"
+        t "You could cut him some slack, you know. He's been going through a really hard time."
+        be "What type of time have the rest of us been going through?"
     else:
         t "I tried to talk him out of it."
         be "Apparently, not hard enough."
-    t "..."
     be "If he wants to freeze to death, he can feel free to do so, but I'm not raising these kits alone."
     be "Crowkit and Batkit already give me enough to worry about."
     t "Don't say things like --"
     stop music
     show featherkit
-    play audio "sfx/ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
+    play audio "sfx/koff.mp3"
     f "*koff* *koff*"
     hide featherkit
     t "!!!"
@@ -80,20 +88,21 @@ label n1:
     be "I was hoping it was just a temporary shock from their mother's passing. But, now ..."
     t "Do you think it's serious?"
     menu:
-        be "I'm not sure. It might be helpful to get a medicine cat's opinion."
+        be "I'm not sure. She's progressing rather quickly ..."
         "Offer to help":
             jump n1_offer_help
         "Decline to help":
             jump n1_decline
 label n1_offer_help:
     $ talon_sun_bonus += 1
-    t "Y-Yes! Of course!"
+    t "I-I'll fetch the medicine cat!"
     $ quest_medical_opinion.started = True
     play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Medical Opinion"
-    t "I'll see Locustleaf in the medicine den and ask him what he thinks."
-    be "Thank you, Talonclaw. Probably best not to delay."
-    be "In kits this young, sickness burns through them quick."
+    t "Locustleaf is in the medicine den right now. He'll know what to do."
+    be "Yes. You're right. It will be good to get his opinion."
+    be "Thank you, Talonclaw. Best not to delay."
+    be "I hate to be morbid, but in kits this young, sickness burns through them quick."
     if quest_crocus.started:
         show screen n_tansy
         call screen gameUI
@@ -102,11 +111,10 @@ label n1_offer_help:
 
 label n1_decline:
     t "... It's just a little cough. It can't be all that bad, right?"
-    t "No need to get Locustleaf involved in something so minor. Especially since his paws are already so full."
+    t "No need to get the medicine cats involved in something so minor. Especially since their paws are already so full."
     be "... Yes. You're right. I'm probably just overreacting."
-    be "All this death around camp is making me paranoid."
-    t "I understand. But it can't all be bad news, right?"
-    t "I'm sure the kits will be feeling better by sundown."
+    be "All this death around camp has been making me paranoid."
+    t "Don't worry. I'm sure she'll be feeling better in no time."
     be "Yes. I hope you're right."
     be "..."
     t "..."
@@ -135,7 +143,7 @@ label n2:
     show screen gameUI
     if quest_medical_opinion.started:
         show willowkit
-        play audio "sfx/ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
+        play audio "sfx/koff.mp3"
         w "*koff* *koff*"
         hide willowkit
         be "Oh, no ... Don't you start now, too."
@@ -155,6 +163,8 @@ label n2:
                 jump n2_white_lie
     else:
         show willowkit
+        show wolfkit
+        show featherkit
         play audio "ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
         w "*koff* *koff*"
         hide willowkit
@@ -164,26 +174,27 @@ label n2:
 label n2_truth:
     t "... He said he doesn't like Featherkit's chances."
     t "You should probably separate her from her siblings, just in case she's contagious."
-    be "Separate them how? You want me to move her to the medicine den, with the grown adults?"
+    be "Separate them how? You want me to move her to the medicine den all by herself?"
     be "Why don't I just go ahead and throw her onto the body pile, while I'm at it?"
     t "... I'm sorry."
     t "Locustleaf said she might still have a shot, if she gets catmint."
     if quest_gather_herbs.started:
         t "I'm going out to find some, now."
-    be "Everyone seems to be needing catmint, these days ..."
+    be "These days, it seems like everycat's in need of catmint ..."
     jump n2_confront
 
 label n2_confront:
-    t "Should somecat let Sunshadow know?"
+    t "Should we let Sunshadow know?"
     be "... No."
     be "I don't want to frighten him."
-    t "He's their father. I think he has the right to be frightened."
-    be "If he's their father, then why isn't he here right now?"
-    be "Why am I the one caring for his sick daughter, while he's out doing who knows what?"
+    t "He's Featherkit's father. I think he has the right to be frightened."
+    be "If he's Featherkit's father, then why isn't he here with her right now?"
+    be "Why am I the one caring for his sick daughter, while he's out running a fool's errand?"
     be "You can tell him whatever you'd like, Talonclaw, but know this -- whatever happens to Featherkit, I am not taking the blame."
-    t "What are you talking about? Who would blame you?"
-    t "Featherkit's sickness was a terrible act of StarClan. It wasn't your --"
-    be "I used to be a loner, Talonclaw."
+    t "What are you talking about?"
+    t "Who would blame you?"
+    t "What's happening to Featherkit is a terrible act of chance. It isn't like --"
+    be "I'm an ex-loner, Talonclaw."
     be "From the way Sunshadow's been talking, I might as well have stolen the food right out of these kittens' mouths."
     be "You know it's true."
     menu:
@@ -200,42 +211,52 @@ label n2_sun_defend:
     t "Sunshadow has nothing against you. I know for a fact he's grateful for your help."
     t "He's just ... concerned about how many newcomers Briarstar let into the Clan when our resources were already stretched thin."
     t "That's all."
-    be "Hmm. And what makes Sunshadow any different from these so-called 'newcomers'?"
+    be "What makes Sunshadow and these so-called 'newcomers' any different?"
     be "His body takes up just as much space in the warriors' den as mine does."
-    be "We eat the same, drink the same, hunt the same."
-    be "And, now, when both of us are starving, somehow I'm the one to blame, and he isn't."
-    be "No. This isn't about resources."
-    be "When cats are afraid, they want to find what's making them afraid, and destroy it."
-    be "Even if it doesn't work, they'll keep trying over and over until they don't feel afraid anymore."
+    be "We eat the same food, drink the same water, bring back the same amount of prey."
+    be "And, now, when both of us are starving, somehow I'm the one to blame, and he isn't?"
+    be "Don't be a fool, Talonclaw. Sunshadow's beliefs aren't so logical. They never have been."
+    be "These past few moons have been madness. Cats are terrified. They want an explanation."
+    be "And when terrified cats want an explanation, they won't stop looking for one until they find it."
+    t "... How will they know when that happens?"
+    be "They won't feel afraid anymore."
+    be "How many cats are going have to get hurt before that happens?"
+    be "Who knows? I'm not sure it even matters."
     be "By that time, there may be nothing left."
     t "..."
     jump n2_finish
 
 label n2_outsider:
-    t "I used to be an outsider, too."
-    be "Then you should know he'll always think less of you."
-    t "That's ridiculous. Sunshadow is my best friend. He's practically my brother."
-    be "Ha! And -- what, you think that will save you?"
-    be "You could be the greatest warrior in ThunderClan history, and still, it wouldn't matter."
-    be "It's not about what you've done, who you were raised by, who you think your friends are ..."
-    be "When cats are afraid, they want to find what's making them afraid, and destroy it."
-    be "Even if it doesn't work, they'll keep trying over and over until they don't feel afraid anymore."
+    t "I used to be an outsider, too. Do you think Sunshadow blames me for his daughter's illness?"
+    t "He's my best friend. He's practically my brother. I know for a fact that he would never --"
+    be "Talonclaw."
+    be "It doesn't matter."
+    t "What do you mean, 'it doesn't matter?' Of course it matters!"
+    be "I mean, you might not be as protected as you think."
+    be "These past few moons have been madness. Cats are terrified. They want an explanation."
+    be "And when terrified cats want an explanation, they won't stop looking for one until they find one."
+    t "... How will they know when they've found one?"
+    be "They won't feel afraid anymore."
+    be "How many cats are going have to get hurt before that happens?"  
+    be "Who knows? I'm not sure it even matters."
     be "By that time, there may be nothing left."
     t "..."
     jump n2_finish
 
 label n2_sun_point:
-    t "Sunshadow just believes -- accurately -- that it was foolish of Briarstar not to exercise a bit more {i}foresight{/i} into --"
+    t "Sunshadow just believes -- accurately -- that it was foolish of Clan leadership not to exercise a bit more {i}foresight{/i} into --"
     be "Foresight? Do you hear yourself?"
+    t "Half of the new cats this greenleaf were newborns, elders, or too sick to hunt! Briarstar should have known better."
     be "You buy into this jargon? That the weak are a burden and the Clan should belong to the strong?"
-    t "Look at nature. Look at the other Clans." 
-    t "When there are less hungry mouths, there's more to go around. Those are just the facts."
-    be "That's the problem with you. You think you'll always belong to the 'strong' category."
-    be "One day, you're going to be weak."
+    t "Look at the other Clans. Look at what happens in nature. It's been proven over and over again."
+    t "Sometimes, you need to trim the fat to keep everything in balance."
+    be "That's the problem with cats like you. You think that you'll always belong to the 'strong' category."
+    be "One day, you're going to be weak, Talonclaw."
     be "What will become of you, then?"
     be "Do you think you'll be a special case?"
-    be "Think cats like {i}Sunshadow{/i} are going to do you any favors?"
-    be "No. I'd practice begging for mercy, now. You're going to need it when the time comes."
+    be "Think that cats like {i}Sunshadow{/i} are going to protect you?"
+    be "No. I'd practice getting on your paws, now, and start begging for mercy."
+    be "When the time finally comes, you'll be grateful for  the experience."
     t "..."
     jump n2_finish
 
@@ -263,10 +284,12 @@ label n2_white_lie:
 
 label n2_finish:
     show willowkit
-    play audio "sfx/ES_Boy, 3 Years Old, Coughing 01 - Epidemic Sound.mp3"
+    show wolfkit
+    show featherkit
+    play audio "sfx/koff.mp3"
     w "*rasp* *wheeze*"
     hide willowkit
-    t "Willowkit's started now, too?"
+    t "Oh, no. Willowkit's started now, too?"
     be "... You should leave."
     be "Whatever you end up doing, you'd better do it fast."
     be "I'm not sure how much longer any of it will matter."

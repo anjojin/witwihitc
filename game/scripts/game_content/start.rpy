@@ -57,5 +57,7 @@ label start:
         s_unknown "What a collosal waste ..."
         s_unknown "..."
         stop music fadeout 0.5
+        play sound "sfx/rustle.mp3"
+        play audio "sfx/impact.mp3"
         scene black with fade
         jump bs_1

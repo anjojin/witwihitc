@@ -4,9 +4,9 @@ label ad1:
     stop music fadeout 1.0
     play music "music/ES_Unbounded Horizons - Victor Lundberg.mp3" loop
     show screen gameUI
-    t "It's always nice to check up on the Clan's future warriors."
+    t "It's always nice to check up on how the Clan's future warriors are doing."
     menu:
-        t "I wonder what they're up to, in there ..."
+        t "I wonder just what they're up to, in there ..."
         "Eavesdrop":
             jump ad1_eavesdrop
         "Leave them alone":
@@ -15,6 +15,7 @@ label ad1:
 label ad1_eavesdrop:
     play sound "sfx/ES_Twig, Snap From Branch - Epidemic Sound.mp3"
     "You strain your ears, picking up on the apprentices' familiar voices."
+    play audio "sfx/meow1.mp3"
     c "StarClan, Redpaw, if I have to hear one more word --"
     r "I'm exercising my free will! I have the right to refuse anything I don't --"
     c "Free will? Are you serious?"
@@ -24,13 +25,14 @@ label ad1_eavesdrop:
     fa "That's why I put it on a leaf, mouse-brain!"
     c "You hear that? That's why she put it on a leaf."
     r "You don't know where that leaf has been!"
-    c "It's a {i}leaf!{/i} You're a ThunderClan apprentice, and you're afraid of a ..."
+    c "It's a {i}leaf!{/i} You're a ThunderClan apprentice, and you're telling me you're afraid of a ..."
     c "Ah ..."
     play audio "sfx/ES_Female, Sneezeing - Epidemic Sound - 0000-1518.mp3"
     c "Ah-CHOO!"
     r "See? Your argument is so stupid, your own body is allergic to it."
     c "Is {i}your{/i} body allergic to my paws in your face?"
     fa "Cloverpaw, wait!!!"
+    play audio "sfx/ES_Hiss, Angry - Epidemic Sound.mp3"
     r "AHHHHH!"
     li "EVERYONE STOP FIGHTING!!!"
     li "StarClan, you're all driving me crazy!"
@@ -41,9 +43,9 @@ label ad1_eavesdrop:
     li "T-Talonclaw! Hello!"
     fa "Talonclaw's outside?"
     c "Talonclaw!"
-    hide lilypaw_entrace with fade
     play sound "sfx/rustle.mp3"
     play audio "sfx/impact.mp3"
+    hide lilypaw_entrace with fade
     show cloverpaw_ad1 with easeinright
     show fawnpaw_ad1 with easeinright
     show redpaw_ad1 with easeinleft
@@ -51,10 +53,11 @@ label ad1_eavesdrop:
     fa "Talonclaw!!!"
     t "Hey, kittos."
     t "Sounded like some battle in there."
-    fa "Oh, this one was actually pretty tame. Usually, it takes twice as long to pull Cloverpaw and Redpaw apart."
+    fa "Oh, this one was actually pretty tame. Usually, it takes twice as long to pull those two apart."
     r "Slowing down lately, Cloverpaw?"
     c "Slowing down? Tch, I was just getting started. You're lucky Talonclaw showed up when he did, or else I would've shredded you."
     r "Right ... that's probably why I won our last three mock-battles, too."
+    play audio "sfx/ES_Retro Game, Gun Shot - Epidemic Sound.mp3" volume 0.5
     c "{i}*STOMP*{/i}"
     menu:
         r "Oww!"
@@ -97,7 +100,7 @@ label ad1_stayout:
 label ad1_cont:
     fa "I think we've all just gone a little stir-crazy from being stuck in camp all the time."
     r "Seriously. I haven't had a real training session since Flipcloud moved into the medicine den." 
-    fa "Yeah. And my mentor keep ditching me to go on patrol with the warriors."
+    fa "Yeah. And my mentor keep ditching me to go on patrol with the other warriors."
     fa "Apparently ThunderClan 'can't afford to have inexperienced hunters scaring off all the prey.'"
     fa "As if there's any prey out there to begin with ..."
     r "Say ... maybe you could take us out later, Talonclaw."
@@ -105,16 +108,18 @@ label ad1_cont:
     r "It could be just like a regular hunting patrol, only we'd be there to help you."
     fa "We swear, we won't let you down! We've all been practicing."
     r "Yeah. Cloverpaw's made an excellent mock mouse."
+    play audio "sfx/ES_Retro Game, Gun Shot - Epidemic Sound.mp3" volume 0.5
     c "{i}*STOMP*{/i}"
     r "Ha. Missed me that time."
     t "I don't know, you guys ..."
     if quest_favorite_prey.started:
-        t "I kind of agreed to do this thing for Sunshadow today, and it's really important."
+        t "I kind of agreed to do this thing for Sunshadow today ..."
     fa "Come on! What have you got to lose?"
     play sound "sfx/game_tip.mp3"
     "{b}Game Tip:{/b} Hunting with the apprentices will {b}increase{/b} the number of opportunities you have at catching prey."
     play sound "sfx/game_tip.mp3"
     "However, it will also {b}decrease{/b} your odds of success."
+    play sound "sfx/game_tip.mp3"
     if quest_gather_herbs.started:
             play sound "sfx/game_tip.mp3"
             "It will also mean you can no longer complete the following questline: {b}Gather Herbs{/b}"
@@ -135,7 +140,7 @@ label ad1_cont:
 label ad1_yes:
     $ quest_babysitting.started = True
     $ training_with = ["hunting_red", "hunting_lily", "hunting_fawn", "hunting_clover"]
-    t "Aw, sure. I'll take you guys out with me. Why not?"
+    t "Aw, sure. You guys can come out with me today. Why not?"
     play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Babysitting"
     if quest_gather_herbs.started:
@@ -146,7 +151,7 @@ label ad1_yes:
     fa "Yes! Thank you!"
     c "Hahaha! I'm gonna catch so much, we won't be able to carry it all home!"
     r "That's kind of unrealistic, Cloverpaw."
-    c "Can you allow joy to exist in your vicinity for, like, one second without getting your melancholy all over it?"
+    c "Can you allow joy to exist in your vicinity for, like, one second without getting your melancholy all over it, Redpaw?"
     r "Nyehh."
     t "... Lilypaw? You've been awfully quiet. Do you have anything to say?"
     li "..."
@@ -240,14 +245,20 @@ label ad1_no_finish:
     li ".........."
     li "I'm tired of the fighting."
     li "I'm going back inside."
+    play audio "sfx/slideup.mp3"
     hide lilypaw_ad1 with moveoutleft
     fa "Lilypaw, wait!"
+    play audio "sfx/slideup.mp3"
     hide fawnpaw_ad1 with moveoutright
     c "Tch. Whatever. I don't know why I even bother."
+    play audio "sfx/slideup.mp3"
     hide cloverpaw_ad1 with moveoutright
     r "... I expected more from you."
+    play audio "sfx/slideup.mp3"
     hide redpaw_ad1 with moveoutleft
-    t "Young cats sure are dramatic."
+    t "Young cats sure are dramatic, these days."
+    t "Though, I guess I can't blame them ..."
+    t "Growing up in times like these would put me on edge, too."
     if quest_crocus.started:
         show screen ad_juniper
     call screen gameUI

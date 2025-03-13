@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/apprentices_den.rpy", line 120: Captions and say menuitems may not exist in the same menu.
-    "How would you like to proceed?"
-                                    ^
+File "game/scripts/game_content/medicine_den.rpy", line 39: play requires a file
+    play music 
+               ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Mon Mar 10 18:26:18 2025
+Wed Mar 12 17:38:50 2025

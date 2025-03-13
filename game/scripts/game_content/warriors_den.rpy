@@ -14,6 +14,7 @@ label wd1_take_nesting:
     play audio "sfx/plant_correct.mp3"
     hide screen dapple_nest
     scene warriors_den_empty with fade
+    play sound "sfx/game_tip.mp3"
     "You picked up the {b}nesting materials.{/b}"
     $ quest_nesting_material.completed = True
     $ quest_nesting_material.started = False

@@ -1,44 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/hunting_patrol.rpy", line 14, in script call
-    call patrol_select from _call_patrol_select
-  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
-    call patrol_select from _call_patrol_select_2
-  File "game/scripts/game_content/hunting_patrol.rpy", line 67, in script call
-    call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 67, in script call
-    call patrol_select from _call_patrol_select_1
-  File "game/scripts/defines/hunting.rpy", line 23, in script
-    python:
-  File "game/scripts/defines/hunting.rpy", line 27, in <module>
-    renpy.jump(hunting_patrols.pop(0))
-IndexError: pop from empty list
+  File "game/scripts/game_content/leaders_den.rpy", line 63, in script
+    if not quest.crocus.started:
+  File "game/scripts/game_content/leaders_den.rpy", line 63, in <module>
+    if not quest.crocus.started:
+NameError: name 'quest' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/hunting_patrol.rpy", line 14, in script call
-    call patrol_select from _call_patrol_select
-  File "game/scripts/game_content/hunting_patrol.rpy", line 71, in script call
-    call patrol_select from _call_patrol_select_2
-  File "game/scripts/game_content/hunting_patrol.rpy", line 67, in script call
-    call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 67, in script call
-    call patrol_select from _call_patrol_select_1
-  File "game/scripts/defines/hunting.rpy", line 23, in script
-    python:
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/scripts/defines/hunting.rpy", line 27, in <module>
-    renpy.jump(hunting_patrols.pop(0))
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\revertable.py", line 90, in do_mutation
-    return method(self, *args, **kwargs)
-IndexError: pop from empty list
+  File "game/scripts/game_content/leaders_den.rpy", line 63, in script
+    if not quest.crocus.started:
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1849, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scripts/game_content/leaders_den.rpy", line 63, in <module>
+    if not quest.crocus.started:
+NameError: name 'quest' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Mon Mar 10 22:22:06 2025
+Wed Mar 12 20:10:17 2025

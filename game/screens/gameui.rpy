@@ -8,9 +8,9 @@ screen gameUI:
         hover "gui/button/camp_hover.png"
         hover_sound "audio/sfx/button_hover_5.mp3"
         activate_sound "audio/sfx/button_click_2.mp3"
-        if currently_in == "burial":
+        if currently_in == "bury":
             action Jump("cl1")
-        if currently_in == "outside":
+        elif currently_in == "outside":
             action Jump("cl2")
         else:
             action [Show("Camp")]

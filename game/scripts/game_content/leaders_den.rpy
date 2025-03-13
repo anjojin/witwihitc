@@ -34,21 +34,22 @@ label ld1:
         t "Rumor has it Briarstar is on her last two lives. At the gathering in greenleaf, she was so proud to report that she had all nine ..."
         t "I can't remember the last time I saw her eating a piece of prey."
         t "Come to think of it, I can't remember the last time I saw her at all ..."
-        show briarstar_standing with fade
         play sound "sfx/rustle.mp3"
         play audio "sfx/impact.mp3"
+        show briarstar_standing with fade
         b "Talonclaw."
         t "Oh!"
         b "I thought I heard somecat talking out here."
         t "I'm so sorry to disturb you, Briarstar. I don't know what I was --"
-        b "No need to explain yourself."
-        b "Sometimes, there's a certain comfort in hearing one's thoughts spoken aloud."
-        b "Why don't you step inside my den with me for a moment? Your paws must be freezing."
-        t "That's very kind of you, but you really don't have to --"
-        b "Please. I insist. Follow me."
-        hide briarstar_standing with fade
+        b "No need to explain yourself. I understand perfectly."
+        b "Sometimes, there's a certain comfort in hearing one's own thoughts spoken aloud."
+        b "Why don't you step inside my den for a moment? Your paws must be freezing."
+        t "That's very kind of you, Briarstar, but you really don't have to --"
+        b "Please. I insist."
+        b "Follow me."
         play sound "sfx/rustle.mp3"
         play audio "sfx/impact.mp3"
+        hide briarstar_standing with fade
         t "... Okay?"
         play sound "sfx/rustle.mp3"
         play audio "sfx/impact.mp3"
@@ -59,6 +60,11 @@ label ld1_inside:
         stop music fadeout 2.0
         play music "music/ES_Little Light - Wanderer's Trove.mp3" loop
         show briarstar
+        if not quest_crocus.started:
+            b "I hope this moss is soft enough for your liking."
+            t "Of course it is, Briarstar. Thank you."
+            t "What a fascinating den you have."
+            b "Oh. Yes."
         b "It stays quite warm in here all year round, so sometimes, peculiar things will grow."
         b "Mostly mushrooms and other fungi; though, once, the most precious white lily blossomed in that corner right over there."
         t "Is that what you named your daughter after?"
@@ -72,6 +78,7 @@ label ld1_inside:
         b "Thank you, Talonclaw."
         b "For helping me discover something new about myself."
         t "... Happy to help."
+        b "..."
         b "Talonclaw?"
         t "Yes?"
         if quest_crocus.started:
@@ -87,7 +94,8 @@ label ld1_inside:
         if quest_gather_herbs.started:
             b "If he stands any chance at beating greencough, it's imperative that he keeps his strength up."
             play sound "sfx/game_tip.mp3"
-            "{b}Game Tip:{/b} hunting for Pouncetail means Talonclaw will no longer be able to complete the following quest: {b}Gather Herbs.{/b}"
+            "{b}Game Tip:{/b} Hunting for Pouncetail means Talonclaw will no longer be able to complete the following quest: {b}Gather Herbs.{/b}"
+            play sound "sfx/game_tip.mp3"
             menu:
                 "How would you like to proceed?"
                 "Stick with gathering herbs":
@@ -142,20 +150,20 @@ label ld1_accept:
     call screen gameUI
 
 label ld1_decline:
-    t "I'm sorry, Briarstar. Hunting's been poor."
+    t "I'm sorry, Briarstar. Hunting's been poor lately."
     t "There's no guarantee that I'll bring anything back to camp today, let alone have enough to spare for Pouncetail."
     t "Even if I did, the medicine cats would have a fit if I broke their quarantine."
     t "They're pretty strict about keeping the sick cats away from the healthy ones."
     b "..."
     b "... Of course."
     b "How foolish of me."
-    b "I wasn't aware that cats were being quarantined."
+    b "I wasn't aware that cats were being quarantined, at all."
     t "... Locustleaf implemented the policy a few moons ago."
     b "A few moons ago?"
     b "My apologies. I seem to be losing track of time ..."
     t "... When was the last time you ate something, Briarstar?"
     b "..."
-    b "You have more pressing things to worry about."
+    b "You have more pressing matters to worry about."
     t "You're our leader. The Clan needs you --"
     b "Prey should go to cats who don't have more than one life to lose."
     b "That's my final opinion on the matter."
@@ -201,6 +209,7 @@ label ld1_stick_sunshadow:
     t "I'm sorry. I can't just abandon my friend."
     b "..."
     b "... You are loyal to him."
+    t "Yes."
     b "More loyal to him than you are to your own Clan."
     b "Watch your back, Talonclaw."
     b "Loyalty like that is often rewarded with betrayal."
