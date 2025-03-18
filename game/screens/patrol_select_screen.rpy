@@ -1,61 +1,13 @@
-screen PatrolSelect():
-    style_prefix "patrol_select"
-    tag menu
-    add "bg/patrol_select_bg.png"
-    imagebutton:
-        xalign 0.0
-        yalign 0.0
-        xoffset 30
-        yoffset 30
-        auto "gui/button/back_%s.png"
-        action Return()
-
-    hbox:
-        xalign 0.5
-        ypos 255    
-        imagebutton:
-            xalign 0.5
-            xmargin 50
-            idle "gui/button/hunting_idle.png"
-            hover "gui/button/hunting_hover.png"
-            action [SetVariable("config.intra_transition", None), ShowMenu("HuntingSelected")] 
-
-        imagebutton:
-            xalign 0.5
-            idle "gui/button/herb_idle.png"
-            hover "gui/button/herb_hover.png"
-            action [SetVariable("config.intra_transition", None), ShowMenu("HerbSelected")]
-
-    hbox:
-        xpos 285
-        ypos 562
-        xmaximum 1300
-        ymaximum 871
-        frame:
-            background Solid("#af9c6b")
-            xmargin 30
-            ymargin 45
-            text "Select the type of patrol you would like to go on. Keep in mind, Talonclaw does not have the strength to do so more than once." 
-    
-    add "gui/button/proceed_unavailable.png" xpos 433 ypos 895
-    add "gui/button/do_not_proceed_unavailable.png" xpos 1096 ypos 895
-
-
 screen HuntingSelected():
     tag menu
     style_prefix "hunting_select"
     add "bg/patrol_select_bg.png"
-    imagebutton:
-        xalign 0.0
-        yalign 0.0
-        xoffset 30
-        yoffset 30
-        auto "gui/button/back_%s.png"
-        action Return()
-   
+
     imagebutton:
         xpos 433
         ypos 895
+        hover_sound "audio/sfx/button_hover_1.mp3"
+        activate_sound "audio/sfx/camp_click.mp3"
         idle "gui/button/proceed_idle.png"
         hover "gui/button/proceed_hover.png"
         action Jump("hunting_start")
@@ -63,9 +15,11 @@ screen HuntingSelected():
     imagebutton:
         xpos 1096
         ypos 895
+        hover_sound "audio/sfx/button_hover_1.mp3"
+        activate_sound "audio/sfx/button_click_2.mp3"
         idle "gui/button/do_not_proceed_idle.png"
         hover "gui/button/do_not_proceed_hover.png"
-        action ShowMenu("PatrolSelect")
+        action Return()
 
     hbox:
         xpos 285
@@ -76,10 +30,44 @@ screen HuntingSelected():
             background Solid("#af9c6b")
             xmargin 45
             ymargin 45
-            text "Hunting selected."
+            text "Talonclaw is currently committed to a {b}hunting patrol.{/b}"
 
-    add "gui/button/hunting_hover.png" xpos 707 ypos 255
-    add "gui/button/herb_unavailable.png" xpos 1010 ypos 255
+    add "gui/button/hunting_idle.png" xalign 0.5 ypos 255
+
+screen AppHuntingSelected():
+    tag menu
+    style_prefix "apphunting_select"
+    add "bg/patrol_select_bg.png"
+   
+    imagebutton:
+        xpos 433
+        ypos 895
+        hover_sound "audio/sfx/button_hover_1.mp3"
+        activate_sound "audio/sfx/camp_click.mp3"
+        idle "gui/button/proceed_idle.png"
+        hover "gui/button/proceed_hover.png"
+        action Jump("hunting_start")
+
+    imagebutton:
+        xpos 1096
+        ypos 895
+        hover_sound "audio/sfx/button_hover_1.mp3"
+        activate_sound "audio/sfx/button_click_2.mp3"
+        idle "gui/button/do_not_proceed_idle.png"
+        hover "gui/button/do_not_proceed_hover.png"
+        action Return()
+    hbox:
+        xpos 285
+        ypos 562
+        xmaximum 1430
+        ymaximum 871
+        frame:
+            background Solid("#af9c6b")
+            xmargin 45
+            ymargin 45
+            text "Talonclaw is committed to a {b}hunting patrol with the apprentices.{/b}"
+
+    add "gui/button/hunting_idle.png" xalign 0.5 ypos 255
 
 screen HerbSelected():
     tag menu
@@ -87,16 +75,10 @@ screen HerbSelected():
     add "bg/patrol_select_bg.png"
 
     imagebutton:
-        xalign 0.0
-        yalign 0.0
-        xoffset 30
-        yoffset 30
-        auto "gui/button/back_%s.png"
-        action Return()
-
-    imagebutton:
         xpos 433
         ypos 895
+        hover_sound "audio/sfx/button_hover_1.mp3"
+        activate_sound "audio/sfx/camp_click.mp3"
         idle "gui/button/proceed_idle.png"
         hover "gui/button/proceed_hover.png"
         action NullAction
@@ -104,9 +86,11 @@ screen HerbSelected():
     imagebutton:
         xpos 1096
         ypos 895
+        hover_sound "audio/sfx/button_hover_1.mp3"
+        activate_sound "audio/sfx/button_click_2.mp3"
         idle "gui/button/do_not_proceed_idle.png"
         hover "gui/button/do_not_proceed_hover.png"
-        action ShowMenu("PatrolSelect")
+        action Return()
 
     hbox:
         xpos 285
@@ -117,10 +101,9 @@ screen HerbSelected():
             background Solid("#af9c6b")
             xmargin 45
             ymargin 45
-            text "Herb gathering selected."
+            text "Talonclaw is currently committed to an {b}herb gathering patrol.{/b}"
     
-    add "gui/button/hunting_unavailable.png" xpos 707 ypos 255
-    add "gui/button/herb_hover.png" xpos 1010 ypos 255
+    add "gui/button/herb_idle.png" xalign 0.5 ypos 255
 
 screen PostPatrolSelect:
     tag menu
@@ -189,5 +172,5 @@ style hunting_select_text:
 style herb_select_text:
     color "#1c1503"
 
-style patrol_select_text:
+style apphunting_select_text:
     color "#1c1503"

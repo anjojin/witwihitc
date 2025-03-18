@@ -15,3 +15,5 @@ default preferences.text_cps = 0
 default burial_rites = False
 
 default final_game_screen = False
+
+default eaten_prey = False

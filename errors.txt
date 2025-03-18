@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/medicine_den.rpy", line 39: play requires a file
-    play music 
-               ^
+File "game/scripts/game_content/hunting_patrol.rpy", line 351: expected statement.
+    scene_counter +=1
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Wed Mar 12 17:38:50 2025
+Sun Mar 16 17:31:26 2025

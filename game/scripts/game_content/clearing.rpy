@@ -37,7 +37,8 @@ label click_freshkill:
     hide screen freshkill
     scene empty freshkill day
     show screen gameUI
-    t "I hope the freshkill pile won't be empty for long."
+    t "I hope the freshkill pile fills up soon."
+    t "Though, even if it does, the prey never seems to last long ..."
     scene clearing bg with fade
     call screen gameUI
 
@@ -46,6 +47,7 @@ label cl2:
     show screen gameUI
     stop music fadeout 0.5
     play music "music/ES_Dreams of a Life - Damon Greene.mp3"
-    t "There's no one in the clearing."
+    t "The clearing is empty. Everycat's already gone out for the day."
+    t "I'd better get a move on, myself, while there's still some light to lose."
     show screen freshkill
     call screen gameUI

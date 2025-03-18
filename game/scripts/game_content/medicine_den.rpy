@@ -174,6 +174,17 @@ label md1_click_berries:
 label md2:
     if quest_medical_opinion.started:
         jump md1
+    elif nursery_visited==False:
+        jump md1
+    elif nursery_visited==True and not quest_medical_opinion.started or quest_medical_opinion.completed:
+        stop music fadeout 0.5
+        play music "music/ES_Enough by Now - Headlund.mp3" loop
+        t "I really hope I'm right about Featherkit ..."
+        t "If her cough turns out to be serious, Beetle can always fetch Locustleaf herself."
+        t "His den is only a few paces away from the nursery, after all."
+        t "I'm a warrior. It's my job to hunt for the Clan. Not worry about sick kits."
+        t "Yep. Definitely not worried."
+        t "Definitely not ..."
     else:
         stop music fadeout 0.5
         play music "music/ES_Enough by Now - Headlund.mp3" loop

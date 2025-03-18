@@ -1,28 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/leaders_den.rpy", line 63, in script
-    if not quest.crocus.started:
-  File "game/scripts/game_content/leaders_den.rpy", line 63, in <module>
-    if not quest.crocus.started:
-NameError: name 'quest' is not defined
+  File "game/scripts/game_content/hunting_patrol.rpy", line 57, in script call
+    call patrol_select from _call_patrol_select
+  File "game/scripts/game_content/hunting_patrol.rpy", line 187, in script call
+    call hunting_call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 368, in script call
+    call patrol_select from _call_patrol_select_1
+  File "game/scripts/game_content/hunting_patrol.rpy", line 147, in script call
+    call hunting_call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 368, in script call
+    call patrol_select from _call_patrol_select_1
+  File "game/scripts/game_content/hunting_patrol.rpy", line 263, in script
+    $ scene_counter += 1
+  File "game/scripts/game_content/hunting_patrol.rpy", line 263, in <module>
+    $ scene_counter += 1
+NameError: name 'scene_counter' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/leaders_den.rpy", line 63, in script
-    if not quest.crocus.started:
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1849, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/scripts/game_content/leaders_den.rpy", line 63, in <module>
-    if not quest.crocus.started:
-NameError: name 'quest' is not defined
+  File "game/scripts/game_content/hunting_patrol.rpy", line 57, in script call
+    call patrol_select from _call_patrol_select
+  File "game/scripts/game_content/hunting_patrol.rpy", line 187, in script call
+    call hunting_call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 368, in script call
+    call patrol_select from _call_patrol_select_1
+  File "game/scripts/game_content/hunting_patrol.rpy", line 147, in script call
+    call hunting_call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 368, in script call
+    call patrol_select from _call_patrol_select_1
+  File "game/scripts/game_content/hunting_patrol.rpy", line 263, in script
+    $ scene_counter += 1
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/game_content/hunting_patrol.rpy", line 263, in <module>
+    $ scene_counter += 1
+NameError: name 'scene_counter' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Wed Mar 12 20:10:17 2025
+Mon Mar 17 20:39:31 2025
