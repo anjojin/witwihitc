@@ -1,46 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/hunting_patrol.rpy", line 57, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 69, in script call
     call patrol_select from _call_patrol_select
-  File "game/scripts/game_content/hunting_patrol.rpy", line 187, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 317, in script call
     call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 368, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 563, in script call
     call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 147, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 83, in script call
     call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 368, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 563, in script call
     call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 263, in script
-    $ scene_counter += 1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 263, in <module>
-    $ scene_counter += 1
-NameError: name 'scene_counter' is not defined
+  File "game/scripts/game_content/hunting_patrol.rpy", line 106, in script call
+    call hunting_call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 897, in script
+    hide redpaw_right with moveoutright
+ScriptError: could not find label 'patrol_over_screen'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/hunting_patrol.rpy", line 57, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 69, in script call
     call patrol_select from _call_patrol_select
-  File "game/scripts/game_content/hunting_patrol.rpy", line 187, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 317, in script call
     call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 368, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 563, in script call
     call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 147, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 83, in script call
     call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 368, in script call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 563, in script call
     call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 263, in script
-    $ scene_counter += 1
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/scripts/game_content/hunting_patrol.rpy", line 263, in <module>
-    $ scene_counter += 1
-NameError: name 'scene_counter' is not defined
+  File "game/scripts/game_content/hunting_patrol.rpy", line 106, in script call
+    call hunting_call
+  File "game/scripts/game_content/hunting_patrol.rpy", line 897, in script
+    hide redpaw_right with moveoutright
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1705, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'patrol_over_screen'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Mon Mar 17 20:39:31 2025
+Wed Mar 19 18:09:08 2025

@@ -13,16 +13,31 @@ image briarstar_standing = At("char/briarstar_standing.png", sprite_highlight('b
 
 define fa = Character("Fawnpaw", callback=name_callback, cb_name='fawn', color="#9f5d16")
 image fawnpaw_ad1 = At("char/fawnpaw ad1.png", sprite_highlight('fawn'))
+image fawnpaw_far_right = At("char/fawnpaw all.png", sprite_highlight('fawn'))
+image fawnpaw_stand_center = At("char/fawnpaw center.png", sprite_highlight('fawn'))
+image fawnpaw_right = At("char/fawnpaw right.png", sprite_highlight('fawn'))
+image fawnpaw_roll_center = At("char/fawnpaw roll center.png", sprite_highlight('fawn'))
 
 define r = Character("Redpaw", callback=name_callback, cb_name='red', color="#9f1616")
 image redpaw_ad1 = At("char/redpaw ad1.png", sprite_highlight('red'))
+image redpaw_left = At("char/redpaw left.png", sprite_highlight('red'))
+image redpaw_right = At("char/redpaw sit right.png", sprite_highlight('red'))
+image redpaw_center = At("char/redpaw center.png", sprite_highlight('red'))
 
 define c = Character("Cloverpaw", callback=name_callback, cb_name='clover', color="#274f23")
 image cloverpaw_ad1 = At("char/cloverpaw ad1.png", sprite_highlight('clover'))
+image cloverpaw_roll_right = At("char/cloverpaw roll right.png", sprite_highlight('clover'))
+image cloverpaw_sit_right = At("char/cloverpaw right.png", sprite_highlight('clover'))
+image cloverpaw_roll_left = At("char/cloverpaw all.png", sprite_highlight('clover'))
+image cloverpaw_sit_left = At("char/cloverpaw left.png", sprite_highlight('clover'))
+image cloverpaw_center = At("char/cloverpaw center.png", sprite_highlight('clover'))
 
 define li = Character("Lilypaw", callback=name_callback, cb_name='lily', color="#4f233c")
 image lilypaw_entrace = At("char/lilypaw ad1 entrance.png", sprite_highlight('lily'))
 image lilypaw_ad1 = At("char/lilypaw ad1.png", sprite_highlight('lily'))
+image lilypaw_stand_left = At("char/lilypaw all.png", sprite_highlight('lily'))
+image lilypaw_sit_left = At("char/lilypaw sit left.png", sprite_highlight('lily'))
+image lilypaw_center = At("char/lilypaw center.png", sprite_highlight('lily'))
 
 define cr = Character("Crowkit", callback=name_callback, cb_name='crow', color="#1e1e1e")
 image crowkit = At("char/crowkit.png", sprite_highlight('crow'))

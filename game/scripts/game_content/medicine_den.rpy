@@ -139,11 +139,7 @@ label md1_accept_challenge:
 
 label md1_give_up:
     t "..."
-    t "... I don't believe this."
-    t "How can this be happening?"
-    t "What did any of us do to deserve this?"
-    l "Believe me, when I find out, you'll be the first to know."
-    l "I'd just put it out of your mind. Focus on the things you can still change."
+    l "That's what I thought."
     l "That way, you ... you ... *koff* *koff*"
     t "!!!"
     jump md1_end
@@ -182,8 +178,8 @@ label md2:
         t "I really hope I'm right about Featherkit ..."
         t "If her cough turns out to be serious, Beetle can always fetch Locustleaf herself."
         t "His den is only a few paces away from the nursery, after all."
-        t "I'm a warrior. It's my job to hunt for the Clan. Not worry about sick kits."
-        t "Yep. Definitely not worried."
+        t "I'm a warrior. It's my job to hunt for the Clan. Not worry about kits with the sniffles."
+        t "Yup. Definitely not worried."
         t "Definitely not ..."
     else:
         stop music fadeout 0.5

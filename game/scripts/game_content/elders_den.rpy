@@ -20,6 +20,7 @@ label ed1_take_crocus:
     scene elders_den_bg with fade
     play audio "sfx/plant_correct.mp3"
     play sound "sfx/game_tip.mp3"
+    $ talon_sun_bonus += 1
     "You picked up the {b}crocus.{/b}"
     t "Crocuses. Probably best not to tell Sunshadow where they came from."
     t "How cruel, that something so beautiful can grow in a place like this."
