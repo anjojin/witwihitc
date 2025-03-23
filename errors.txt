@@ -2,69 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/hunting_patrol.rpy", line 90: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
+File "game/screens/patrol_select_screen.rpy", line 13: 'unavailble' is not a keyword argument or valid child of the imagebutton statement.
+    unavailble "gui/button/proceed_unavailable.png"
+              ^
 
-File "game/scripts/game_content/hunting_patrol.rpy", line 113: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 136: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 160: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 184: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 208: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 232: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 257: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 293: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 329: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 365: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 396: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 430: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 461: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 496: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
-
-File "game/scripts/game_content/hunting_patrol.rpy", line 527: expected 'label_name' not found.
-    jump [training_with.pop()]
-        ^
+File "game/screens/patrol_select_screen.rpy", line 58: 'unavailble' is not a keyword argument or valid child of the imagebutton statement.
+    unavailble "gui/button/proceed_unavailable.png"
+              ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Wed Mar 19 13:42:12 2025
+Sun Mar 23 13:14:31 2025

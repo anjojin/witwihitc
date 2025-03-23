@@ -35,12 +35,7 @@ screen Camp():
         hover_sound "audio/sfx/button_hover_1.mp3"
         activate_sound "audio/sfx/camp_click.mp3"
         if already_patrolled==False:
-            if quest_babysitting.started:
-                action ShowMenu("AppHuntingSelected")
-            elif quest_gather_herbs.started:
-                action ShowMenu("HerbSelected")
-            else:
-                action ShowMenu("HuntingSelected")
+                action ShowMenu("PatrolSelect")
         else:
             action ShowMenu("PostPatrolSelect")
 

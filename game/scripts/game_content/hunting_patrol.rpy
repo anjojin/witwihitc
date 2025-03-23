@@ -10,21 +10,22 @@ label hunting_start:
         $ talon_chance = 13 - talon_clan_bonus
     scene patrol bg with fade
     stop music fadeout 1.0
-    play audio "ambience/ES_Bieszczady Forest, Winter, Silence - Epidemic Sound.mp3" loop
     play music "music/ES_Naranjas en Diciembre - Vendla.mp3" loop
     if quest_babysitting.started:
+        play audio "sfx/slideup.mp3"
         show cloverpaw_roll_right with easeinright
         c "Finally, fresh air!"
-        c "That's it, I'm never going back to camp. This is the start of my new life as a rogue."
+        c "That's it, I'm never going back to camp. This is officially the start of my new life as a rogue."
         c "From now on, call me ... 'Clovetopher.'"
+        play audio "sfx/slideup.mp3"
         show redpaw_left with easeinleft
         r "Could you stop kidding around?"
         r "If we don't take this seriously, the warriors are never going to trust us with another hunt."
-        hide cloverpaw_roll_right
-        show cloverpaw_sit_right
         c "Hmph. You clan cats are always so uptight."
         t "Alright, everyone, focus up. We're about to get started."
-        hide cloverpaw_sit_right with moveoutright
+        play audio "sfx/slideup.mp3"
+        hide cloverpaw_roll_right with moveoutright
+        play audio "sfx/slideup.mp3"
         hide redpaw_left with moveoutleft
     else:
         t "So cold ... It feels like my paws are about to snap off."
@@ -35,7 +36,7 @@ label hunting_start:
             t "Still, Briarstar is counting on me to bring something back for Pouncetail. The whole Clan is."
             t "I'd better get a move on. For everycat's sake."
         else:
-            t "Let's hope I manage to catch something that makes all this worth it."
+            t "Let's hope I manage to catch something that's worth all this trouble."
 
 label hunting_instructions:    
     play sound "sfx/game_tip.mp3"
@@ -46,7 +47,9 @@ label hunting_instructions:
     "Once he does, he can either {b}proceed{/b} or {b}not proceed{/b} to attempt the catch."
     play sound "sfx/game_tip.mp3"
     if quest_babysitting.started:
-        "If he {b}proceeds,{/b} he will either succeed at making the catch, or fail. If he {b}does not proceed,{/b} one of the {b}apprentices{/b} will make the attempt."
+        "If he {b}proceeds,{/b} he will either succeed at making the catch, or fail."
+        play sound "sfx/game_tip.mp3"
+        "If he {b}does not proceed,{/b} one of the {b}apprentices{/b} will make the attempt."
     else:
         "If he {b}proceeds,{/b} he will either succeed at making the catch, or fail. If he {b}does not proceed,{/b} the catch will be skipped over."
     play sound "sfx/game_tip.mp3"
@@ -80,16 +83,16 @@ label hunting_1:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You pounce, snapping a small mouse up your jaws!"
-                call hunting_call
+                call hunting_call from _call_hunting_call
             else:
                 play sound "sfx/prey_minor_loss.mp3"
-                "You poke your nose into the leaves, only to find the scent of old prey. Your ears must have been playing tricks on you."
-                call hunting_call
+                "You poke your nose into the leaves, but there's nothing there. Your ears must have been playing tricks on you."
+                call hunting_call from _call_hunting_call_1
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             "It must just be the wind. You decide to keep moving."
-            call hunting_call
+            call hunting_call from _call_hunting_call_2
 
 label hunting_2:
     $ prey_potential = 1
@@ -103,16 +106,16 @@ label hunting_2:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You manage to track the scent to a small burrow, where you ambush the rodent, killing it in one swift bite."
-                call hunting_call
+                call hunting_call from _call_hunting_call_3
             else:
                 play sound "sfx/prey_minor_loss.mp3"
-                "You track the scent in circles before finally giving up. The mouse is long gone."
-                call hunting_call
+                "You track the scent in circles before finally giving up. It's clear that the mouse is long gone."
+                call hunting_call from _call_hunting_call_4
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
-            "No use trying to track something so small. You decide to look elsewhere."
-            call hunting_call
+            "No use trying to track something so tiny. You decide to look elsewhere."
+            call hunting_call from _call_hunting_call_5
 
 label hunting_3:
     $ prey_potential = 1
@@ -126,17 +129,17 @@ label hunting_3:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You make quick work of the mouse, careful not to damage its tiny body as you bury it nearby."
-                call hunting_call
+                call hunting_call from _call_hunting_call_6
             else:
                 play sound "sfx/prey_minor_loss.mp3"
                 "You kill the mouse but, in the process, discover it's barely worth a mouthful of prey. You decide to bury it and move on."
-                call hunting_call
+                call hunting_call from _call_hunting_call_7
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
-                "This mouse isn't big enough to feed a tiny kitten. Best not to waste your time."
-                call hunting_call
+                "This mouse isn't even big enough to feed a tiny kitten. Best not to waste your time."
+                call hunting_call from _call_hunting_call_8
 
 label hunting_4:
     $ prey_potential = 1
@@ -150,17 +153,17 @@ label hunting_4:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You dive into the branches, emerging with a tiny sparrow. It's not much, but it's better than nothing."
-                call hunting_call
+                call hunting_call from _call_hunting_call_9
             else:
                 play sound "sfx/prey_minor_loss.mp3"
                 "You investigate, but no matter how hard you look, the branches remain curiously empty. Your eyes must have been playing tricks on you."
-                call hunting_call
+                call hunting_call from _call_hunting_call_10
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
                 "Your eyes must be playing tricks on you. You decide to keep looking."
-                call hunting_call
+                call hunting_call from _call_hunting_call_11
 
 label hunting_5:
     $ prey_potential = 1
@@ -174,17 +177,17 @@ label hunting_5:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You flush the mole out of its burrow, dispatching it in one swift pounce. It's smaller than you expected, but still good."
-                call hunting_call
+                call hunting_call from _call_hunting_call_12
             else:
                 play sound "sfx/prey_minor_loss.mp3"
-                "You dig until your paws are sore, but by the time you break ground, you can't detect the mole anymore. It seems it's already moved on."
-                call hunting_call
+                "You dig until your paws are sore, but by the time you break ground, the mole is already gone."
+                call hunting_call from _call_hunting_call_13
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
                 "There's no use trying to hunt something you can't even see. You decide to keep looking."
-                call hunting_call
+                call hunting_call from _call_hunting_call_14
 
 label hunting_6:
     $ prey_potential = 1
@@ -198,17 +201,17 @@ label hunting_6:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You launch yourself at the sparrow, killing it in a single strike. It should be good for a few mouthfulls of prey."
-                call hunting_call
+                call hunting_call from _call_hunting_call_15
             else:
                 play sound "sfx/prey_minor_loss.mp3"
                 "Just as you're about to pounce, the sparrow is startled off by a gust of wind."
-                call hunting_call
+                call hunting_call from _call_hunting_call_16
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
                 "The sparrow is startled off by a gust of wind."
-                call hunting_call
+                call hunting_call from _call_hunting_call_17
 
 label hunting_7:
     $ prey_potential = 1
@@ -222,17 +225,17 @@ label hunting_7:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You track the source of the feather to a plump male cardinal. Gathering your haunches, you make quick work of it."
-                call hunting_call
+                call hunting_call from _call_hunting_call_18
             else:
                 play sound "sfx/prey_minor_loss.mp3"
-                "Try as you might, you can't track down the source of the feather. The cardinal is long gone."
-                call hunting_call
+                "Try as you might, you can't track down the source of the feather."
+                call hunting_call from _call_hunting_call_19
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
-                "A strong wind carries off the feather, vanishing from sight."
-                call hunting_call
+                "A strong wind carries off the feather."
+                call hunting_call from _call_hunting_call_20
 
 
 label hunting_8:
@@ -246,18 +249,18 @@ label hunting_8:
             if h1_int > talon_chance:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
-                "You dive for the chickadee, silencing its call. It takes you a few moments to clear the feathers from your tongue."
-                call hunting_call
+                "You dive for the chickadee, purring as the prey-taste floods your tongue."
+                call hunting_call from _call_hunting_call_21
             else:
                 play sound "sfx/prey_minor_loss.mp3"
                 "You dive for the chickadee, but your claws close around empty air as it flutters away."
-                call hunting_call
+                call hunting_call from _call_hunting_call_22
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
-                "The chickadee quickly flits away."
-                call hunting_call
+                "The chickadee flits away."
+                call hunting_call from _call_hunting_call_23
 
 label hunting_9:
     $ prey_potential = 1.5
@@ -272,28 +275,28 @@ label hunting_9:
                 $ prey_caught += 1
                 play sound "sfx/prey_major_win.mp3"
                 "You taste a few of the berries, and they fill you with a rush of energy. {b}(+1 Proceed){/b}"
-                "You meticulously collect the rest of the berries, forming a sizable pile to take back to camp with you."
-                call hunting_call
+                "You meticulously collect the rest, forming a sizable pile to take back to camp with you."
+                call hunting_call from _call_hunting_call_24
             elif h1_int > talon_chance:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You meticulously collect the berries, forming a sizable pile to take back to camp with you."
-                call hunting_call
+                call hunting_call from _call_hunting_call_25
             elif h1_int < 5:
                 $ proceed_counter -= 1
                 play sound "sfx/prey_major_loss.mp3"
                 "You taste a few of the berries, and they sap you of your strength, filling your throat with a horrible, sickly feeling. {b}(-1 Proceed){/b}"
-                call hunting_call
+                call hunting_call from _call_hunting_call_26
             else:
                 play sound "sfx/prey_minor_loss.mp3"
                 "After spending ages meticulously collecting the berries, you realize that these are not, in fact, the kind of berries Locustleaf told you about."
-                call hunting_call
+                call hunting_call from _call_hunting_call_27
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
-                "You decide to move on, not wanting to risk being wrong."
-                call hunting_call
+                "You decide to move on."
+                call hunting_call from _call_hunting_call_28
 
 label hunting_10:
     $ prey_potential = 1.5
@@ -308,28 +311,28 @@ label hunting_10:
                 $ prey_caught += 1
                 play sound "sfx/prey_major_win.mp3"
                 "You take a few bites of the twoleg food, purring as the delicious taste hits your tongue. {b}(+1 Proceed){/b}"
-                "You grab the container holding the rest of the food and slip out of the trap, careful not to trigger it."
-                call hunting_call
+                "You grab the container and slip out, careful not to trigger the trap."
+                call hunting_call from _call_hunting_call_29
             elif h1_int > talon_chance:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
-                "You carefully slip in and out of the trap, snagging the container of twoleg food behind you. Hopefully, your Clanmates won't turn their up their noses!"
-                call hunting_call
+                "You carefully slip in and out of the trap, snagging the container of twoleg food behind you. Hopefully, your Clanmates won't turn up their noses at it!"
+                call hunting_call from _call_hunting_call_30
             elif h1_int < 5:
                 $ proceed_counter -= 1
                 play sound "sfx/prey_major_loss.mp3"
                 "As soon as you step inside the trap, the door swings shut behind you. It takes you hours to free yourself, and by the time you do, it's nearly dark. {b}(-1 Proceed){/b}"
-                call hunting_call
+                call hunting_call from _call_hunting_call_31
             else:
                 play sound "sfx/prey_minor_loss.mp3"
-                "You slip inside the trap, but when you try to pick up the twoleg food, it spills all over the ground. It's useless to you, now."
-                call hunting_call
+                "You slip inside the trap, but when you try to pick up the twoleg food, it spills all over the ground."
+                call hunting_call from _call_hunting_call_32
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
                 "You nervously move past the trap, making a mental note to tell somecat about it later."
-                call hunting_call
+                call hunting_call from _call_hunting_call_33
 
 label hunting_11:
     $ prey_potential = 1.5
@@ -344,28 +347,28 @@ label hunting_11:
                 $ prey_caught += 1
                 play sound "sfx/prey_major_win.mp3"
                 "You scoop minnow after helpless minnow out of the stream, thrilled by your luck. {b}(+1 Proceed){/b}"
-                "You manage to collect a sizeable pile before the cold becomes too much to bare, worth at least a few mouthfulls."
-                call hunting_call
+                "You manage to collect a sizeable pile before the cold becomes too much to bare."
+                call hunting_call from _call_hunting_call_34
             elif h1_int > talon_chance:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You manage to scoop a few minnows out of the stream before the cold becomes too much to bare."
-                call hunting_call
+                call hunting_call from _call_hunting_call_35
             elif h1_int < 5:
                 $ proceed_counter -= 1
                 play sound "sfx/prey_major_loss.mp3"
                 "The minnows are too fast, and now your paws are wet and freezing. It takes hours to warm them up again, and by the time you do, it's nearly dark. {b}(-1 Proceed){/b}"
-                call hunting_call
+                call hunting_call from _call_hunting_call_36
             else:
                 play sound "sfx/prey_minor_loss.mp3"
                 "You attempt to hook the minnows, but they're deceptively fast. You decide to move on."
-                call hunting_call
+                call hunting_call from _call_hunting_call_37
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
-                "The minnows dart beneath a sheet of ice, safely out of reach."
-                call hunting_call
+                "The minnows dart beneath a sheet of ice, out of reach."
+                call hunting_call from _call_hunting_call_38
 
 label hunting_12:
     $ prey_potential = 2
@@ -379,24 +382,24 @@ label hunting_12:
                 $ prey_caught += 2
                 play sound "sfx/prey_major_win.mp3"
                 "The buzzards, docile and overfed, seem happy enough to share the kill. You tear off a huge chunk of meat, almost too large to carry back to camp."
-                call hunting_call
+                call hunting_call from _call_hunting_call_39
             else:
                 play sound "sfx/prey_major_loss.mp3"
                 "The buzzards beat you back in a swarm of beaks and wings."
                 if prey_caught == 0:
                     $ proceed_counter -= 1
-                    "You manage to escape unscathed, but exhausted. It takes you a few moments to recover from the encounter. {b}(-1 Proceed){/b}"
+                    "You manage to escape unscathed, but it takes you a few moments to recover from the encounter. {b}(-1 Proceed){/b}"
                 else:
                     $ prey_caught = 0
                     "When you return to the spot where your prey was buried, you discover all of your catches are gone."
                     t "Fox-dung!"
-                call hunting_call
+                call hunting_call from _call_hunting_call_40
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
-                "Best not to get tangled up with buzzards. You wrinkle your nose and move to a different part of the territory."
-                call hunting_call
+                "Best not to get tangled up with buzzards. You wrinkle your nose and move ahead."
+                call hunting_call from _call_hunting_call_41
 
 label hunting_13:
     $ prey_potential = 1.5
@@ -410,27 +413,27 @@ label hunting_13:
                 $ prey_caught += 2
                 play sound "sfx/prey_major_win.mp3"
                 "You carefully pick your way up the tree and ambush the nest. Two plump squirrels become your new kills."
-                call hunting_call
+                call hunting_call from _call_hunting_call_42
             elif h1_int > talon_chance:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You carefully pick your way up the tree and ambush the nest. One skinny squirrel becomes your new kill."
-                call hunting_call
+                call hunting_call from _call_hunting_call_43
             elif h1_int < 5:
                 $ proceed_counter -= 1
                 play sound "sfx/prey_major_loss.mp3"
-                "As you scramble up the tree, a dead branch gives beneath your paws. You slam to the ground, fighting for breath. {b}(-1 Proceed){/b}"
-                call hunting_call
+                "As you scramble up the tree, a dead branch gives beneath your paws. You slam to the ground, struggling to catch your breath. {b}(-1 Proceed){/b}"
+                call hunting_call from _call_hunting_call_44
             else:
                 play sound "sfx/prey_minor_loss.mp3"
                 "You carefully pick your way up the tree, only for the nest to collapse beneath your paws. It's empty."
-                call hunting_call
+                call hunting_call from _call_hunting_call_45
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
                 "You decide to move on."
-                call hunting_call
+                call hunting_call from _call_hunting_call_46
 
 
 label hunting_14:
@@ -445,8 +448,8 @@ label hunting_14:
                 $ prey_caught += 2
                 play sound "sfx/prey_major_win.mp3"
                 "You catch the hawk by surprise, startling it into the air."
-                "As it flies off, you inspect its meal: a massive squirrel, large enough to feed two warriors! It seems your courage was rewarded."
-                call hunting_call
+                "As it flies off, you inspect its meal: a massive squirrel, large enough to feed two warriors!"
+                call hunting_call from _call_hunting_call_47
             else:
                 play sound "sfx/prey_major_loss.mp3"
                 if prey_caught == 0:
@@ -454,14 +457,14 @@ label hunting_14:
                     "The furious hawk chases you across the territory, talons outstretched. By the time it leaves you alone, it's already nearly dark. {b}(-1 Proceed){/b}"
                 else:
                     $ prey_caught = 0
-                    "The furious hawk chases you across the territory, stopping to linger over where your prey was buried. To save your pelt, you're forced to abandon it."
+                    "The furious hawk chases you across the territory, lingering over where your prey was buried. To save your pelt, you're forced to abandon your catches."
                     t "Fox-dung!"
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
-                "The hawk takes off into the air, prey dangling in its talons."
-                call hunting_call
+                "The hawk takes off into the air."
+                call hunting_call from _call_hunting_call_48
 
 label hunting_15:
     $ prey_potential = 1.5
@@ -476,27 +479,27 @@ label hunting_15:
                 play sound "sfx/prey_major_win.mp3"
                 "Out of pure instinct, you leap up and grab the pigeon out of the air!"
                 "It's the fattest bird you've seen in moons. You purr, thinking of all the cats it will feed."
-                call hunting_call
+                call hunting_call from _call_hunting_call_49
             elif h1_int > talon_chance:
                 $ prey_caught += 1
                 play sound "sfx/prey_minor_win.mp3"
                 "You barely to snag the pigeon with the edge of your claw. It's a messy kill, and a lot of the meat is spoiled, but enough should be intact to feed one cat."
-                call hunting_call
+                call hunting_call from _call_hunting_call_50
             elif h1_int < 7:
                 play sound "sfx/prey_major_loss.mp3"
                 $ proceed_counter -= 1
                 "You attempt to pounce but falter, slamming into the ground hard enough to see stars. It takes you a few moments to catch your breath. {b}(-1 Proceed){/b}"
-                call hunting_call
+                call hunting_call from _call_hunting_call_51
             else:
                 play sound "sfx/prey_minor_loss.mp3"
                 "You attempt to pounce but falter, barely managing to stay upright as the pigeon whisks away into the air."
-                call hunting_call
+                call hunting_call from _call_hunting_call_52
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
                 "The pigeon whisks away into the air."
-                call hunting_call
+                call hunting_call from _call_hunting_call_53
 
 label hunting_16:
     $ prey_potential = 2
@@ -510,7 +513,7 @@ label hunting_16:
                 $ prey_caught += 2
                 play sound "sfx/prey_major_win.mp3"
                 "You wait patiently until the crow flies to the ground, then tackle it in a whirl of black feathers. It's so much prey, you can barely haul it back to camp!"
-                call hunting_call
+                call hunting_call from _call_hunting_call_54
             else:
                 play sound "sfx/prey_major_loss.mp3"
                 if prey_caught == 0:
@@ -521,13 +524,13 @@ label hunting_16:
                     $ prey_caught = 0
                     "You scrabble up the tree, but just as you're about to pounce, the crow flutters to the ground, where you see a mob of its friends surrounding your buried prey."
                     "By the time you make it down the tree, they've already taken off with your hard-earned kills, a flurry of caws in their wake."
-                call hunting_call
+                call hunting_call from _call_hunting_call_55
         "Do not proceed":
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
                 "The hawk takes off into the air, prey dangling in its talons."
-                call hunting_call
+                call hunting_call from _call_hunting_call_56
 
 label hunting_call:
     if proceed_counter==0:
@@ -618,10 +621,10 @@ label hunting_red:
     
 label hunting_lily: 
     $ h1_int = renpy.random.randint(1,20)
-    show lilypaw_center with easeinright
+    show lilypaw_center with easeinleft
     play audio "sfx/ES_Twig, Snap From Branch - Epidemic Sound.mp3"
     li "{i}*Whoosh*{/i}"
-    hide lilypaw_center with moveoutleft
+    hide lilypaw_center with moveoutright
     if prey_potential == 1:
         if h1_int > lily_hunting_chance:
             $ prey_caught += 1
@@ -672,10 +675,10 @@ label hunting_lily:
 
 label hunting_fawn: 
     $ h1_int = renpy.random.randint(1,20)
-    show fawnpaw_stand_center with easeinright
+    show fawnpaw_roll_center with easeinright
     play audio "sfx/ES_Twig, Snap From Branch - Epidemic Sound.mp3"
     fa "Mrow!"
-    hide fawnpaw_stand_center with moveoutleft
+    hide fawnpaw_roll_center with moveoutleft
     if prey_potential == 1:
         if h1_int > fawn_hunting_chance:
             $ prey_caught += 1
@@ -740,7 +743,7 @@ label red_hunting_success:
     r "Hehe ... Just doing it like we practiced."
     hide redpaw_left with moveoutleft
     hide cloverpaw_sit_right with moveoutright
-    call hunting_call
+    call hunting_call from _call_hunting_call_57
 
 label red_hunting_fail:
     show redpaw_center with easeinleft
@@ -750,14 +753,14 @@ label red_hunting_fail:
     t "It's okay. There's still plenty of daylight."
     t "Let's see what else we can find."
     hide redpaw_center with moveoutleft
-    call hunting_call
+    call hunting_call from _call_hunting_call_58
 
 label lily_hunting_success:
     show lilypaw_sit_left with easeinleft
     t "StarClan, Lilypaw, where'd you learn to pounce like that?"
     li "Heh ... I dunno ... Just my training, I guess."
     t "That's more than just training. You're a natural talent!"
-    show cloverpaw_sit_right with easeinright
+    show cloverpaw_roll_right with easeinright
     c "Yeah, don't be shy, Lilypaw!"
     c "She always does the best at our hunting practices."
     t "Is that so?"
@@ -767,50 +770,50 @@ label lily_hunting_success:
     t "You've got his blood in you, kitto. I just know he would be proud."
     li "{i}*Lilypaw beams with pride.*{/i}"
     hide lilypaw_sit_left with moveoutleft
-    hide cloverpaw_sit_right with moveoutright
-    call hunting_call
+    hide cloverpaw_roll_right with moveoutright
+    call hunting_call from _call_hunting_call_59
 
 label lily_hunting_fail:
     show lilypaw_sit_left with easeinleft
     li "..."
-    show fawnpaw_far_right with easeinright
-    fa "Aw, mouse-dung, Lilypaw, what happened? You were doing so well in hunting practice!"
     show redpaw_right with easeinright
+    show fawnpaw_right with easeinright
+    fa "Aw, mouse-dung, Lilypaw, what happened? You were doing so well in hunting practice!"
     r "I'm telling you, she's too young. This is why we shouldn't have brought her along."
     r "We're practically warriors while she's barely out of the nursery."
-    show cloverpaw_roll_left with easeinleft
+    show cloverpaw_far_right with easeinright
     c "You two mouse-brains better shut up before I claw you!"
     c "It's okay, Lilypaw. You'll get it next time."
     li "..."
-    hide cloverpaw_roll_left with moveoutleft
-    hide lilypaw_sit_left with moveoutleft
+    hide cloverpaw_far_right with moveoutright
+    hide fawnpaw_right with moveoutright
     hide redpaw_right with moveoutright
-    hide fawnpaw_far_right with moveoutright
-    call hunting_call
+    hide lilypaw_sit_left with moveoutleft
+    call hunting_call from _call_hunting_call_60
 
 label fawn_hunting_success:
-    show fawnpaw_right with easeinright
+    show fawnpaw_left with easeinleft
     fa "Haha! Yes! I did it!"
     fa "I'm going to give this one to Flipcloud. It's his favorite."
-    show redpaw_left with easeinleft
+    show redpaw_right with easeinright
     r "I always thought robins were Dad's favorite?"
     fa "Oh, yeah ... Maybe this is second favorite, then."
     r "Yeah. Well. It doesn't really matter."
     r "He's not exactly conscious to enjoy it, anyway."
-    show cloverpaw_roll_left with easeinleft
+    show cloverpaw_far_right with easeinleft
     c "Redpaw!"
     r "What? I'm just saying!"
     c "Grr! Why are you so --"
     fa "It's okay, Cloverpaw."
     fa "This will make Flipcloud feel better. I just know it."
     r "..."
-    hide cloverpaw_roll_left with moveoutleft
-    hide redpaw_left with moveoutleft
-    hide fawnpaw_right with moveoutright
-    call hunting_call
+    hide cloverpaw_far_right with moveoutleft
+    hide redpaw_right with moveoutleft
+    hide fawnpaw_left with moveoutright
+    call hunting_call from _call_hunting_call_61
 
 label fawn_hunting_fail:
-    show fawnpaw_right with easeinright
+    show fawnpaw_left with easeinleft
     fa "{i}No!!!{/i}"
     t "Whoa, Fawnpaw! Calm down! It's alright!"
     fa "It's not alright!"
@@ -821,8 +824,8 @@ label fawn_hunting_fail:
     fa "Redpaw and I haven't been allowed to visit, and StarClan knows how often they've been feeding him in there."
     fa "I just thought ... If I caught something ... Maybe it could help him get better."
     t "I'm so sorry."
-    show redpaw_left with easeinleft
-    r "Yeah, cheer up, Fawnpaw. He's so far gone, that stupid little catch probably wouldn't have made much of a difference anyway."
+    show redpaw_right with easeinright
+    r "Yeah, cheer up, Fawnpaw. Flipcloud's so far gone, that stupid little catch probably wouldn't have made much of a difference anyway."
     fa "*Gasp*"
     t "Redpaw!"
     fa "How could you say something like that?"
@@ -833,32 +836,38 @@ label fawn_hunting_fail:
     fa "........."
     fa "... Let's just keep hunting."
     t "Are you sure?"
-    fa "Would you rather just keep standing around here bickering at each other?"
+    fa "Would you rather stand around here bickering at each other?"
     fa "We're losing light. Let's go."
-    hide fawnpaw_right with moveoutright
-    hide redpaw_left with moveoutleft
-    call hunting_call
+    hide fawnpaw_left with moveoutleft
+    hide redpaw_right with moveoutright
+    call hunting_call from _call_hunting_call_62
 
 label clover_end_patrol:
+    stop music fadeout 2.0
     show lilypaw_stand_left with easeinleft
     show redpaw_right with easeinright
-    show fawnpaw_far_right with easeinright
-    fa "Wow, you're on fire, Talonclaw!"    
-    r "Yeah, leave some prey for the rest of us."
-    t "Hehe. Thanks, kittos."
+    show fawnpaw_right with easeinright
+    if prey_caught >0:
+        fa "Wow, you're on fire, Talonclaw!"    
+        r "Yeah, leave some prey for the rest of us."
+        t "Hehe. Thanks, kittos."
+    else:
+        fa "I guess my mentor wasn't wrong. Prey really is scarce out here ..."
+        t "Don't give up yet. We still have a little time left to turn things around."
     t "Say, where's Cloverpaw? She seemed the most excited to hunt out of any of you."
     fa "I think she's fallen behind a little."
     r "Probably too busy chasing her own tail to keep up ..."
     fa "Oh, here she comes, now!"
-    show cloverpaw_sit_left with easeinleft
+    show cloverpaw_stand_left with easeinleft
     fa "Hey, Cloverpaw!"
     c "{i}*Pant* ... *Pant* ...{/i}"
     fa "Where have you been? We've been waiting on you."
     r "Yeah. You seem a little out of shape."
     c "{i}*Pant* ... *Pant* ... *Pant* ...{/i}"
     t "... Cloverpaw?"
-    stop music
     play audio "sfx/ES_Female, Single - Epidemic Sound.mp3"
+    hide cloverpaw_stand_left
+    show cloverpaw_sit_left
     c "{i}*Cough* *Cough*{/i}"
     play music "music/ES_Sweet Scent - Headlund.mp3" loop
     fa "*Gasp*"
@@ -880,27 +889,30 @@ label clover_end_patrol:
     c "{i}*Wheeze*{/i} -- W-What?! No!"
     t "Stay close, everyone."
     c "B-But --"
+    t "Especially you, Cloverpaw."
     t "We're leaving."
     c "..."
-    hide fawnpaw_far_right with moveoutright
+    hide fawnpaw_right with moveoutright
     hide redpaw_right with moveoutright
     hide cloverpaw_sit_left with moveoutleft
     hide lilypaw_stand_left with moveoutleft
     jump patrol_over_quests
 
 label clover_hunting_success:
+    stop music fadeout 2.0
     show lilypaw_stand_left with easeinleft
-    show cloverpaw_sit_left with easeinleft
+    show cloverpaw_stand_left with easeinleft
     show redpaw_right with easeinright
-    show fawnpaw_far_right with easeinright
+    show fawnpaw_right with easeinright
     c "{i}*Pant* ... *Pant* ...{/i}"
     fa "Alright, Cloverpaw!"    
     r "Not bad for a rogue, 'Clovetopher.'"
     t "Yes, Cloverpaw, very well done!"
     c "{i}*Pant* ... *Pant* ... *Pant* ...{/i}"
     t "... Cloverpaw?"
-    stop music
     play audio "sfx/ES_Female, Single - Epidemic Sound.mp3"
+    hide cloverpaw_stand_left
+    show cloverpaw_sit_left
     c "{i}*Cough* *Cough*{/i}"
     play music "music/ES_Sweet Scent - Headlund.mp3" loop
     fa "*Gasp*"
@@ -921,11 +933,11 @@ label clover_hunting_success:
     t "I'm taking you all back to camp."
     c "{i}*Wheeze*{/i} -- W-What?! No!"
     t "Gather your catches, everyone."
-    t "Except for Cloverpaw. You bury yours here."
+    t "Except you, Cloverpaw. You bury yours here."
     c "But that's perfectly good prey!"
     t "Leave it."
     c "..."
-    hide fawnpaw_far_right with moveoutright
+    hide fawnpaw_right with moveoutright
     hide redpaw_right with moveoutright
     hide cloverpaw_sit_left with moveoutleft
     hide lilypaw_stand_left with moveoutleft
@@ -946,7 +958,7 @@ label patrol_over:
                 $ eaten_prey = True
                 "Talonclaw guiltily scarfs down a piece of prey."
                 "Some energy restored, he heads back onto the territory."
-                call hunting_call
+                call hunting_call from _call_hunting_call_63
             "No":
                 jump patrol_hard_over
     else:
@@ -956,22 +968,22 @@ label patrol_hard_over:
     t "It's getting dark ... I should probably head back to camp."
 
 label patrol_over_quests:
-    play audio "quest_unlocked.mp3"
+    play sound "quest_unlocked.mp3"
     "{b}Patrol Completed.{/b}"
     if quest_babysitting.started:
         $ quest_babysitting.started = False
         $ quest_babysitting.completed = True
-        play audio "quest_unlocked.mp3"
+        play sound "quest_unlocked.mp3"
         "{b}Quest Completed:{/b} Babysitting"
     elif prey_caught > 0:
         if quest_favorite_prey.started:
             $ quest_favorite_prey.started = False
             $ quest_favorite_prey.completed= True
-            play audio "quest_unlocked.mp3"
+            play sound "quest_unlocked.mp3"
             "{b}Quest Completed:{/b} Favorite Prey"
 
 label patrol_over_prey:
-    play audio "quest_unlocked.mp3"
+    play sound "quest_unlocked.mp3"
     if prey_caught == 1:
         "You return to camp with {b}[prey_caught]{/b} piece of prey."
     else:

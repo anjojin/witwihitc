@@ -48,7 +48,7 @@ label ad1_eavesdrop:
     hide lilypaw_entrace with fade
     show cloverpaw_ad1 with easeinright
     show fawnpaw_ad1 with easeinright
-    show redpaw_ad1 with easeinleft
+    show redpaw_left with easeinleft
     show lilypaw_ad1 with easeinleft
     fa "Talonclaw!!!"
     t "Hey, kittos."
@@ -255,7 +255,7 @@ label ad1_no_finish:
     hide cloverpaw_ad1 with moveoutright
     r "... I expected more from you."
     play audio "sfx/slideup.mp3"
-    hide redpaw_ad1 with moveoutleft
+    hide redpaw_left with moveoutleft
     t "Young cats sure are dramatic, these days."
     t "Though, I guess I can't blame them ..."
     t "Growing up in times like these would put me on edge, too."

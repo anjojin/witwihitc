@@ -12,12 +12,3 @@ init python:
             self.started = started
             self.completed = completed
             self.cancelled = cancelled
-
-
-        ## This determines wheter the quest will show in the choices.
-        ## A quest will show if it is available and has not been completed.
-        @property
-        def should_show(self):
-            if self.started and not self.completed:
-                return True
-            return False

@@ -54,7 +54,7 @@ label md1:
         l "Maplebreeze is a {i}medicine cat.{/i}"
         l "If these herbs could go towards saving one life, versus saving Maplebreeze, who will go on to save dozens ..."
         l "Well, I'll let you do the math on that one."
-        l "Need I remind you how much worse things got for ThunderClan after we lost our apprentice?"
+        l "Need I remind you how much worse things got for ThunderClan after we lost our last apprentice?"
         t "..."
         t "... What if I could find more?"
         l "Excuse me?"
@@ -139,7 +139,7 @@ label md1_accept_challenge:
 
 label md1_give_up:
     t "..."
-    l "That's what I thought."
+    l "Yeah. That's what I thought."
     l "That way, you ... you ... *koff* *koff*"
     t "!!!"
     jump md1_end
@@ -154,7 +154,7 @@ label md1_end:
     t "Locustleaf --"
     l "I said, get OUT!!!"
     l "{i}*Koff* *Koff* *Koff*{/i}"
-    play sound "quest_unlocked.mp3"
+    play audio "quest_unlocked.mp3"
     "{b}Quest Completed:{/b} Medical Opinion"
     $ quest_medical_opinion.started = False
     $ quest_medical_opinion.completed = True
@@ -175,12 +175,18 @@ label md2:
     elif nursery_visited==True and not quest_medical_opinion.started or quest_medical_opinion.completed:
         stop music fadeout 0.5
         play music "music/ES_Enough by Now - Headlund.mp3" loop
+        scene med_den_ext with fade
         t "I really hope I'm right about Featherkit ..."
         t "If her cough turns out to be serious, Beetle can always fetch Locustleaf herself."
-        t "His den is only a few paces away from the nursery, after all."
+        t "The medicine den is only a few paces away from the nursery, after all."
         t "I'm a warrior. It's my job to hunt for the Clan. Not worry about kits with the sniffles."
         t "Yup. Definitely not worried."
         t "Definitely not ..."
+        if quest_crocus.started:
+            show screen md_berries
+            call screen gameUI
+        else:
+            call screen gameUI
     else:
         stop music fadeout 0.5
         play music "music/ES_Enough by Now - Headlund.mp3" loop

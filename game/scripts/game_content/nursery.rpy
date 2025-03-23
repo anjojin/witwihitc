@@ -58,9 +58,9 @@ label n1:
     be "Stormkit looks so much like her mother, don't you think?"
     t "Yes. She's beautiful."
     t "They all are."
-    be "Their father should be here to enjoy this moment. Have you seen Sunshadow today?"
+    be "Their father should be here to enjoy this moment. Have you seen Sunshadow anywhere?"
     t "Er, Sunshadow is ... out."
-    be "Oh, really? Out where? On patrol?"
+    be "Out where? On patrol?"
     t "... Out digging a grave for Dapplefeather."
     be "Tch."
     be "Do you hear that, little ones? Your father must be the biggest fool in all of ThunderClan."
@@ -262,21 +262,24 @@ label n2_sun_point:
 
 label n2_white_lie:
     $ talon_clan_bonus += 2
-    t "He said that Featherkit will be fine, as long as she gets the proper herbs."
+    t "He said that Featherkit will be fine, as long as she gets the herbs she needs."
     if quest_gather_herbs.started:
         t "I'm going out to fetch her some, now."
     be "Good. You should hurry. It's not just Featherkit, anymore."
-    be "Willowkit's started wheezing, too."
+    be "Willowkit's developed a wheeze now, too."
     t "W-What? Already? I was only gone a few moments!"
     t "Should we quarantine them? Separate them from the rest of their siblings?"
-    be "Separate them how? You want me to move her to the medicine den, with the rest of the breathing corpses?"
-    be "Why don't I just go ahead and throw her onto the body pile, while I'm at it?"
+    be "Separate them how? You want me to move them to the medicine den all by themselves?"
+    be "Why don't I just go ahead and throw them onto the body pile, while I'm at it?"
     t "... I'm sorry."
     be "...*Sigh*"
     be "It's alright."
     be "Once they get their herbs, it's all going to be better, right?"
     t "... Yes. It's all going to be better."
     show willowkit
+    show wolfkit
+    show featherkit
+    play audio "sfx/koff.mp3"
     w "*rasp* *wheeze*"
     be "Whatever you end up doing, you'd better do it fast."
     be "I'm not sure how much longer any of it will matter."

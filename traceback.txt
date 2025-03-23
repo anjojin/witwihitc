@@ -1,46 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/hunting_patrol.rpy", line 69, in script call
-    call patrol_select from _call_patrol_select
-  File "game/scripts/game_content/hunting_patrol.rpy", line 317, in script call
-    call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 563, in script call
-    call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 83, in script call
-    call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 563, in script call
-    call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 106, in script call
-    call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 897, in script
-    hide redpaw_right with moveoutright
-ScriptError: could not find label 'patrol_over_screen'.
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+TypeError: get_tooltip() missing 1 required positional argument: 'self'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/hunting_patrol.rpy", line 69, in script call
-    call patrol_select from _call_patrol_select
-  File "game/scripts/game_content/hunting_patrol.rpy", line 317, in script call
-    call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 563, in script call
-    call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 83, in script call
-    call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 563, in script call
-    call patrol_select from _call_patrol_select_1
-  File "game/scripts/game_content/hunting_patrol.rpy", line 106, in script call
-    call hunting_call
-  File "game/scripts/game_content/hunting_patrol.rpy", line 897, in script
-    hide redpaw_right with moveoutright
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1705, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'patrol_over_screen'.
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 3281, in interact_core
+    rv = renpy.display.focus.mouse_handler(ev, x, y)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\focus.py", line 638, in mouse_handler
+    return change_focus(new_focus, default=default)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\focus.py", line 564, in change_focus
+    set_focused(current, newfocus.arg, newfocus.screen)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\focus.py", line 226, in set_focused
+    new_tooltip = widget._get_tooltip()
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\behavior.py", line 951, in _get_tooltip
+    return get_tooltip(self.action)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\behavior.py", line 454, in get_tooltip
+    return func()
+TypeError: get_tooltip() missing 1 required positional argument: 'self'
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Wed Mar 19 18:09:08 2025
+Sun Mar 23 13:24:46 2025

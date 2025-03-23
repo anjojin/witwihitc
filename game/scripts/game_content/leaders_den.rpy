@@ -43,6 +43,7 @@ label ld1:
         t "I'm so sorry to disturb you, Briarstar. I don't know what I was --"
         b "No need to explain yourself. I understand perfectly."
         b "Sometimes, there's a certain comfort in hearing one's own thoughts spoken aloud."
+        t "Er ... Yes. I suppose so."
         b "Why don't you step inside my den for a moment? Your paws must be freezing."
         t "That's very kind of you, Briarstar, but you really don't have to --"
         b "Please. I insist."
