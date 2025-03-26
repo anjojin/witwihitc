@@ -8,11 +8,13 @@ default quest_gather_herbs = Quest(name="Gather Herbs", description="Go on an he
 default quest_babysitting = Quest(name="Adult Supervision", description="Go on a hunting patrol with the apprentices.")
 default quest_check_nursery = Quest(name="Check Nursery", description="Check on Sunshadow's kits in the nursery")
 default quest_harbringer = Quest(name="Harbringer", description="Break the bad news to Sunshadow at the burial site.")
+default quest_harbringer_final = Quest(name="Harbringer*", description="Break the bad news to Sunshadow at the burial site. /n*{i}Note: Completing this quest will end the game{/i}")
 default quest_miracle_worker = Quest(name="Miracle Worker", description = "Give the catmint to a cat of your choice.")
 default quest_followup_beetle = Quest(name="Better Days", description="Follow up with Beetle in the nursery.")
 default quest_followup_briar = Quest(name="Leadership", description="Update Briarstar on Pouncetail's condition.")
-default quest_check_clover = Quest(name="Check on Cloverpaw", description="Check on Cloverpaw in the apprentice's den.")
+default quest_check_clover = Quest(name="Check on Cloverpaw*", description="Check on Cloverpaw in the apprentice's den. /n*{i}Note: Completing this quest will complete the game{/i}")
 default quest_report_clover = Quest(name="Report Cloverpaw", description="Tell the medicine cats about Cloverpaw's condition.")
+default quest_grim_tidings = Quest(name="Grim Tidings", description="Report back to Beetle.")
 
 ## my_quests contains all quests. This is used for quests_screen.
 default my_quests = []
@@ -30,3 +32,5 @@ label create_my_quests:
     $ my_quests.append(quest_followup_beetle)
     $ my_quests.append(quest_followup_briar)
     $ my_quests.append(quest_check_clover)
+    $ my_quests.append(quest_harbringer_final)
+    $ my_quests.appent(quest_grim_tidings)

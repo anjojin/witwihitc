@@ -39,7 +39,7 @@ label md1:
         play music "music/ES_Days That Matter - Headlund.mp3" loop
         t "What?!"
         l "I'm sorry. There's nothing I can do."
-        l "A cat her age, in these conditions, doesn't stand a chance against any sort of cough."
+        l "A cat her age, in these conditions, doesn't stand a chance against any sort of cough without the proper nutrition."
         l "Herbs, or no herbs."
         t "No, no, that can't be right."
         t "She just got sick this morning! There must still be some time to save her!"
@@ -52,7 +52,7 @@ label md1:
         t "Maplebreeze was just saying she didn't need hers!"
         m "Yes ... {i}wheeze{/i}... I'd be happy to spare a little ..."
         l "Maplebreeze is a {i}medicine cat.{/i}"
-        l "If these herbs could go towards saving one life, versus saving Maplebreeze, who will go on to save dozens ..."
+        l "If these herbs could go towards saving one starving kit, versus saving Maplebreeze, who will go on to save dozens ..."
         l "Well, I'll let you do the math on that one."
         l "Need I remind you how much worse things got for ThunderClan after we lost our last apprentice?"
         t "..."
@@ -158,6 +158,9 @@ label md1_end:
     "{b}Quest Completed:{/b} Medical Opinion"
     $ quest_medical_opinion.started = False
     $ quest_medical_opinion.completed = True
+    play audio "sfx/quest_unlocked.mp3"
+    "{b}Quest Unlocked:{/b} Grim Tidings"
+    $ quest_grim_tidings.started = True
     call screen gameUI
 
 label md1_click_berries:

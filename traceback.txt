@@ -1,32 +1,82 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 193, in script
-    python:
-  File "renpy/common/00start.rpy", line 194, in <module>
-    renpy.execute_default_statement(True)
-  File "game/scripts/defines/misc_variables.rpy", line 17, in execute_default
-    default nursery_visited_postp = False
-Exception: store.nursery_visited_postp is being given a default a second time.
+  File "game/scripts/game_content/hunting_patrol.rpy", line 72, in script call
+    call patrol_select from _call_patrol_select
+  File "game/scripts/game_content/hunting_patrol.rpy", line 356, in script call
+    call hunting_call from _call_hunting_call_35
+  File "game/scripts/game_content/hunting_patrol.rpy", line 566, in script call
+    call patrol_select from _call_patrol_select_1
+  File "game/scripts/game_content/hunting_patrol.rpy", line 487, in script call
+    call hunting_call from _call_hunting_call_50
+  File "game/scripts/game_content/nursery.rpy", line 406, in script
+    call screen gameUI
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "renpy/common/00action_menu.rpy", line 120, in __call__
+    renpy.call_in_new_context("_game_menu", *self.args, _game_menu_screen=screen, **self.kwargs)
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+ScriptError: could not find label 'bs_2'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 193, in script
-    python:
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00start.rpy", line 194, in <module>
-    renpy.execute_default_statement(True)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 372, in execute_default_statement
-    i.execute_default(start)
-  File "game/scripts/defines/misc_variables.rpy", line 17, in execute_default
-    default nursery_visited_postp = False
-Exception: store.nursery_visited_postp is being given a default a second time.
+  File "game/scripts/game_content/hunting_patrol.rpy", line 72, in script call
+    call patrol_select from _call_patrol_select
+  File "game/scripts/game_content/hunting_patrol.rpy", line 356, in script call
+    call hunting_call from _call_hunting_call_35
+  File "game/scripts/game_content/hunting_patrol.rpy", line 566, in script call
+    call patrol_select from _call_patrol_select_1
+  File "game/scripts/game_content/hunting_patrol.rpy", line 487, in script call
+    call hunting_call from _call_hunting_call_50
+  File "game/scripts/game_content/nursery.rpy", line 406, in script
+    call screen gameUI
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1980, in execute
+    self.call("execute")
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1959, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 3286, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\screen.py", line 791, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\layout.py", line 1297, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\behavior.py", line 1182, in event
+    return handle_click(self.clicked)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\behavior.py", line 1103, in handle_click
+    rv = run(action)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+  File "renpy/common/00action_menu.rpy", line 120, in __call__
+    renpy.call_in_new_context("_game_menu", *self.args, _game_menu_screen=screen, **self.kwargs)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\game.py", line 377, in call_in_new_context
+    return renpy.execution.run_context(False)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'bs_2'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Sun Mar 23 18:49:40 2025
+Wed Mar 26 14:06:28 2025

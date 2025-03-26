@@ -161,7 +161,7 @@ define hidden_achievement = Achievement(
     name=_("Hidden Achievement"),
     id="hidden_achievement",
     description=_("This hidden achievement hides both the name and description."),
-    unlocked_image=Transform("gui/window_icon.png", matrixcolor=BrightnessMatrix(-1.0)),
+    unlocked_image=Transform("gui/window_icon.png"),
     hidden=True, ## The important bit that hides the name and description
 )
 

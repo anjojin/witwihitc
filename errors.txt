@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/clearing.rpy", line 167: Only one say menuitem may exist per menu.
-    c "{i}*Cough* *Cough* *Cough*{/i}"
-                                      ^
+File "game/screens/camp_screen.rpy", line 39: reached end of line when expecting ':'.
+    if quest_
+             ^
+
+File "game/scripts/game_content/nursery.rpy", line 309: else clause expects a non-empty block.
+    else:
+         ^
+
+File "game/scripts/game_content/nursery.rpy", line 328: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    be "... Featherkit left first, and her sister followed shortly after."
+    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Tue Mar 25 21:31:48 2025
+Wed Mar 26 12:56:43 2025

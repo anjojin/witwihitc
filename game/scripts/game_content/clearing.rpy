@@ -99,7 +99,7 @@ label cl3_crowkit:
     cr "I-I wasn't -- I wasn't supposed to --"
     cr "{i}*Sob*{/i}"
     t "Whoa, buddy! Easy! Take a breath."
-    cr "But I wasn't supposed to see! Batkit and me were supposed to wait outside! Mama didn't want us to see!"
+    cr "But I wasn't supposed to see! Batkit and me were supposed to wait outside!"
     cr "I didn't wanna sneak a peek! Batkit dared me to!"
     cr "A-And now -- And now --"
     t "Crowkit, slow down. I can hardly understand you."
@@ -217,6 +217,7 @@ label cl3_spare:
     t "..."
     t "Somehow, I can't tell if that was the bravest thing I've ever done, or the stupidest."
     t "I should probably visit the apprentice's den later to check how she's doing."
+    $ quest_check_clover.started = True
     play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Check on Cloverpaw"
     jump cl3_clover_end
@@ -245,6 +246,7 @@ label cl3_clover_end:
     call screen gameUI
 
 label cl3_freshkill:
+    $ already_freshkill = True
     hide screen freshkill_night
     scene freshkill meager with fade
     t "Seems like the warriors managed to bring a few kills back ... but it isn't much."
@@ -296,6 +298,7 @@ label cl3_clanmates:
             jump cl3_no
 
 label cl3_eavesdrop:
+    $ already_clanmates = True
     scene clanmates bg with fade
     hide screen clanmates
     show raven_sit
@@ -343,4 +346,13 @@ label cl3_eavesdrop:
 
 label cl3_no:
     t "I have better things to do than listen to petty gossip."
+    call screen gameUI
+
+label cl4:
+    scene clearing bg night with fade
+    t "..."
+    if not already_clanmates:
+        show screen clanmates
+    if not already_freshkill:
+        show screen freshkill_night
     call screen gameUI

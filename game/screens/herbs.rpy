@@ -77,3 +77,12 @@ screen clanmates:
         idle "gui/button/clanmates.png"
         hover "gui/button/clanmates_hover.png"
         action Jump("cl3_clanmates")
+
+screen willowkit:
+    tag herb_screen
+    imagebutton:
+        xpos 595
+        ypos 695
+        idle "gui/button/willowkit.png"
+        hover "gui/button/willowkit_hover.png"
+        action Jump("ed3_willowkit")

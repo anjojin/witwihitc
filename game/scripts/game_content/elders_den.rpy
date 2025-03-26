@@ -17,8 +17,8 @@ label ed1:
 
 label ed1_take_crocus:
     hide screen crocus
-    scene elders_den_bg with fade
     play audio "sfx/plant_correct.mp3"
+    scene elders_den_bg with fade
     play sound "sfx/game_tip.mp3"
     $ talon_sun_bonus += 1
     "You picked up the {b}crocus.{/b}"
@@ -36,7 +36,27 @@ label ed2:
     else:
         show screen elders_bg_crocus with fade
     show screen gameUI
+    stop music fadeout 1.0
+    play music "ambience/ES_Forest High Wind Trees Creaking - Epidemic Sound.mp3" loop volume 1.5
     t ".........."
     t "I shouldn't stay here long."
     t "Out of respect for the dead."
+    call screen gameUI
+
+label ed3:
+    stop music fadeout 1.0
+    play music "ambience/ES_Forest High Wind Trees Creaking - Epidemic Sound.mp3" loop volume 1.5
+    scene elders night bg with fade
+    show screen gameUI
+    t "..."
+    show screen willowkit
+    call screen gameUI
+
+label ed3_willowkit:
+    if quest_harbringer.started or quest_harbringer_final.started or quest_harbringer.completed:
+        t "Rest well, little one."
+        t "May the stars light your path."
+    else:
+        t "Is that ...?"
+        t "Oh, great StarClan ..."
     call screen gameUI

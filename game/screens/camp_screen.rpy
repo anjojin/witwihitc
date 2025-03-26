@@ -2,6 +2,8 @@ screen Camp():
     tag herb_screen
     if not already_patrolled:
         add "bg/camp_bg.png"
+    else:
+        add "bg/camp_bg_night.png"
     imagebutton:
         xalign 0.0
         yalign 0.0
@@ -36,7 +38,8 @@ screen Camp():
         if already_patrolled==False:
                 action Show("PatrolSelect")
         else:
-            action ShowMenu("PostPatrolSelect")
+            if quest_harbringer.started or quest_harbringer_final.started:
+                action ShowMenu("SunSelect")
 
     imagebutton:
         xpos 587
@@ -76,6 +79,10 @@ screen Camp():
                     action [Hide("Camp"), SetVariable("currently_in", "elders"), Jump("ed1")]
                 else:
                     action [Hide("Camp"), SetVariable("currently_in", "elders"), Jump("ed2")]
+            else:
+                if not quest_check_nursery.started:
+                    action [Hide("Camp"), SetVariable("currently_in", "elders"), Jump("ed3")]
+
 
     imagebutton:
         xpos 1181
@@ -104,6 +111,9 @@ screen Camp():
                     action [Hide("Camp"), SetVariable("currently_in", "nursery"), Jump("n1")]
                 else:
                     action [Hide("Camp"), SetVariable("currently_in", "nursery"), Jump("n2")]
+            else:
+                if nursery_visited_postp==False:
+                    action [Hide("Camp"), SetVariable("currently_in", "nursery"), Jump("n3")]
 
     imagebutton:
         xpos 916
@@ -115,4 +125,7 @@ screen Camp():
         activate_sound "audio/sfx/camp_click.mp3"
         if not currently_in=="clearing":
             if already_patrolled==False:
-                    action [Hide("Camp"), SetVariable("currently_in", "clearing"), Jump("cl2")]
+                action [Hide("Camp"), SetVariable("currently_in", "clearing"), Jump("cl2")]
+            else:
+                if not quest_check_nursery:
+                    action [Hide("Camp"), SetVariable("currently_in", "clearing"), Jump("cl3_1")]

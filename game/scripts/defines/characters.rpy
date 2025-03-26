@@ -3,6 +3,9 @@ define s_unknown = Character("Sunshadow", color="#7c490f", callback=name_callbac
 image side sun sitting = At("char/sun_sitting.png", sprite_highlight('sun'))
 image side sun rising = At("char/sun_rising.png", sprite_highlight('sun'))
 image side sun standing = At("char/sun_standing.png", sprite_highlight('sun'))
+image side sun_m sitting = At("char/sun muddy sitting.png", sprite_highlight('sun'))
+image side sun_m rising = At("char/sun muddy rising.png", sprite_highlight('sun'))
+image side sun_m standing = At("char/sun muddy standing.png", sprite_highlight('sun'))
 
 define t = Character("Talonclaw", color = "#3d3c72", callback = name_callback, cb_name = 'talon')
 image talon = At("char/lark pixel.png", sprite_highlight('talon'))
@@ -49,6 +52,8 @@ image batkit = At("char/batkit.png", sprite_highlight('bat'))
 define be = Character("Beetle", callback=name_callback, cb_name='beetle', color="#434200")
 image beetle = At("char/beetle.png", sprite_highlight('beetle'))
 image beetle_kits = At("char/beetle with kits.png", sprite_highlight('beetle'))
+image beetle_kits_night = At("char/beetle with kits night.png", sprite_highlight('beetle'))
+image beetle_curl = At("char/beetle curl night.png", sprite_highlight('beetle'))
 
 define w = Character("Willowkit", callback=name_callback, cb_name='willow', color="#454545")
 image willowkit = At("char/willowkit.png", sprite_highlight('willow'))

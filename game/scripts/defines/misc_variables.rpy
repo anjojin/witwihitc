@@ -6,7 +6,6 @@ default leaders_visited = False
 default nursery_visited = False
 default clearing_visited = False
 default warriors_visited = False
-default nursery_visited_prep2=False
 
 default elders_visited_postp = False
 default apprentice_visited_postp = False
@@ -21,6 +20,9 @@ default preferences.text_cps = 0
 
 default burial_rites = False
 default report_clover = ""
+default got_catmint = False
+default already_clanmates = False
+default already_freshkill = False
 
 default final_game_screen = False
 

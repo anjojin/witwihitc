@@ -1,6 +1,7 @@
 label hunting_start:
     $ proceed_counter = 3
     $ currently_in = "outside"
+    $ already_patrolled = True
     call shuffle_patrols from _call_shuffle_patrols
     if quest_favorite_prey.started:
         $ talon_chance = 13 - (talon_sun_bonus/2)
@@ -528,7 +529,7 @@ label hunting_16:
             if len(training_with) > 0:
                 $ renpy.jump(training_with.pop(0))
             else:
-                "The hawk takes off into the air, prey dangling in its talons."
+                "The crow flies away."
                 call hunting_call from _call_hunting_call_56
 
 label hunting_call:
