@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/patrol_select_screen.rpy", line 13: 'unavailble' is not a keyword argument or valid child of the imagebutton statement.
-    unavailble "gui/button/proceed_unavailable.png"
-              ^
-
-File "game/screens/patrol_select_screen.rpy", line 58: 'unavailble' is not a keyword argument or valid child of the imagebutton statement.
-    unavailble "gui/button/proceed_unavailable.png"
-              ^
+File "game/scripts/game_content/clearing.rpy", line 167: Only one say menuitem may exist per menu.
+    c "{i}*Cough* *Cough* *Cough*{/i}"
+                                      ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Mar 23 13:14:31 2025
+Tue Mar 25 21:31:48 2025

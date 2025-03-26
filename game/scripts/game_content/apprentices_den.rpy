@@ -142,7 +142,7 @@ label ad1_yes:
     $ training_with = ["hunting_red", "hunting_lily", "hunting_fawn", "hunting_clover"]
     t "Aw, sure. You guys can come out with me today. Why not?"
     play sound "sfx/quest_unlocked.mp3"
-    "{b}Quest Unlocked:{/b} Babysitting"
+    "{b}Quest Unlocked:{/b} Adult Supervision"
     if quest_gather_herbs.started:
         $ quest_gather_herbs.started = False
         $ quest_gather_herbs.cancelled = True
@@ -256,9 +256,10 @@ label ad1_no_finish:
     r "... I expected more from you."
     play audio "sfx/slideup.mp3"
     hide redpaw_left with moveoutleft
-    t "Young cats sure are dramatic, these days."
-    t "Though, I guess I can't blame them ..."
-    t "Growing up in times like these would put me on edge, too."
+    t "Tch ..."
+    t "Awfully dramatic, those young cats."
+    t "One day, they'll know better."
+    t "Once somecat actually gets around to teaching them ..."
     if quest_crocus.started:
         show screen ad_juniper
     call screen gameUI

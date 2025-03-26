@@ -1,6 +1,5 @@
 screen Camp():
     tag herb_screen
-    $ Hide("quick_menu")
     if not already_patrolled:
         add "bg/camp_bg.png"
     imagebutton:
@@ -35,7 +34,7 @@ screen Camp():
         hover_sound "audio/sfx/button_hover_1.mp3"
         activate_sound "audio/sfx/camp_click.mp3"
         if already_patrolled==False:
-                action ShowMenu("PatrolSelect")
+                action Show("PatrolSelect")
         else:
             action ShowMenu("PostPatrolSelect")
 

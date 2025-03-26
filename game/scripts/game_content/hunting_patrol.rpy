@@ -1,5 +1,3 @@
-
-
 label hunting_start:
     $ proceed_counter = 3
     $ currently_in = "outside"
@@ -9,6 +7,7 @@ label hunting_start:
     else:
         $ talon_chance = 13 - talon_clan_bonus
     scene patrol bg with fade
+    $ quick_menu = True
     stop music fadeout 1.0
     play music "music/ES_Naranjas en Diciembre - Vendla.mp3" loop
     if quest_babysitting.started:
@@ -533,7 +532,7 @@ label hunting_16:
                 call hunting_call from _call_hunting_call_56
 
 label hunting_call:
-    if proceed_counter==0:
+    if proceed_counter<=0:
         jump patrol_over
     else:
         $ diff_counter = patrol_max - patrol_counter
@@ -856,7 +855,7 @@ label clover_end_patrol:
         t "Don't give up yet. We still have a little time left to turn things around."
     t "Say, where's Cloverpaw? She seemed the most excited to hunt out of any of you."
     fa "I think she's fallen behind a little."
-    r "Probably too busy chasing her own tail to keep up ..."
+    r "Probably too busy bossing the rest of us around to keep up ..."
     fa "Oh, here she comes, now!"
     show cloverpaw_stand_left with easeinleft
     fa "Hey, Cloverpaw!"
@@ -869,7 +868,7 @@ label clover_end_patrol:
     hide cloverpaw_stand_left
     show cloverpaw_sit_left
     c "{i}*Cough* *Cough*{/i}"
-    play music "music/ES_Sweet Scent - Headlund.mp3" loop
+    play music "music/ES_Saint Valentine - Vendla.mp3" loop
     fa "*Gasp*"
     r "Great StarClan ..."
     c "{i}*Hack*{/i} I-I'm fine, guys -- {i}*Gasp*{/i} -- I just got some dust in my throat!"
@@ -914,7 +913,7 @@ label clover_hunting_success:
     hide cloverpaw_stand_left
     show cloverpaw_sit_left
     c "{i}*Cough* *Cough*{/i}"
-    play music "music/ES_Sweet Scent - Headlund.mp3" loop
+    play music "music/ES_Saint Valentine - Vendla.mp3" loop
     fa "*Gasp*"
     r "Great StarClan ..."
     c "{i}*Hack*{/i} I-I'm fine, guys -- {i}*Gasp*{/i} -- I just got some dust in my throat!"
@@ -968,24 +967,24 @@ label patrol_hard_over:
     t "It's getting dark ... I should probably head back to camp."
 
 label patrol_over_quests:
-    play sound "quest_unlocked.mp3"
+    play audio "sfx/quest_unlocked.mp3"
     "{b}Patrol Completed.{/b}"
     if quest_babysitting.started:
         $ quest_babysitting.started = False
         $ quest_babysitting.completed = True
-        play sound "quest_unlocked.mp3"
-        "{b}Quest Completed:{/b} Babysitting"
+        play audio "sfx/quest_unlocked.mp3"
+        "{b}Quest Completed:{/b} Adult Supervision"
     elif prey_caught > 0:
         if quest_favorite_prey.started:
             $ quest_favorite_prey.started = False
             $ quest_favorite_prey.completed= True
-            play sound "quest_unlocked.mp3"
+            play audio "sfx/quest_unlocked.mp3"
             "{b}Quest Completed:{/b} Favorite Prey"
 
 label patrol_over_prey:
-    play sound "quest_unlocked.mp3"
+    play audio "sfx/quest_unlocked.mp3"
     if prey_caught == 1:
         "You return to camp with {b}[prey_caught]{/b} piece of prey."
     else:
         "You return to camp with {b}[prey_caught]{/b} pieces of prey."
-    jump cl2
+    jump cl3

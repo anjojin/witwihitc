@@ -25,12 +25,12 @@ image redpaw_center = At("char/redpaw center.png", sprite_highlight('red'))
 define c = Character("Cloverpaw", callback=name_callback, cb_name='clover', color="#274f23")
 image cloverpaw_ad1 = At("char/cloverpaw ad1.png", sprite_highlight('clover'))
 image cloverpaw_roll_right = At("char/cloverpaw roll right.png", sprite_highlight('clover'))
-image cloverpaw_sit_right = At("char/cloverpaw right.png", sprite_highlight('clover'))
 image cloverpaw_roll_left = At("char/cloverpaw all.png", sprite_highlight('clover'))
 image cloverpaw_sit_left = At("char/cloverpaw sit left.png", sprite_highlight('clover'))
 image cloverpaw_stand_left = At("char/cloverpaw stand left.png")
 image cloverpaw_far_right = At("char/cloverpaw far right.png")
 image cloverpaw_center = At("char/cloverpaw center.png", sprite_highlight('clover'))
+image cloverpaw_sit_center = At("char/cloverpaw sit center.png", sprite_highlight('clover'))
 
 define li = Character("Lilypaw", callback=name_callback, cb_name='lily', color="#4f233c")
 image lilypaw_entrace = At("char/lilypaw ad1 entrance.png", sprite_highlight('lily'))
@@ -41,6 +41,7 @@ image lilypaw_center = At("char/lilypaw center.png", sprite_highlight('lily'))
 
 define cr = Character("Crowkit", callback=name_callback, cb_name='crow', color="#1e1e1e")
 image crowkit = At("char/crowkit.png", sprite_highlight('crow'))
+image crowkit clearing = At("char/crowkit clearing.png", sprite_highlight('crow'))
 
 define ba = Character("Batkit", callback=name_callback, cb_name='bat', color="#1e1e1e")
 image batkit = At("char/batkit.png", sprite_highlight('bat'))
@@ -69,3 +70,15 @@ image locustleaf = At("char/locustleaf.png", sprite_highlight('locust'))
 
 define m = Character("Maplebreeze", callback=name_callback, cb_name='maple', color="#400000")
 image maplebreeze = At("char/maplebreeze_1.png", sprite_highlight('maple'))
+
+define r = Character("Raven", callback=name_callback, cb_name='raven', color="#400000")
+image raven_sit = At("char/ravenslash sit.png", sprite_highlight('raven'))
+image raven_stand = At("char/ravenslash stand.png", sprite_highlight('raven'))
+
+define mo = Character("Mothdust", callback=name_callback, cb_name='moth', color="#400000")
+image moth_sit = At("char/mothdust sit.png", sprite_highlight('moth'))
+image moth_stand = At("char/mothdust stand.png", sprite_highlight('moth'))
+
+define cl = Character("Cloudheart", callback=name_callback, cb_name='cloud', color="#400000")
+image cloud_sit = At("char/cloudheart sit.png", sprite_highlight('cloud'))
+image cloud_stand = At("char/cloudheart stand.png", sprite_highlight('cloud'))

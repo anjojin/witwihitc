@@ -154,7 +154,7 @@ label md1_end:
     t "Locustleaf --"
     l "I said, get OUT!!!"
     l "{i}*Koff* *Koff* *Koff*{/i}"
-    play audio "quest_unlocked.mp3"
+    play audio "sfx/quest_unlocked.mp3"
     "{b}Quest Completed:{/b} Medical Opinion"
     $ quest_medical_opinion.started = False
     $ quest_medical_opinion.completed = True

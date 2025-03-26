@@ -59,3 +59,21 @@ screen freshkill:
         idle "gui/button/freshkill.png"
         hover "gui/button/freshkill_hover.png"
         action Jump("click_freshkill")
+
+screen freshkill_night:
+    tag herb_screen
+    imagebutton:
+        xpos 1605
+        ypos 587
+        idle "gui/button/freshkill_night.png"
+        hover "gui/button/freshkill_hover.png"
+        action Jump("cl3_freshkill")
+
+screen clanmates:
+    tag herb_screen
+    imagebutton:
+        xpos 0
+        ypos 405
+        idle "gui/button/clanmates.png"
+        hover "gui/button/clanmates_hover.png"
+        action Jump("cl3_clanmates")

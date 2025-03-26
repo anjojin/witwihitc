@@ -1,5 +1,4 @@
 screen PatrolSelect():
-    tag menu
     style_prefix "patrol_select"
     add "bg/patrol_select_bg.png"
 
@@ -17,7 +16,7 @@ screen PatrolSelect():
                     if quest_gather_herbs.started:
                         action NullAction
                     else:
-                        action [Jump("hunting_start"), SetVariable("already_patrolled", True)]
+                        action [Hide ("PatrolSelect"), Hide("Camp"), Jump("hunting_start"), SetVariable("already_patrolled", True)]
 
     imagebutton:
         xpos 1096
@@ -26,7 +25,7 @@ screen PatrolSelect():
         activate_sound "audio/sfx/button_click_2.mp3"
         idle "gui/button/do_not_proceed_idle.png"
         hover "gui/button/do_not_proceed_hover.png"
-        action Return()
+        action [Hide ("PatrolSelect"), Hide("Camp")]
 
     hbox:
         xpos 285
