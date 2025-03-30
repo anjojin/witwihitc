@@ -34,6 +34,11 @@ screen quests_ui:
                 for quest in my_quests:
                     if quest.cancelled:
                         text "[quest.name]"
+            vbox:
+                text "{b}Failed{/b}"
+                for quest in my_quests:
+                    if quest.failed:
+                        text "[quest.name]"
 
 style quests_screen_text:
     color "#1c1503"

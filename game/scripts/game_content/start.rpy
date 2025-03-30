@@ -28,7 +28,7 @@ label start:
         s "... And now, just when I thought the worst was over, my mate has abandoned us, too."
         show dapplefeather bg with fade
         s_unknown "My Dapplefeather. Only seventy-two moons old."
-        s_unknown "Just five days ago, she delivered our first litter."
+        s_unknown "Just yesterday, she delivered our first litter."
         s_unknown "Willowkit, Wolfkit, Stormkit, Starlingkit, and Featherkit."
         s_unknown "They haven't even opened their eyes yet and, already, their mother is gone."
         s_unknown "Our kits will grow up with no memory of her face."

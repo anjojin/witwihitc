@@ -65,6 +65,10 @@ screen Camp():
         if not currently_in=="apprentices":
             if already_patrolled==False:
                 action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("ad1")]
+            else:
+                if not quest_check_nursery.started:
+                    action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("ad3")]
+
 
     imagebutton:
         xpos 901 

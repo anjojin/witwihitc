@@ -738,11 +738,11 @@ label hunting_clover:
 
 label red_hunting_success:
     show redpaw_left with easeinleft
-    show cloverpaw_sit_right with easeinright
+    show cloverpaw_roll_right with easeinright
     c "Wow, Red! I didn't know you had it in you!"
     r "Hehe ... Just doing it like we practiced."
     hide redpaw_left with moveoutleft
-    hide cloverpaw_sit_right with moveoutright
+    hide cloverpaw_roll_right with moveoutright
     call hunting_call from _call_hunting_call_57
 
 label red_hunting_fail:
@@ -852,7 +852,7 @@ label clover_end_patrol:
         r "Yeah, leave some prey for the rest of us."
         t "Hehe. Thanks, kittos."
     else:
-        fa "I guess my mentor wasn't wrong. Prey really is scarce out here ..."
+        fa "I guess my mentor wasn't wrong. Prey really is hard to find out here ..."
         t "Don't give up yet. We still have a little time left to turn things around."
     t "Say, where's Cloverpaw? She seemed the most excited to hunt out of any of you."
     fa "I think she's fallen behind a little."
@@ -861,7 +861,7 @@ label clover_end_patrol:
     show cloverpaw_stand_left with easeinleft
     fa "Hey, Cloverpaw!"
     c "{i}*Pant* ... *Pant* ...{/i}"
-    fa "Where have you been? We've been waiting on you."
+    fa "Where have you been? We were just talking about you."
     r "Yeah. You seem a little out of shape."
     c "{i}*Pant* ... *Pant* ... *Pant* ...{/i}"
     t "... Cloverpaw?"
@@ -981,6 +981,12 @@ label patrol_over_quests:
             $ quest_favorite_prey.completed= True
             play audio "sfx/quest_unlocked.mp3"
             "{b}Quest Completed:{/b} Favorite Prey"
+    else:
+        if quest_favorite_prey.started:
+            $ quest_favorite_prey.started = False
+            $ quest_favorite_prey.failed= True
+            play sound "sfx/ES_Error 04 - Epidemic Sound.mp3"
+            "{b}Quest Failed:{/b} Favorite Prey"
 
 label patrol_over_prey:
     play audio "sfx/quest_unlocked.mp3"

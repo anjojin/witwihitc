@@ -31,8 +31,10 @@ label ld1:
 
     else:
         t "The leaders' den."
-        t "Rumor has it Briarstar is on her last two lives. At the gathering in greenleaf, she was so proud to report that she had all nine ..."
-        t "I can't remember the last time I saw her eating a piece of prey."
+        t "At the start of the famine, Briarstar used to give these incredible speeches here."
+        t "'I have seven lives left,' she said, 'and I'll give every last one of them helping my Clan.'"
+        t "... Rumor has it she's down to two, now."
+        t "And I can't remember the last time I saw her give a speech."
         t "Come to think of it, I can't remember the last time I saw her at all ..."
         play sound "sfx/rustle.mp3"
         play audio "sfx/impact.mp3"
@@ -63,8 +65,9 @@ label ld1_inside:
         show briarstar
         if not quest_crocus.started:
             b "I hope this moss is soft enough for your liking."
-            t "Of course it is, Briarstar. Thank you."
+            t "... Of course it is, Briarstar. Thank you."
             t "What a fascinating den you have."
+            t "I can see why you spend so much time in here."
             b "Oh. Yes."
         b "It stays quite warm in here all year round, so sometimes, peculiar things will grow."
         b "Mostly mushrooms and other fungi; though, once, the most precious white lily blossomed in that corner right over there."
@@ -138,7 +141,7 @@ label ld1_accept:
     t "... When was the last time you ate something, Briarstar?"
     b "..."
     b "You have more pressing things to worry about."
-    t "You're our leader. The Clan needs you --"
+    t "You're our leader. The Clan is counting on you to --"
     b "Prey should go to cats who don't have more than one life to lose."
     b "That's my final opinion on the matter."
     t "..."
@@ -165,7 +168,7 @@ label ld1_decline:
     t "... When was the last time you ate something, Briarstar?"
     b "..."
     b "You have more pressing matters to worry about."
-    t "You're our leader. The Clan needs you --"
+    t "You're our leader. The Clan is counting on you to --"
     b "Prey should go to cats who don't have more than one life to lose."
     b "That's my final opinion on the matter."
     t "..."
@@ -215,13 +218,15 @@ label ld1_stick_sunshadow:
     b "Watch your back, Talonclaw."
     b "Loyalty like that is often rewarded with betrayal."
     t "..."
+    t "... While I'm here, there were a few other Clan matters I wanted to speak to you about."
+    t "The warriors have started organizing their own patrols, and I think it might be helpful to --"
+    b "Thank you, Talonclaw. That will be all."
     b "I'll be moving deeper into my quarters. Feel free to stay in my den as long as you'd like."
-    b "I hope you find what you're looking for, Talonclaw."
-    t "Thank --"
+    b "I hope you find what you're looking for."
     play sound "sfx/rustle.mp3"
     play audio "sfx/impact.mp3"
     hide briarstar with fade
-    t "... you."
+    t "..."
     if quest_crocus.started:
         show screen ld_mushroom
     call screen gameUI
@@ -251,12 +256,15 @@ label ld1_switch:
     "{b}Quest Unlocked:{/b} Feed the Deputy"
     b "Thank you, Talonclaw. You're a good cat. Loyal to your friend. That's something to be admired."
     b "I hope, once all this is over, the two of you can dig a truly lavish grave together."
-    t "Thank --"
+    t "Thank you, Briarstar."
+    t "Oh -- and while I'm here, there were a few other Clan matters I wanted to speak to you about."
+    t "The warriors have started organizing their own patrols, and I think it might be helpful to --"
+    b "Thank you, Talonclaw. That will be all."
     b "Come and find me after you've visited Pouncetail. I'd like to know how he's doing."
     play sound "sfx/rustle.mp3"
     play audio "sfx/impact.mp3"
     hide briarstar with fade
-    t "... you."
+    t "..."
     call screen gameUI
 
 label ld_2:
@@ -264,8 +272,11 @@ label ld_2:
     show screen gameUI
     stop music fadeout 0.5
     play music "ES_La Vuelta a Lerida - Vendla.mp3" loop
-    t "I doubt Briarstar wants anycat disturbing her right now."
+    t "There's no point in trying to get ahold of Briarstar right now."
     if quest_feed_deputy.started:
         t "I'll come back when I've made sure that Pouncetail's eaten something."
+    else:
+        t "Or ever, apparently."
+        t "Maybe Sunshadow was onto something ..."
     call screen gameUI
 

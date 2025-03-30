@@ -70,7 +70,7 @@ screen SunSelect:
         idle "gui/button/proceed_idle.png"
         hover "gui/button/proceed_hover.png"
         insensitive "gui/button/proceed_unavailable.png"
-        action [Hide ("SunSelect"), Hide("Camp"), Jump("bs2"), SetVariable("currently_in", "bury")]
+        action [Hide ("SunSelect"), Hide("Camp"), Jump("bs2"), SetVariable("currently_in", "bury2")]
 
     imagebutton:
         xpos 1096

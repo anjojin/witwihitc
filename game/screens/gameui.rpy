@@ -12,6 +12,8 @@ screen gameUI:
             action Jump("cl1")
         elif currently_in == "outside":
             action Jump("cl2")
+        elif currently_in == "bury2":
+            action Jump("cl4")
         else:
             action [Show("Camp")]
 

@@ -2,7 +2,7 @@ label n1:
     $ nursery_visited = True
     scene nursery bg with fade
     stop music fadeout 0.5
-    play music "music/ES_View of the Park - Roots and Recognition.mp3" loop
+    play music "music/ES_Weightless Steps - Roots and Recognition.mp3" loop
     show screen gameUI
     t "... Hello?"
     play audio "sfx/ES_Twig, Snap From Branch - Epidemic Sound.mp3"
@@ -54,10 +54,10 @@ label n1:
     hide featherkit
     t "Wow ... wouldja look at that?"
     t "They're so small."
-    be "They may be small for now, but those five hungry mouths will grow up faster than you know it."
-    be "I'm not a young queen anymore, Talonclaw. My milk can only go so far."
-    t "Don't worry. Sunshadow and I will make sure you won't go hungry."
-    be "Oh, yeah? And where is Sunshadow now?"
+    be "They may be small for now, but those five hungry mouths will grow up faster than you realize."
+    be "I only hope my milk will last ..."
+    t "You won't go hungry. Sunshadow and I will make sure of it."
+    be "And where is Sunshadow now?"
     t "Er, he's ... out."
     be "Out where? On patrol?"
     t "... Out digging a grave for Dapplefeather."
@@ -70,7 +70,6 @@ label n1:
         t "I tried to talk him out of it."
         be "Apparently, not hard enough."
     be "If he wants to freeze to death, he can feel free to do so, but I'm not raising these kits alone."
-    be "There's already barely enough to feed all five of them."
     t "Don't say things like --"
     stop music
     show featherkit
@@ -82,26 +81,26 @@ label n1:
     be "Oh, StarClan. Not this again."
     be "Shh, shhh ... it's alright little one. Settle down."
     t "What's happening? Why is she coughing?"
-    be "She caught a little cold just this morning. She and Willowkit haven't been eating well."
+    be "She may have a little cold. She and Willowkit haven't been eating well."
     t "What?!"
     be "I was hoping it was just a temporary shock from their mother's passing. But, now ..."
     t "Do you think it's serious?"
     menu:
-        be "I'm not sure. She's progressing rather quickly ..."
+        be "I'm not sure ..."
         "Offer to help":
             jump n1_offer_help
         "Decline to help":
             jump n1_decline
 label n1_offer_help:
     $ talon_sun_bonus += 1
-    t "I-I'll fetch the medicine cat!"
+    t "I-I'll fetch the medicine cat right away!"
     $ quest_medical_opinion.started = True
     play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Medical Opinion"
-    t "Locustleaf is in the medicine den right now. He'll know what to do."
+    t "Locustleaf is in the medicine den. He'll know what to do."
     be "Yes. You're right. It will be good to get his opinion."
     be "Thank you, Talonclaw. Best not to delay."
-    be "I hate to be morbid, but in kits this young, sickness burns through them quick."
+    be "In kits this young, sickness burns through them quick."
     if quest_crocus.started:
         show screen n_tansy
         call screen gameUI
@@ -146,7 +145,7 @@ label n2:
         w "*koff* *koff*"
         hide willowkit
         be "Oh, no ... Don't you start now, too."
-        be "Don't worry, sweeties. Help is coming."
+        be "Don't worry, darlings. Help is coming."
         be "Just hang in there a little while longer ..."
         call screen gameUI
     elif quest_grim_tidings.started:
@@ -179,7 +178,7 @@ label n2_truth:
     t "Locustleaf said she might still have a shot, if she gets catmint."
     if quest_gather_herbs.started:
         t "I'm going out to find some, now."
-    be "These days, it seems like everycat's in need of catmint ..."
+    be "These days, it seems catmint's what every cat needs ..."
     jump n2_confront
 
 label n2_confront:
@@ -188,7 +187,7 @@ label n2_confront:
     be "I don't want to frighten him."
     t "He's Featherkit's father. I think he has the right to be frightened."
     be "If he's Featherkit's father, then why isn't he here with her right now?"
-    be "Why am I the one caring for his sick daughter, while he's out running a fool's errand on the territory?"
+    be "Why am I the one caring for his sick daughter, while he's out running a fool's errand who-knows-where?"
     be "You can tell him whatever you'd like, Talonclaw, but know this -- whatever happens to Featherkit, I am not taking the blame."
     t "What are you talking about?"
     t "Who would blame you?"
@@ -213,31 +212,29 @@ label n2_sun_defend:
     be "What makes Sunshadow and these so-called 'newcomers' any different?"
     be "His body takes up just as much space in the warriors' den as mine does."
     be "We eat the same food, drink the same water, bring back the same amount of prey."
+    be "He blames kitting queens, yet he has kits, himself, and refuses to take care of them."
     be "And, now, when both of us are starving, somehow I'm the one to blame, and he isn't?"
-    be "Don't be a fool, Talonclaw. Sunshadow's beliefs aren't so logical. They never have been."
+    be "Don't be a fool, Talonclaw. Sunshadow's beliefs aren't motivated by justice. They never have been."
     be "These past few moons have been madness. Cats are terrified. They want an explanation."
     be "And when terrified cats want an explanation, they won't stop looking for one until they find it."
     t "... How will they know when that happens?"
     be "They won't feel afraid anymore."
-    be "How many cats are going have to get hurt before that happens?"
-    be "Who knows? I'm not sure it even matters."
     be "By that time, there may be nothing left."
     t "..."
     jump n2_finish
 
 label n2_outsider:
-    t "I used to be an outsider, too. Do you think Sunshadow blames me for his daughter's illness?"
+    t "I used to be an outsider, too. Do you think Sunshadow would blame {i}me{/i} for his daughter's illness?"
     t "He's my best friend. He's practically my brother. I know for a fact that he would never --"
     be "Talonclaw."
     be "It doesn't matter."
     t "What do you mean, 'it doesn't matter?' Of course it matters!"
-    be "I mean, you might not be as protected as you think."
+    be "It won't protect you."
+    be "None of it will."
     be "These past few moons have been madness. Cats are terrified. They want an explanation."
     be "And when terrified cats want an explanation, they won't stop looking for one until they find one."
     t "... How will they know when they've found one?"
     be "They won't feel afraid anymore."
-    be "How many cats are going have to get hurt before that happens?"  
-    be "Who knows? I'm not sure it even matters."
     be "By that time, there may be nothing left."
     t "..."
     jump n2_finish
@@ -245,8 +242,10 @@ label n2_outsider:
 label n2_sun_point:
     t "Sunshadow just believes -- accurately -- that it was foolish of Clan leadership not to exercise a bit more {i}foresight{/i} into --"
     be "Foresight? Do you hear yourself?"
-    t "Half of the new cats this greenleaf were newborns, elders, or too sick to hunt! Briarstar should have known better."
-    be "You buy into this jargon? That the weak are a burden and the Clan should belong to the strong?"
+    t "Half of the ThunderClan this greenleaf were newborns, elders, or too sick to hunt! Briarstar should have known better."
+    be "Briarstar gave me a place to stay when rogues drove me out of my home."
+    be "She gave me the chance to provide a better life for my kits."
+    be "You're telling me you really buy into this jargon? That the weak are a burden and the Clan should belong to the strong?"
     t "Look at the other Clans. Look at what happens in nature. It's been proven over and over again."
     t "Sometimes, you need to trim the fat to keep everything in balance."
     be "That's the problem with cats like you. You think that you'll always belong to the 'strong' category."
@@ -255,7 +254,7 @@ label n2_sun_point:
     be "Do you think you'll be a special case?"
     be "Think that cats like {i}Sunshadow{/i} are going to protect you?"
     be "No. I'd practice getting on your paws, now, and start begging for mercy."
-    be "When the time finally comes, you'll be grateful for  the experience."
+    be "When the time finally comes, you'll be grateful for the experience."
     t "..."
     jump n2_finish
 
@@ -332,7 +331,7 @@ label n3_check:
     be "..."
     hide beetle_curl
     show beetle_kits_night
-    be "... I take it one of my kits ran into you in the clearing."
+    be "... I take it you must have run into one of my kits."
 
 label n3_continue:
     t "No."
@@ -388,8 +387,10 @@ label n3_continue:
     t "How can you say that?"
     be "For the sakes of these three kits, he'll have to understand."
     be "You know, it's funny."
-    be "For how much the two of you claim to care about this little family, I was the only one who was here to watch those two kits die."
-    be "I'm not doing this alone anymore, Talonclaw."
+    be "For how much the two of you claim to care about this little family, I was the only one who was here to comfort those two kits as they died."
+    t "..."
+    be "I'm not going through this alone, Talonclaw."
+    be "Now, it's your and Sunshadow's turns."
     be "I've already grieved more than my share."
     t "..."
     play sound "sfx/quest_unlocked.mp3"

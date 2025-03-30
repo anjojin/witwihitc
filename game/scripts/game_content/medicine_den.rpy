@@ -39,7 +39,7 @@ label md1:
         play music "music/ES_Days That Matter - Headlund.mp3" loop
         t "What?!"
         l "I'm sorry. There's nothing I can do."
-        l "A cat her age, in these conditions, doesn't stand a chance against any sort of cough without the proper nutrition."
+        l "An underfed cat her age, in these conditions, doesn't stand a chance against any sort of cough."
         l "Herbs, or no herbs."
         t "No, no, that can't be right."
         t "She just got sick this morning! There must still be some time to save her!"
@@ -52,7 +52,7 @@ label md1:
         t "Maplebreeze was just saying she didn't need hers!"
         m "Yes ... {i}wheeze{/i}... I'd be happy to spare a little ..."
         l "Maplebreeze is a {i}medicine cat.{/i}"
-        l "If these herbs could go towards saving one starving kit, versus saving Maplebreeze, who will go on to save dozens ..."
+        l "If these herbs could go towards one starving kit, versus Maplebreeze, who will go on to save dozens of lives..."
         l "Well, I'll let you do the math on that one."
         l "Need I remind you how much worse things got for ThunderClan after we lost our last apprentice?"
         t "..."
@@ -139,9 +139,15 @@ label md1_accept_challenge:
 
 label md1_give_up:
     t "..."
-    l "Yeah. That's what I thought."
-    l "That way, you ... you ... *koff* *koff*"
-    t "!!!"
+    t "... How can this be happening?"
+    t "Why would StarClan take her so young?"
+    l "Oh, don't be so dramatic."
+    l "Sometimes kits die. It's just a fact of life. Especially in big litters."
+    t "There's no need to say something so cruel!"
+    t "You couldn't possibly understand how it feels to be completely powerless to save someone you love!"
+    l "... {i}I{/i} couldn't possibly understand?"
+    l "... Heh. Heh."
+    l "Hahaha! Ahahaha!"
     jump md1_end
 
 label md1_end:
@@ -196,7 +202,7 @@ label md2:
         scene med_den_ext with fade
         t "I doubt Locustleaf wants to see me back so soon ..."
         if quest_gather_herbs.started:
-            t "I'll follow up with him when I get the herbs, like I promised."
+            t "I'll follow up with him when I get the catmint, like I promised."
         else:
             t "I hope he's doing okay."
             t "If we lost him ..."

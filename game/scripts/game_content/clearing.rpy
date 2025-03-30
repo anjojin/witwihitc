@@ -138,26 +138,26 @@ label cl3_cloverpaw:
     c "... Why are you looking at me like that?"
     t "Like what?"
     c "Like I could drop dead at any moment."
-    c "I swear to StarClan, all of you are overreacting. I'm fine. It's just a little cough."
+    c "I swear to StarClan, all of you are overreacting. I'm fine. It's just a little cough. I'm already over it."
     t "Yeah. How many times have I heard that speech before?"
     t "And how many of those cats are still 'perfectly fine' today?"
     c "..."
-    t "How long has this been going on?"
+    t "When did your symptoms first begin?"
     c "... I guess training started getting kinda hard a few days ago."
-    c "My first sneeze was just last night."
+    c "And I sneezed for the first time just last night."
     t "Have any of your denmates started showing any symptoms?"
     c "Are you serious?"
     c "One cough and you already think it's dangerous for me to be around my friends?"
     t "It's not personal, Cloverpaw. It's just how sickness spreads."
-    c "I would never do anything to hurt the cats I care about."
+    c "I would never do anything to hurt them."
     t "Then why all the secrecy?"
-    t "You must have known you weren't feeling well. Why not speak up about it earlier?"
+    t "You know how contagious greencough is. Why not speak up about it earlier?"
     c "..."
-    c "... I've seen cats do it like you say."
+    c "... I've seen cats who do it like you say."
     c "Good, upstanding Clanmates who ran straight to the medicine den at the first sign of trouble."
     c "That was what my sister did."
     c "She said I shouldn't visit her."
-    c "It was a risk, she said. I might get infected, she said."
+    c "It was a risk, she said. I might get infected."
     c "... That was the last time I ever saw her."
     c "Cats who go into the medicine den ... They don't come back out again."
     c "I don't want to die in the medicine den, Talonclaw."
@@ -165,7 +165,9 @@ label cl3_cloverpaw:
     t "..."
     c "... Except, now, I guess I probably won't have a choice, right?"
     c "You're going to tell Locustleaf what happened, and I'll be dragged away like a naughty kit who escaped the nursery."
-    c "It's kinda funny, if you think about it. I'll get to see Fawnpaw and Redpaw's dad before they do. Haha --"
+    c "It's kinda funny, if you think about it."
+    c "I'll get to see Fawnpaw and Redpaw's dad before they do."
+    c "Ahaha --"
     play audio "sfx/ES_Female, Single - Epidemic Sound.mp3"
     menu:
         c "{i}*Cough* *Cough* *Cough*{/i}"
@@ -202,17 +204,19 @@ label cl3_spare:
     c "{i}*Cough*{/i} ... Whuh?"
     t "Don't cough so loud. You'll make the warriors suspicious."
     c "You mean ... you aren't going to turn me in?"
-    t "I don't 'mean' anything."
-    t "I'm just think that {i}maybe{/i} we should wait a few days before we make a big decision. Just to see if this cough gets any worse."
-    t "And if it does, mark my words, kitto, you're going straight to the medicine den. No exceptions."
+    t "I didn't say that."
+    t "I just think that {i}maybe{/i} we should wait a few days before making such a big decision."
+    t "Just to see if this cough gets worse or not."
+    t "And the second it does, mark my words, kitto, you're going straight to Locustleaf. No exceptions."
     t "But, for now ..."
     t "We'll wait and see."
     c "..."
-    c "... Wow, Talonclaw."
     c "I don't know what to say."
     t "How about 'thank you?'"
-    c "Thank you."
+    c "Thank you, Talonclaw."
     c "I ... I really owe you one."
+    play sound "sfx/rustle.mp3"
+    play audio "sfx/impact.mp3"
     hide cloverpaw_sit_center with fade
     t "..."
     t "Somehow, I can't tell if that was the bravest thing I've ever done, or the stupidest."
@@ -290,6 +294,7 @@ label cl3_1:
     call screen gameUI
 
 label cl3_clanmates:
+    play sound "sfx/game_tip.mp3"
     menu:
         "It seems like your clanmates are having a discussion. Would you like to listen in?"
         "Yes":
@@ -304,43 +309,50 @@ label cl3_eavesdrop:
     show raven_sit
     show moth_sit
     show cloud_stand
-    r "I swear, it was like a whole squirrel in there, or something. It was as long as my tail."
+    ra "I swear, it was like a whole squirrel in there, or something. It was as long as my tail."
     mo "It was probably a pellet. An owl pellet."
-    r "What in StarClan's name is that?"
-    mo "It's a puked-up amalgamation of all the bits that owls can't digest."
-    cl "Can we eat them?"
-    r "Ew. Are you crazy?"
+    ra "What in StarClan's name is an {i}owl pellet?{/i}"
+    mo "It's a puked-up amalgamation of all the bits and pieces that owls can't digest."
+    cl "Think we can eat 'em?"
+    ra "Ew. Are you crazy?"
     hide cloud_stand
     show cloud_sit
-    cl "Only joking. Di-jest, Di-jest."
-    r "{i}*Groan*{/i}"
+    cl "I was only joking. You know how di-jest."
+    ra "{i}*Groan*{/i}"
     cl "Hahaha!"
     hide raven_sit
     show raven_stand
-    r "Boo! Hiss!"
+    ra "Boo! Hiss!"
     mo "It's kinda scary, isn't it? An owl that close to camp?"
     hide cloud_stand
     show cloud_sit
-    cl "It seemed like it was eating well. Maybe we should follow its example."
-    r "Wanna grow a pair of wings, Cloudheart? It might help you on your journey to become leader."
+    cl "At least it seemed to be eating well. Maybe we should follow its example."
+    ra "Wanna grow a pair of wings, Cloudheart? Then, cats would have to make you leader."
     hide moth_sit
     show moth_stand
+    show raven_stand
+    show cloud_sit
     mo "Whoa. Cloudheart wants to be leader?"
-    r "Why are you so surprised? Pouncetail's on the way out, and so is Briarstar."
-    cl "Raven's exaggerating. It was only an idea."
-    cl "Besides, it's not like I could even go to the Moonpool to receive my nine lives, anyways."
-    mo "Oh, yeah. What do you plan to do about that?"
-    cl "I'm not sure. I wasn't really serious, anyway. Who would even wanna be the leader right now?"
-    cl "How can you turn ThunderClan around from a mess like this one?"
+    ra "Is it really so surprising? Pouncetail's on the way out, and so is Briarstar."
+    cl "Raven's exaggerating. It was only just an idea."
+    cl "Besides, it's not like I could even go to the Moonpool to receive my nine lives right now, anyways."
+    mo "Oh, yeah. What did you plan on doing about that?"
+    cl "I'm not sure. I wasn't really all that serious about it, anyway."
+    cl "I mean, who would wanna lead ThunderClan in the state it's in?"
+    cl "How do you turn the Clan around from a mess like this one?"
     hide raven_stand
     show raven_sit
-    r "Yeah, well, whatever you do, it'd be better than nothing. Which is what our current leader is doing."
-    r "A whole lotta nothing."
+    ra "Yeah, well, whatever you do, it'd be better than nothing. Which is what our current leader is doing."
+    ra "A whole lotta nothing."
+    hide moth_stand
+    show moth_sit
+    show raven_sit
+    show cloud_sit
     mo "... You could do a lot worse than nothing, too."
     mo "Whatever cat ends up taking over, I just feel sorry for them."
     mo "It'll take a lot to earn ThunderClan's trust again."
     cl "..."
-    r "..."
+    ra "..."
     scene clearing bg night with fade
     call screen gameUI
 
