@@ -110,16 +110,22 @@ default f3_locked = False
 default f4_locked = False
 default f5_locked = False
 
-default f1_next_herb = ""
-default f2_next_herb = ""
-default f3_next_herb = ""
-default f4_next_herb = ""
-default f5_next_herb = ""
-
 default herb_turns = {"blackberry":2, "catmint":3}
 
+default turn_max1 = frame1_progress - 1
+default herb_max1 = herb_turns.get(herbf1)
+default turn_max2 = frame2_progress - 1
+default herb_max2 = herb_turns.get(herbf2)
+default turn_max3 = frame3_progress - 1
+default herb_max3 = herb_turns.get(herbf3)
+default turn_max4 = frame4_progress - 1
+default herb_max4 = herb_turns.get(herbf4)   
+default turn_max5 = frame5_progress - 1
+default herb_max5 = herb_turns.get(herbf5)      
+
+default lost_leads = []
+
 label define_herb(frame_herb):
-    $ frame_empty = False
     $ rand_herb = renpy.random.randint(1,10)
     if rand_herb > 8:
         if frame_herb == "f1":
@@ -130,7 +136,7 @@ label define_herb(frame_herb):
             $ herbf3 = "catmint"
         elif frame_herb == "f4":
             $ herbf4 = "catmint"
-        elif frame_herb == "f5":
+        else:
             $ herbf5 = "catmint"
     elif rand_herb < 5:
         if frame_herb == "f1":
@@ -141,18 +147,19 @@ label define_herb(frame_herb):
             $ herbf3 = "blackberry"
         elif frame_herb == "f4":
             $ herbf4 = "blackberry"
-        elif frame_herb == "f5":
+        else:
             $ herbf5 = "blackberry"    
     else:
         if frame_herb == "f1":
             $ frame1_empty = True
+            $ print("frame1 should be empty")
         elif frame_herb == "f2":
             $ frame2_empty = True
         elif frame_herb == "f3":
             $ frame3_empty = True
         elif frame_herb == "f4":
             $ frame4_empty = True
-        elif frame_herb == "f5":
+        else:
             $ frame5_empty = True  
     return
 
@@ -166,39 +173,76 @@ label show_herbs:
 
 label proceed_logic:
     $ i += 1
-    call show_herbs
+    $ f1_prev = herbf1
+    $ f2_prev = herbf2
+    $ f3_prev = herbf3
+    $ f4_prev = herbf4
+    $ f5_prev = herbf5
+    $ frame1_empty = False
+    $ frame2_empty = False
+    $ frame3_empty = False
+    $ frame4_empty = False
+    $ frame5_empty = False
+    jump show_herbs
     if f1_locked:
+        $ print("I know f1 is locked")
+        $ herbf1 = f1_prev
         $ lead_chance = renpy.random.randint(1,10)
-        if lead_chance >=6:
+        if lead_chance > 0:
+            $ print("I know the lead chance is greater than zero")
             $ frame1_progress += 1
+            $ turn_max1 += 1
         else:
             $ frame1_empty = True
             $ frame1_progress = 1
+            $ lost_leads.append(herbf1)
+            $ herbf1 = ""
+            $ print("frame1 should be empty")
     elif f2_locked:
+        $ herbf2 = f2_prev
         $ lead_chance = renpy.random.randint(1,10)
         if lead_chance >=6:
             $ frame2_progress += 1
+            $ turn_max2 += 2
         else:
             $ frame2_empty = True
             $ frame2_progress = 1
+            $ herbf2 = ""
+            $ lost_leads.append(herbf2)
     elif f3_locked:
+        $ herbf3 = f3_prev
         $ lead_chance = renpy.random.randint(1,10)
         if lead_chance >=6:
             $ frame3_progress += 1
+            $ turn_max3 += 1
         else:
             $ frame3_empty = True
             $ frame3_progress = 1
+            $ herbf3 = ""
+            $ lost_leads.append(herbf3)
     elif f4_locked:
+        $ herbf4 = f4_prev
         $ lead_chance = renpy.random.randint(1,10)
         if lead_chance >=6:
             $ frame4_progress += 1
+            $ turn_max4 += 1
         else:
             $ frame4_empty = True 
-            $ frame4_progress = 1           
+            $ frame4_progress = 1
+            $ herbf4 = ""
+            $ lost_leads.append(herbf4)
     elif f5_locked:
+        $ herbf5 = f5_prev
         $ lead_chance = renpy.random.randint(1,10)
         if lead_chance >=6:
             $ frame5_progress += 1
+            $ turn_max5 += 1
         else:
             $ frame5_empty = True
             $ frame5_progress = 1
+            $ herbf5 = ""
+            $ lost_leads.append(herbf5)
+    else:
+        return
+
+

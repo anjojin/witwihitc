@@ -1,104 +1,36 @@
-2025-03-31 20:18:13 UTC
+2025-03-31 22:26:02 UTC
 Windows-10-10.0.26100
 Ren'Py 8.3.4.24120703
 
-Early init took 0.18s
-Loading error handling took 0.03s
-Loading script took 0.19s
-Loading save slot metadata took 0.03s
+Early init took 0.25s
+Loading error handling took 0.05s
+Loading script took 0.25s
+Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
-Running init code took 0.05s
+Running init code took 0.07s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\annie\\AppData\\Roaming/RenPy/backups\\WITWIHITC':
-Dump and make backups took 0.06s
+Dump and make backups took 0.17s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.03s
+Initial gc took 0.05s
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
 Creating interface object took 0.01s
 Cleaning stores took 0.00s
-Init translation took 0.03s
+Init translation took 0.05s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.03s
-Prepare screens took 0.06s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.51s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) Iris(R) Xe Graphics'
-Version: b'4.6.0 - Build 30.0.101.1960'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1856, 1044) drawable=(1856, 1044)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/scripts/game_content/herb_gathering.rpy", line 88, in script
-    scene herbbg with fade
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1251, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1080, in show_imspec
-    renpy.config.show(name,
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\exports\displayexports.py", line 503, in show
-    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\scenelists.py", line 466, in add
-    thing.set_transform_event("show")
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\transform.py", line 823, in set_transform_event
-    self.child.set_transform_event(event)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\image.py", line 501, in set_transform_event
-    return self.target.set_transform_event(event)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\image.py", line 760, in set_transform_event
-    self.find_target()
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\image.py", line 683, in find_target
-    raise Exception(error)
-Exception: DynamicImage 'images/bg/herbbg_[i].png': could not find image. ('images/bg/herbbg_0.png')
-
-While running game code:
-  File "game/scripts/game_content/herb_gathering.rpy", line 88, in script
-    scene herbbg with fade
-Exception: DynamicImage 'images/bg/herbbg_[i].png': could not find image. ('images/bg/herbbg_0.png')
-Resetting cache.
-Early init took 17.46s
-Loading error handling took 0.03s
-Loading script took 0.18s
-Loading save slot metadata took 0.03s
-Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.03s
-Index archives took 0.00s
-Dump and make backups took 0.05s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.06s
-DPI scale factor: 1.500000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.04s
-Build styles took 0.00s
-Load screen analysis took 0.03s
+Load screen analysis took 0.06s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.06s
+Prepare screens took 0.08s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
-Interface start took 0.07s
+Interface start took 0.16s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -108,81 +40,31 @@ Vendor: "b'Intel'"
 Renderer: b'Intel(R) Iris(R) Xe Graphics'
 Version: b'4.6.0 - Build 30.0.101.1960'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1856, 1044) drawable=(1856, 1044)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1046) drawable=(1920, 1046)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/scripts/game_content/herb_gathering.rpy", line 88, in script
-    scene herbbg with fade
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1251, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1080, in show_imspec
-    renpy.config.show(name,
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\exports\displayexports.py", line 503, in show
-    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\scenelists.py", line 466, in add
-    thing.set_transform_event("show")
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\transform.py", line 823, in set_transform_event
-    self.child.set_transform_event(event)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\image.py", line 501, in set_transform_event
-    return self.target.set_transform_event(event)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\image.py", line 760, in set_transform_event
-    self.find_target()
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\image.py", line 683, in find_target
-    raise Exception(error)
-Exception: DynamicImage 'images/bg/herbbg_[i].png': could not find image. ('images/bg/herbbg_0.png')
-
-While running game code:
-  File "game/scripts/game_content/herb_gathering.rpy", line 88, in script
-    scene herbbg with fade
-Exception: DynamicImage 'images/bg/herbbg_[i].png': could not find image. ('images/bg/herbbg_0.png')
-
-Full traceback:
-  File "game/scripts/game_content/herb_gathering.rpy", line 90, in script
-    call screen herb_gathering_screen
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1980, in execute
-    self.call("execute")
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1959, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  [Previous line repeated 2 more times]
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\displayable.py", line 436, in visit_all
-    callback(self)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\image.py", line 793, in per_interact
-    self.find_target()
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\display\image.py", line 683, in find_target
-    raise Exception(error)
-Exception: DynamicImage 'images/bg/herbbg_[i].png': could not find image. ('images/bg/herbbg_2.png')
-
-While running game code:
-  File "game/scripts/game_content/herb_gathering.rpy", line 90, in script
-    call screen herb_gathering_screen
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-Exception: DynamicImage 'images/bg/herbbg_[i].png': could not find image. ('images/bg/herbbg_2.png')
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1046) drawable=(1920, 1046)
+Maximum texture size: 4096x4096
+I am now calling show_herbs
+frame1 should be empty
+I am now in screen herb_gathering_screen
+I am now in screen frame1
+True
+1
+True
+I think frame1 is not empty
+I am incorrectly accessing this statement
+I am now in screen frame2
+I am now in screen frame3
+I am now in screen frame4
+I am now in screen frame5
+I am now in screen herb_gathering_screen
+I am now in screen frame1
+True
+1
+True
+I think frame1 is not empty
+I am incorrectly accessing this statement
+I am now in screen frame2
+I am now in screen frame3
+I am now in screen frame4
+I am now in screen frame5
