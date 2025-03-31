@@ -246,6 +246,9 @@ label cl3_clover_end:
             t "Has he completely frozen to death yet, or only halfway-frozen?"
             t "I should probably go check on --"
             jump cl3_crowkit
+        else:
+            t "... It looks like the other warriors finished their hunting patrol, too."
+            t "Hopefully, they at least didn't come back empty-pawed."
     show screen freshkill_night
     call screen gameUI
 
@@ -361,7 +364,10 @@ label cl3_no:
     call screen gameUI
 
 label cl4:
+    stop music fadeout 0.5
+    play music "music/ES_Dreams of a Life - Damon Greene.mp3"
     scene clearing bg night with fade
+    show screen gameUI
     t "..."
     if not already_clanmates:
         show screen clanmates

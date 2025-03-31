@@ -284,11 +284,14 @@ label ad2:
     call screen gameUI
 
 label ad3:
+    $ apprentice_visited_postp = True
     scene app den night with fade
     stop music fadeout 1.0
     play music "music/ES_The Coldest Water - Headlund.mp3" loop
     show screen gameUI
-    if quest_check_clover.started:
+    if apprentice_visited_postp == True:
+        jump ad4
+    elif quest_check_clover.started:
         jump ad3_check_clover
     else:
         if quest_report_clover.completed:
@@ -572,7 +575,7 @@ label ad3_ending:
     cf "..."
     cf "... I'll fight for it it until my very last breath."
     "{b}END GAME{/b}"
-    return
+    $ MainMenu(confirm=False)()
 
 label ad4:
     t "Probably best to let the apprentices rest up."

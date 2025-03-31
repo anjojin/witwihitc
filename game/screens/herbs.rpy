@@ -86,3 +86,12 @@ screen willowkit:
         idle "gui/button/willowkit.png"
         hover "gui/button/willowkit_hover.png"
         action Jump("ed3_willowkit")
+
+screen talon_nest:
+    tag herb_screen
+    imagebutton:
+        xpos 1220
+        ypos 515
+        idle "gui/button/nest.png"
+        hover "gui/button/nest_hover.png"
+        action Jump ("wd3_ending")

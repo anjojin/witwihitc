@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/apprentices_den.rpy", line 319: expected statement.
+File "game/scripts/game_content/clearing.rpy", line 249: else clause expects a non-empty block.
     else:
-        ^
+         ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sat Mar 29 11:39:04 2025
+Sun Mar 30 18:27:34 2025

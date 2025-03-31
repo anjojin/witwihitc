@@ -13,6 +13,8 @@ image talon = At("char/lark pixel.png", sprite_highlight('talon'))
 define b = Character("Briarstar", callback=name_callback, cb_name='briar', color="#6b0e5a")
 image briarstar = At("char/briarstar.png", sprite_highlight('briar'))
 image briarstar_standing = At("char/briarstar_standing.png", sprite_highlight('briar'))
+image briar_night_sit = At("char/briar night stand.png", sprite_highlight('briar'))
+image briar_night_lay = At("char/briar night lay.png", sprite_highlight('briar'))
 
 define fa = Character("Fawnpaw", callback=name_callback, cb_name='fawn', color="#9f5d16")
 image fawnpaw_ad1 = At("char/fawnpaw ad1.png", sprite_highlight('fawn'))
@@ -75,6 +77,7 @@ image featherkit = At("char/featherkit.png", sprite_highlight('feather'))
 
 define l = Character("Locustleaf", callback=name_callback, cb_name='locust', color="#4c5119")
 image locustleaf = At("char/locustleaf.png", sprite_highlight('locust'))
+image locust_night = At("char/locust night.png", sprite_highlight('locust'))
 
 define m = Character("Maplebreeze", callback=name_callback, cb_name='maple', color="#400000")
 image maplebreeze = At("char/maplebreeze_1.png", sprite_highlight('maple'))

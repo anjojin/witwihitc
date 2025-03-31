@@ -2,8 +2,8 @@ label wd1:
     $ warriors_visited = True
     scene warriors_den_dapple_nest with fade
     stop music fadeout 1.0
+    play music "music/ES_Autumn Skies - Roots and Recognition.mp3"
     show screen gameUI
-
     t "Guess my conversation with Sunshadow took longer than I thought. All the healthy warriors have already gone out on patrol."
     t "Seems like I'll be hunting solo today."
     if quest_nesting_material.started:
@@ -43,4 +43,47 @@ label wd2:
     t "I think I could use a little of that, myself."
     t "This whole Clan could."
     call screen gameUI
+
+label wd3:
+    $ warriors_visited_postp = True
+    stop music fadeout 1.0
+    play music "music/ES_Autumn Skies - Roots and Recognition.mp3"
+    if quest_nesting_material.completed:
+        scene warriors night with fade
+    else:
+        scene warriors night dapple with fade
+    show screen gameUI
+    t "Great StarClan, I'm exhausted ..."
+    t "It feels like I could curl up in my nest and sleep until newleaf."
+    play sound "sfx/game_tip.mp3"
+    "When you're ready, you can {b}click on Talonclaw's nest{/b} to end the game."
+    play sound "sfx/game_tip.mp3"
+    "However, this is not the only way to end the story ..."
+    play sound "sfx/game_tip.mp3"
+    "See if you can find all the endings!"
+    show screen talon_nest
+    call screen gameUI
+
+label wd3_ending:
+    scene black with fade
+    t "Zzz..."
+
+label wd4:
+    stop music fadeout 1.0
+    play music "music/ES_Autumn Skies - Roots and Recognition.mp3"
+    if quest_nesting_material.completed:
+        scene warriors night with fade
+    else:
+        scene warriors night dapple with fade
+    show screen gameUI
+    t "..."
+    show screen talon_nest
+    call screen gameUI
+
+
+
+
+
+
+    
 

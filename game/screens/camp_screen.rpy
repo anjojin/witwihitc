@@ -67,7 +67,11 @@ screen Camp():
                 action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("ad1")]
             else:
                 if not quest_check_nursery.started:
-                    action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("ad3")]
+                    if apprentice_visited_postp:
+                        action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("ad3")]
+
+                    else:
+                        action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("ad4")]
 
 
     imagebutton:
@@ -101,6 +105,12 @@ screen Camp():
                     action [Hide("Camp"), SetVariable("currently_in", "warriors"), Jump("wd1")]
                 else:
                     action [Hide("Camp"), SetVariable("currently_in", "warriors"), Jump("wd2")]
+            else:
+                if not quest_check_nursery.started:
+                    if warriors_visited_postp:
+                        action [Hide("Camp"), SetVariable("currently_in", "warriors"), Jump("wd3")]
+                    else:
+                        action [Hide("Camp"), SetVariable("currently_in", "warriors"), Jump("wd4")]
 
     imagebutton:
         xpos 1220
@@ -131,5 +141,5 @@ screen Camp():
             if already_patrolled==False:
                 action [Hide("Camp"), SetVariable("currently_in", "clearing"), Jump("cl2")]
             else:
-                if not quest_check_nursery:
-                    action [Hide("Camp"), SetVariable("currently_in", "clearing"), Jump("cl3_1")]
+                if not quest_check_nursery.started:
+                    action [Hide("Camp"), SetVariable("currently_in", "clearing"), Jump("cl4")]

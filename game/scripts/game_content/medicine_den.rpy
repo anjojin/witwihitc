@@ -215,3 +215,19 @@ label md2:
             call screen gameUI
         else:
             call screen gameUI
+
+label md3:
+    $ med_den_visited_postp = True
+    stop music fadeout 0.5
+    play music "music/ES_Enough by Now - Headlund.mp3" loop
+    scene med int night with fade
+    show screen gameUI
+    if quest_report_clover.started:
+        jump md3_clover
+    else:
+        show locust_night with easeinright
+
+label md3_clover:
+    show cloverpaw_sit_center with easeinleft
+    
+
