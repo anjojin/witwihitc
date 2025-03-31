@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/clearing.rpy", line 249: else clause expects a non-empty block.
-    else:
+File "game/scripts/game_content/herb_gathering.rpy", line 14: end of line expected.
+    jump pursue(i) 
+               ^
+
+File "game/scripts/game_content/herb_gathering.rpy", line 21: end of line expected.
+    show screen frame[i]_locked
+                     ^
+
+File "game/scripts/game_content/herb_gathering.rpy", line 36: end of line expected.
+    hide screen frame[i]
+                     ^
+
+File "game/scripts/game_content/herb_gathering.rpy", line 19: invalid syntax
+    f[i]_locked = True
          ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Mar 30 18:27:34 2025
+Mon Mar 31 16:14:39 2025

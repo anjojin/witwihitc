@@ -280,3 +280,15 @@ label ld_2:
         t "Maybe Sunshadow was onto something ..."
     call screen gameUI
 
+label ld3:
+    if quest_feed_deputy.completed:
+        jump ld3_feed_dep
+    elif quest_feed_deputy.cancelled or quest_feed_deputy.failed:
+        jump ld3_dep_incomplete
+    else:
+        "x"
+
+label ld3_feed_dep:
+
+label ld3_dep_incomplete:
+

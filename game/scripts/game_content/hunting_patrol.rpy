@@ -8,7 +8,6 @@ label hunting_start:
     else:
         $ talon_chance = 13 - talon_clan_bonus
     scene patrol bg with fade
-    $ quick_menu = True
     stop music fadeout 1.0
     play music "music/ES_Naranjas en Diciembre - Vendla.mp3" loop
     if quest_babysitting.started:

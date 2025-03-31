@@ -281,6 +281,9 @@ label n2_white_lie:
     w "*rasp* *wheeze*"
     be "Whatever you end up doing, you'd better do it fast."
     be "I'm not sure how much longer any of it will matter."
+    "{b}Quest Completed:{/b} Grim Tidings"
+    $ quest_grim_tidings.started = False
+    $ quest_grim_tidings.completed = True
     call screen gameUI
 
 label n2_finish:

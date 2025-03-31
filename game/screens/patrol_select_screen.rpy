@@ -15,7 +15,7 @@ screen PatrolSelect():
                 if not quest_nesting_material.started:
                     if not quest_grim_tidings.started:
                         if quest_gather_herbs.started:
-                            action NullAction
+                            action [Hide ("PatrolSelect"), Hide("Camp"), Jump("herb_start")]
                         else:
                             action [Hide ("PatrolSelect"), Hide("Camp"), Jump("hunting_start")]
 
@@ -45,10 +45,10 @@ screen PatrolSelect():
                 text "Talonclaw cannot go on patrol until he completes the following quest: {b}Nesting Material.{/b}"
             elif quest_babysitting.started:
                 text "Talonclaw is committed to a {b}hunting patrol with the apprentices.{/b}"
-            elif quest_gather_herbs.started:
-                text "Talonclaw is currently committed to an {b}herb gathering patrol.{/b}"
             elif quest_grim_tidings.started:
                 text "Talonclaw cannot go on patrol until he completes the following quest: {b}Grim Tidings.{/b}"
+            elif quest_gather_herbs.started:
+                text "Talonclaw is currently committed to an {b}herb gathering patrol.{/b}"
             else:
                 text "Talonclaw is currently committed to a {b}hunting patrol.{/b}"
 

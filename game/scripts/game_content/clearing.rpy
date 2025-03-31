@@ -1,7 +1,7 @@
 label cl1:
     $ currently_in = "clearing"
     scene clearing bg with fade
-    play sound "sfx/camp_click.mp3"
+    play audio "sfx/camp_click.mp3"
     show screen gameUI
     stop music fadeout 0.5
     play music "music/ES_Dreams of a Life - Damon Greene.mp3"
