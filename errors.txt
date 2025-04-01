@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/herb_gathering.rpy", line 94: expected statement.
-    i += 1
-      ^
+File "game/scripts/defines/herb_gathering_defines.rpy", line 9: non-default argument follows default argument
+        def __init__(self, number, herb="", x_pos, y_pos, progress=1, clicked=False, empty=False, locked=False, previous=""):
+                                                    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Mon Mar 31 16:33:37 2025
+Tue Apr  1 18:39:15 2025

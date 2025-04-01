@@ -1,38 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/herb_gathering.rpy", line 5, in script call
-    call show_herbs
-  File "game/scripts/defines/herb_gathering_defines.rpy", line 166, in script call
-    call define_herb("f1")
-  File "game/scripts/defines/herb_gathering_defines.rpy", line 166, in script call
-    call define_herb("f1")
-  File "game/scripts/defines/herb_gathering_defines.rpy", line 166, in script call
-    call define_herb("f1")
-  [Previous line repeated 5357 more times]
-  File "game/scripts/defines/herb_gathering_defines.rpy", line 128, in script
-    label define_herb(frame_herb):
-Exception: Possible infinite loop.
+  File "game/scripts/game_content/herb_gathering.rpy", line 104, in script
+    call screen herb_gathering_screen
+ScriptError: could not find label 'herb3_collected'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/herb_gathering.rpy", line 5, in script call
-    call show_herbs
-  File "game/scripts/defines/herb_gathering_defines.rpy", line 166, in script call
-    call define_herb("f1")
-  File "game/scripts/defines/herb_gathering_defines.rpy", line 166, in script call
-    call define_herb("f1")
-  File "game/scripts/defines/herb_gathering_defines.rpy", line 166, in script call
-    call define_herb("f1")
-  [Previous line repeated 5357 more times]
-  File "game/scripts/defines/herb_gathering_defines.rpy", line 128, in script
-    label define_herb(frame_herb):
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\execution.py", line 61, in check_infinite_loop
-    raise Exception("Possible infinite loop.")
-Exception: Possible infinite loop.
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "game/scripts/game_content/herb_gathering.rpy", line 104, in script
+    call screen herb_gathering_screen
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'herb3_collected'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Mon Mar 31 18:19:47 2025
+Tue Apr  1 19:10:59 2025
