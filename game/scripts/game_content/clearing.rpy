@@ -61,7 +61,11 @@ label cl3:
     play music "music/ES_Dreams of a Life - Damon Greene.mp3"
     if quest_babysitting.completed:
         jump cl3_cloverpaw
-    elif not quest_gather_herbs.completed and prey_caught==0:
+    elif quest_gather_herbs.completed:
+        jump cl3_catmint
+    elif quest_gather_herbs.failed:
+        jump cl3_fail_herbs
+    elif prey_caught==0:
         t "Oof. StarClan, what a disaster ..."
         t "At least the warriors' hunting patrol made it back alright. Hopefully, they fared better than I did."
         if quest_favorite_prey.completed:
@@ -82,6 +86,18 @@ label cl3:
             jump cl3_crowkit
     show screen freshkill_night
     call screen gameUI
+
+label cl3_catmint:
+    t "I ... I got it."
+    t "I can't believe it. I really got it!"
+    t "Thank you, StarClan, for blessing me with this gift. I promise that I won't take it for granted ..."
+    t "... Locustleaf is going to be so impressed."
+    jump cl3_crowkit
+
+label cl3_fail_herbs:
+    if len(herbs_gathered) == 0:
+        t "Oof. StarClan, what a disaster ..."
+        t "At least the warriors' hunting patrol made it back alright. Hopefully, they fared better than I did."
 
 label cl3_crowkit:
     stop music fadeout 1.0

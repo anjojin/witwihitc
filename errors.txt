@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/scripts/defines/herb_gathering_defines.rpy", line 9: non-default argument follows default argument
-        def __init__(self, number, herb="", x_pos, y_pos, progress=1, clicked=False, empty=False, locked=False, previous=""):
-                                                    ^
+File "game/scripts/game_content/apprentices_den.rpy", line 291: expected statement.
+    elif quest_check_clover.started:
+                           ^
+
+File "game/scripts/game_content/apprentices_den.rpy", line 293: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Tue Apr  1 18:39:15 2025
+Wed Apr  2 17:34:01 2025

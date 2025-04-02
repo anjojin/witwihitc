@@ -29,8 +29,8 @@ screen ad_juniper:
     imagebutton:
         xpos 0
         ypos 832
-        idle "gui/button/juniper.png"
-        hover "gui/button/juniper_hover.png"
+        idle "gui/button/junipera.png"
+        hover "gui/button/junipera_hover.png"
         action Jump("ad1_click_juniper")
 
 screen n_tansy:

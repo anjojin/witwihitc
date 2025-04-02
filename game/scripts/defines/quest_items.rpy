@@ -4,7 +4,7 @@ default quest_favorite_prey = Quest(name="Favorite Prey", description="Go on a h
 default quest_crocus = Quest(name="Crocuses", description="Find a small, purple flower somewhere in camp.", cancelled = False, started = False)
 default quest_feed_deputy = Quest(name="Feed the Deputy", description="Catch something and deliver it to Pouncetail in the medicine den.")
 default quest_medical_opinion = Quest(name="Medical Opinion", description="Visit the medicine den and ask Locustleaf about Featherkit.")
-default quest_gather_herbs = Quest(name="Gather Herbs", description="Go on an herb gathering patrol.")
+default quest_gather_herbs = Quest(name="Collect Catmint", description="Go on an herb gathering patrol and collect catmint.")
 default quest_babysitting = Quest(name="Adult Supervision", description="Go on a hunting patrol with the apprentices.")
 default quest_check_nursery = Quest(name="Check Nursery", description="Check on Sunshadow's kits in the nursery")
 default quest_harbringer = Quest(name="Harbringer", description="Break the bad news to Sunshadow at the burial site.")

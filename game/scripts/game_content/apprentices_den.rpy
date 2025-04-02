@@ -185,7 +185,6 @@ label ad1_no:
 
 label ad1_leave_alone:
     t "Probably best not to disturb them. Especially when there's so much other work to be done."
-    t "Maybe I'll run into them later."
     if quest_crocus.started:
         show screen ad_juniper
     call screen gameUI
@@ -289,9 +288,7 @@ label ad3:
     stop music fadeout 1.0
     play music "music/ES_The Coldest Water - Headlund.mp3" loop
     show screen gameUI
-    if apprentice_visited_postp == True:
-        jump ad4
-    elif quest_check_clover.started:
+    if quest_check_clover.started:
         jump ad3_check_clover
     else:
         if quest_report_clover.completed:

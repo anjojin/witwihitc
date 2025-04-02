@@ -27,3 +27,4 @@ default already_freshkill = False
 default final_game_screen = False
 
 default eaten_prey = False
+default tutorial_proceeded = False

@@ -39,7 +39,7 @@ label md1:
         play music "music/ES_Days That Matter - Headlund.mp3" loop
         t "What?!"
         l "I'm sorry. There's nothing I can do."
-        l "An underfed cat her age, in these conditions, doesn't stand a chance against any sort of cough."
+        l "A cat her age, in these conditions, without a mother, doesn't stand a chance against any sort of cough."
         l "Herbs, or no herbs."
         t "No, no, that can't be right."
         t "She just got sick this morning! There must still be some time to save her!"
@@ -181,7 +181,7 @@ label md2:
         jump md1
     elif nursery_visited==False:
         jump md1
-    elif nursery_visited==True and not quest_medical_opinion.started or quest_medical_opinion.completed:
+    elif nursery_visited==True and not quest_medical_opinion.started and not quest_medical_opinion.completed:
         stop music fadeout 0.5
         play music "music/ES_Enough by Now - Headlund.mp3" loop
         scene med_den_ext with fade

@@ -54,9 +54,11 @@ label n1:
     hide featherkit
     t "Wow ... wouldja look at that?"
     t "They're so small."
-    be "They may be small for now, but those five hungry mouths will grow up faster than you realize."
-    be "I only hope my milk will last ..."
-    t "You won't go hungry. Sunshadow and I will make sure of it."
+    be "They may be small, but their appetites certainly aren't."
+    be "I'm not a young queen anymore, Talonclaw. My milk won't last forever."
+    t "Don't worry. You won't go hungry."
+    t "Sunshadow and I will make sure of it."
+    be "Hmm ..."
     be "And where is Sunshadow now?"
     t "Er, he's ... out."
     be "Out where? On patrol?"
@@ -81,7 +83,7 @@ label n1:
     be "Oh, StarClan. Not this again."
     be "Shh, shhh ... it's alright little one. Settle down."
     t "What's happening? Why is she coughing?"
-    be "She may have a little cold. She and Willowkit haven't been eating well."
+    be "She may have caught something. She and Willowkit haven't been eating well."
     t "What?!"
     be "I was hoping it was just a temporary shock from their mother's passing. But, now ..."
     t "Do you think it's serious?"
@@ -178,7 +180,7 @@ label n2_truth:
     t "Locustleaf said she might still have a shot, if she gets catmint."
     if quest_gather_herbs.started:
         t "I'm going out to find some, now."
-    be "These days, it seems catmint's what every cat needs ..."
+    be "These days, it seems like every cat's in need of catmint ..."
     jump n2_confront
 
 label n2_confront:
@@ -188,7 +190,7 @@ label n2_confront:
     t "He's Featherkit's father. I think he has the right to be frightened."
     be "If he's Featherkit's father, then why isn't he here with her right now?"
     be "Why am I the one caring for his sick daughter, while he's out running a fool's errand who-knows-where?"
-    be "You can tell him whatever you'd like, Talonclaw, but know this -- whatever happens to Featherkit, I am not taking the blame."
+    be "You can tell him whatever you'd like, Talonclaw, but know this -- whatever happens to Featherkit, I am not taking the blame for it."
     t "What are you talking about?"
     t "Who would blame you?"
     t "What's happening to Featherkit is a terrible act of chance. It isn't like --"
@@ -212,9 +214,8 @@ label n2_sun_defend:
     be "What makes Sunshadow and these so-called 'newcomers' any different?"
     be "His body takes up just as much space in the warriors' den as mine does."
     be "We eat the same food, drink the same water, bring back the same amount of prey."
-    be "He blames kitting queens, yet he has kits, himself, and refuses to take care of them."
     be "And, now, when both of us are starving, somehow I'm the one to blame, and he isn't?"
-    be "Don't be a fool, Talonclaw. Sunshadow's beliefs aren't motivated by justice. They never have been."
+    be "Don't be a fool, Talonclaw. Sunshadow's beliefs aren't so rational. They never have been."
     be "These past few moons have been madness. Cats are terrified. They want an explanation."
     be "And when terrified cats want an explanation, they won't stop looking for one until they find it."
     t "... How will they know when that happens?"
