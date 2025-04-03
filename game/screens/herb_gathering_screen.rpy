@@ -1,8 +1,6 @@
 screen frame1_screen:
     if not frame1.empty:
         if frame1.progress == frame1.herb.turns:
-            $ print(q)
-            $ print("herb should be in frame 1")
             imagebutton:
                 xpos frame1.xpos
                 ypos frame1.ypos
@@ -29,7 +27,7 @@ screen frame1_screen:
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
                 action Jump("herb1_p2_clicked")
-        else:
+        elif frame1.progress==3:
             imagebutton:
                 xpos frame1.xpos
                 ypos frame1.ypos
@@ -41,9 +39,7 @@ screen frame1_screen:
 
 screen frame2_screen:
     if not frame2.empty:
-        if frame2.progress == frame2.herb.turns:
-            $ print(q)
-            $ print("herb should be in frame 2")            
+        if frame2.progress == frame2.herb.turns:          
             imagebutton:
                 xpos frame2.xpos
                 ypos frame2.ypos
@@ -70,7 +66,7 @@ screen frame2_screen:
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
                 action Jump("herb2_p2_clicked")
-        else:
+        elif frame2.progress==3:
             imagebutton:
                 xpos frame2.xpos
                 ypos frame2.ypos
@@ -83,8 +79,6 @@ screen frame2_screen:
 screen frame3_screen:
     if not frame3.empty:
         if frame3.progress == frame3.herb.turns:
-            $ print(q)
-            $ print("herb should be in frame 3")
             imagebutton:
                 xpos frame3.xpos
                 ypos frame3.ypos
@@ -111,7 +105,7 @@ screen frame3_screen:
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
                 action Jump("herb3_p2_clicked")
-        else:
+        elif frame3.progress==3:
             imagebutton:
                 xpos frame3.xpos
                 ypos frame3.ypos
@@ -124,8 +118,6 @@ screen frame3_screen:
 screen frame4_screen:  
     if not frame4.empty:
         if frame4.progress == frame4.herb.turns:
-            $ print(q)
-            $ print("herb should be in frame 4")
             imagebutton:
                 xpos frame4.xpos
                 ypos frame4.ypos
@@ -152,7 +144,7 @@ screen frame4_screen:
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
                 action Jump("herb4_p2_clicked")
-        else:
+        elif frame4.progress==3:
             imagebutton:
                 xpos frame4.xpos
                 ypos frame4.ypos
@@ -165,8 +157,6 @@ screen frame4_screen:
 screen frame5_screen: 
     if not frame5.empty:
         if frame5.progress == frame5.herb.turns:
-            $ print(q)
-            $ print("herb should be in frame 5")
             imagebutton:
                 xpos frame5.xpos
                 ypos frame5.ypos
@@ -193,7 +183,8 @@ screen frame5_screen:
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
                 action Jump("herb5_p2_clicked")
-        else:
+        elif frame5.progress==3:
+            $ print("screen knows progress is 3")
             imagebutton:
                 xpos frame5.xpos
                 ypos frame5.ypos

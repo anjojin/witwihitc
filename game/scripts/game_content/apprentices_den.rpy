@@ -575,6 +575,10 @@ label ad3_ending:
     $ MainMenu(confirm=False)()
 
 label ad4:
+    scene app den night with fade
+    stop music fadeout 1.0
+    play music "music/ES_The Coldest Water - Headlund.mp3" loop
+    show screen gameUI
     t "Probably best to let the apprentices rest up."
     if quest_babysitting.completed:
         t "They've had a long day."

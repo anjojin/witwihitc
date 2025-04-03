@@ -125,11 +125,14 @@ label define_herb(frame_herb):
     return
 
 label define_progress(frame_herb):
-    $ rand_progress = renpy.random.randint(1,10)
-    if rand_progress >= 9:
-        $ frame_herb.progress = 2
-    else:
-        $ frame_herb.progress = 1
+    if not frame_herb.empty:
+        if not frame_herb.herb == juniper:
+            if not frame_herb.herb == burdock:
+                $ rand_progress = renpy.random.randint(1,10)
+                if rand_progress > 9:
+                    $ frame_herb.progress = 2
+                else:
+                    $ frame_herb.progress = 1
     return
 
 
@@ -150,41 +153,56 @@ label proceed_logic(herbframe):
     $ herbframe.prev = herbframe.herb
     $ herbframe.empty = False
     call define_herb(herbframe)
-    if herbframe.locked:
-        $ herbframe.herb = herbframe.prev
-        $ lead_chance = renpy.random.randint(1,10)
-        if herbframe.progress == 1:
-            if lead_chance >= 6:
-                $ herbframe.progress += 1
-                $ herbframe.locked = False
-            else:
-                $ herbframe.empty = True
-                $ herbframe.progress = 1
-                $ lost_leads.append(herbframe.herb.name)
-                $ herbframe.locked = False
-            return
-        elif herbframe.progress == 2:
-            if lead_chance >= 4:
-                $ herbframe.progress += 1
-                $ herbframe.locked = False
-            else:
-                $ herbframe.empty = True
-                $ herbframe.progress = 1
-                $ lost_leads.append(herbframe.herb.name)
-                $ herbframe.locked = False
-        elif herbframe.progress > 2:
-            if lead_chance >= 3:
-                $ herbframe.progress += 1
-                $ herbframe.locked = False
-            else:
-                $ herbframe.empty = True
-                $ herbframe.progress = 1
-                $ lost_leads.append(herbframe.herb.name)
-                $ herbframe.locked = False
-            return
-    else:
+    if not herbframe.locked:
         if not herbframe.empty:
             call define_progress(herbframe)
         return
+    else:
+        $ herbframe.herb = herbframe.prev
+        $ herbframe.empty = False
+        $ lead_chance = renpy.random.randint(1,10)
+        $ print("progress")
+        $ print(herbframe.progress)
+        $ print("lead chance")
+        $ print(lead_chance)
+        if herbframe.progress == 1:
+            if lead_chance >= 6:
+                $ herbframe.progress += 1
+                $ print("new progress")
+                $ print(herbframe.progress)
+                $ herbframe.locked = False
+                return
+            else:
+                $ herbframe.empty = True
+                $ herbframe.progress = 1
+                $ lost_leads.append(herbframe.herb.name)
+                $ herbframe.locked = False
+                return
+        elif herbframe.progress == 2:
+            if lead_chance >= 4:
+                $ herbframe.progress += 1
+                $ print("new progress")
+                $ print(herbframe.progress)
+                $ herbframe.locked = False
+                return
+            else:
+                $ herbframe.empty = True
+                $ herbframe.progress = 1
+                $ lost_leads.append(herbframe.herb.name)
+                $ herbframe.locked = False
+                return
+        elif herbframe.progress > 2:
+            if lead_chance >= 3:
+                $ herbframe.progress += 1
+                $ print("new progress")
+                $ print(herbframe.progress)
+                $ herbframe.locked = False
+                return
+            else:
+                $ herbframe.empty = True
+                $ herbframe.progress = 1
+                $ lost_leads.append(herbframe.herb.name)
+                $ herbframe.locked = False
+                return
 
 

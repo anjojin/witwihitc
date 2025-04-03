@@ -1,24 +1,37 @@
-2025-04-02 21:34:01 UTC
+2025-04-03 14:19:23 UTC
 Windows-10-10.0.26100
 Ren'Py 8.3.4.24120703
 
-Early init took 0.18s
+Early init took 0.19s
 Loading error handling took 0.03s
-Loading script took 0.26s
+Loading script took 0.22s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-
-File "game/scripts/game_content/apprentices_den.rpy", line 291: expected statement.
-    elif quest_check_clover.started:
-                           ^
-
-File "game/scripts/game_content/apprentices_den.rpy", line 293: expected statement.
-    else:
-        ^
+Running init code took 0.04s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\annie\\AppData\\Roaming/RenPy/backups\\WITWIHITC':
+Dump and make backups took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.03s
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.32s
+Creating interface object took 0.01s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.07s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Interface start took 0.73s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -30,13 +43,78 @@ Version: b'4.6.0 - Build 30.0.101.1960'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1856, 1044) drawable=(1856, 1044)
 Maximum texture size: 4096x4096
+screen knows progress is 3
+screen knows progress is 3
+screen knows progress is 3
+screen knows progress is 3
+screen knows progress is 3
+progress
+1
+lead chance
+6
+new progress
+2
+screen knows progress is 3
+screen knows progress is 3
+progress
+2
+lead chance
+7
+new progress
+3
+screen knows progress is 3
+screen knows progress is 3
+screen knows progress is 3
+screen knows progress is 3
+screen knows progress is 3
+screen knows progress is 3
+progress
+3
+lead chance
+5
+new progress
+4
+screen knows progress is 3
+screen knows progress is 3
+progress
+1
+lead chance
+9
+new progress
+2
+screen knows progress is 3
+screen knows progress is 3
+screen knows progress is 3
+False
+False
+False
+
+Full traceback:
+  File "game/scripts/game_content/herb_gathering.rpy", line 378, in script
+    if len(herbs_gathered==1):
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1849, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scripts/game_content/herb_gathering.rpy", line 378, in <module>
+    if len(herbs_gathered==1):
+TypeError: object of type 'bool' has no len()
+
+While running game code:
+  File "game/scripts/game_content/herb_gathering.rpy", line 378, in script
+    if len(herbs_gathered==1):
+  File "game/scripts/game_content/herb_gathering.rpy", line 378, in <module>
+    if len(herbs_gathered==1):
+TypeError: object of type 'bool' has no len()
 Resetting cache.
-Early init took 48.16s
-Loading error handling took 0.02s
-Loading script took 0.25s
+Early init took 43.03s
+Loading error handling took 0.03s
+Loading script took 0.19s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
-Running init code took 0.05s
+Running init code took 0.03s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
@@ -45,7 +123,7 @@ Backing up script files to 'C:\\Users\\annie\\AppData\\Roaming/RenPy/backups\\WI
 Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.04s
+Initial gc took 0.06s
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -60,7 +138,7 @@ Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.14s
+Interface start took 0.16s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -72,3 +150,5 @@ Version: b'4.6.0 - Build 30.0.101.1960'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1856, 1044) drawable=(1856, 1044)
 Maximum texture size: 4096x4096
+False
+False

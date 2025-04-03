@@ -1,39 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/herb_gathering.rpy", line 109, in script
-    menu:
-AttributeError: 'str' object has no attribute 'name'
+  File "game/scripts/game_content/herb_gathering.rpy", line 378, in script
+    if len(herbs_gathered==1):
+  File "game/scripts/game_content/herb_gathering.rpy", line 378, in <module>
+    if len(herbs_gathered==1):
+TypeError: object of type 'bool' has no len()
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/herb_gathering.rpy", line 109, in script
-    menu:
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1621, in execute
-    renpy.exports.say(None, "\n".join(narration), interact=False)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\character.py", line 1440, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\character.py", line 1354, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\character.py", line 1334, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
+  File "game/scripts/game_content/herb_gathering.rpy", line 378, in script
+    if len(herbs_gathered==1):
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1849, in execute
+    if renpy.python.py_eval(condition):
   File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1209, in py_eval
     return py_eval_bytecode(code, globals, locals)
   File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-AttributeError: 'str' object has no attribute 'name'
+  File "game/scripts/game_content/herb_gathering.rpy", line 378, in <module>
+    if len(herbs_gathered==1):
+TypeError: object of type 'bool' has no len()
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Wed Apr  2 16:52:02 2025
+Thu Apr  3 10:19:56 2025

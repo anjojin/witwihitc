@@ -2,13 +2,25 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/apprentices_den.rpy", line 291: expected statement.
-    elif quest_check_clover.started:
-                           ^
+File "game/screens/herb_gathering_screen.rpy", line 32: expected a keyword argument or child statement.
+    $ print("screen knows progress is 3")
+    ^
 
-File "game/scripts/game_content/apprentices_den.rpy", line 293: expected statement.
-    else:
-        ^
+File "game/screens/herb_gathering_screen.rpy", line 72: expected a keyword argument or child statement.
+    $ print("screen knows progress is 3")
+    ^
+
+File "game/screens/herb_gathering_screen.rpy", line 112: expected a keyword argument or child statement.
+    $ print("screen knows progress is 3")
+    ^
+
+File "game/screens/herb_gathering_screen.rpy", line 152: expected a keyword argument or child statement.
+    $ print("screen knows progress is 3")
+    ^
+
+File "game/screens/herb_gathering_screen.rpy", line 192: expected a keyword argument or child statement.
+    $ print("screen knows progress is 3")
+    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Wed Apr  2 17:34:01 2025
+Thu Apr  3 09:59:18 2025

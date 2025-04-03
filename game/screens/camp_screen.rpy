@@ -67,7 +67,7 @@ screen Camp():
                 action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("ad1")]
             else:
                 if not quest_check_nursery.started:
-                    if apprentice_visited_postp:
+                    if not apprentice_visited_postp:
                         action [Hide("Camp"), SetVariable("currently_in", "apprentices"), Jump("ad3")]
 
                     else:
@@ -107,7 +107,7 @@ screen Camp():
                     action [Hide("Camp"), SetVariable("currently_in", "warriors"), Jump("wd2")]
             else:
                 if not quest_check_nursery.started:
-                    if warriors_visited_postp:
+                    if not warriors_visited_postp:
                         action [Hide("Camp"), SetVariable("currently_in", "warriors"), Jump("wd3")]
                     else:
                         action [Hide("Camp"), SetVariable("currently_in", "warriors"), Jump("wd4")]

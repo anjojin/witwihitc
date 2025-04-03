@@ -108,7 +108,7 @@ label herb1_p1_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame1.herb.name] is faint. Would you like to pursue it?"
+        "The scent of {b}[frame1.herb.name]{/b} is faint. Would you like to pursue it?"
         "Yes":
             jump pursuef1
         "No":
@@ -119,7 +119,7 @@ label herb1_p2_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame1.herb.name] is getting stronger. Would you like to keep pursuing?"
+        "The scent of {b}[frame1.herb.name]{/b} is getting stronger. Would you like to keep pursuing?"
         "Yes":
             jump pursuef1 
         "No":
@@ -129,7 +129,7 @@ label herb1_p3_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame1.herb.name] so strong, you can almost taste it. Would you like to keep pursuing?"
+        "The scent of {b}[frame1.herb.name]{/b} so strong, you can almost taste it. Would you like to keep pursuing?"
         "Yes":
             jump pursuef1 
         "No":
@@ -144,7 +144,7 @@ label herb2_p1_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame2.herb.name] is faint. Would you like to pursue it?"
+        "The scent of {b}[frame2.herb.name]{/b} is faint. Would you like to pursue it?"
         "Yes":
             jump pursuef2
         "No":
@@ -154,7 +154,7 @@ label herb2_p2_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame2.herb.name] is getting stronger. Would you like to keep pursuing?"
+        "The scent of {b}[frame2.herb.name]{/b} is getting stronger. Would you like to keep pursuing?"
         "Yes":
             jump pursuef2
         "No":
@@ -164,7 +164,7 @@ label herb2_p3_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame2.herb.name] so strong, you can almost taste it. Would you like to keep pursuing?"
+        "The scent of {b}[frame2.herb.name]{/b} so strong, you can almost taste it. Would you like to keep pursuing?"
         "Yes":
             jump pursuef2
         "No":
@@ -179,7 +179,7 @@ label herb3_p1_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame3.herb.name] is faint. Would you like to pursue it?"
+        "The scent of {b}[frame3.herb.name]{/b} is faint. Would you like to pursue it?"
         "Yes":
             jump pursuef3
         "No":
@@ -189,7 +189,7 @@ label herb3_p2_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame3.herb.name] is getting stronger. Would you like to keep pursuing?"
+        "The scent of {b}[frame3.herb.name]{/b} is getting stronger. Would you like to keep pursuing?"
         "Yes":
             jump pursuef3
         "No":
@@ -199,7 +199,7 @@ label herb3_p3_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame3.herb.name] so strong, you can almost taste it. Would you like to keep pursuing?"
+        "The scent of {b}[frame3.herb.name]{/b} so strong, you can almost taste it. Would you like to keep pursuing?"
         "Yes":
             jump pursuef3
         "No":
@@ -214,7 +214,7 @@ label herb4_p1_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame4.herb.name] is faint. Would you like to pursue it?"
+        "The scent of {b}[frame4.herb.name]{/b} is faint. Would you like to pursue it?"
         "Yes":
             jump pursuef4
         "No":
@@ -224,7 +224,7 @@ label herb4_p2_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame4.herb.name] is getting stronger. Would you like to keep pursuing?"
+        "The scent of {b}[frame4.herb.name]{/b} is getting stronger. Would you like to keep pursuing?"
         "Yes":
             jump pursuef4
         "No":
@@ -234,7 +234,7 @@ label herb4_p3_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame4.herb.name] so strong, you can almost taste it. Would you like to keep pursuing?"
+        "The scent of {b}[frame4.herb.name]{/b} so strong, you can almost taste it. Would you like to keep pursuing?"
         "Yes":
             jump pursuef4
         "No":
@@ -249,7 +249,7 @@ label herb5_p1_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame5.herb.name] is faint. Would you like to pursue it?"
+        "The scent of {b}[frame5.herb.name]{/b} is faint. Would you like to pursue it?"
         "Yes":
             jump pursuef5
         "No":
@@ -259,7 +259,7 @@ label herb5_p2_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame5.herb.name] is getting stronger. Would you like to keep pursuing?"
+        "The scent of {b}[frame5.herb.name]{/b} is getting stronger. Would you like to keep pursuing?"
         "Yes":
             jump pursuef5
         "No":
@@ -269,7 +269,7 @@ label herb5_p3_clicked:
     show screen herb_gathering_screen
     show screen locked_herbs
     menu:
-        "The scent of [frame5.herb.name] so strong, you can almost taste it. Would you like to keep pursuing?"
+        "The scent of {b}[frame5.herb.name]{/b} so strong, you can almost taste it. Would you like to keep pursuing?"
         "Yes":
             jump pursuef5
         "No":
@@ -285,6 +285,8 @@ label no_pursue:
     call screen locked_herbs
 
 label herb_proceed:
+    hide screen herb_gathering_screen
+    hide screen locked_herbs
     if q<5:
         $ q += 1
     if q==5:
@@ -303,7 +305,9 @@ label herb_proceed:
     call screen herb_gathering_screen
 
 label herb1_collected:
-    "You collected the [frame1.herb.name]."
+    show screen herb_gathering_screen
+    show screen locked_herbs
+    "You collected the {b}[frame1.herb.name]{/b}."
     $ herbs_gathered.append(frame1.herb.name)
     $ frame1.empty = True
     $ frame1.locked = False
@@ -312,7 +316,9 @@ label herb1_collected:
     call screen locked_herbs
 
 label herb2_collected:
-    "You collected the [frame2.herb.name]."
+    show screen herb_gathering_screen
+    show screen locked_herbs
+    "You collected the {b}[frame2.herb.name]{/b}."
     $ herbs_gathered.append(frame2.herb.name)
     $ frame2.empty = True
     $ frame2.locked = False
@@ -321,7 +327,9 @@ label herb2_collected:
     call screen locked_herbs
 
 label herb3_collected:
-    "You collected the [frame3.herb.name]."
+    show screen herb_gathering_screen
+    show screen locked_herbs
+    "You collected the {b}[frame3.herb.name]{/b}."
     $ herbs_gathered.append(frame3.herb.name)
     $ frame3.empty = True
     $ frame3.locked = False
@@ -330,7 +338,9 @@ label herb3_collected:
     call screen locked_herbs
 
 label herb4_collected:
-    "You collected the [frame4.herb.name]."
+    show screen herb_gathering_screen
+    show screen locked_herbs
+    "You collected the {b}[frame4.herb.name]{/b}."
     $ herbs_gathered.append(frame4.herb.name)
     $ frame4.empty = True
     $ frame4.locked = False
@@ -339,7 +349,9 @@ label herb4_collected:
     call screen locked_herbs
 
 label herb5_collected:
-    "You collected the [frame5.herb.name]."
+    show screen herb_gathering_screen
+    show screen locked_herbs
+    "You collected the {b}[frame5.herb.name]{/b}."
     $ herbs_gathered.append(frame5.herb.name)
     $ frame5.empty = True
     $ frame5.locked = False
@@ -356,11 +368,15 @@ label herb_end:
         play audio "sfx/quest_unlocked.mp3"
         $ quest_gather_herbs.started = False
         $ quest_gather_herbs.completed = True
-        "{b}Quest Completed:{/b} Gather Herbs"
+        $ got_catmint = True
+        "{b}Quest Completed:{/b} Collect Catmint"
     else:
         $ quest_gather_herbs.started = False
         $ quest_gather_herbs.failed = True
         play sound "sfx/ES_Error 04 - Epidemic Sound.mp3"
-        "{b}Quest Failed:{/b} Gather Herbs"
-    "You gathered {b}[len(herbs_gathered)]{/b} herbs."
+        "{b}Quest Failed:{/b} Collect Catmint"
+    if len(herbs_gathered)==1:
+        "You gathered {b}1{/b} herb in total."
+    else:
+        "You gathered {b}[len(herbs_gathered)]{/b} herbs in total."
     jump cl3

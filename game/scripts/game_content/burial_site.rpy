@@ -5,25 +5,29 @@ label bs_1:
     show side sun sitting
     play music "music/ES_A Friend Like You - Headlund.mp3" loop
     s "I only said what every cat in ThunderClan's already been thinking."
-    t "I think I saw a few of the warriors crying ..."
-    t "I know you're grieving, Sunshadow, but as you yourself so deftly pointed out, the bodies are quite literally beginning to pile up around camp."
-    t "Cats are going through enough as it is. Did you have to make her vigil so ... upsetting?"
+    t "I had a few thoughts about the part where you condemned our warrior ancestors to an eternity of suffering and torment ..."
     hide side sun sitting
     show side sun rising
-    s "Upsetting? {i}Upsetting?{/i}"
-    s "ThunderClan {i}needs{/i} to be upset."
-    s "With each day that passes, more of our Clanmates' lives are stolen away from us, yet no cat seems to want to lift a paw to do anything about it."
-    s "Did you notice that Briarstar wasn't even at the vigil?"
-    t "She hasn't been to a vigil in moons. What difference does it make?"
-    s "It goes to show just how little she values the lives of her warriors."
-    t "Oh, please. What do you want Briarstar to do? It's not like she can bring the prey back to the forest."
-    t "If there was anything she could do to make this go away, I'm sure that she would do it."
+    s "Think you're funny?"
+    s "I'm not in the mood to laugh right now, Talonclaw."
+    t "I'm sorry. But, as you yourself pointed out, the bodies are quite literally beginning to pile up around camp."
+    t "And yet, your speech managed to depress your fellow warriors so much, I think I caught a few of them secretly crying on the way out here."
+    t "Did you have to make it so ... upsetting?"
+    hide side sun sitting
+    show side sun rising
+    s "{i}Upsetting{/i} was exactly my intention."
+    s "With each day that passes, more and more of our Clanmates' lives are stolen away."
+    s "Where are the cats who are supposed to protect us?"
+    s "Where are the cats who were supposed to protect Dapplefeather?"
+    s "Did you notice how Briarstar couldn't even be bothered to show up to the vigil?"
+    t "Come on. You can't blame all this on Briarstar."
+    t "If there was anything Clan leadership could've done to save Dapplefeather, I'm sure they would've done it."
     hide side sun rising
     show side sun sitting
     s "..."
     s "Tell me this, then, Talonclaw."
     menu: 
-        s "What do you think caused this famine, in the first place?"
+        s "Why do you think this famine happened, in the first place?"
         "The Moonpool running dry.":
             jump bs1_wc_moonpool
         "The greencough outbreak.":
@@ -34,7 +38,7 @@ label bs_1:
             jump bs1_wc_leafbare
 
 label bs1_wc_moonpool:
-    t "Believe what you will, but you can't deny that all of this started when we lost our connection to StarClan."
+    t "Believe what you will, but you can't deny that things fell apart after we lost our connection to StarClan."
     hide side sun sitting
     show side sun rising
     s "Am I really expected to believe that the power of our warrior ancestors is contained within a little pool of water?"
@@ -42,8 +46,8 @@ label bs1_wc_moonpool:
     s "What happens when the Moonpool freezes over? Or when twolegs decide to fill it in with dirt?"
     s "No. What really matters are the choices that were made in the land of the living."
     s "Last newleaf alone, there were four new litters of kits, none of which were their queens' first."
-    s "Our family trees have grown so large, it's impossible for cats to keep track of their own kin."
-    s "That's not even to mention all the downtrodden rogues and strays Briarstar's taken in."
+    s "Our family trees are so large, cats can't even keep track of their own kin."
+    s "Not to mention all the downtrodden rogues and strays Briarstar's taken in."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
     t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
@@ -57,8 +61,8 @@ label bs1_wc_greencough:
     show side sun rising
     s "And how do outbreaks spread?"
     s "Last newleaf alone, there were four new litters of kits, none of which were their queens' first."
-    s "Our family trees have grown so large, it's impossible for cats to keep track of their own kin."
-    s "That's not even to mention all the downtrodden rogues and strays Briarstar's taken in."
+    s "Our family trees are so large, cats can't even keep track of their own kin."
+    s "Not to mention all the downtrodden rogues and strays Briarstar's taken in."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
     t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
@@ -72,8 +76,8 @@ label bs1_wc_overpopulation:
     show side sun rising
     s "It's not an opinion. It's simple fact."
     s "Last newleaf alone, there were four new litters of kits, none of which were their queens' first."
-    s "Our family trees have grown so large, it's impossible for cats to keep track of their own kin."
-    s "That's not even to mention all the downtrodden rogues and strays Briarstar's taken in."
+    s "Our family trees are so large, cats can't even keep track of their own kin."
+    s "Not to mention all the downtrodden rogues and strays Briarstar's taken in."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
     t "Hn. Well, if your theory is true, the hard times shouldn't last much longer."
     t "By my last head count, I believe our ranks are down to sixteen, now."
@@ -86,8 +90,8 @@ label bs1_wc_leafbare:
     show side sun rising
     s "ShadowClan, WindClan, and RiverClan have all endured the exact same conditions that we have, but they haven't experienced nearly as much hardship."
     s "Last newleaf alone, there were four new litters of kits, none of which were their queens' first."
-    s "Our family trees have grown so large, it's impossible for cats to keep track of their own kin."
-    s "That's not even to mention all the downtrodden rogues and strays Briarstar's taken in."
+    s "Our family trees are so large, cats can't even keep track of their own kin."
+    s "Not to mention all the downtrodden rogues and strays Briarstar's taken in."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
     t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
@@ -98,24 +102,30 @@ label bs1_sun_lament:
     t "That's counting your new kits."
     s "Sixteen cats ..."
     s "And I suspect at least a few of those won't make it to the end of leaf-bare."
-    t "What do we do, now?"
+    t "Stop it."
+    t "Don't do that."
+    t "ThunderClan is strong. We can survive this if we just --"
+    s "Just what?"
+    s "Stick together? Be the best warriors we can be?"
+    s "Dapplefeather believed all that, too, and it didn't do her a lick of good."
+    t "What are you going to do about it, then, Sunshadow?"
     hide side sun rising
     show side sun sitting
     s "..."
     s "I'll tell you what I'm going to do."
     s "I'm going to bury my mate."
-    s "I refuse to let Dapplefeather rot on the body pile because of another cat's half-witted compromises."
-    s "She's going to get a proper ThunderClan burial. All the rites. All the rituals."
+    s "She's getting a proper ThunderClan burial -- all the rites, all the rituals."
+    s "Nothing withheld."
     t "Sunshadow."
     s "What?"
     t "You can't be serious."
     s "Do I seem unserious to you?"
-    t "We're practically one bad day away from all of ThunderClan joining the pile."
+    t "We're practically one bad day away from all of ThunderClan joining the body pile."
     t "We barely have enough energy to keep everyone fed, let alone perform an elaborate grave-digging ritual in the middle of leaf-bare."
     t "Forgive me if I'm not overwhelmed with sympathy."
     s "See, that, Talonclaw, is an appeal to logic. To reason."
     s "But those things don't matter anymore. Nothing makes sense and it hasn't for a long time."
-    s "My mate is dead. Let me freeze, for all I care. These burial rites can be for the both of us."
+    s "My mate is dead. Let me freeze, for all I care. The worms can eat us both."
     t "Don't say things like that."
     s "Why not? Suddenly overwhelmed with sympathy?"
     menu:
@@ -161,9 +171,8 @@ label bs1_kits_selfish:
 label bs1_kits_irrational:
     t "It's just not rational to throw your life away over a cat who's already gone."
     t "I'm sorry, Sunshadow. I know how much you loved her. But doing this won't bring her back."
-    t "What happens to Dapplefeather's body won't make a difference in the lives of your kits."
-    t "What happens to {i}you,{/i} will."
-    t "Just ... Come on, Sunshadow. Come back to camp with me. Get some food in your belly. Warm your paws. I can cover your hunting patrols for the day."
+    t "Just ... Come on, Sunshadow. Come back to camp with me."
+    t "Get some food in your belly. Warm your paws. I can cover your hunting patrols for the day."
     jump bs1_kit_quiz
 
 label bs1_kits_unfair:
@@ -452,8 +461,8 @@ label bs2_abrupt:
     t "Your daughters. Willowkit and Featherkit."
     t "They were weakened by their mother's loss. There was nothing we could do."
     t "I'm so sorry."
-    t "I wish there was something I could say to this any better."
-    t "I wish I could take away even a fraction of the pain you must be feeling inside."
+    t "I wish there was something I could say to make this any better."
+    t "To take away even a fraction of the pain you must be feeling."
     t "But there isn't. And I can't."
     t "So I'm just ... sorry."
     s "..."
@@ -494,7 +503,7 @@ label bs2_nonending:
     s "Things are turning over in the dirt."
     t "Sunshadow --"
     s "Go back to camp, Talonclaw."
-    s "But --"
+    t "But --"
     s "Go back to camp."
     s "I have to bury my mate."
     t "..."

@@ -128,7 +128,7 @@ label md1_accept_challenge:
         $ quest_babysitting.started = False
         $ quest_babysitting.cancelled = True
     play sound "sfx/quest_unlocked.mp3"
-    "{b}Quest Unlocked:{/b} Gather Herbs"
+    "{b}Quest Unlocked:{/b} Collect Catmint"
     t "Fine! I will, then!"
     t "... N-Not the branch thing. The catmint thing."
     t "I'm going to find catmint, and I'm going to save Featherkit's life, and I'm going to make everything better!"

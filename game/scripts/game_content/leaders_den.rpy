@@ -31,9 +31,9 @@ label ld1:
 
     else:
         t "The leaders' den."
-        t "At the start of the famine, Briarstar used to give these incredible speeches here."
-        t "'I have seven lives left,' she said, 'and I'll give every last one of them helping my Clan.'"
-        t "... Rumor has it she's down to two, now."
+        t "At the start of the famine, Briarstar used to give these incredible speeches from this very spot."
+        t "'I have seven lives left,' she said, 'and I'll give every last one of them helping my Clan!'"
+        t "... Rumor has it she's down to her last two, now."
         t "And I can't remember the last time I saw her give a speech."
         t "Come to think of it, I can't remember the last time I saw her at all ..."
         play sound "sfx/rustle.mp3"
@@ -67,7 +67,7 @@ label ld1_inside:
             b "I hope this moss is soft enough for your liking."
             t "... Of course it is, Briarstar. Thank you."
             t "What a fascinating den you have."
-            t "I can see why you spend so much time in here."
+            t "I can see why you spend so much time in it."
             b "Oh. Yes."
         b "It stays quite warm in here all year round, so sometimes, peculiar things will grow."
         b "Mostly mushrooms and other fungi; though, once, the most precious white lily blossomed in that corner right over there."

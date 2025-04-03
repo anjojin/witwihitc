@@ -393,7 +393,7 @@ label n3_continue:
     be "You know, it's funny."
     be "For how much the two of you claim to care about this little family, I was the only one who was here to comfort those two kits as they died."
     t "..."
-    be "I'm not going through this alone, Talonclaw."
+    be "I'm not going through this alone anymore, Talonclaw."
     be "Now, it's your and Sunshadow's turns."
     be "I've already grieved more than my share."
     t "..."
