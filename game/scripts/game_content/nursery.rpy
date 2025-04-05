@@ -16,7 +16,7 @@ label n1:
     cr "Talonclaw, Talonclaw, Talonclaw!!!"
     ba "What are you doing here? Shouldn't you be out on patrol with the rest of the warriors?"
     cr "Didja bring us any presents?"
-    ba "Anything to eat???"
+    ba "Didja fight off any rogues???"
     play audio "sfx/growl.mp3"
     be "Boys, stop pestering him."
     cr "But - But --"
@@ -305,6 +305,7 @@ label n2_finish:
     call screen gameUI
 
 label n3:
+    $ nursery_visited_postp = True
     scene nursery bg night with fade
     stop music fadeout 0.5
     play music "music/ES_Asheville Lament - American Legion.mp3" loop
@@ -330,8 +331,8 @@ label n3_no_check:
 
 label n3_check:
     be "Talonclaw --"
+    t "Tell me it's not what I think it is."    
     t "Tell me I'm not too late."
-    t "Tell me it's not what I think it is."
     be "..."
     hide beetle_curl
     show beetle_kits_night
@@ -342,61 +343,87 @@ label n3_continue:
     t "{i}No.{/i}"
     if quest_gather_herbs.completed:
         if got_catmint:
-            t "This can't be happening."
-            t "I - I just got the catmint for them!"
+            t "How long has it been? There might still be time!"
+            t "I have the catmint right here! Maybe -- if we give it to them -- they can still --"
+            be "Talonclaw."
+            be "I'm sorry."
+            t "Where are they now?"
+            jump n3_cont_2
     elif not nursery_visited:
             t "This can't be happening."
             t "I - I didn't even know that any of the kits were sick!"
     else:
         be "... Featherkit left first, and her sister followed shortly after."
-    be "It happened quick. They went out just like little embers."
+    be "It happened quick. They went out like little embers."
     be "Nothing the medicine cats could do, they said."
     t "..."
-    t "... Where are the kits now?"
+    t "... Where are Featherkit and Willowkit now?"
+    jump n3_cont_2
+
+label n3_cont_2:
     be "Where do you think? I moved them outside."
     t "Already?!"
     t "In this cold?"
     be "They won't feel it anymore, Talonclaw."
-    be "In case you've forgotten, they aren't the only little ones out there, either."
-    t "..."
+    be "They're sleeping with the other little ones, now."
+    be "In the elder's den."
     t "... This is all my fault."
     if nursery_visited:
         if not quest_medical_opinion.completed:
             t "I should have taken their sickness more seriously. Maybe if Locustleaf had known earlier, he --"
         else:
-            if not quest_gather_herbs.completed:
-                t "I should have tried harder to save them. Maybe if I had been brave enough to look for catmint, they --"
+            if quest_gather_herbs.completed:
+                t "Maybe if I had been faster gathering the catmint, they --"
+            elif quest_gather_herbs.failed:
+                t "Maybe if I had managed to find the catmint, they --"
             else:
-                t "I wasted so much time. Maybe if I had been faster gathering the catmint --"
+                t "I should have tried harder to save them. Maybe if I had been brave enough to look for catmint, they --"
     else:
-        t "I should have checked on them earlier. Maybe, if I had noticed, they could've --"
+        t "I should have checked on them earlier. Maybe if I had been here, they could've --"
     be "What good is that, now?"
     be "The shame. The responsibility. It won't make any difference."
-    if quest_gather_herbs.completed:
-        if got_catmint == True:
-            t "..."
-            t "... What do I do with the catmint, now?"
-            be "I'm not sure. Maybe give it to somecat who needs it?"
-            be "I'm sure you can think of a few."
-            play sound "sfx/quest_unlocked.mp3"
-            $ quest_miracle_worker.started = True
-            "{b}Quest Unlocked:{/b} Miracle Worker"
-            be "Somecat needs to break the bad news to your friend, too."
-    else:
-        t "..."
-        be "Somecat needs to break the bad news to your friend."
+    t "..."
+    be "Somecat needs to break the bad news to your friend."
     t "Oh, StarClan. Sunshadow."
     t "He's going to be devastated. He didn't even know that they were sick."
     be "He'll understand."
     t "How can you say that?"
     be "For the sakes of these three kits, he'll have to understand."
-    be "You know, it's funny."
-    be "For how much the two of you claim to care about this little family, I was the only one who was here to comfort those two kits as they died."
-    t "..."
-    be "I'm not going through this alone anymore, Talonclaw."
-    be "Now, it's your and Sunshadow's turns."
-    be "I've already grieved more than my share."
-    t "..."
+    if quest_gather_herbs.completed or quest_gather_herbs.failed:
+            be "It's up to Sunshadow to fight for his family, now."
+            be "No more passing the blame."
+            be "No more running away to dig graves."
+            t "..."
+            if got_catmint:
+                t "... What do I do with the catmint, now?"
+                be "Give it to somecat who needs it."
+                be "I'm sure you can think of a few."
+                be "It's not too late for you to save a life tonight."
+                play sound "sfx/quest_unlocked.mp3"
+                $ quest_miracle_worker.started = True
+                "{b}Quest Unlocked:{/b} Miracle Worker"
+                t "..."
+            be "Don't look at me like that, Talonclaw."
+            be "So guilty."
+            be "So full of remorse."
+            be "We did everything we could."
+            t "But it still wasn't enough."
+            t "We couldn't save them."
+            be "Sometimes, that's just the way things are."
+            be "It doesn't change the fact that you gave everything you had to give."
+            be "Willowkit and Featherkit both know that. And they'll be grateful when you see them again in StarClan."
+            be "Until then, we have to keep trying for the ones that are still here."
+            t "Even though it hurts?"
+            be "Even though it hurts."
+            t "..."
+    else:
+        be "You know, it's funny."
+        be "For how much the two of you claim to care about this little family, I was the only one who watched those two kits take their final breaths."
+        t "..."
+        be "I'm not going through this alone anymore, Talonclaw."
+        be "Now, it's your and Sunshadow's turns."
+        be "I've already grieved more than my share."
+        t "..."
     play sound "sfx/quest_unlocked.mp3"
     $ quest_check_nursery.started = False
     $ quest_check_nursery.completed = True
@@ -410,16 +437,137 @@ label n3_continue:
     call screen gameUI
 
 label n4:
+    scene nursery bg night with fade
+    stop music fadeout 0.5
     if quest_followup_beetle.started:
         jump n4_ending
     else:
-        scene nursery bg night with fade
-        stop music fadeout 0.5
         play music "music/ES_Asheville Lament - American Legion.mp3" loop
         show screen gameUI
         show beetle_curl with easeinbottom
         be "..."
         call screen gameUI
+
+label n4_ending:
+    play music "music/ES_A Sign of Solace - Daniel Kaede.mp3" loop
+    show screen gameUI
+    show beetle_curl with easeinbottom
+    t "There are only 14 of us left, now ..."
+    hide beetle_curl 
+    show beetle_kits_night
+    be "What?"
+    t "Oh, I'm sorry. I was just thinking out loud ..."
+    be "Did you get rid of the catmint?"
+    t "Yes. Just like you suggested."
+    if got_catmint=="maple":
+        t "Maplebreeze seemed very appreciative. I think the herbs will go a long way in supporting her recovery."
+    elif got_catmint=="pounce":
+        t "I tried giving it to Pouncetail, but ... he didn't really seem to notice."
+    elif got_catmint=="flip":
+        t "Flipcloud seemed appreciative ... or, at least I think he did."
+        t "I hope it helps him get to see his kits again, soon."
+    elif got_catmint=="clover":
+        be "Who'd you give them to?"
+        t "Erm ... a cat who needed them."
+    be "Well done. And what about Sunshadow?"
+    t "... He didn't exactly take the news well."
+    t "But I can't say I blame him."
+    be "I take it he didn't come back to camp with you?"
+    t "... No."
+    t "He didn't."
+    if talon_sun_bonus>0:
+        be "..."
+        t "Listen, Beetle, I know Sunshadow can be kind of a pawful, but he's not really a bad cat."
+        t "He wants to be a good father to these kits. I know he does."
+        t "He's just ... going through a lot right now."
+        t "I mean, can you really blame him for needing to spend some time away from camp right now?"
+        t "The wound is still so fresh."
+        be "You don't have to defend him to me, Talonclaw."
+        be "I've lost kits before. I have sympathy for what he's going through."
+        be "As for him wanting to be a good father ..."
+        hide beetle_kits_night
+        show beetle_curl
+        be "... I'll believe it when I see it."
+    else:
+        be "..."
+        t "I don't know how to get through to him."
+        t "He's been like this ever since he was a kit. Whenever he sets his mind to something, it's impossible to talk him out of it."
+        be "Hmph."
+        be "I guess I'll just have to wait for the day he finally sets his mind on being a father, then?"
+        t "C'mon, Beetle. You could have a little sympathy."
+        t "You've lost kits before, haven't you?"
+        be "... Yes."
+        be "I have."
+        t "So you must know how he feels."
+        be "I don't think I've ever truly known how that tom is feeling."
+        be "I think he can make other cats feel however he wants them to feel."
+        be "But as for him ..."
+        be "What's really inside his heart ..."
+        hide beetle_kits_night
+        show beetle_curl
+        be "I have no way of knowing."
+    t "StarClan, Beetle."
+    t "Do you think ..."
+    t "Do you think the other three kits will make it?"
+    t "Are they doing well?"
+    hide beetle_curl
+    show beetle_kits_night
+    be "It depends on what you mean by 'make it.'"
+    be "Make it out of kithood? Maybe. Only time will tell."
+    be "But will things really be any easier for them when they become apprentices?"
+    be "Or even warriors?"
+    t "Surely, the famine will be over by then!"
+    be "Okay. But what comes after the famine?"
+    be "Even you aren't so naive, Talonclaw."
+    be "I hear you counting your Clanmates' nests under your breath at night."
+    be "Think greenleaf is going to stir the cats we've lost from their graves?"
+    be "Think the blood is going to water the flowers and make the trees grow?"
+    be "No. Things won't move on so easily."
+    be "Nothing can stop what happens now."
+    be "A change is brewing for ThunderClan, and it sure as StarClan won't be for the better."
+    "{b}BEGIN ILLUSTRATION HERE{/b}"
+    be "... I just hope that whoever is in charge next is kind to them."
+    be "I had hoped that my sons being born here would mean they'd have a better life than mine."
+    be "The mighty ThunderClan."
+    be "Where a cat can realize his destiny."
+    be "Become whoever he's meant to be."
+    t "Your sons can still have that life."
+    t "We may be going through a rough patch right now, but ThunderClan is still the place that you dreamed about."
+    be "... Oh, Talonclaw."
+    be "It was never the place that I dreamed about."
+    be "I had to give my sons Clan names so cats wouldn't think less of them."
+    be "Crowkit's name was supposed to be 'Crawford.' After my father."
+    be "He's barely three moons old, now, and, already, he dreams of murder."
+    be "And warriors encourage him, because he cats he wants to kill aren't from our Clan."
+    be "And when the day comes that he's finally finished his work ..."
+    be "When his body finally breaks down ..."
+    be "... This Clan will discard him. Just like it does to all the cats who've outlived their usefulness."
+    be "At least these kits won't make the same mistake I did."
+    be "They won't have to grow up blaming themselves. Wondering just what it is that this place stands for."
+    be "In a way, I almost envy them."
+    be "They've already gotten all that grief out of the way."
+    be "Whatever life throws at them, they'll be ready."
+    t "..."
+    st "Mew!"
+    be "Shh ..."
+    be "The kits are hungry again."
+    be "Think you could fetch us something to eat?"
+    t "... I'm not sure how much is left on the pile."
+    t "Would you be open to splitting?"
+    be "Sure."
+    be "Why not?"
+    be "I'm open to anything."
+    scene black with fade
+    be "After all ..."
+    be "... it's the end of the world."
+    "{b}END GAME{/b}"
+    $ MainMenu(confirm=False)()
+
+
+
+
+
+
 
 
 

@@ -419,7 +419,9 @@ label bs2:
             s "You didn't, did you?"
             s "What was it, huh?"
             s "Briarstar needed you on the hunting patrol? A kitten was stuck up in a tree somewhere?"
-            t "No! What? No!" 
+            t "No! What? No!"
+            if eaten_prey:
+                s "Don't lie! I can smell you've eaten!"
             t "Listen, if you would just let me explain --"
         else:
             t "Yes, but --"

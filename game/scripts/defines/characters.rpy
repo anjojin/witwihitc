@@ -77,10 +77,13 @@ image featherkit = At("char/featherkit.png", sprite_highlight('feather'))
 
 define l = Character("Locustleaf", callback=name_callback, cb_name='locust', color="#4c5119")
 image locustleaf = At("char/locustleaf.png", sprite_highlight('locust'))
-image locust_night = At("char/locust night.png", sprite_highlight('locust'))
+image locust_hunch_night = At("char/locust hunch night.png", sprite_highlight('locust'))
+image locust_loaf_night = At("char/locust loaf night.png", sprite_highlight('locust'))
+image locust_lay_night = At("char/locust lay night.png", sprite_highlight('locust'))
 
 define m = Character("Maplebreeze", callback=name_callback, cb_name='maple', color="#400000")
 image maplebreeze = At("char/maplebreeze_1.png", sprite_highlight('maple'))
+image sd_maple = At("gui/button/maplebreeze.png", sprite_highlight('maple'))
 
 define ra = Character("Raven", callback=name_callback, cb_name='raven', color="#080808")
 image raven_sit = At("char/ravenslash sit.png", sprite_highlight('raven'))
@@ -93,3 +96,9 @@ image moth_stand = At("char/mothdust stand.png", sprite_highlight('moth'))
 define cl = Character("Cloudheart", callback=name_callback, cb_name='cloud', color="#304460")
 image cloud_sit = At("char/cloudheart sit.png", sprite_highlight('cloud'))
 image cloud_stand = At("char/cloudheart stand.png", sprite_highlight('cloud'))
+
+define fl = Character("Flipcloud", callback=name_callback, cb_name='flip', color="#711919")
+image flipcloud = At("gui/button/flipcloud.png", sprite_highlight('flip'))
+
+define p = Character("Pouncetail", callback=name_callback, cb_name='pounce', color="#491971")
+image pouncetail = At("gui/button/pouncetail.png", sprite_highlight('pounce'))

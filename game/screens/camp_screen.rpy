@@ -27,6 +27,12 @@ screen Camp():
                     action [Hide("Camp"), SetVariable("currently_in", "leaders"), Jump("ld1")]
                 else:
                     action [Hide("Camp"), SetVariable("currently_in", "leaders"), Jump("ld2")]
+            else:
+                if not quest_check_nursery.started:
+                    if leaders_visited_postp==False:
+                        action [Hide("Camp"), SetVariable("currently_in", "leaders"), Jump("ld3")]
+                    else:
+                        action [Hide("Camp"), SetVariable("currently_in", "leaders"), Jump("ld4")]
 
     imagebutton:
         xpos 620
@@ -54,6 +60,10 @@ screen Camp():
                     action [Hide("Camp"), SetVariable("currently_in", "med_den"), Jump("md1")]
                 else:
                     action [Hide("Camp"), SetVariable("currently_in", "med_den"), Jump("md2")]
+            else:
+                if not quest_check_nursery.started:
+                    if not med_den_visited_postp:
+                        action [Hide("Camp"), SetVariable("currently_in", "med_den"), Jump("md3")]
 
     imagebutton:
         xpos 590
@@ -128,6 +138,8 @@ screen Camp():
             else:
                 if nursery_visited_postp==False:
                     action [Hide("Camp"), SetVariable("currently_in", "nursery"), Jump("n3")]
+                else:
+                    action [Hide("Camp"), SetVariable("currently_in", "nursery"), Jump("n4")]
 
     imagebutton:
         xpos 916

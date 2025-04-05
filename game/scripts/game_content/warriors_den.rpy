@@ -65,8 +65,11 @@ label wd3:
     call screen gameUI
 
 label wd3_ending:
+    hide screen talon_nest
     scene black with fade
     t "Zzz..."
+    $ MainMenu(confirm=False)()
+
 
 label wd4:
     stop music fadeout 1.0

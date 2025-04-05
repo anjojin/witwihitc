@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/game_content/herb_gathering.rpy", line 378, in script
-    if len(herbs_gathered==1):
-  File "game/scripts/game_content/herb_gathering.rpy", line 378, in <module>
-    if len(herbs_gathered==1):
-TypeError: object of type 'bool' has no len()
+  File "game/scripts/game_content/medicine_den.rpy", line 538, in script
+    call screen sick_cats
+ScriptError: could not find label 'sd_maple'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/game_content/herb_gathering.rpy", line 378, in script
-    if len(herbs_gathered==1):
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1849, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/scripts/game_content/herb_gathering.rpy", line 378, in <module>
-    if len(herbs_gathered==1):
-TypeError: object of type 'bool' has no len()
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "game/scripts/game_content/medicine_den.rpy", line 538, in script
+    call screen sick_cats
+  File "C:\Users\annie\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'sd_maple'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.4.24120703
  1.0
-Thu Apr  3 10:19:56 2025
+Fri Apr  4 18:21:59 2025

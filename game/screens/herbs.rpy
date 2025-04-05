@@ -94,4 +94,56 @@ screen talon_nest:
         ypos 515
         idle "gui/button/nest.png"
         hover "gui/button/nest_hover.png"
-        action Jump ("wd3_ending")
+        action Jump("wd3_ending")
+
+screen sickden:
+    tag herb_screen
+    imagebutton:
+        xpos 5
+        ypos 10
+        idle "gui/button/sickden.png"
+        hover "gui/button/sickden_hover.png"
+        action Jump("sickden")
+    add "char/locust hunch night.png"
+
+screen md_herbs:
+    tag herb_screen
+    if "juniper" in herbs_gathered:
+        add "bg/md juniper.png"
+    if "blackberry" in herbs_gathered:
+        add "bg/md blackberry.png"
+    if "daisy" in herbs_gathered:
+        add "bg/md daisy.png"
+    if "dandelion" in herbs_gathered:
+        add "bg/md dadelion.png"
+    if "burdock" in herbs_gathered:
+        add "bg/md burdock.png"
+
+screen sick_cats:
+    tag herb_screen
+    if quest_miracle_worker.started:
+        imagebutton:
+            xpos 615
+            ypos 480
+            idle "gui/button/maplebreeze.png"
+            hover "gui/button/maplebreeze_hover.png"
+            action Jump("sd_maplebreeze")
+        imagebutton:
+            xpos 1270
+            ypos 490
+            idle "gui/button/flipcloud.png"
+            hover "gui/button/flipcloud_hover.png"
+            action Jump("sd_flipcloud")
+        imagebutton:
+            xpos -50
+            ypos 490
+            idle "gui/button/pouncetail.png"
+            hover "gui/button/pouncetail_hover.png"
+            action Jump("sd_pouncetail")
+    elif quest_feed_deputy.started:
+        imagebutton:
+            xpos -50
+            ypos 500
+            idle "gui/button/pouncetail.png"
+            hover "gui/button/pouncetail.png"
+            action Jump("sd_pouncetail")

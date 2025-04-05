@@ -71,7 +71,7 @@ label cl3:
         if quest_favorite_prey.completed:
             t "I guess Sunshadow will have to make do without a piece of prey for Dapplefeather, after all."
             t "I wonder how he's doing out there."
-            t "Has he completely frozen to death yet, or only halfway-frozen?"
+            t "Has he completely frozen to death yet, or only half-frozen?"
             t "I should probably go check on --"
             jump cl3_crowkit
     elif prey_caught > 0:
@@ -81,23 +81,36 @@ label cl3:
         if quest_favorite_prey.completed: 
             t "I guess I have everything Sunshadow asked for, now."
             t "I wonder how he's doing out there."
-            t "Has he completely frozen to death yet, or only halfway-frozen?"
+            t "Has he completely frozen to death yet, or only half-frozen?"
             t "I should probably go check on --"
             jump cl3_crowkit
     show screen freshkill_night
     call screen gameUI
 
 label cl3_catmint:
-    t "I ... I got it."
-    t "I can't believe it. I really got it!"
-    t "Thank you, StarClan, for blessing me with this gift. I promise that I won't take it for granted ..."
-    t "... Locustleaf is going to be so impressed."
+    t "... Ha."
+    t "Haha. Hahaha!"
+    t "I got it! StarClan above, I really got it!"
+    t "And it's so beautiful, too ... all those spiky leaves."
+    t "This just might send Locustleaf into shock!"
+    t "And Beetle -- she's going be kicking herself over all the things she said earlier."
+    t "I don't know what she was so --"
     jump cl3_crowkit
 
 label cl3_fail_herbs:
-    if len(herbs_gathered) == 0:
-        t "Oof. StarClan, what a disaster ..."
-        t "At least the warriors' hunting patrol made it back alright. Hopefully, they fared better than I did."
+    t "StarClan, Locustleaf was right. It really is impossible to find catmint out there ..."
+    if not len(herbs_gathered) == 0:
+        t "... Well, a-at least I didn't come back empty pawed, right?"
+        t "What did I bring back? [herbs_gathered[0]]? That's gotta be useful for something, right?"
+        t "Are these roots supposed to treat kittencough? Or - Or these leaves, maybe?"
+        t "Come on, come on."
+        t "It can't all have been for nothing!"
+    else:
+        t "... Well, t-that doesn't mean I'm done fighting for Willowkit and Featherkit. There's gotta be other options, right?"
+        t "Maybe I can still go back to Maplebreeze and ask for some of her herbs? Locustleaf gave her plenty!"
+        t "Or maybe there's some other herb that will help! I found all kinds of scents out there. Locustleaf would know!"
+        t "Or - Or maybe --"
+        jump cl3_crowkit
 
 label cl3_crowkit:
     stop music fadeout 1.0
@@ -115,12 +128,13 @@ label cl3_crowkit:
     cr "I-I wasn't -- I wasn't supposed to --"
     cr "{i}*Sob*{/i}"
     t "Whoa, buddy! Easy! Take a breath."
-    cr "But I wasn't supposed to see! Batkit and me were supposed to wait outside!"
+    cr "But I wasn't supposed to see!"
+    cr "Batkit and me were supposed to wait outside!"
     cr "I didn't wanna sneak a peek! Batkit dared me to!"
     cr "A-And now -- And now --"
     t "Crowkit, slow down. I can hardly understand you."
     cr "{i}*Whimper*{/i}"
-    t "Now, I need you to answer me as clearly as you can."
+    t "Now, I need you use your words with me."
     t "What is making you so upset?"
     cr "{i}*Sniff*{/i}"
     cr "Guh ...."
@@ -328,40 +342,43 @@ label cl3_eavesdrop:
     show raven_sit
     show moth_sit
     show cloud_stand
-    ra "I swear, it was like a whole squirrel in there, or something. It was as long as my tail."
+    ra "I swear, there was like a whole squirrel in there, or something. It was as long as my tail."
     mo "It was probably a pellet. An owl pellet."
     ra "What in StarClan's name is an {i}owl pellet?{/i}"
     mo "It's a puked-up amalgamation of all the bits and pieces that owls can't digest."
-    cl "Think we can eat 'em?"
+    cl "Think we could've eaten it?"
     ra "Ew. Are you crazy?"
     hide cloud_stand
     show cloud_sit
-    cl "I was only joking. You know how di-jest."
+    cl "I was only joking. Di-jest, di-jest."
     ra "{i}*Groan*{/i}"
     cl "Hahaha!"
     hide raven_sit
     show raven_stand
     ra "Boo! Hiss!"
-    mo "It's kinda scary, isn't it? An owl that close to camp?"
+    mo "It's kinda scary, isn't it?"
+    mo "An owl that close to camp?"
     hide cloud_stand
     show cloud_sit
     cl "At least it seemed to be eating well. Maybe we should follow its example."
-    ra "Wanna grow a pair of wings, Cloudheart? Then, cats would have to make you leader."
+    ra "Wanna grow a pair of wings, Cloudheart?"
+    ra "It would probably help with your journey to leader."
     hide moth_sit
     show moth_stand
     show raven_stand
     show cloud_sit
-    mo "Whoa. Cloudheart wants to be leader?"
-    ra "Is it really so surprising? Pouncetail's on the way out, and so is Briarstar."
-    cl "Raven's exaggerating. It was only just an idea."
-    cl "Besides, it's not like I could even go to the Moonpool to receive my nine lives right now, anyways."
+    mo "Whoa. Cloudheart wants to become leader?"
+    ra "Is it really so hard to believe? Pouncetail's on the way out, and so is Briarstar."
+    cl "Raven's exaggerating. It was only an idea."
+    cl "Besides, it's not like I could go to the Moonpool right now, anyways."
     mo "Oh, yeah. What did you plan on doing about that?"
     cl "I'm not sure. I wasn't really all that serious about it, anyway."
     cl "I mean, who would wanna lead ThunderClan in the state it's in?"
-    cl "How do you turn the Clan around from a mess like this one?"
+    cl "How do you turn the us around from a mess like this one?"
     hide raven_stand
     show raven_sit
-    ra "Yeah, well, whatever you do, it'd be better than nothing. Which is what our current leader is doing."
+    ra "Yeah, well, whatever you do, it'd be better than nothing."
+    ra "Which is what our current leader is doing."
     ra "A whole lotta nothing."
     hide moth_stand
     show moth_sit
@@ -384,6 +401,13 @@ label cl4:
     play music "music/ES_Dreams of a Life - Damon Greene.mp3"
     scene clearing bg night with fade
     show screen gameUI
+    if quest_harbringer.completed:
+        if quest_miracle_worker.completed:
+            t "I bet Beetle will want to hear about how I gave the herbs away, considering she's the one who gave me the idea."
+            t "StarClan knows she could use some good news, right about now."
+            play audio "sfx/quest_unlocked.mp3"
+            "{b}Quest Unlocked:{/b} Follow Up with Beetle"
+            $ quest_followup_beetle.started = True
     t "..."
     if not already_clanmates:
         show screen clanmates

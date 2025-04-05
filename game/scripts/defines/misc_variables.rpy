@@ -28,3 +28,5 @@ default final_game_screen = False
 
 default eaten_prey = False
 default tutorial_proceeded = False
+
+default gave_herbs = ""
