@@ -8,7 +8,7 @@ screen frame1_screen:
                 hover "herbf1_h"
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
-                action Jump("herb1_collected")
+                action Jump("herb1_found")
         elif frame1.progress==1:
             imagebutton:
                 xpos frame1.xpos
@@ -47,7 +47,7 @@ screen frame2_screen:
                 hover "herbf2_h"
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
-                action Jump("herb2_collected")
+                action Jump("herb2_found")
         elif frame2.progress==1:
             imagebutton:
                 xpos frame2.xpos
@@ -86,7 +86,7 @@ screen frame3_screen:
                 hover "herbf3_h"
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
-                action Jump("herb3_collected")
+                action Jump("herb3_found")
         elif frame3.progress==1:
             imagebutton:
                 xpos frame3.xpos
@@ -125,7 +125,7 @@ screen frame4_screen:
                 hover "herbf4_h"
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
-                action Jump("herb4_collected")
+                action Jump("herb4_found")
         elif frame4.progress==1:
             imagebutton:
                 xpos frame4.xpos
@@ -164,7 +164,7 @@ screen frame5_screen:
                 hover "herbf5_h"
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
-                action Jump("herb5_collected")
+                action Jump("herb5_found")
         elif frame5.progress==1:
             imagebutton:
                 xpos frame5.xpos
@@ -204,7 +204,7 @@ screen tutorial_frame_screen:
                 hover "herbft_h"
                 hover_sound "audio/sfx/button_hover_3.mp3"
                 activate_sound "audio/sfx/button_click_3.mp3"
-                action Jump("herbt_collected")
+                action Jump("herbt_found")
         elif tutorial_frame.progress==1:
             imagebutton:
                 xpos tutorial_frame.xpos

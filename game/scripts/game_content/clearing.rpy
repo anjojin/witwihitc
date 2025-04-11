@@ -38,7 +38,7 @@ label click_freshkill:
     scene empty freshkill day
     show screen gameUI
     t "I hope the freshkill pile fills up soon."
-    t "Though, even if it does, the prey never seems to last long ..."
+    t "Though, even if it does, the prey never seems to last for long ..."
     scene clearing bg with fade
     call screen gameUI
 
@@ -55,6 +55,8 @@ label cl2:
 label cl3:
     $ currently_in = "clearing"
     $ quick_menu = True
+    if prey_caught>2:
+        $ faminewhatfamine.grant()
     scene clearing bg night with fade
     show screen gameUI
     stop music fadeout 0.5
@@ -66,6 +68,8 @@ label cl3:
     elif quest_gather_herbs.failed:
         jump cl3_fail_herbs
     elif prey_caught==0:
+        if eaten_prey == True:
+            $ codebreaker.grant()
         t "Oof. StarClan, what a disaster ..."
         t "At least the warriors' hunting patrol made it back alright. Hopefully, they fared better than I did."
         if quest_favorite_prey.completed:
@@ -75,11 +79,10 @@ label cl3:
             t "I should probably go check on --"
             jump cl3_crowkit
     elif prey_caught > 0:
-        t "Thank you, StarClan, for the lives of this prey. Please guide their spirits to the afterlife, and let their bodies nourish and protect our own ..."
-        t "... It looks like the other warriors finished their hunting patrol, too."
-        t "Hopefully, they didn't come back empty-pawed."
+        t "Thank you, StarClan, for blessing me with the lives of this prey."
+        t "Please guide their spirits to the afterlife, and let their bodies nourish and protect our own ..."
         if quest_favorite_prey.completed: 
-            t "I guess I have everything Sunshadow asked for, now."
+            t "I guess I have everything Sunshadow asked me for, now."
             t "I wonder how he's doing out there."
             t "Has he completely frozen to death yet, or only half-frozen?"
             t "I should probably go check on --"
@@ -91,26 +94,32 @@ label cl3_catmint:
     t "... Ha."
     t "Haha. Hahaha!"
     t "I got it! StarClan above, I really got it!"
-    t "And it's so beautiful, too ... all those spiky leaves."
-    t "This just might send Locustleaf into shock!"
-    t "And Beetle -- she's going be kicking herself over all the things she said earlier."
-    t "I don't know what she was so --"
-    jump cl3_crowkit
+    t "No time to waste. I've gotta get this to the nursery!"
+    $ quest_check_nursery.started = True
+    play sound "sfx/quest_unlocked.mp3"
+    "{b}Quest Unlocked:{/b} Check the Nursery"
+    show screen freshkill_night
+    call screen gameUI
 
 label cl3_fail_herbs:
-    t "StarClan, Locustleaf was right. It really is impossible to find catmint out there ..."
+    t "StarClan, what a disaster."
+    t "Locustleaf was right. It really is impossible to find catmint out there ..."
     if not len(herbs_gathered) == 0:
-        t "... Well, a-at least I didn't come back empty pawed, right?"
+        t "... Well, a-at least I didn't come back completely empty pawed, right?"
         t "What did I bring back? [herbs_gathered[0]]? That's gotta be useful for something, right?"
         t "Are these roots supposed to treat kittencough? Or - Or these leaves, maybe?"
-        t "Come on, come on."
-        t "It can't all have been for nothing!"
+        t "Come on, come on, think ..."
+        t "It can't all have been for --"
+
     else:
-        t "... Well, t-that doesn't mean I'm done fighting for Willowkit and Featherkit. There's gotta be other options, right?"
-        t "Maybe I can still go back to Maplebreeze and ask for some of her herbs? Locustleaf gave her plenty!"
-        t "Or maybe there's some other herb that will help! I found all kinds of scents out there. Locustleaf would know!"
+        t "... Well, t-there are still other options, right?"
+        t "There's gotta be."
+        t "Maybe I can still go back to Maplebreeze and ask for some of her herbs?"
+        t "Locustleaf gave her more than she needs!"
+        t "Or maybe there's some other herb that will help!"
+        t "The day's not over -- there's still a little light!"
         t "Or - Or maybe --"
-        jump cl3_crowkit
+    jump cl3_crowkit
 
 label cl3_crowkit:
     stop music fadeout 1.0
@@ -150,6 +159,10 @@ label cl3_crowkit:
     call screen gameUI
 
 label cl3_cloverpaw:
+    if prey_caught==0:
+        $ rookie_mistake.grant
+    elif prey_caught >= 2:
+        $ beginners_luck.grant
     show lilypaw_ad1 with easeinleft
     show redpaw_right with easeinright
     show fawnpaw_right with easeinright
@@ -177,7 +190,7 @@ label cl3_cloverpaw:
     c "And I sneezed for the first time just last night."
     t "Have any of your denmates started showing any symptoms?"
     c "Are you serious?"
-    c "One cough and you already think it's dangerous for me to be around my friends?"
+    c "One cough and you already think I'm a danger my friends?"
     t "It's not personal, Cloverpaw. It's just how sickness spreads."
     c "I would never do anything to hurt them."
     t "Then why all the secrecy?"
@@ -362,16 +375,17 @@ label cl3_eavesdrop:
     show cloud_sit
     cl "At least it seemed to be eating well. Maybe we should follow its example."
     ra "Wanna grow a pair of wings, Cloudheart?"
-    ra "It would probably help with your journey to leader."
+    ra "Then, Briarstar would have to make you leader."
     hide moth_sit
     show moth_stand
     show raven_stand
     show cloud_sit
     mo "Whoa. Cloudheart wants to become leader?"
-    ra "Is it really so hard to believe? Pouncetail's on the way out, and so is Briarstar."
+    ra "Is it really so hard to believe?"
+    ra "Pouncetail's on the way out, and so is Briarstar."
     cl "Raven's exaggerating. It was only an idea."
     cl "Besides, it's not like I could go to the Moonpool right now, anyways."
-    mo "Oh, yeah. What did you plan on doing about that?"
+    mo "Oh, yeah. How did you plan to get around that?"
     cl "I'm not sure. I wasn't really all that serious about it, anyway."
     cl "I mean, who would wanna lead ThunderClan in the state it's in?"
     cl "How do you turn the us around from a mess like this one?"

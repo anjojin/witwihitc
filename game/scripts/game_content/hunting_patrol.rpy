@@ -36,6 +36,13 @@ label hunting_start:
             t "I'd better get a move on. For everycat's sake."
         else:
             t "Let's hope I manage to catch something that's worth all this trouble."
+        play sound "sfx/game_tip.mp3"
+    menu:
+        "Would you like to play through the tutorial?"
+        "Yes":
+            jump hunting_instructions
+        "No":
+            jump hunting_no
 
 label hunting_instructions:    
     play sound "sfx/game_tip.mp3"

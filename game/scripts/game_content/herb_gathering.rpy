@@ -33,7 +33,7 @@ label demonstrate_proceed:
     play sound "sfx/game_tip.mp3"
     "If you continue successfully pursuing this scent, eventually it will lead you to the blackberry plant."
     play sound "sfx/game_tip.mp3"
-    "Different types of herbs will need to be pursued different distances to be collected."
+    "Once you find the plant, you can either choose to collect it to bring back to camp or use it on the territory."
     $ tutorial_proceeded = True
     $ tutorial_frame.progress = 1
     $ tutorial_frame.locked = False
@@ -287,9 +287,9 @@ label no_pursue:
 label herb_proceed:
     hide screen herb_gathering_screen
     hide screen locked_herbs
-    if q<5:
+    if q<herb_proceed_max:
         $ q += 1
-    if q==5:
+    if q==herb_proceed_max:
         jump herb_end
     $ lost_leads = []
     call proceed_logic(frame1)
@@ -304,16 +304,104 @@ label herb_proceed:
             "You lost the scent of [lost_leads.pop()]."
     call screen herb_gathering_screen
 
-label herb1_collected:
+label herb1_found:
     show screen herb_gathering_screen
     show screen locked_herbs
-    "You collected the {b}[frame1.herb.name]{/b}."
+    "You found {b}[frame1.herb.name]{/b}!"
+    if frame1.herb.turns == 2:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to refresh the scents in this part of the territory?"
+            "Collect":
+                jump herb1_collected
+            "Use":
+                $ frame1.progress = 1
+                jump use_2turn
+    elif frame1.herb.turns == 3:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to advance the progress of one other scent?"
+            "Collect":
+                jump herb1_collected
+            "Use":
+                $ frame1.progress = 1
+                $ frame1.empty = True
+                jump use_3turn
+    elif frame1.herb.turns == 4:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to gain {b}four extra proceeds?{/b}"
+            "Collect":
+                jump herb1_collected
+            "Use":
+                $ frame1.progress = 1
+                $ frame1.empty = True
+                jump use_4turn
+
+label herb1_collected:
+    "You collected the {b}[frame1.herb.name].{/b}"
     $ herbs_gathered.append(frame1.herb.name)
     $ frame1.empty = True
     $ frame1.locked = False
     $ frame1.progress = 1
     show screen herb_gathering_screen
     call screen locked_herbs
+
+label use_2turn:
+    hide screen herb_gathering_screen
+    call define_herbs
+    show screen herb_gathering_screen with fade
+    call screen locked_herbs
+
+label use_3turn:
+    menu:
+        "Which scent would you like to advance the progress of?"
+        "[frame1.herb.name]" if not frame1.empty:
+            $ frame1.progress += 1
+        "[frame2.herb.name]" if not frame2.empty:
+            $ frame2.progress += 1
+        "[frame3.herb.name]" if not frame3.empty:
+            $ frame3.progress += 1
+        "[frame4.herb.name]" if not frame4.empty:
+            $ frame4.progress += 1
+        "[frame5.herb.name]" if not frame5.empty:
+            $ frame5.progress += 1
+    show screen herb_gathering_screen
+    call screen locked_herbs
+
+label use_4turn:
+    $ herb_proceed_max += 4
+    show screen herb_gathering_screen
+    call screen locked_herbs
+
+label herb2_found:
+    show screen herb_gathering_screen
+    show screen locked_herbs
+    "You found {b}[frame2.herb.name]{/b}!"
+    if frame2.herb.turns == 2:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to refresh the scents in this part of the territory?"
+            "Collect":
+                $ frame2.progress = 1
+                jump herb2_collected
+            "Use":
+                jump use_2turn
+    elif frame2.herb.turns == 3:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to advance the progress of one other scent?"
+            "Collect":
+                jump herb2_collected
+            "Use":
+                $ frame2.progress = 1
+                $ frame2.empty = True
+                jump use_3turn
+    elif frame2.herb.turns == 4:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to gain {b}four extra proceeds?{/b}"
+            "Collect":
+                jump herb2_collected
+            "Use" if not already_used:
+                $ frame2.progress = 1
+                $ frame2.empty = True
+                $ already_used = True
+                jump use_4turn
 
 label herb2_collected:
     show screen herb_gathering_screen
@@ -326,6 +414,37 @@ label herb2_collected:
     show screen herb_gathering_screen
     call screen locked_herbs
 
+label herb3_found:
+    show screen herb_gathering_screen
+    show screen locked_herbs
+    "You found {b}[frame3.herb.name]{/b}!"
+    if frame3.herb.turns == 2:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to refresh the scents in this part of the territory?"
+            "Collect":
+                jump herb3_collected
+            "Use":
+                $ frame3.progress = 1                
+                jump use_2turn
+    elif frame3.herb.turns == 3:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to advance the progress of one other scent?"
+            "Collect":
+                jump herb3_collected
+            "Use":
+                $ frame3.progress = 1
+                $ frame3.empty = True
+                jump use_3turn
+    elif frame3.herb.turns == 4:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to gain {b}four extra proceeds?{/b}"
+            "Collect":
+                jump herb3_collected
+            "Use":
+                $ frame3.progress = 1
+                $ frame3.empty = True
+                jump use_4turn
+
 label herb3_collected:
     show screen herb_gathering_screen
     show screen locked_herbs
@@ -337,6 +456,37 @@ label herb3_collected:
     show screen herb_gathering_screen
     call screen locked_herbs
 
+label herb4_found:
+    show screen herb_gathering_screen
+    show screen locked_herbs
+    "You found {b}[frame4.herb.name]{/b}!"
+    if frame4.herb.turns == 2:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to refresh the scents in this part of the territory?"
+            "Collect":
+                jump herb4_collected
+            "Use":
+                $ frame4.progress = 1
+                jump use_2turn
+    elif frame4.herb.turns == 3:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to advance the progress of one other scent?"
+            "Collect":
+                jump herb4_collected
+            "Use":
+                $ frame4.progress = 1
+                $ frame4.empty = True
+                jump use_3turn
+    elif frame4.herb.turns == 4:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to gain {b}four extra proceeds?{/b}"
+            "Collect":
+                jump herb4_collected
+            "Use":
+                $ frame4.progress = 1
+                $ frame4.empty = True
+                jump use_4turn
+
 label herb4_collected:
     show screen herb_gathering_screen
     show screen locked_herbs
@@ -347,6 +497,37 @@ label herb4_collected:
     $ frame4.progress = 1
     show screen herb_gathering_screen
     call screen locked_herbs
+
+label herb5_found:
+    show screen herb_gathering_screen
+    show screen locked_herbs
+    "You found {b}[frame5.herb.name]{/b}!"
+    if frame5.herb.turns == 2:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to refresh the scents in this part of the territory?"
+            "Collect":
+                jump herb5_collected
+            "Use":
+                $ frame5.progress = 1
+                jump use_2turn
+    elif frame5.herb.turns == 3:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to advance the progress of one other scent?"
+            "Collect":
+                jump herb5_collected
+            "Use":
+                $ frame5.progress = 1
+                $ frame5.empty = True
+                jump use_3turn
+    elif frame5.herb.turns == 4:
+        menu:
+            "Would you like to {b}collect it{/b} to bring back to camp, or {b}use it{/b} here to gain {b}four extra proceeds?{/b}"
+            "Collect":
+                jump herb5_collected
+            "Use":
+                $ frame5.progress = 1
+                $ frame5.empty = True
+                jump use_4turn
 
 label herb5_collected:
     show screen herb_gathering_screen

@@ -31,7 +31,7 @@ label ld1:
 
     else:
         t "The leaders' den."
-        t "At the start of the famine, Briarstar used to give these incredible speeches from here."
+        t "At the start of the famine, Briarstar used to give these incredible speeches from up here."
         t "'I have seven lives left,' she said, 'and I'll give every last one of them helping my Clan!'"
         t "... Rumor has it she's down to her last two, now."
         t "And I can't remember the last time I saw her give a speech."
@@ -46,7 +46,8 @@ label ld1:
         b "No need to explain yourself. I understand perfectly."
         b "Sometimes, there's a certain comfort in hearing one's own thoughts spoken aloud."
         t "Er ... Yes. I suppose so."
-        b "Why don't you step inside my den for a moment? Your paws must be freezing."
+        b "Why don't you step inside my den for a moment?"
+        b "Your paws must be freezing."
         t "That's very kind of you, Briarstar, but you really don't have to --"
         b "Please. I insist."
         b "Follow me."
@@ -76,7 +77,7 @@ label ld1_inside:
         t "Your daughter? Lilypaw?"
         b "... Oh. Yes. I suppose it is."
         b "That's funny. All these moons since she was born, and I'm just now making that connection."
-        b "I just always knew I felt a strong call to the name 'Lily'."
+        b "I just always knew I felt a strong connection to the name 'Lily'."
         t "It must have been a sign from StarClan."
         b "Yes. It must have."
         b "Thank you, Talonclaw."
@@ -138,7 +139,7 @@ label ld1_accept:
     b "It's okay."
     b "I suppose I am ... {i}devastated.{/i}"
     b "I'm not sure."
-    b "I try not to feel things too strongly, these days."
+    b "I try not to feel anything too strongly, these days."
     t "... When was the last time you ate something, Briarstar?"
     b "..."
     b "You have more pressing things to worry about."
@@ -147,11 +148,12 @@ label ld1_accept:
     b "That's my final opinion on the matter."
     t "..."
     b "Come and find me after you've visited Pouncetail. I'd like to know how he's doing."
-    t "Oh --"
+    t "Wait, but, while I have your ear, there were a few other Clan matters I wanted to speak to you --"
+    b "I hope you stay well, Talonclaw."
     play sound "sfx/rustle.mp3"
     play audio "sfx/impact.mp3"
     hide briarstar with fade
-    t "... kay."
+    t "..."
     call screen gameUI
 
 label ld1_decline:
@@ -175,17 +177,18 @@ label ld1_decline:
     t "..."
     b "I'll be retreating deeper into my quarters. Feel free to stay here as long as you'd like."
     b "I hope you stay well, Talonclaw."
-    t "Thank --"
+    t "Wait, but, while I have your ear, there were a few other Clan matters I wanted to speak to you --"
+    b "I hope you stay well, Talonclaw."
     play sound "sfx/rustle.mp3"
     play audio "sfx/impact.mp3"
     hide briarstar with fade 
-    t "... you."
+    t "..."
     call screen gameUI
 
 label ld1_talonclaw_sunshadow:
         b "If he stands any chance against greencough, it's imperative that he keeps his strength up."
         t "... I'm sorry, Briarstar. I'm actually not sure if I'll be able to hunt for the Clan today."
-        t "I agreed to help with a burial ceremony for Dapplefeather."
+        t "I agreed to help with a burial ceremony for Spottedlight."
         if quest_crocus.started:
             t "That's what the crocuses are for."
         b "Oh."
@@ -194,6 +197,7 @@ label ld1_talonclaw_sunshadow:
         t "You heard that from the leader's den?"
         b "Yes. Your friend is a very gifted orator."
         b "Even though you know how I hate the vigils, I must admit I was ... roused by his words."
+        b "I can see why the other warriors think so highly of him."
         b "But rousing words aren't enough to fill empty bellies."
         b "Pouncetail is the deputy of this Clan. ThunderClan can't afford to lose another." 
         b "Especially not so soon after Squirrelpelt's passing."
@@ -206,12 +210,10 @@ label ld1_talonclaw_sunshadow:
             
 label ld1_stick_sunshadow:
     $ talon_sun_bonus +=1
-    t "Sunshadow just lost the love of his life."
-    t "He needs me."
-    b "Talonclaw, there's not a cat left in ThunderClan who hasn't lost something. Who doesn't {i}need{/i} something."
-    b "Squirrelpelt's body is rotting in the elders' den right now, alongside those of several of our kits."
-    b "If that was all we paid attention to, ThunderClan would never catch another piece of prey."
-    t "I'm sorry. I can't just abandon my friend."
+    t "... You know, you could show a little more gratitude towards."
+    t "Without him out there organizing the patrols, rationing the prey, and giving the warriors something to believe in every day ..."
+    t "... This Clan might very well just fall apart."
+    t "StarClan knows you aren't doing it any favors."
     b "..."
     b "... You are loyal to him."
     t "Yes."
@@ -219,11 +221,9 @@ label ld1_stick_sunshadow:
     b "Watch your back, Talonclaw."
     b "Loyalty like that is often rewarded with betrayal."
     t "..."
-    t "... While I have your ear, there were a few other Clan matters I wanted to speak to you about."
-    t "The warriors have started organizing their own patrols, and I think it might be helpful to --"
-    b "Thank you, Talonclaw. That will be all."
-    b "I'll be moving deeper into my quarters. Feel free to stay in my den as long as you'd like."
-    b "I hope you find what you're looking for."
+    b "I'll be moving deeper into my quarters."
+    b "Feel free to stay in my den as long as you'd like."
+    b "I hope you find what you're looking for, Talonclaw."
     play sound "sfx/rustle.mp3"
     play audio "sfx/impact.mp3"
     hide briarstar with fade
@@ -233,6 +233,9 @@ label ld1_stick_sunshadow:
     call screen gameUI
 
 label ld1_click_mushroom:
+    $ herbs_clicked += 1
+    if herbs_clicked == 5:
+        $ botanist.grant()
     play audio "sfx/plant_error.mp3"
     t "I don't think this is what Sunshadow is looking for."
     hide screen ld_mushroom
@@ -259,7 +262,7 @@ label ld1_switch:
     b "I hope, once all this is over, the two of you can dig a truly lavish grave together."
     t "Thank you, Briarstar."
     t "Oh -- and while I have your ear, there were a few other Clan matters I wanted to speak to you about."
-    t "The warriors have started organizing their own patrols, and I think it might be helpful to --"
+    t "Sunshadow's been organizing all the patrols, and I think it might be helpful if --"
     b "Thank you, Talonclaw. That will be all."
     b "Come and find me after you've visited Pouncetail. I'd like to know how he's doing."
     play sound "sfx/rustle.mp3"
@@ -275,7 +278,7 @@ label ld_2:
     play music "music/ES_La Vuelta a Lerida - Vendla.mp3" loop
     t "I doubt Briarstar wants to see me back so soon."
     if quest_feed_deputy.started:
-        t "I'll come back when I've made sure that Pouncetail's eaten something."
+        t "I'll come back once I've made sure that Pouncetail's eaten something."
     call screen gameUI
 
 label ld3:
@@ -288,7 +291,7 @@ label ld3:
         show screen gameUI
         t "I don't think Briarstar wants to see me right now."
         if quest_feed_deputy.started:
-            t "I'll see her after I deliver Pouncetail his prey in the medicine den, like I promised."
+            t "I'll see her after I deliver Pouncetail's meal to him in the medicine den, just like I promised."
         call screen gameUI
 
 label ld3_feed_dep:
@@ -296,43 +299,60 @@ label ld3_feed_dep:
     play music "music/ES_Little Light - Wanderer's Trove.mp3" loop
     scene leaders int night with fade
     show briar_night_lay
-    b "Back already?"
-    t "Already ...?"
-    t "It's been hours ..."
+    b "Talonclaw."
+    b "You're back already?"
+    t "Um ... Already?"
+    t "Briarstar, it's been hours since we last talked."
+    t "The entire day has nearly passed."
     b "Has it?"
-    b "Oh. Would you look outside?"
+    b "Oh. Would you look at that?"
+    b "It's dark outside."
     b "Night's fallen so quick ..."
-    b "Tell me, do the days feel any longer to you?"
+    b "Tell me, Talonclaw, do the days feel any longer to you?"
     b "We've already passed the solstice, and yet, nothing seems to have changed."
-    t "The days are getting longer. We just haven't noticed yet."
+    t "The nights are getting shorter in their own time, even if it's not enough for us to notice yet."
     t "Trust in StarClan. Better times are on their way."
     b "..."
     b "... Did you visit Pouncetail?"
     if quest_feed_deputy.completed:
         jump ld3_feed_dep_complete
     else:
-        t "... No. I didn't get the chance to."
-        t "I'm so sorry, Briarstar. I honestly meant to, but --"
+        t "... No."
+        t "I'm sorry."
+        t "I really tried my best to, because I know how important this is, but other things just kept coming up, and --"
+        b "Talonclaw."
         b "It's okay."
-        b "You don't need to explain."
-        t "But ... aren't you x?"
-        b "I don't ask questions anymore. I've forgotten how to do it."
-        b "I can't quite remember how it feels to be afraid."
-        b "The flood of metal over your tongue ..."
-        b "I can conjure it up in words, but somehow I can't quite make it real."
-        t "You're exhausted. We all are."
-        b "..."
-        b "... I suppose I should start preparing Pouncetail's eulogy."
-        t "Have you given any thought to who's going to lead the Clan next?"
+        b "Really."
+        b "You don't need to justify yourself to me."
+        t "But ... aren't you angry?"
+        t "I failed to do what you asked of me."
+        t "Aren't you wondering why?"
+        b "I don't really ... {i}wonder{/i} things, anymore."
+        b "I find that {i}wondering{/i}, more often than not, originates from a place of fear ..."
+        b "... And, well, I can't quite remember how it feels to be afraid."
+        b "I've forgotten how to do it."
+        b "The racing heartbeat ..."
+        b "The flood of metal over the tongue ..."
+        b "I can conjure it up in words, but somehow I can't quite manage to inhabit it for real."
+        t "... You're just exhausted."
+        t "We all are."
+        t "Maybe looking ahead to the future would help."
+        t "Have you given any thought to who's going to be next in line to lead the Clan?"
+        t "Sunshadow seems like a natural choice. All the warriors look up to him so much, already."
+        if talon_sun_bonus<0:
+            t "But, I'd be happy to talk through other options, as well, if you're interested ..."
         b "..."
         b "... You're right, Talonclaw."
-        b "I am exhausted."
-        b "{i}Very{/i} exhausted."
-        b "That's the exact term I was looking for."
-        b "I've been searching for moons, but I couldn't quite find it."
-        b "{i}Exhausted.{/i}"
+        b "I am ..."
+        b "... {i}exhausted.{/i}"
+        b "That's exactly right."
+        b "I've been searching for that term for moons, but could never quite find it."
+        b "{i}'Exhausted' ...{/i}"
         b "You know, you really have a way with words."
         b "I can see why you and Sunshadow are friends."
+        t "Briarstar --"
+        b "Please excuse me, Talonclaw."
+        t "But --"
         play sound "sfx/rustle.mp3"
         play audio "sfx/impact.mp3"
         hide briar_night_lay with fade
@@ -341,29 +361,38 @@ label ld3_feed_dep:
 
 label ld3_feed_dep_complete:
     t "Yes."
-    t "I tried bringing him some prey, but ... I don't think he ate it."
-    t "In fact, I don't think he noticed I was in the den, at all."
-    t "It might be time to seriously consider choosing a new deputy, Briarstar."
+    t "I brought him a fresh meal, like you asked, but ..."
+    t "... I don't think he ate it."
+    t "In fact, I don't think he noticed my presence, at all."
+    b "Hmm."
+    b "Yes. It makes sense."
+    b "Squirrelpelt was like that, too. Towards the end."
+    t "... I see."
+    t "It might be time to seriously consider choosing a new deputy, then, Briarstar."
+    t "Have you given any thought to it?"
+    t "Who's going to be next in line to lead the Clan?"
     b "..."
     hide briar_night_lay
     show briar_night_sit
     stop music fadeout 5.0
-    b "... Somehow, I knew you would say that."
-    b "So I've spent the whole day thinking about what I'm going to say at Pouncetail's vigil."
-    b "I think I might start attending them, again."
-    t "That's ... That's wonderful, Briarstar."
-    t "Your Clanmates will be happy to see you again."
-    b "It isn't wonderful."
-    t "..."
-    b "Forgive me. I haven't been myself lately."
-    b "I worry all the time I've been spending in my den has ... somewhat weakened my facility for language."
-    b "No matter how I try, I just can't seem to come up with the right words ..."
-    b "Perhaps you could help me, Talonclaw?"
-    b "I'll start giving my eulogy, and whenever I pause, you can suggest the word that you think best ..."
+    b "... What do you think about me starting to attend the vigils, again?"
+    b "I've spent the whole day thinking about what I'm going to say at Pouncetail's."
+    t "That's ..." 
+    t "That's wonderful, Briarstar."
+    t "I know your Clanmates will be happy to see you again."
+    b "It {i}isn't{/i} wonderful."
+    b "I fear that all the time I've spent alone in my den has weakened my facility for language ..."
+    b "No matter how I try, I just can't seem to come up with the right words to honor Pouncetail's memory ..."
+    b "I can't appear before the warriors like this."
+    b "... Perhaps you could help me, Talonclaw?"
+    t "Help you, how?"
+    b "I'll deliver what I have eulogy, and whenever I pause, you can suggest the word that you think best ..."
+    b "..."
+    b "..............."
     t "... Fits?"
-    b "See?"
-    b "You're a natural."
-    b "Let's begin."
+    b "'Fits.' Thank you."
+    b "See? You're already a natural."
+    b "Alright. Now, let's begin."
     b "Ahem ..."
     jump briar_eulogy_start
 
@@ -372,36 +401,37 @@ label briar_eulogy_start:
     $ eulogy_mistakes = 0
     b "Pouncetail was my apprentice."
     b "I was with him from his sixth moon until he graduated early, on his tenth."
-    b "Four moons may not seem a very long time to be involved with a cat, but it's a period of my life I still look back on very fondly."
+    b "Four moons may not seem like a very long time to form a connection with a cat, but it's a period of my life I still look back on very fondly."
     menu:
-        b "Though I hate to say it, because '... ... ...', I learned from Pouncepaw just as much as I taught him."
-        "'...'":
+        b "Though I hate to say it, because '... ... ...', I learned from Pouncepaw just as much as I had to teach him."
+        "'it's embarrassing'":
             jump briar_eulogy_incorrect
         "'I hate cliches'":
             jump briar_eulogy_cont1
-        "'...'":
+        "'it's only half-true'":
             jump briar_eulogy_incorrect
 
 label briar_eulogy_cont1:
     menu:
-        b "Even now, when I look at his face, I just see that plucky young cat who never seemed to ..."
-        "'...'":
+        b "Even now, when I look into his face, I just see that plucky young cat who never seemed to ..."
+        "'... give up on what was right.'":
             jump briar_eulogy_incorrect
-        "'...'":
+        "'... stop fighting.'":
             jump briar_eulogy_incorrect
         "'... run out of things to say.'":
             jump briar_eulogy_cont2
 
 label briar_eulogy_cont2:
-    b "The stench of greenleaf."
+    b "I can still picture that greenleaf so clearly."
+    b "The stench of growth."
     b "The oppressive heat."
     menu:
         b "The '...' coating our pelts in a film."
-        "sweat":
+        "'sweat'":
             jump briar_eulogy_cont3
-        "'...'":
+        "'salt'":
             jump briar_eulogy_incorrect
-        "'...'":
+        "'rain'":
             jump briar_eulogy_incorrect
 
 label briar_eulogy_cont3:
@@ -409,9 +439,9 @@ label briar_eulogy_cont3:
         b "I used to think, what does '...' exist for, if not for cats like him?"
         "'the future'":
             jump briar_eulogy_cont4
-        "'...'":
+        "'ThunderClan'":
             jump briar_eulogy_incorrect
-        "'...'":
+        "'the Warrior Code'":
             jump briar_eulogy_incorrect
 
 label briar_eulogy_cont4:
@@ -432,63 +462,70 @@ label briar_eulogy_cont5:
     b "I know some of you may think I've failed you as a leader."
     menu:
         b "That it was my '...' that caused this famine."
-        "'lack of foresight.'":
+        "'lack of foresight'":
             jump briar_eulogy_cont6
-        "'poor decision making.'":
+        "'poor decision making'":
             jump briar_eulogy_incorrect
-        "'...'":
+        "'inflexibility'":
             jump briar_eulogy_incorrect
 
 label briar_eulogy_cont6:
-    b "I've only ever tried to do what was best for everycat."
-    b "But maybe if I had done something more, something differently, this wouldn't have happened."
+    b "I've only ever tried to do what was best for every cat under my jurisdiction."
+    b "But ... maybe, there was something I could have done ..."
+    b"Something more ..."
+    b "Something differently ..." 
+    b "... that could have stopped all of this from happening."
     b "I don't know."
     b "I'm not sure if that's true."
     b "Maybe it isn't."
     b "But what I do know is ..."
-    b "Pouncetail will never know the taste of lizard."
-    b "And, if that's because of me, then I didn't do it on purpose."
+    b "Pouncetail will never know the taste of lizard, now."
+    b "And, if I caused that, then I hope he knows that I didn't do it on purpose."
     stop music fadeout 5.0
-    b "I would've caught him a lizard."
+    b "I would've caught a lizard for him."
     b "I would've hunted down every last lizard in the forest."
+    hide briar_night_sit
+    show briar_night_lay
+    if eulogy_mistakes == 0:
+        $ silver_tongue.grant()
+    "{b}BEGIN ILLUSTRATION HERE{/b}"
     b "..."
+    t "..."
     t "... That's it?"
     t "That's all you have to say?"
     t "Nothing about who's going to take over as deputy? Who's next in line to lead the Clan?"
-    b "..."
     play music "music/ES_A Subtle Reflection - Daniel Kaede.mp3" loop
-    hide briar_night_sit
-    show briar_night_lay
     b "... I'm very tired, Talonclaw."
     t "Great StarClan."
     t "You have no idea, do you?"
-    t "Your Clanmates are scared, Briarstar. They need a leader." 
-    t "You can't just give up. It's your duty to help them!"
+    t "Cats are dying out there, Briarstar! They need an answer!"
+    t "They need to know who's going to lead them!"
+    t "Not just a cat who's going to hide in her den feeling sorry for herself all day -- a real {i}leader!{/i}"
+    t "It's your duty to help them!"
     b "..."
     b "'Duty.'"
     b "Yes. It makes sense that you would be concerned with duty."
     b "After all ..."
     b "You've never died."
     b "Not even once."
-    b "When you don't know how it feels to die, your mind tends to develop a remarkable propensity for torturing itself over vague concepts."
+    b "When you don't know how it feels to die, your mind develops this remarkable propensity for torturing itself over vague concepts."
     b "'Duty' being one of them."
-    b "But I left all that behind with my old body."
-    b "Seven times over."
-    b "I know where I'm going when all of this is over, Talonclaw."
-    b "I don't have any illusions about how I'll be remembered."
-    b "The leader who destroyed ThunderClan with her naivete and couldn't even be bothered to regret it."
-    b "Who was never worried enough."
-    b "That is how you think of me, yes?"
-    t "..."
-    b "Of course it is."
-    b "None of you could see just how terrified I was at the beginning of all this."
+    b "But I've left all of that behind with my old body."
+    b "I've left it behind seven times over."
+    b "I don't have any illusions about where I'm going when all of this is over, Talonclaw."
+    b "I know how I'll be remembered."
+    b "'The leader who destroyed ThunderClan with her naivete.'"
+    b "'Who gave shelter to dozens and couldn't even be bothered to regret it.'"
+    b "'Who was never worried enough.'"
+    b "None of you could see just how terrified I was when those first snows hit."
+    b "When all of this began."
     b "How could I possibly lead these cats, I thought, when I'm just as sick and scared as they are?"
     b "The simple answer was, I couldn't."
-    b "Now, Squirrelpelt is dead, and so are all but one of my kits."
-    b "And I finally understand just how little point there is to worrying about things that can't be changed."
+    b "Now, Squirrelpelt is dead, and so are all but one of our kits."
+    b "And I finally understand just how little point there is to worrying about things that are outside of my control."
     b "Nothing can stop what happens now, Talonclaw."
-    b "Whoever wants ThunderClan next can take it."
-    b "They can take all the pain and the heartbreak that comes with it, too."
+    b "If Sunshadow wants ThunderClan next, he can take it."
+    b "He can take all the pain and the heartbreak that comes with it, too."
     b "As for me, I'll be a blade of grass ..."
     b "A cough in the wind ..."
     scene black with fade

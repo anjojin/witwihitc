@@ -10,19 +10,31 @@ label bs_1:
     show side sun rising
     s "Think you're funny?"
     s "I'm not in the mood to laugh right now, Talonclaw."
-    t "I'm sorry. But, as you yourself pointed out, the bodies are quite literally beginning to pile up around camp."
-    t "And yet, your speech managed to depress your fellow warriors so much, I think I caught a few of them secretly crying on the way out here."
-    t "Did you have to make it so ... upsetting?"
+    t "I'm sorry. But, as you yourself so aptly pointed out, the bodies are quite literally beginning to pile up around camp."
+    t "Everycat is already going through a hard enough time. The warriors are looking to you for words of comfort; words of inspiration."
+    t "Did you have to make your speech so ... upsetting?"
+    s "Upsetting?"
     hide side sun sitting
     show side sun rising
     s "{i}Upsetting{/i} was exactly my intention."
     s "With each day that passes, more and more of our Clanmates' lives are stolen away."
-    s "Where are the cats who are supposed to protect us?"
-    s "Where are the cats who were supposed to protect Dapplefeather?"
-    s "Did you notice how Briarstar couldn't even be bothered to show up to the vigil?"
-    t "Come on. You can't blame all this on Briarstar."
-    t "If there was anything Clan leadership could've done to save Dapplefeather, I'm sure they would've done it."
+    s "Now, Spottedlight is gone, and you expect me not to be upset?"
+    t "I didn't mean --"
     hide side sun rising
+    show side sun standing
+    s "I know what you meant."
+    s "Did you even notice that Briarstar couldn't be bothered to attend the vigil?"
+    s "Or, did you just not care enough to look?"
+    t "..."
+    t "I noticed, Sunshadow."
+    s "Then, why aren't you angry?"
+    s "It's a matter of principle! You say cats need words of comfort -- well, where are the cats who are supposed to comfort us?"
+    s "To protect us?"
+    s "Where are the cats who were supposed to protect Spottedlight?"
+    t "Come on. You can't blame all this on Briarstar."
+    t "Spottedlight was her Clanmate, too."
+    t "If there was anything she could've done to avoid this, I'm sure she would've done it."
+    hide side sun standing
     show side sun sitting
     s "..."
     s "Tell me this, then, Talonclaw."
@@ -38,21 +50,21 @@ label bs_1:
             jump bs1_wc_leafbare
 
 label bs1_wc_moonpool:
-    t "Believe what you will, but you can't deny that things fell apart after we lost our connection to StarClan."
+    t "Believe what you will, but you can't deny that things really started falling apart after we lost our connection to StarClan."
     hide side sun sitting
     show side sun rising
     s "Am I really expected to believe that the power of our warrior ancestors is contained within a little pool of water?"
     s "If that's the case, why worship them at all?"
     s "What happens when the Moonpool freezes over? Or when twolegs decide to fill it in with dirt?"
-    s "No. What really matters are the choices that were made in the land of the living."
-    s "Last newleaf alone, there were four new litters of kits, none of which were their queens' first."
+    s "No. What happens in the land of the living -- that's what really matters."
+    s "Last newleaf alone, ThunderClan had four new litters of kits, none of which were their queens' first."
     s "Our family trees are so large, cats can't even keep track of their own kin."
     s "Not to mention all the downtrodden rogues and strays Briarstar's taken in."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
     t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
     s "How many are there, now?"
-    t "... With the loss of Dapplefeather, I believe that puts us at sixteen."
+    t "... With the loss of Spottedlight, I believe that puts us at sixteen."
     jump bs1_sun_lament
 
 label bs1_wc_greencough:
@@ -60,14 +72,14 @@ label bs1_wc_greencough:
     hide side sun sitting
     show side sun rising
     s "And how do outbreaks spread?"
-    s "Last newleaf alone, there were four new litters of kits, none of which were their queens' first."
+    s "Last newleaf alone, ThunderClan had four new litters of kits, none of which were their queens' first."
     s "Our family trees are so large, cats can't even keep track of their own kin."
     s "Not to mention all the downtrodden rogues and strays Briarstar's taken in."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
     t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
     s "How many are there, now?"
-    t "... With the loss of Dapplefeather, I believe that puts us at sixteen."
+    t "... With the loss of Spottedlight, I believe that puts us at sixteen."
     jump bs1_sun_lament
 
 label bs1_wc_overpopulation:
@@ -75,11 +87,11 @@ label bs1_wc_overpopulation:
     hide side sun sitting
     show side sun rising
     s "It's not an opinion. It's simple fact."
-    s "Last newleaf alone, there were four new litters of kits, none of which were their queens' first."
+    s "Last newleaf alone, ThunderClan had four new litters of kits, none of which were their queens' first."
     s "Our family trees are so large, cats can't even keep track of their own kin."
     s "Not to mention all the downtrodden rogues and strays Briarstar's taken in."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
-    t "Hn. Well, if your theory is true, the hard times shouldn't last much longer."
+    t "Hn. Well, if your theory is true, at least the hard times shouldn't last much longer."
     t "By my last head count, I believe our ranks are down to sixteen, now."
     jump bs1_sun_lament
 
@@ -88,15 +100,15 @@ label bs1_wc_leafbare:
     t "Not to mention the drought earlier this greenleaf."
     hide side sun sitting
     show side sun rising
-    s "ShadowClan, WindClan, and RiverClan have all endured the exact same conditions that we have, but they haven't experienced nearly as much hardship."
-    s "Last newleaf alone, there were four new litters of kits, none of which were their queens' first."
+    s "ShadowClan, WindClan, and RiverClan have all endured the exact same conditions that we have, and yet they haven't experienced nearly as much hardship."
+    s "Last newleaf alone, ThunderClan had four new litters of kits, none of which were their queens' first."
     s "Our family trees are so large, cats can't even keep track of their own kin."
     s "Not to mention all the downtrodden rogues and strays Briarstar's taken in."
     s "With our dens overflowing, it's no wonder the Clan couldn't sustain itself."
     t "I think every cat in ThunderClan is already well aware of your opinions, Sunshadow."
     s "Yeah. Every cat who's left."
     s "How many are there, now?"
-    t "... With the loss of Dapplefeather, I believe that puts us at sixteen."
+    t "... With the loss of Spottedlight, I believe that puts us at sixteen."
 
 label bs1_sun_lament:
     t "That's counting your new kits."
@@ -107,8 +119,10 @@ label bs1_sun_lament:
     t "ThunderClan is strong. We can survive this if we just --"
     s "Just what?"
     s "Stick together? Be the best warriors we can be?"
-    s "Dapplefeather believed all that, too, and it didn't do her a lick of good."
+    s "Spottedlight believed all that, too, and look where she is, now!"
     t "What are you going to do about it, then, Sunshadow?"
+    t "Start a revolution?"
+    t "Go back in time and stop those kits from being born?"
     hide side sun rising
     show side sun sitting
     s "..."
@@ -127,23 +141,25 @@ label bs1_sun_lament:
     s "But those things don't matter anymore. Nothing makes sense and it hasn't for a long time."
     s "My mate is dead. Let me freeze, for all I care. The worms can eat us both."
     t "Don't say things like that."
-    s "Why not? Suddenly overwhelmed with sympathy?"
+    s "Why not?"
+    s "Suddenly overwhelmed with sympathy?"
     menu:
         t "What about ..."
-        "The Warrior Code?":
+        "Your Clanmates?":
             jump bs1_warrior_code
         "Your kits?":
             jump bs1_kits
         "Me?":
             jump bs1_me
-    hide side sun sitting
-    show side sun rising
-    jump sun_ultimatum
 
 label bs1_warrior_code:
     $ talon_clan_bonus += 1
+    t "There's a whole denful of cats back at camp looking up to you for guidance."
+    t "The warriors hang on your every word. Is this really the sort of example you want to be setting for them?"
+    s "You mean letting go of fear and resisting hardship to do what's right for the cats I love?"
+    s "Yes, Talonclaw. That's exactly the kind of example I want to be setting."
     t "The Warrior Code clearly states that keeping the Clan fed must always be our top priority, even at the expense of --"
-    s "The Warrior Code also states that our leaders are supposed to care for ThunderClan's young and old, and live each life with pride and dignity."
+    s "The Warrior Code also states that our leaders are supposed to care for ThunderClan's young and old, living each life with pride and dignity."
     s "Does that sound like Briarstar to you?"
     t "..."
     hide side sun sitting
@@ -178,7 +194,7 @@ label bs1_kits_irrational:
 label bs1_kits_unfair:
     t "It isn't fair to them."
     t "And I know how much that must hurt. Because it isn't fair to you, either."
-    t "And it especially isn't fair to Dapplefeather."
+    t "And it especially isn't fair to Spottedlight."
     hide side sun sitting
     show side sun rising
     s "..."
@@ -197,7 +213,7 @@ label bs1_kits_unfair:
     t "Every cat does."
     t "But we can't give that to her, Sunshadow."
     t "Not while our Clanmates are counting on us to keep them alive."
-    t "And I think Dapplefeather would agree."
+    t "And I think Spottedlight would agree."
     jump bs1_sun_relent
 
 label bs1_kit_quiz:
@@ -281,11 +297,11 @@ label bs1_offer_help:
     t "... Then let me help you."
     s "What?"
     t "If there's nothing I can do to stop you, then at least let me help you."
-    t "If we hurry, maybe we can be done by dark."
+    t "If we hurry, maybe we can be done by sundown."
     t "We might even have a little energy left over to hunt for the Clan."
     s "..."
-    s "You're a good cat, Talonclaw."
-    t "... Whatever."
+    s "You're a good friend, Talonclaw."
+    t "... Yeah. I know."
     t "Just tell me what you need."
     jump bs1_quest
 
@@ -319,7 +335,7 @@ label bs1_sun_relent:
     t "..."
     s "..."
     t "Come back to camp with me, Sunshadow."
-    t "Get some food in your belly. Warm your paws. I can cover your hunting patrols for the day."
+    t "Get some food in your belly. Warm your paws. I can organize the patrols for the day."
     s "I ..."
     s "I can't."
     t "Why?"
@@ -335,7 +351,7 @@ label bs1_sun_relent:
     t "..."
     t "Let me help you."
     s "What?"
-    t "Let me help you bury Dapplefeather."
+    t "Let me help you bury Spottedlight."
     s "But I thought you said --"
     t "Forget what I said."
     t "Just tell me what you need."
@@ -355,7 +371,7 @@ label bs1_quest:
     play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Nesting Material"
     s "Two: a piece of her favorite prey."
-    s "Dapplefeather wasn't picky. Anything should suffice."
+    s "Spottedlight wasn't picky. Anything should suffice."
     $ quest_favorite_prey.started = True
     play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Favorite Prey"
@@ -365,13 +381,13 @@ label bs1_quest:
     play sound "sfx/quest_unlocked.mp3"
     "{b}Quest Unlocked:{/b} Crocuses"
     t "Is that all?"
-    s "Yes. If you get those things for me, I can handle all the digging myself."
+    s "Yes. If you get those things for me, I can handle all the digging by myself."
     t "Are you sure?"
     s "I'm not dead yet, Talonclaw. I haven't completely lost my strength."
-    t "I'll start heading towards camp, then. I'll be back when everything is gathered."
-    s "Okay. Sounds good."
+    t "... I guess I can start heading back towards camp, then."
+    t "I'll come back to this part of the territory when I gave everything gathered."
     s "... Thank you, Talonclaw."
-    s "Dapplefeather really loved you, you know."
+    s "Spottedlight really loved you, you know."
     s "I know that, wherever she is, she's grateful for your help, too."
     t "..."
     show screen gameUI with fade
@@ -397,10 +413,15 @@ label bs2:
         hide side sun_m standing 
         show side sun_m rising
         s "Yes. Of course. I see that, now ..."
-        s "I'm sorry. I shouldn't have doubted. It's just, these days, it's so rare to find a cat you can truly trust."
-        t "Sunshadow, I --"
+        s "I'm sorry. I shouldn't have doubted. It's just, these days, it's so rare to find a cat you can truly depend on."
+        t "... Sunshadow, I --"
         hide side sun_m rising
         show side sun_m sitting
+        s "Say, how did the patrols go today?"
+        s "I wish I could say I was too preoccupied to think about them, but, alas ... you know how I worry."
+        s "Did the warriors manage to organize themselves okay without me?"
+        t "Yes, but --"
+        s "Ha! What did I tell you, Talonclaw? It all works out."
         s "Oh! And, would you look at this? The grave is finally ready."
         s "Around sunhigh, a few buzzards started circling, but I managed to scare them off."
         s "They'll think twice before bothering my mate again!"
@@ -410,7 +431,7 @@ label bs2:
         show side sun_m standing
         s "Ha! Well, would you look at that? They are."
         s "It's funny, I'm completely numb to the pain." 
-        s "Maybe I should freeze myself more often."
+        s "Maybe I should get frozen more often."
         t "... Sunshadow, there's something I have to tell you."
         s "Alright. But first, did you manage to get all the things I asked for?"
         if quest_favorite_prey.cancelled or quest_favorite_prey.failed:
@@ -418,10 +439,11 @@ label bs2:
             s "... Oh, no."
             s "You didn't, did you?"
             s "What was it, huh?"
-            s "Briarstar needed you on the hunting patrol? A kitten was stuck up in a tree somewhere?"
+            s "Briarstar needed you on the hunting patrol? A kitten got stuck up in a tree somewhere?"
             t "No! What? No!"
             if eaten_prey:
-                s "Don't lie! I can smell you've eaten!"
+                s "Don't lie! I can smell that you've eaten!"
+                s "Too hungry to save that prey for Spottedlight?"
             t "Listen, if you would just let me explain --"
         else:
             t "Yes, but --"
@@ -434,24 +456,32 @@ label bs2:
         show side sun_m rising
         if talon_sun_bonus<0:
             s "... What are you doing here?"
-            s "Come to insult my family again?"
-            s "Or, worse, talk me into fleeing back to camp with you like a coward?"
+            s "Come to insult my family?"
+            s "Or, worse, try to talk me into turning tail and fleeing back to camp with you like a good little warrior?"
         else:
             s "Talonclaw."
             s "What are you doing here?"
-            s "Come to talk me into coming back to camp with you?"
-        t "You look awful." 
+            s "Come to talk me into coming back to camp with you like a good little warrior?"
+        t "Sunshadow."
+        t "You look ... awful." 
         s "I am awful."
-        s "Answer my question."
+        s "Now, answer my question."
+        s "{i}What are you doing here?{/i}"
         t "..."
+        t "... I wish I didn't have to be the one to tell you this."
+        hide side sun_m rising
+        show side sun_m sitting        
+        s "When have you ever wanted to be 'the one' to do anything?"
         t "You might want to sit down for this."
-        hide side sun_m rising 
+        s "I'm already sitting."
+        t "Sunshadow, something ... uh, s-something ..."
+        hide side sun_m sitting 
         show side sun_m standing
-        s "What? Did Briarstar not pick you for the hunting patrol?"
-        s "Was there a kitten stuck up a tree you couldn't save?"
-        t "No! What? No!" 
-        t "Listen, if you would just let me explain --"
-        s "The love of my life is about to be buried, Talonclaw! What could possibly be more important than --"
+        s "StarClan, out with it. What's the great tragedy? Did Briarstar skip you for the hunting patrol?"
+        s "Was there a kitten stuck up a tree that you couldn't save somewhere?"
+        t "Sunshadow ..."
+        s "Look around you, Talonclaw! Look at what's been happening for the past four moons!"
+        s "The love of my life is cold and gray at my paws! Whatever you have to say, I think I can handle --"
         jump bs2_abrupt
 
 label bs2_abrupt:
@@ -461,11 +491,15 @@ label bs2_abrupt:
     show side sun_m sitting
     s "..."
     t "Your daughters. Willowkit and Featherkit."
-    t "They were weakened by their mother's loss. There was nothing we could do."
-    t "I'm so sorry."
-    t "I wish there was something I could say to make this any better."
+    t "They were weakened by their mother's loss."
+    t "There ... There was nothing we could do."
+    s "..."
+    t "... StarClan, Sunshadow, I'm sorry."
+    t "I'm so, so incredibly sorry."
+    t "You have no idea how badly I wish there was something I could say to make this any better."
     t "To take away even a fraction of the pain you must be feeling."
-    t "But there isn't. And I can't."
+    t "But ... there isn't."
+    t "And I can't."
     t "So I'm just ... sorry."
     s "..."
     s "......."
@@ -473,10 +507,12 @@ label bs2_abrupt:
     s "... What about the others?"
     t "What?"
     s "The other three? Stormkit, Wolfkit, and Starlingkit."
-    s "Are they alright?"
-    t "I ... Yes."
+    s "Are they doing alright?"
+    t "I ..."
+    t "Yes."
+    t "I think so."
     s "Are they healthy?"
-    t "Yes. Healthy enough."
+    t "Healthy enough."
     s "They have enough to eat, now?"
     t "..."
     t "......."
@@ -502,12 +538,13 @@ label bs2_abrupt:
 label bs2_nonending:
     s "Something's shifted."
     s "Can you sense it?"
-    s "Things are turning over in the dirt."
+    s "That churning in the air?"
     t "Sunshadow --"
     s "Go back to camp, Talonclaw."
     t "But --"
     s "Go back to camp."
-    s "I have to bury my mate."
+    s "You can't feel it."
+    s "You never have."
     t "..."
     play sound "sfx/quest_unlocked.mp3"
     $ quest_harbringer.started = False
@@ -518,7 +555,7 @@ label bs2_nonending:
 label bs2_ending:
     play music "music/ES_Whispers of the Wasteland - Victor Lundberg.mp3"
     "{b}Begin Illustration Here{/b}"
-    s "We are gathered here today to mourn the passing of Dapplefeather."
+    s "We are gathered here today to mourn the passing of Spottedlight."
     s "She was a loving mate, sister, daughter, mother, and friend to everyone in ThunderClan."
     s "An honorable warrior who served her fellow Clanmates until her very last breath."
     s "It is time, now, to perform the burial rites that were taught to us by our warrior ancestors ..."
@@ -527,7 +564,7 @@ label bs2_ending:
     s "Crocuses."
     s "Nesting materials."
     s "And, finally, a piece of prey."
-    s "StarClan, please accept these offerings such that they may ease Dapplefeather's journey into Silverpelt ..."
+    s "StarClan, please accept these offerings such that they may ease Spottedlight's journey into Silverpelt ..."
     s "... As well as replenish the spirits of the living who are here to mourn her."
     s "For we, too, have a long journey ahead."
     s "The journey to remake a new ThunderClan."

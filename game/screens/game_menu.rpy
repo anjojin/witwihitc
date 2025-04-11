@@ -31,6 +31,8 @@ screen game_menu(title):
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
+        textbutton _("Achievements") action ShowMenu("achievement_gallery")
+
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)

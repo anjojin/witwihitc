@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/game_content/leaders_den.rpy", line 282: end of line expected.
-    if quest_feed_deputy.completed or quest_feed_deputy.cancelled or quest_feed_deputy.failed::
-                                                                                              ^
-
-File "game/scripts/game_content/leaders_den.rpy", line 284: expected statement.
-    else:
-        ^
+File "game/scripts/defines/achievements.rpy", line 238: invalid syntax
+        hidden = True,)
+         ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sat Apr  5 17:20:35 2025
+Fri Apr 11 17:22:25 2025

@@ -201,6 +201,36 @@ define -2 all_achievements = Achievement(
     hide_description=_("Get all other achievements."),
 )
 
+define botanist = Achievement(
+    name=_("Botanist"),
+    description=_("Click on every herb in camp."),
+    unlocked_image=Transform("gui/window_icon.png", matrixcolor=InvertMatrix()))
+
+define silver_tongue = Achievement(
+    name=_("Silver Tongue"),
+    description=_("Perfect Briarstar's speech."),
+    unlocked_image=Transform("gui/window_icon.png", matrixcolor=InvertMatrix()))
+
+define codebreaker = Achievement(
+    name=_("Codebreaker"),
+    description=_("Eat a piece of prey on a hunt and come back to camp empty-pawed."),
+    unlocked_image=Transform("gui/window_icon.png", matrixcolor=InvertMatrix()))
+
+define rookie_mistake = Achievement(
+    name=_("Rookie Mistake"),
+    description=_("Hunt with the apprentices and come back to camp empty-pawed."),
+    unlocked_image=Transform("gui/window_icon.png", matrixcolor=InvertMatrix()))
+
+define beginners_luck = Achievement(
+    name=_("Beginner's Luck"),
+    description=_("Catch at least 2 pieces of prey with the apprentices."),
+    unlocked_image=Transform("gui/window_icon.png", matrixcolor=InvertMatrix()))
+
+define faminewhatfamine = Achievement(
+    name=_("Famine? What Famine?"),
+    description=_("Catch more than 2 pieces of prey on a solo patrol."),
+    unlocked_image=Transform("gui/window_icon.png", matrixcolor=InvertMatrix()))
+
 ################################################################################
 ## SCREENS
 ################################################################################

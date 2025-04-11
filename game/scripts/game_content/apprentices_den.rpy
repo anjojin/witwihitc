@@ -6,7 +6,7 @@ label ad1:
     show screen gameUI
     t "It's always nice to check up on how the Clan's future warriors are doing."
     menu:
-        t "I wonder just what they're up to, in there ..."
+        t "I wonder just what it is they're up to, in there ..."
         "Eavesdrop":
             jump ad1_eavesdrop
         "Leave them alone":
@@ -96,7 +96,7 @@ label ad1_side_clover:
 
 label ad1_stayout:
     t "Haha! You guys crack me up." 
-    t "This takes me back to my own apprentice days. My denmates used to drive me up the wall."
+    t "Really takes me back to my own apprentice days. My denmates used to drive me up the wall!"
     jump ad1_cont
 
 label ad1_cont:
@@ -167,7 +167,7 @@ label ad1_yes:
     r "Cloverpaw!"
     c "What? I'm just trying to be {i}realistic.{/i}"
     fa "We promise you won't regret this, Talonclaw."
-    t "I might be starting to, already ..."
+    t "I might be sorta starting to, already ..."
     if quest_crocus.started:
         show screen ad_juniper
     call screen gameUI
@@ -260,12 +260,13 @@ label ad1_no_finish:
     t "Tch ..."
     t "Awfully dramatic, those young cats."
     t "One day, they'll know better."
-    t "Once somecat actually gets around to teaching them ..."
+    t "If anycat ever gets around to actually teaching them ..."
     if quest_crocus.started:
         show screen ad_juniper
     call screen gameUI
 
 label ad1_click_juniper:
+    $ botanist.add_progress(1)
     play audio "sfx/plant_error.mp3"
     t "It's purple, and it's a flower ... but it's not quite a crocus."
     t "I'd better keep looking."
@@ -374,7 +375,8 @@ label ad3_check_clover:
     "The faint voices of the apprentices drift towards the entrance of the den."
     fa "... Are you {i}sure{/i} you're okay?"
     c "Stars, not this again."
-    c "How many times do I have to tell you this? I'm perfectly fi--"
+    c "How many times do I have to tell you?"
+    c ""
     t "Cloverpaw?"
     c "..."
     t "I know you're in there. Come outside. I want to talk to you."
@@ -384,9 +386,7 @@ label ad3_check_clover:
     show clover_sit_n with fade
     c "... Go away. I'm busy."
     t "Busy doing what?"
-    c "Dying, apparently."
-    t "Not funny."
-    c "I disagree. What do you want?"
+    c "Dying, apparently. What do you want?"
     t "I just ... came to say hello, I guess."
     c "'Hello.'"
     hide clover_sit_n
@@ -397,19 +397,19 @@ label ad3_check_clover:
     show clover_sit_n
     c "..."
     t "How are you holding up?"
-    t "Have there been any changes since we last talked?"
-    c "Well, I've been communing with my warrior ancestors, and they helped me find the healing power of friendship, so I guess you could say I'm basically cured."
+    t "Any change in your condition since the last time we talked?"
+    c "Well, I've been communing with my warrior ancestors, and they helped me discover the healing power of friendship, so basically, I'm cured."
     t "Come on, Cloverpaw."
     t "Talk to me."
     c "I {i}am{/i} talking."
-    t "How long do you think you can avoid this?"
+    t "How long do you think you can avoid confronting this?"
     hide clover_sit_n
     show clover_roll_n
     c "Until the sun explodes. Until my teeth fall out."
     c "I'm young. I'm spry. I think I've got a while."
     t "Every cat thinks they've got a while."
     c "Oh, suddenly, he's the lifespan expert."
-    c "Remind me of something, Talonclaw: how many family members have you lost in the past five moons?"
+    c "Remind me of something, Talonclaw: how many family members have you lost this leafbare?"
     c "Oh, wait. I forgot. You're an orphan."
     c "Pulled that thorn out of your paw early, didn't you?"
     t "Now, you're just being mean."
@@ -425,7 +425,7 @@ label ad3_check_clover:
 
 label ad3_encouraging:
     t "C'mon. Don't be so defeatist."
-    t "You can still beat this thing if you face it head-on."
+    t "You can still beat this thing. You just have to face it head-on."
     hide clover_roll_n
     show clover_stand_n
     c "Oh, yeah? You got any spare catmint lying around?"
@@ -433,7 +433,7 @@ label ad3_encouraging:
 
 label ad3_empathy:
     t "... I'm so sorry, Cloverpaw."
-    t "I didn't get the chance to say if before, but I really do feel for you."
+    t "I didn't get the chance to say it before, but I really do feel for you."
     t "I can't even imagine how scared and alone you must be feeling ..."
     hide clover_roll_n
     show clover_stand_n
@@ -448,7 +448,7 @@ label ad3_harsh:
     show clover_stand_n
     c "You think I don't know that?"
     c "When I came back from the clearing, all of them had already moved their nests to the other side of the den."
-    c "I thought I could at least pretend things were normal for a little while longer, but now I'm going to die {i}and{/i} they all hate me."
+    c "I thought I could at least pretend things were normal for a little while longer, but now I'm going to die {i}and{/i} my friends hate me."
     t  "Don't say that."
     jump ad3_cont
 
@@ -456,10 +456,13 @@ label ad3_cont:
     t "I thought we agreed we weren't going to panic until we knew for sure that this was serious."
     hide clover_stand_n 
     show clover_sit_n
-    c "Yeah. And, for tonight, that agreement is perfect. Because we still don't know."
+    c "Yeah. And, for tonight, that arrangement is perfect."
+    c "Because we still don't know."
     c "But who knows what tomorrow will bring?"
     scene silverpelt with fade
-    c "... Can I ask you something kinda pathetic?"
+    c "... Talonclaw?"
+    t "Yes?'"
+    c "Can I ask you a kinda pathetic question?"
     t "Go for it."
     c "Okay."
     c "Do you ..."
@@ -469,12 +472,13 @@ label ad3_cont:
     c "Heh."
     c "Figures."
     c "All praise to our glorious leader."
-    t "Come on. She may not be all there, but StarClan chose her for a reason."
+    t "Come on. That's no kind of attitude for a young warrior to have."
+    t "She's made a lot of mistakes, sure, but StarClan chose her for a reason."
     c "StarClan must not know what they're doing, then."
-    c "... Must be getting awfully crowded up there."
+    c "... Must be getting awfully crowded up in Silverpelt."
     c "Do you believe in what Sunshadow was saying, earlier?"
     menu:
-        c "That they're having as rough a go as we are?"
+        c "That they're having as rough a go of it as we are?"
         "Yes":
             jump ad3_yes
         "No":
@@ -483,13 +487,14 @@ label ad3_cont:
             jump ad3_idk
 
 label ad3_yes:
+    $ talon_sun_bonus += 1
     t "... I do."
-    t "The StarClan I knew would have never put ThunderClan through something like this."
+    t "The StarClan I knew -- the all-powerful StarClan -- would have never put ThunderClan through something like this."
     t "They would have sent a prophecy. Or an omen. I don't know. Just ... something."
-    t "They wouldn't just sit back and let it happen."
-    c "StarClan's let bad things happen before, though, haven't they?"
-    c "Other outbreaks. Other accidents. All the wars between the Clans."
-    c "Think they were powerless then, too?"
+    t "They wouldn't have just sat back and let it happen."
+    c "Bad things have happened before, though, haven't they?"
+    c "Other outbreaks. Other accidents. Your family abandoning you here."
+    c "Think StarClan was powerless then, too?"
     t "... I guess I'm not sure."
     jump ad3_cont2
 
@@ -499,6 +504,8 @@ label ad3_no:
     t "I guess there's just something comforting about believing that there's still a paradise up there, waiting for us."
     t "Especially while there's so much suffering down below."
     c "Why do you think they let this happen, then?"
+    c "All the suffering. All the cruelty."
+    c "If they're really all-powerful, why wouldn't they intervene?"
     t "... I guess I'm not sure."
     jump ad3_cont2
 
@@ -509,24 +516,30 @@ label ad3_idk:
 label ad3_cont2:
     t "None of us will never really know, until we join them up there."
     t "It's always been sort of mysterious how they work."
-    c "... Do you think StarClan cats get the chance to grow up?"
-    c "Like, when kits die, do they stay kits forever, or will they eventually become warriors?"
+    c "... Do you think cats get the chance to grow up? In StarClan?"
+    c "Like, when kits die, do they stay kits forever, or will they eventually become apprentices and warriors and stuff?"
+    t "Hmm."
     t "That's an interesting question, Cloverpaw."
     t "I guess I never really thought about it."
-    c "... Will {i}I{/i} ever get the chance to grow up?"
+    c "..."
+    c "Will ..."
+    c "Will {i}I{/i} ever get the chance to grow up?"
     c "Will I ever master my front paw blow, or will I screw it up for all eternity?"
     c "Will I understand more, when I'm up there?"
     c "Will I be braver?"
     c "Or is this just ... it?"
-    c "This is the sad, stupid version of my soul that's going to be beamed up into the sky and preserved forever."
-    c "The kits will look up to me at night:"
-    c "'Who did that star used to be, Mommy? A great Clan leader? A noble war hero?'"
-    c "'Oh, no, little one. That's just Cloverpaw. The apprentice who couldn't quite hack it.'"
-    c "'Unless by 'hack it', you mean 'hack up both of her lungs.''"
+    c "This is the sad, stupid version of my soul that's going to be beamed up into the sky and turned into a star."
+    c "The kits will look up at me at night:"
+    c "'Who did that star used to be, Mommy? A great Clan leader? A noble warrior?'"
+    c "'Oh, no, little one. That's just Cloverpaw. The little apprentice who couldn't quite hack it.'"
+    c "'Unless by 'it', you mean 'up a lung.''"
     stop music fadeout 5.0
     t "..."
     c "Oh, c'mon. You can't deny that that was funny."
     c "Sad and funny."
+    t "..."
+    c "Tough crowd, huh?"
+    c "I'll workshop it."
     t "..."
     t "Crouch down."
     c "What?"
@@ -539,7 +552,7 @@ label ad3_ending:
     c "But - I thought you said --"
     t "Briarstar doesn't have to know. I doubt it will make much of a difference to her, anyways."
     t "You can tell your friends I took you to her den and had her do it special."
-    t "Keep vigil in the clearing tonight."
+    t "I'll keep vigil with you in the clearing tonight."
     c "T-Talonclaw, this is really nice, and all, but I don't know if I really --"
     t "Too late! It's already happening."
     t "Nothing can stop it, now."
@@ -551,7 +564,7 @@ label ad3_ending:
     t "Have you thought of a warrior name that you like?"
     c "Oh, c'mon."
     c "That's totally cheating!"
-    t "Don't lie. You've probably had one picked out for moons."
+    t "Don't lie. I know you've had one picked out since the day you left the nursery."
     c "..."
     c "... Cloverfang."
     t "Ohh. {i}Cloverfang.{/i}"

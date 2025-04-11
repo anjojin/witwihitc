@@ -30,3 +30,5 @@ default eaten_prey = False
 default tutorial_proceeded = False
 
 default gave_herbs = ""
+
+default herbs_clicked = 1

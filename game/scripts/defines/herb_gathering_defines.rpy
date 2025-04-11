@@ -27,6 +27,7 @@ init python:
 
 default herbs_gathered = []
 default q = 0
+default herb_proceed_max = 5
 
 default frame1 = HerbFrame(number=1, xpos=290, ypos=611)
 default frame2 = HerbFrame(number=2, xpos=480, ypos=331)
