@@ -205,12 +205,12 @@ label ad1_mentors:
 label ad1_polite:
     $ talon_clan_bonus -= 1
     t "Patrolling isn't all it's cracked up to be."
-    t "You should consider all yourselves lucky to get to relax around camp all day while the rest of us freeze our tails off out there."
+    t "You should consider yourselves lucky to get to relax in camp all day while the rest of us have to freeze our tails off out there."
     c "... What?"
     c "Our Clanmates and kin are dying. We just want to help, and you're telling us it's 'not all it's cracked up to be?'"
     c "How old do you think we are?"
     r "Unbelievable. You know, this is why things never get better. Because cats like you refuse to take our ideas seriously."
-    c "This is slander!"
+    c "It's ridiculous!"
     r "It's an outrage!"
     jump ad1_no_finish
 
@@ -260,13 +260,15 @@ label ad1_no_finish:
     t "Tch ..."
     t "Awfully dramatic, those young cats."
     t "One day, they'll know better."
-    t "If anycat ever gets around to actually teaching them ..."
+    t "That is, if anycat ever actually bothers to teach them ..."
     if quest_crocus.started:
         show screen ad_juniper
     call screen gameUI
 
 label ad1_click_juniper:
-    $ botanist.add_progress(1)
+    $ herbs_clicked += 1
+    if herbs_clicked == 5:
+        $ botanist.grant()
     play audio "sfx/plant_error.mp3"
     t "It's purple, and it's a flower ... but it's not quite a crocus."
     t "I'd better keep looking."

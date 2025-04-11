@@ -60,7 +60,7 @@ label wd3:
     play sound "sfx/game_tip.mp3"
     "However, this is not the only way to end the story ..."
     play sound "sfx/game_tip.mp3"
-    "See if you can find all the endings!"
+    "See if you can discover all the endings!"
     show screen talon_nest
     call screen gameUI
 

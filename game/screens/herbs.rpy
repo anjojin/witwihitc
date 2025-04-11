@@ -104,8 +104,7 @@ screen sickden:
         idle "gui/button/sickden.png"
         hover "gui/button/sickden_hover.png"
         action Jump("sickden")
-    add "char/locust hunch night.png"
-
+        
 screen md_herbs:
     tag herb_screen
     if "juniper" in herbs_gathered:

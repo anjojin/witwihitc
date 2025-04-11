@@ -4,36 +4,35 @@ label bs_1:
     show burial site bg with fade
     show side sun sitting
     play music "music/ES_A Friend Like You - Headlund.mp3" loop
-    s "I only said what every cat in ThunderClan's already been thinking."
+    s "I only said what's already been on every cat in ThunderClan's mind."
     t "I had a few thoughts about the part where you condemned our warrior ancestors to an eternity of suffering and torment ..."
     hide side sun sitting
     show side sun rising
     s "Think you're funny?"
     s "I'm not in the mood to laugh right now, Talonclaw."
-    t "I'm sorry. But, as you yourself so aptly pointed out, the bodies are quite literally beginning to pile up around camp."
+    t "I'm sorry. But, as you yourself pointed out, the bodies are quite literally beginning to pile up around camp."
     t "Everycat is already going through a hard enough time. The warriors are looking to you for words of comfort; words of inspiration."
-    t "Did you have to make your speech so ... upsetting?"
+    t "Did your speech have to be quite so ... upsetting?"
     s "Upsetting?"
     hide side sun sitting
     show side sun rising
     s "{i}Upsetting{/i} was exactly my intention."
     s "With each day that passes, more and more of our Clanmates' lives are stolen away."
-    s "Now, Spottedlight is gone, and you expect me not to be upset?"
+    s "Now, Spottedlight is gone, and you expect me not to be upset about it?"
     t "I didn't mean --"
     hide side sun rising
     show side sun standing
-    s "I know what you meant."
-    s "Did you even notice that Briarstar couldn't be bothered to attend the vigil?"
-    s "Or, did you just not care enough to look?"
+    s "I know exactly what you meant."
+    s "Were you even paying enough attention to notice that Briarstar didn't show up to the vigil?"
+    s "Or, did not even care enough to look?"
     t "..."
     t "I noticed, Sunshadow."
-    s "Then, why aren't you angry?"
-    s "It's a matter of principle! You say cats need words of comfort -- well, where are the cats who are supposed to comfort us?"
+    s "Then, you should be angry!"
+    s "You say cats need words of comfort -- well, where are the cats whose job it is to comfort us?"
     s "To protect us?"
-    s "Where are the cats who were supposed to protect Spottedlight?"
     t "Come on. You can't blame all this on Briarstar."
     t "Spottedlight was her Clanmate, too."
-    t "If there was anything she could've done to avoid this, I'm sure she would've done it."
+    t "If there was anything she could've done to prevent this, I'm sure she would've done it."
     hide side sun standing
     show side sun sitting
     s "..."
@@ -119,16 +118,16 @@ label bs1_sun_lament:
     t "ThunderClan is strong. We can survive this if we just --"
     s "Just what?"
     s "Stick together? Be the best warriors we can be?"
-    s "Spottedlight believed all that, too, and look where she is, now!"
-    t "What are you going to do about it, then, Sunshadow?"
+    s "Spottedlight believed that, too. Look at all the good it did her!"
+    t "What {i}are{/i} we supposed to do, then, Sunshadow?"
     t "Start a revolution?"
-    t "Go back in time and stop those kits from being born?"
+    t "Go back in time and stop ThunderClan from becoming overpopulated?"
     hide side sun rising
     show side sun sitting
     s "..."
-    s "I'll tell you what I'm going to do."
+    s "I'll tell you what {i}I'm{/i} going to do."
     s "I'm going to bury my mate."
-    s "She's getting a proper ThunderClan burial -- all the rites, all the rituals."
+    s "She's getting a proper ThunderClan sendoff -- all the rites, all the rituals."
     s "Nothing withheld."
     t "Sunshadow."
     s "What?"
@@ -154,16 +153,18 @@ label bs1_sun_lament:
 
 label bs1_warrior_code:
     $ talon_clan_bonus += 1
-    t "There's a whole denful of cats back at camp looking up to you for guidance."
-    t "The warriors hang on your every word. Is this really the sort of example you want to be setting for them?"
-    s "You mean letting go of fear and resisting hardship to do what's right for the cats I love?"
-    s "Yes, Talonclaw. That's exactly the kind of example I want to be setting."
+    t "There's a whole denful of cats back at camp waiting for you to put them to work."
+    t "The warriors look up to you. Some of them practically hang on your every word."
+    t "Is this really the sort of example you want to be setting for them?"
+    hide side sun sitting
+    show side sun rising
+    s "You mean the example of doing right by the cats I love?"
+    s "Resisting fear? Standing up against the unfairness of our sitation?"
+    s "Yes, Talonclaw. That's {i}exactly{/i} the kind of example I want to be setting."
     t "The Warrior Code clearly states that keeping the Clan fed must always be our top priority, even at the expense of --"
     s "The Warrior Code also states that our leaders are supposed to care for ThunderClan's young and old, living each life with pride and dignity."
     s "Does that sound like Briarstar to you?"
     t "..."
-    hide side sun sitting
-    show side sun rising
     jump sun_ultimatum
 
 label bs1_kits:
@@ -327,7 +328,7 @@ label bs1_sun_relent:
     s "StarClan, Talonclaw. I really hate you."
     s "How is it that you always know exactly what to say?"
     t "Because I've spent too much time around you, mouse-brain."
-    t "That, and I secretly have psychic powers. But don't tell anyone."
+    t "That, and I secretly have psychic powers. But keep it under wraps."
     s "*Snrk*"
     t "Ha! See? I made you laugh!" 
     t "Don't ever say I haven't achieved the impossible."
@@ -335,16 +336,18 @@ label bs1_sun_relent:
     t "..."
     s "..."
     t "Come back to camp with me, Sunshadow."
-    t "Get some food in your belly. Warm your paws. I can organize the patrols for the day."
+    t "Get some food in your belly. Warm your paws. I can take over your duties for the day."
     s "I ..."
     s "I can't."
     t "Why?"
     hide side sun sitting
     show side sun rising
-    s "Look at the sky. The vultures are already circling."
+    s "Look at the sky. The vultures are already starting to circle."
     s "How can I walk away knowing that, as soon as I do, they'll carry her off and I'll never see her again?"
     s "I know that it's pointless and I know that it's foolish. But I just ..."
-    s "Oh, StarClan, Talonclaw. She wanted to take our kits to the creek. In greenleaf, she said."
+    s "Oh, StarClan, Talonclaw."
+    s "She wanted to take our kits to the creek."
+    s "In greenleaf, she said."
     s "When everything got better, we were supposed to go swimming."
     s "Do you think they'll even remember what she smells like?"
     s "Will I?"
@@ -385,7 +388,7 @@ label bs1_quest:
     t "Are you sure?"
     s "I'm not dead yet, Talonclaw. I haven't completely lost my strength."
     t "... I guess I can start heading back towards camp, then."
-    t "I'll come back to this part of the territory when I gave everything gathered."
+    t "I'll come back to this part of the territory when I have everything gathered."
     s "... Thank you, Talonclaw."
     s "Spottedlight really loved you, you know."
     s "I know that, wherever she is, she's grateful for your help, too."

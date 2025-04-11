@@ -377,8 +377,8 @@ label md3_clover2:
     t "You'll take care of Cloverpaw, won't you?"
     l "Of course I will."
     l "What kind of medicine cat would I be, if I didn't?"
-    t "Do you think she did the right thing?"
-    t "What if she's really fine, but she ends up catching something serious from one of the cats inside?"
+    t "Do you think we did the right thing?"
+    t "What if Cloverpaw's really fine, but she ends up catching something serious from one of the cats inside?"
     hide locust_hunch_night
     show locust_loaf_night
     l "It's worth the risk. The apprentices are far too vital to this Clan for any potential contagion among them to be left unaddressed."
@@ -447,10 +447,11 @@ label md3_pouncetail:
     t "... Say, whatever happened to Maplebreeze?"
     l "She's recovering in the sick den, with the rest of the patients."
     t "Oh."
-    t "Could I ... possibly see them?"
+    t "Could I ... possibly go back there to see them?"
     l "Absolutely not. Unless you intend on staying back there forever."
     t "Please? I swear, I'll be in and out."
-    t "I need to do a favor for Briarstar."
+    t "I just need to do a favor for Briarstar."
+    t "What if this is what she needs to finally start being a leader again?"
     hide locust_hunch_night
     show locust_loaf_night
     l "... Something tells me no matter what I say, I won't be able to convince you what a mouse-brained idea this is."

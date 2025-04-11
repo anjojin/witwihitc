@@ -396,6 +396,7 @@ label hunting_12:
                     $ proceed_counter -= 1
                     "You manage to escape unscathed, but it takes you a few moments to recover from the encounter. {b}(-1 Proceed){/b}"
                 else:
+                    $ toughbreak.grant()
                     $ prey_caught = 0
                     "When you return to the spot where your prey was buried, you discover all of your catches are gone."
                     t "Fox-dung!"
@@ -462,6 +463,7 @@ label hunting_14:
                     $ proceed_counter -= 1
                     "The furious hawk chases you across the territory, talons outstretched. By the time it leaves you alone, it's already nearly dark. {b}(-1 Proceed){/b}"
                 else:
+                    $ toughbreak.grant()
                     $ prey_caught = 0
                     "The furious hawk chases you across the territory, lingering over where your prey was buried. To save your pelt, you're forced to abandon your catches."
                     t "Fox-dung!"
@@ -527,6 +529,7 @@ label hunting_16:
                     "You scrabble up the tree, but just as you're about to pounce, the crow flutters to the ground."
                     "You give chase, crow eluding you at every turn, until, finally, winded and panting, the crow caws at you once and flies away. {b}(-1 Proceed){/b}"
                 else:
+                    $ toughbreak.grant()
                     $ prey_caught = 0
                     "You scrabble up the tree, but just as you're about to pounce, the crow flutters to the ground, where you see a mob of its friends surrounding your buried prey."
                     "By the time you make it down the tree, they've already taken off with your hard-earned kills, a flurry of caws in their wake."
@@ -621,6 +624,7 @@ label hunting_red:
                 $ proceed_counter -= 1
                 "Redpaw dives with zero hesitation, only to slam into the ground, yowling in pain. It takes a few moments for him to recover. {b}(-1 Proceed){/b}"
             else:
+                $ toughbreak.grant()
                 $ prey_caught = 0
                 "By the time you return to where your catches were buried, all of them are gone."
             jump red_hunting_fail
@@ -674,6 +678,7 @@ label hunting_lily:
                 $ proceed_counter -= 1
                 "As Lilypaw creeps forward, the snow gives way beneath her paws. It takes hours for the patrol to free her. {b}(-1 Proceed){/b}"
             else:
+                $ toughbreak.grant()
                 $ prey_caught = 0
                 "As Lilypaw creeps forward, the snow gives way beneath her paws. It takes hours for the patrol to free her."
                 "When you finally finish, you return to where your catches are buried, only to discover all of them are gone."
@@ -728,6 +733,7 @@ label hunting_fawn:
                 $ proceed_counter -= 1
                 "Fawnpaw is so focused on the catch, she creeps right into a thicket of brambles. It takes hours for the patrol to free her. {b}(-1 Proceed){/b}"
             else:
+                $ toughbreak.grant()
                 $ prey_caught = 0
                 "Fawnpaw is so focused on the catch, she creeps right into a thicket of brambles. It takes hours for the patrol to free her."
                 "When you finally finish, you return to where your catches are buried, only to discover all of them are gone."

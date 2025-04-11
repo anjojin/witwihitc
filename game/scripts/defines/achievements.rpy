@@ -194,7 +194,7 @@ define hidden_double_unlock = Achievement(
 ## so it shows up first in the list even though it's defined all the way down
 ## here.
 define -2 all_achievements = Achievement(
-    name=_("Platinum Achievement"),
+    name=_("Gold Star"),
     id="platinum_achievement",
     description=_("Congrats! You unlocked every achievement!"),
     unlocked_image=Transform("gui/window_icon.png", matrixcolor=BrightnessMatrix(1.0)),
@@ -229,6 +229,11 @@ define beginners_luck = Achievement(
 define faminewhatfamine = Achievement(
     name=_("Famine? What Famine?"),
     description=_("Catch more than 2 pieces of prey on a solo patrol."),
+    unlocked_image=Transform("gui/window_icon.png", matrixcolor=InvertMatrix()))
+
+define toughbreak = Achievement(
+    name=_("Tough Break"),
+    description=_("Lose all your prey on a hunting patrol."),
     unlocked_image=Transform("gui/window_icon.png", matrixcolor=InvertMatrix()))
 
 ################################################################################
