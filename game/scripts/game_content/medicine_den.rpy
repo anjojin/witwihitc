@@ -68,7 +68,7 @@ label md1:
             play sound "sfx/game_tip.mp3"
             menu:
                 "How would you like to proceed?"
-                "Stick with burying Dapplefeather":
+                "Stick with burying Spottedlight":
                     jump md1_give_up
                 "Switch to finding catmint":
                     jump md1_accept_challenge
@@ -246,11 +246,22 @@ label md3:
         show locust_loaf_night
         l "... Talonclaw."
         l "I should've known it was you. No other warrior has quite such a ... distinctive smell."
-        l "What are you doing in the medicine den? Don't the words 'emergencies only' mean anything to you?"
+        if quest_gather_herbs.cancelled:
+            l "How did the catmint search go?"
+            l "Manage to find anything?"
+            t "... Not exactly."
+            t "I decided to go hunting, instead."
+            l "Ha. Finally, he wisens up."
+            l "It's like I always say. Leave the medical work to the medicine cats."
+            l "You warriors wouldn't last a day in our paws, anyway."
+            l "So then, what are you doing in the medicine den?"
+        else:
+            l "What are you doing in the medicine den?"
+        l "Don't the words 'emergencies only' mean anything to you?"
         t "I need to talk to you about something."
         hide locust_loaf_night
         show locust_hunch_night
-        l "Hn. You hear that, sick and dying patients? It's an emergency. Talonclaw needs to talk to me about something."
+        l "Hn. You hear that, sick and dying patients? Talonclaw needs to talk to me about something."
         l "Go ahead and talk, then."
         jump locust_menu1
 
@@ -308,7 +319,7 @@ label md3_herbs:
 label md3_clover:
     t "... Hello? Locustleaf?"
     t "Are you home?"
-    t "Listen, I know you don't any cats disturbing you, but I have to tell you something."
+    t "Listen, I know you don't want any cats disturbing you, but I have to tell you something."
     t "It's about ..."
     show cloverpaw_sit_center with easeinleft
     t "... Cloverpaw?" 
@@ -437,21 +448,11 @@ label md3_catmint:
 
 label md3_pouncetail:
     $ already_pouncetail = True
-    if quest_gather_herbs.cancelled:
-        l "By the way, how did your catmint search go?"
-        l "Manage to find anything?"
-        t "... I decided to spend my time hunting, instead."
-        l "Ha. Finally, he wisens up."
-        l "It's like I always say. Leave the medical work to the medicine cats."
-        l "You warriors wouldn't last a day in our paws, anyway."
-    t "... Say, whatever happened to Maplebreeze?"
-    l "She's recovering in the sick den, with the rest of the patients."
-    t "Oh."
-    t "Could I ... possibly go back there to see them?"
+    t "Could I ... possibly go back to the sick den to visit a patient?"
     l "Absolutely not. Unless you intend on staying back there forever."
     t "Please? I swear, I'll be in and out."
     t "I just need to do a favor for Briarstar."
-    t "What if this is what she needs to finally start being a leader again?"
+    t "What if news of Pouncetail is what she needs to finally start being a leader again?"
     hide locust_hunch_night
     show locust_loaf_night
     l "... Something tells me no matter what I say, I won't be able to convince you what a mouse-brained idea this is."
@@ -461,6 +462,8 @@ label md3_pouncetail:
     show screen sickden with fade
     play sound "sfx/game_tip.mp3"
     "Click on the {b}sick den entrance{/b} to access cats in the sick den."
+    hide locust_loaf_night
+    show locust_hunch_night
     jump locust_menu
 
 label md3_flipcloud:
@@ -506,7 +509,7 @@ label md3_cough:
     jump locust_menu
 
 label md3_future:
-    $ already_future = False
+    $ already_future = True
     t "Locustleaf, you've seen more tragedy this leafbare than any cat."
     t "Do you think ... Do you think it changes who you are on the inside?"
     t "Will ThunderClan ever go back to the way it was?"
@@ -531,7 +534,7 @@ label md3_future:
     l "A warrior's top job isn't to hunt for his Clan, or even protect it."
     l "It's to believe in everything it stands for."
     l "As long as ThunderClan exists, it will need cats to believe in it."
-    l "And, as long as THunderClan exists, cats will always have something to believe in."
+    l "And, as long as ThunderClan exists, cats will always have something to believe in."
     l "But not if we stop --"
     hide locust_lay_night
     show locust_hunch_night
@@ -543,7 +546,7 @@ label md3_future:
     l "Nothing can stop what happens now."
     l "All of our insides have changed, in a physical and literal sense, and even more change is on the way. No way around it."
     l "But, as for me ... I'm not worried."
-    l "ThunderClan will come out the other side of this -- damanged, sure, but alive."
+    l "ThunderClan will come out the other side of this -- damaged, sure, but alive."
     l "As long as the warriors still believe."
     l "Don't let the spark die out, Talonclaw."
     t "..."

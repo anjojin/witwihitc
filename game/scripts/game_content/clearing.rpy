@@ -73,7 +73,7 @@ label cl3:
         t "Oof. StarClan, what a disaster ..."
         t "At least the warriors' hunting patrol made it back alright. Hopefully, they fared better than I did."
         if quest_favorite_prey.completed:
-            t "I guess Sunshadow will have to make do without a piece of prey for Dapplefeather, after all."
+            t "I guess Sunshadow will have to make do without a piece of prey for Spottedlight, after all."
             t "I wonder how he's doing out there."
             t "Has he completely frozen to death yet, or only half-frozen?"
             t "I should probably go check on --"
@@ -276,7 +276,7 @@ label cl3_clover_end:
         t "That's the last time I ever let the apprentices talk me into anything."
         t "At least the warriors' hunting patrol made it back alright. Hopefully, they fared better than we did."
         if quest_favorite_prey.completed:
-            t "I guess Sunshadow will have to make do without a piece of prey for Dapplefeather, after all."
+            t "I guess Sunshadow will have to make do without a piece of prey for Spottedlight, after all."
             t "I wonder how he's doing out there."
             t "Has he completely frozen to death yet, or only halfway-frozen?"
             t "I should probably go check on --"
@@ -311,7 +311,7 @@ label cl3_freshkill:
                     jump cl3_1
         elif quest_favorite_prey.completed:
             menu:
-                "You have 1 freshkill set aside for Dapplefeather. Contribute your remaining {b}[prey_caught - 1]{/b} prey to the pile?"
+                "You have 1 freshkill set aside for Spottedlight. Contribute your remaining {b}[prey_caught - 1]{/b} prey to the pile?"
                 "Yes":
                     jump cl3_yes
                 "No":
@@ -388,7 +388,7 @@ label cl3_eavesdrop:
     mo "Oh, yeah. How did you plan to get around that?"
     cl "I'm not sure. I wasn't really all that serious about it, anyway."
     cl "I mean, who would wanna lead ThunderClan in the state it's in?"
-    cl "How do you turn the us around from a mess like this one?"
+    cl "How do you turn the Clan around from a mess like this one?"
     hide raven_stand
     show raven_sit
     ra "Yeah, well, whatever you do, it'd be better than nothing."

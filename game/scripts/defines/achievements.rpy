@@ -325,7 +325,7 @@ screen achievement_gallery():
     ## Version 2 ###############################################################
     ## Otherwise, if you'd like this to be independent of the game menu,
     ## use the following:
-    textbutton _("Return") action Return() align (1.0, 1.0)
+    textbutton _("Return") action Return() align (0.0, 1.0)
     viewport:
         mousewheel True draggable True pagekeys True
         scrollbars "vertical"

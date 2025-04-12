@@ -210,7 +210,7 @@ label ld1_talonclaw_sunshadow:
             
 label ld1_stick_sunshadow:
     $ talon_sun_bonus +=1
-    t "... You know, you could show a little more gratitude towards."
+    t "... You know, you could show a little more gratitude towards Sunshadow."
     t "Without him out there organizing the patrols, rationing the prey, and giving the warriors something to believe in every day ..."
     t "... This Clan might very well just fall apart."
     t "StarClan knows you aren't doing it any favors."

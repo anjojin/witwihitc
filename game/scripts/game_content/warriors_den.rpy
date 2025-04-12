@@ -19,7 +19,7 @@ label wd1_take_nesting:
     "You picked up the {b}nesting materials.{/b}"
     $ quest_nesting_material.completed = True
     $ quest_nesting_material.started = False
-    t "It feels so strange without Dapplefeather's nest there ..."
+    t "It feels so strange without Spottedlight's nest there ..."
     t "The warriors' den just keeps getting smaller and smaller."
     call screen gameUI
 
@@ -36,9 +36,9 @@ label wd2:
     if quest_nesting_material.started:
         t "He really owes me after this. Why do I always let him talk me into doing the most mouse-brained stuff for him?"
     if quest_nesting_material.completed:
-        t "... He'll be devastated when he sees Dapplefeather's nest is gone."
+        t "... He'll be devastated when he sees Spottedlight's nest is gone."
     else:
-        t "... When they finally clear Dapplefeather's nest away, he'll be devastated."
+        t "... When they finally clear Spottedlight's nest away, he'll be devastated."
     t "I hope burying her will at least help him find some healing."
     t "I think I could use a little of that, myself."
     t "This whole Clan could."

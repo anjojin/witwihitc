@@ -29,9 +29,10 @@ screen game_menu(title):
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Progress") action ShowMenu("achievement_gallery")
 
-        textbutton _("Achievements") action ShowMenu("achievement_gallery")
+
+        textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 

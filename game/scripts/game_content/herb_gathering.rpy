@@ -3,7 +3,7 @@ label herb_start:
     play music "music/ES_Saint Valentine - Vendla.mp3" loop
     $ currently_in = "outside"
     $ already_patrolled = True
-    call define_herbs
+    call define_herbs from _call_define_herbs
     scene patrol bg with fade
     show screen gameUI
     t "Hang in there, little ones."
@@ -292,11 +292,11 @@ label herb_proceed:
     if q==herb_proceed_max:
         jump herb_end
     $ lost_leads = []
-    call proceed_logic(frame1)
-    call proceed_logic(frame2)
-    call proceed_logic(frame3)
-    call proceed_logic(frame4)
-    call proceed_logic(frame5)
+    call proceed_logic(frame1) from _call_proceed_logic
+    call proceed_logic(frame2) from _call_proceed_logic_1
+    call proceed_logic(frame3) from _call_proceed_logic_2
+    call proceed_logic(frame4) from _call_proceed_logic_3
+    call proceed_logic(frame5) from _call_proceed_logic_4
     scene herbbg with fade
     if len(lost_leads)>0:
         while len(lost_leads)>0:
@@ -346,7 +346,7 @@ label herb1_collected:
 
 label use_2turn:
     hide screen herb_gathering_screen
-    call define_herbs
+    call define_herbs from _call_define_herbs_1
     show screen herb_gathering_screen with fade
     call screen locked_herbs
 

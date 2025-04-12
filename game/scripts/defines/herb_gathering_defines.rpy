@@ -138,25 +138,25 @@ label define_progress(frame_herb):
 
 
 label define_herbs:
-    call define_herb(frame1)
-    call define_herb(frame2)
-    call define_herb(frame3)
-    call define_herb(frame4)
-    call define_herb(frame5)
-    call define_progress(frame1)
-    call define_progress(frame2)
-    call define_progress(frame3)
-    call define_progress(frame4)
-    call define_progress(frame5)
+    call define_herb(frame1) from _call_define_herb
+    call define_herb(frame2) from _call_define_herb_1
+    call define_herb(frame3) from _call_define_herb_2
+    call define_herb(frame4) from _call_define_herb_3
+    call define_herb(frame5) from _call_define_herb_4
+    call define_progress(frame1) from _call_define_progress
+    call define_progress(frame2) from _call_define_progress_1
+    call define_progress(frame3) from _call_define_progress_2
+    call define_progress(frame4) from _call_define_progress_3
+    call define_progress(frame5) from _call_define_progress_4
     return
 
 label proceed_logic(herbframe):
     $ herbframe.prev = herbframe.herb
     $ herbframe.empty = False
-    call define_herb(herbframe)
+    call define_herb(herbframe) from _call_define_herb_5
     if not herbframe.locked:
         if not herbframe.empty:
-            call define_progress(herbframe)
+            call define_progress(herbframe) from _call_define_progress_5
         return
     else:
         $ herbframe.herb = herbframe.prev

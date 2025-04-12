@@ -987,7 +987,7 @@ label patrol_over_quests:
         $ quest_babysitting.completed = True
         play audio "sfx/quest_unlocked.mp3"
         "{b}Quest Completed:{/b} Adult Supervision"
-    elif prey_caught > 0:
+    if prey_caught > 0:
         if quest_favorite_prey.started:
             $ quest_favorite_prey.started = False
             $ quest_favorite_prey.completed= True

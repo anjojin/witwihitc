@@ -538,23 +538,6 @@ label bs2_abrupt:
     else:
         jump bs2_nonending
 
-label bs2_nonending:
-    s "Something's shifted."
-    s "Can you sense it?"
-    s "That churning in the air?"
-    t "Sunshadow --"
-    s "Go back to camp, Talonclaw."
-    t "But --"
-    s "Go back to camp."
-    s "You can't feel it."
-    s "You never have."
-    t "..."
-    play sound "sfx/quest_unlocked.mp3"
-    $ quest_harbringer.started = False
-    $ quest_harbringer.completed = True
-    "{b}Quest Completed:{/b} Harbringer"
-    call screen gameUI
-
 label bs2_ending:
     play music "music/ES_Whispers of the Wasteland - Victor Lundberg.mp3"
     "{b}Begin Illustration Here{/b}"
@@ -590,3 +573,20 @@ label bs2_ending:
     s "Nothing can stop what happens now."
     "{b}END GAME{/b}"
     $ MainMenu(confirm=False)()
+
+label bs2_nonending:
+    s "Something's shifted."
+    s "Can you sense it?"
+    s "That churning in the air?"
+    t "Sunshadow --"
+    s "Go back to camp, Talonclaw."
+    t "But --"
+    s "Go back to camp."
+    s "I know you can't feel it."
+    s "You never have."
+    t "..."
+    play sound "sfx/quest_unlocked.mp3"
+    $ quest_harbringer.started = False
+    $ quest_harbringer.completed = True
+    "{b}Quest Completed:{/b} Harbringer"
+    call screen gameUI
